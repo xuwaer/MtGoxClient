@@ -137,34 +137,50 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
     return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     TickerCell *cell = (TickerCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell = [[[NSBundle mainBundle] loadNibNamed:@"TickerCell" owner:self options:nil] lastObject];
     }
-    
+
     // Configure the cell...
+
+    switch (indexPath.row) {
+        case 0:
+            [cell display:mtGoxUSDResponse];
+            break;
+        case 1:
+            [cell display:mtGoxEURResponse];
+            break;
+        case 2:
+            [cell display:mtGoxJPYResponse];
+            break;
+        case 3:
+            [cell display:mtGoxCNYResponse];
+            break;
+        default:
+            break;
+    }
     
     return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;
 }
 
 /*
@@ -218,5 +234,26 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
+
+
+-(void)loadTicker
+{
+    // 请求美元兑换行情
+    MtGoxTickerRequest *mtGoxUSDRequest = [[MtGoxTickerRequest alloc] initWithCurrency:USD];
+    [mtGoxQueue sendRequest:mtGoxUSDRequest target:self selector:@selector(updateUIDisplay:)];
+    
+    // 请求欧元兑换行情
+    MtGoxTickerRequest *mtGoxEURRequest = [[MtGoxTickerRequest alloc] initWithCurrency:EUR];
+    [mtGoxQueue sendRequest:mtGoxEURRequest target:self selector:@selector(updateUIDisplay:)];
+    
+    // 请求日元兑换行情
+    MtGoxTickerRequest *mtGoxJPYRequest = [[MtGoxTickerRequest alloc] initWithCurrency:JPY];
+    [mtGoxQueue sendRequest:mtGoxJPYRequest target:self selector:@selector(updateUIDisplay:)];
+    
+    // 请求人民币兑换行情
+    MtGoxTickerRequest *mtGoxCNYRequest = [[MtGoxTickerRequest alloc] initWithCurrency:CNY];
+    [mtGoxQueue sendRequest:mtGoxCNYRequest target:self selector:@selector(updateUIDisplay:)];
+}
+
 
 @end
