@@ -8,6 +8,9 @@
 
 #import "MtGoxInformationQueue.h"
 
+#import "MtGoxTickerRequest.h"
+
 @implementation MtGoxInformationQueue
+
 
 @end

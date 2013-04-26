@@ -41,7 +41,9 @@ static TransManager *transManager;
         controllers = [[NSMutableArray alloc] init];
         
         // log日志记录
+#if DEBUG
         [DDLog addLogger:[DDTTYLogger sharedInstance]];
+#endif
     }
     
     return self;

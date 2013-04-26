@@ -38,7 +38,7 @@
     NSDictionary *tickerList = [dic valueForKey:kData];
     if (tickerList == nil) return;
     
-    NSMutableArray *datas = [[NSMutableArray alloc] init];
+    NSMutableDictionary *datas = [[NSMutableDictionary alloc] init];
     
     NSArray *keys = [tickerList allKeys];
     
@@ -50,7 +50,7 @@
                      key:key];
         
         [response decode];
-        [datas addObject:response];
+        [datas setValue:response forKey:key];
     }
     
     _data = datas;
@@ -62,6 +62,21 @@
 }
 
 @end
+
+NSString const * hightKey = @"high";
+NSString const * lowKey = @"low";
+NSString const * avgKey = @"avg";
+NSString const * vwapKey = @"vwap";
+NSString const * volKey = @"vol";
+NSString const * lastLocalKey = @"last_local";
+NSString const * lastOrigKey = @"last_orig";
+NSString const * lastAllKey = @"last_all";
+NSString const * lastKey = @"last";
+NSString const * buyKey = @"buy";
+NSString const * sellKey = @"sell";
+NSString const * itemKey = @"item";
+NSString const * nowKey = @"now";
+
 
 @implementation MtGoxTickerDetailResponse
 

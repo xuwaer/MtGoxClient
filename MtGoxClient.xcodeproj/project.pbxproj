@@ -19,8 +19,6 @@
 		B9E563391728F82B005443A3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B9E563381728F82B005443A3 /* Default.png */; };
 		B9E5633B1728F82B005443A3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9E5633A1728F82B005443A3 /* Default@2x.png */; };
 		B9E5633D1728F82B005443A3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9E5633C1728F82B005443A3 /* Default-568h@2x.png */; };
-		B9E563401728F82B005443A3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E5633F1728F82B005443A3 /* ViewController.m */; };
-		B9E563431728F82B005443A3 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E563411728F82B005443A3 /* ViewController.xib */; };
 		B9E564381728F8D3005443A3 /* ITSRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E563781728F8D3005443A3 /* ITSRequest.m */; };
 		B9E564391728F8D3005443A3 /* ITSRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E5637B1728F8D3005443A3 /* ITSRequestFactory.m */; };
 		B9E5643A1728F8D3005443A3 /* ITSResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E5637E1728F8D3005443A3 /* ITSResponse.m */; };
@@ -59,6 +57,10 @@
 		B9E5648A1728F948005443A3 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E564891728F948005443A3 /* MobileCoreServices.framework */; };
 		B9E5648E1728F9BC005443A3 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E5648D1728F9BC005443A3 /* libz.1.2.5.dylib */; };
 		B9E564901728F9DC005443A3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E5648F1728F9DC005443A3 /* Security.framework */; };
+		B9E5F31B172A1285007FA1D1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E5F319172A1285007FA1D1 /* MainViewController.m */; };
+		B9E5F31C172A1285007FA1D1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E5F31A172A1285007FA1D1 /* MainViewController.xib */; };
+		B9E5F31F172A12E1007FA1D1 /* TickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E5F31E172A12E1007FA1D1 /* TickerCell.m */; };
+		B9E5F321172A12F3007FA1D1 /* TickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E5F320172A12F3007FA1D1 /* TickerCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,9 +83,6 @@
 		B9E563381728F82B005443A3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		B9E5633A1728F82B005443A3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		B9E5633C1728F82B005443A3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		B9E5633E1728F82B005443A3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B9E5633F1728F82B005443A3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		B9E563421728F82B005443A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		B9E563731728F8D3005443A3 /* ITS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITS.h; sourceTree = "<group>"; };
 		B9E563741728F8D3005443A3 /* ITSConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITSConfig.h; sourceTree = "<group>"; };
 		B9E563771728F8D3005443A3 /* ITSRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITSRequest.h; sourceTree = "<group>"; };
@@ -163,6 +162,12 @@
 		B9E564891728F948005443A3 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		B9E5648D1728F9BC005443A3 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		B9E5648F1728F9DC005443A3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		B9E5F318172A1285007FA1D1 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		B9E5F319172A1285007FA1D1 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		B9E5F31A172A1285007FA1D1 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		B9E5F31D172A12E1007FA1D1 /* TickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TickerCell.h; sourceTree = "<group>"; };
+		B9E5F31E172A12E1007FA1D1 /* TickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TickerCell.m; sourceTree = "<group>"; };
+		B9E5F320172A12F3007FA1D1 /* TickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TickerCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,12 +224,10 @@
 		B9E5632C1728F82B005443A3 /* MtGoxClient */ = {
 			isa = PBXGroup;
 			children = (
+				B9E5F317172A1263007FA1D1 /* View Controllers */,
 				B9E563491728F8D3005443A3 /* ITSMVC */,
 				B9E563351728F82B005443A3 /* AppDelegate.h */,
 				B9E563361728F82B005443A3 /* AppDelegate.m */,
-				B9E5633E1728F82B005443A3 /* ViewController.h */,
-				B9E5633F1728F82B005443A3 /* ViewController.m */,
-				B9E563411728F82B005443A3 /* ViewController.xib */,
 				B9E5632D1728F82B005443A3 /* Supporting Files */,
 			);
 			path = MtGoxClient;
@@ -451,6 +454,19 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		B9E5F317172A1263007FA1D1 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B9E5F318172A1285007FA1D1 /* MainViewController.h */,
+				B9E5F319172A1285007FA1D1 /* MainViewController.m */,
+				B9E5F31A172A1285007FA1D1 /* MainViewController.xib */,
+				B9E5F31D172A12E1007FA1D1 /* TickerCell.h */,
+				B9E5F31E172A12E1007FA1D1 /* TickerCell.m */,
+				B9E5F320172A12F3007FA1D1 /* TickerCell.xib */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -506,8 +522,9 @@
 				B9E563391728F82B005443A3 /* Default.png in Resources */,
 				B9E5633B1728F82B005443A3 /* Default@2x.png in Resources */,
 				B9E5633D1728F82B005443A3 /* Default-568h@2x.png in Resources */,
-				B9E563431728F82B005443A3 /* ViewController.xib in Resources */,
 				B9E564821728F8D3005443A3 /* README.txt in Resources */,
+				B9E5F31C172A1285007FA1D1 /* MainViewController.xib in Resources */,
+				B9E5F321172A12F3007FA1D1 /* TickerCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,7 +537,6 @@
 			files = (
 				B9E563331728F82B005443A3 /* main.m in Sources */,
 				B9E563371728F82B005443A3 /* AppDelegate.m in Sources */,
-				B9E563401728F82B005443A3 /* ViewController.m in Sources */,
 				B9E564381728F8D3005443A3 /* ITSRequest.m in Sources */,
 				B9E564391728F8D3005443A3 /* ITSRequestFactory.m in Sources */,
 				B9E5643A1728F8D3005443A3 /* ITSResponse.m in Sources */,
@@ -556,6 +572,8 @@
 				B98965C61729003700260BFF /* MtGoxInformationQueue.m in Sources */,
 				B98965C9172901A300260BFF /* MtGoxTickerRequest.m in Sources */,
 				B98965D51729069600260BFF /* MtGoxTickerResponse.m in Sources */,
+				B9E5F31B172A1285007FA1D1 /* MainViewController.m in Sources */,
+				B9E5F31F172A12E1007FA1D1 /* TickerCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,14 +586,6 @@
 				B9E563301728F82B005443A3 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		B9E563411728F82B005443A3 /* ViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B9E563421728F82B005443A3 /* en */,
-			);
-			name = ViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

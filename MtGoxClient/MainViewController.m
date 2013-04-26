@@ -7,6 +7,11 @@
 //
 
 #import "MainViewController.h"
+#import "MtGoxInformationQueue.h"
+#import "MtGoxTickerRequest.h"
+#import "MtGoxTickerResponse.h"
+
+#import "TickerCell.h"
 
 @interface MainViewController ()
 
@@ -14,14 +19,99 @@
 
 @implementation MainViewController
 
+-(id)init
+{
+    self = [super init];
+    if (self) {
+        [self setupHttpQueue];
+    }
+    
+    return self;
+}
+
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self setupHttpQueue];
+    }
+    
+    return self;
+}
+
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        [self setupHttpQueue];
+    }
+    
+    return self;
+}
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        [self setupHttpQueue];
     }
     return self;
 }
+
+-(void)dealloc
+{
+    if (timer) {
+        [timer invalidate];
+        timer = nil;
+    }
+    
+    [self destoryHttpQueue];
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+#pragma mark - Request & Receive message from server
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+-(void)setupHttpQueue
+{
+    mtGoxQueue = [[MtGoxInformationQueue alloc] init];
+    [[TransManager defaultManager] add:mtGoxQueue];
+}
+
+-(void)destoryHttpQueue
+{
+    [[TransManager defaultManager] remove:mtGoxQueue];
+    mtGoxQueue = nil;
+    
+}
+
+-(void)updateUIDisplay:(id)responseFromQueue
+{
+    if ([responseFromQueue isKindOfClass:[MtGoxTickerResponse class]]) {
+        
+        MtGoxTickerResponse *response = (MtGoxTickerResponse *)responseFromQueue;
+        
+        if (response.tag == kActionTag_Response_USD)
+            mtGoxUSDResponse = response;
+        else if (response.tag == kActionTag_Response_EUR)
+            mtGoxEURResponse = response;
+        else if (response.tag == kActionTag_Response_JPY)
+            mtGoxJPYResponse = response;
+        else if (response.tag == kActionTag_Response_CNY)
+            mtGoxCNYResponse = response;
+        
+        [self.tableView reloadData];
+    }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+#pragma mark - life cycle
+
+//////////////////////////////////////////////////////////////////////////////////////////
 
 - (void)viewDidLoad
 {
@@ -32,6 +122,9 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    [self loadTicker];
+    timer = [NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(loadTicker) userInfo:nil repeats:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,6 +140,7 @@
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -54,14 +148,18 @@
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
     return 0;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    TickerCell *cell = (TickerCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"TickerCell" owner:self options:nil] lastObject];
     }
     
     // Configure the cell...

@@ -8,6 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+@class MtGoxInformationQueue;
+@class MtGoxTickerResponse;
+
 @interface MainViewController : UITableViewController
+{
+    @private
+    MtGoxInformationQueue *mtGoxQueue;
+    
+    MtGoxTickerResponse *mtGoxUSDResponse;
+    MtGoxTickerResponse *mtGoxEURResponse;
+    MtGoxTickerResponse *mtGoxJPYResponse;
+    MtGoxTickerResponse *mtGoxCNYResponse;
+    
+    NSTimer *timer;
+}
 
 @end
