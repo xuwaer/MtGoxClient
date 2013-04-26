@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B9366390172A5FC50077859A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B936638F172A5FC50077859A /* QuartzCore.framework */; };
+		B9366394172A61B60077859A /* UserDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = B9366393172A61B60077859A /* UserDefault.m */; };
+		B9366397172A64790077859A /* Remind.m in Sources */ = {isa = PBXBuildFile; fileRef = B9366396172A64790077859A /* Remind.m */; };
 		B98965C61729003700260BFF /* MtGoxInformationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B98965C51729003700260BFF /* MtGoxInformationQueue.m */; };
 		B98965C9172901A300260BFF /* MtGoxTickerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B98965C8172901A200260BFF /* MtGoxTickerRequest.m */; };
 		B98965D51729069600260BFF /* MtGoxTickerResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B98965D41729069600260BFF /* MtGoxTickerResponse.m */; };
@@ -61,9 +64,18 @@
 		B9E5F31C172A1285007FA1D1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E5F31A172A1285007FA1D1 /* MainViewController.xib */; };
 		B9E5F31F172A12E1007FA1D1 /* TickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E5F31E172A12E1007FA1D1 /* TickerCell.m */; };
 		B9E5F321172A12F3007FA1D1 /* TickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E5F320172A12F3007FA1D1 /* TickerCell.xib */; };
+		B9E5F326172A532D007FA1D1 /* Setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9E5F325172A532D007FA1D1 /* Setting@2x.png */; };
+		B9E5F32A172A5BC8007FA1D1 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E5F328172A5BC7007FA1D1 /* SettingViewController.m */; };
+		B9E5F32B172A5BC8007FA1D1 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E5F329172A5BC7007FA1D1 /* SettingViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B936638F172A5FC50077859A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B9366392172A61B60077859A /* UserDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefault.h; sourceTree = "<group>"; };
+		B9366393172A61B60077859A /* UserDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefault.m; sourceTree = "<group>"; };
+		B9366395172A64790077859A /* Remind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Remind.h; sourceTree = "<group>"; };
+		B9366396172A64790077859A /* Remind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Remind.m; sourceTree = "<group>"; };
+		B9366398172A83660077859A /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		B98965C41729003700260BFF /* MtGoxInformationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MtGoxInformationQueue.h; sourceTree = "<group>"; };
 		B98965C51729003700260BFF /* MtGoxInformationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MtGoxInformationQueue.m; sourceTree = "<group>"; };
 		B98965C7172901A200260BFF /* MtGoxTickerRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MtGoxTickerRequest.h; sourceTree = "<group>"; };
@@ -168,6 +180,10 @@
 		B9E5F31D172A12E1007FA1D1 /* TickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TickerCell.h; sourceTree = "<group>"; };
 		B9E5F31E172A12E1007FA1D1 /* TickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TickerCell.m; sourceTree = "<group>"; };
 		B9E5F320172A12F3007FA1D1 /* TickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TickerCell.xib; sourceTree = "<group>"; };
+		B9E5F325172A532D007FA1D1 /* Setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Setting@2x.png"; sourceTree = "<group>"; };
+		B9E5F327172A5BC7007FA1D1 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		B9E5F328172A5BC7007FA1D1 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		B9E5F329172A5BC7007FA1D1 /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +191,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9366390172A5FC50077859A /* QuartzCore.framework in Frameworks */,
 				B9E564901728F9DC005443A3 /* Security.framework in Frameworks */,
 				B9E5648E1728F9BC005443A3 /* libz.1.2.5.dylib in Frameworks */,
 				B9E5648A1728F948005443A3 /* MobileCoreServices.framework in Frameworks */,
@@ -189,6 +206,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B9366391172A619D0077859A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B9366392172A61B60077859A /* UserDefault.h */,
+				B9366393172A61B60077859A /* UserDefault.m */,
+				B9366395172A64790077859A /* Remind.h */,
+				B9366396172A64790077859A /* Remind.m */,
+				B9366398172A83660077859A /* Constant.h */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		B9E5631A1728F82B005443A3 = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				B9E5648D1728F9BC005443A3 /* libz.1.2.5.dylib */,
+				B936638F172A5FC50077859A /* QuartzCore.framework */,
 				B9E5648F1728F9DC005443A3 /* Security.framework */,
 				B9E564891728F948005443A3 /* MobileCoreServices.framework */,
 				B9E564871728F936005443A3 /* CFNetwork.framework */,
@@ -224,10 +254,12 @@
 		B9E5632C1728F82B005443A3 /* MtGoxClient */ = {
 			isa = PBXGroup;
 			children = (
-				B9E5F317172A1263007FA1D1 /* View Controllers */,
-				B9E563491728F8D3005443A3 /* ITSMVC */,
 				B9E563351728F82B005443A3 /* AppDelegate.h */,
 				B9E563361728F82B005443A3 /* AppDelegate.m */,
+				B9E5F317172A1263007FA1D1 /* View Controllers */,
+				B9366391172A619D0077859A /* Data */,
+				B9E563491728F8D3005443A3 /* ITSMVC */,
+				B9E5F324172A5303007FA1D1 /* Image */,
 				B9E5632D1728F82B005443A3 /* Supporting Files */,
 			);
 			path = MtGoxClient;
@@ -463,8 +495,19 @@
 				B9E5F31D172A12E1007FA1D1 /* TickerCell.h */,
 				B9E5F31E172A12E1007FA1D1 /* TickerCell.m */,
 				B9E5F320172A12F3007FA1D1 /* TickerCell.xib */,
+				B9E5F327172A5BC7007FA1D1 /* SettingViewController.h */,
+				B9E5F328172A5BC7007FA1D1 /* SettingViewController.m */,
+				B9E5F329172A5BC7007FA1D1 /* SettingViewController.xib */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		B9E5F324172A5303007FA1D1 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				B9E5F325172A532D007FA1D1 /* Setting@2x.png */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -525,6 +568,8 @@
 				B9E564821728F8D3005443A3 /* README.txt in Resources */,
 				B9E5F31C172A1285007FA1D1 /* MainViewController.xib in Resources */,
 				B9E5F321172A12F3007FA1D1 /* TickerCell.xib in Resources */,
+				B9E5F326172A532D007FA1D1 /* Setting@2x.png in Resources */,
+				B9E5F32B172A5BC8007FA1D1 /* SettingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,6 +619,9 @@
 				B98965D51729069600260BFF /* MtGoxTickerResponse.m in Sources */,
 				B9E5F31B172A1285007FA1D1 /* MainViewController.m in Sources */,
 				B9E5F31F172A12E1007FA1D1 /* TickerCell.m in Sources */,
+				B9E5F32A172A5BC8007FA1D1 /* SettingViewController.m in Sources */,
+				B9366394172A61B60077859A /* UserDefault.m in Sources */,
+				B9366397172A64790077859A /* Remind.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

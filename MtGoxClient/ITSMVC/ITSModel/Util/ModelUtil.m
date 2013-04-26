@@ -48,7 +48,7 @@
 
 +(id)convertObjectToXML:(id)object
 {
-
+    return nil;
 }
 
 @end

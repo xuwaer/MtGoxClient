@@ -7,15 +7,7 @@
 //
 
 #import "BaseRequest.h"
-
-// 币种
-enum CurrencyType {
-    USD,
-    JPY,
-    EUR,
-    CNY
-};
-
+#import "Constant.h"
 
 /**
  *	@brief	请求交易行情bean

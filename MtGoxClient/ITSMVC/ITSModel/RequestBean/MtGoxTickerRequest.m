@@ -8,17 +8,11 @@
 
 #import "MtGoxTickerRequest.h"
 
-// MtGox需要请求的数据
-#define kUSD @"api/2/BTCUSD/money/ticker"
-#define kEUR @"api/2/BTCEUR/money/ticker"
-#define kJPY @"api/2/BTCJPY/money/ticker"
-#define kCNY @"api/2/BTCCNY/money/ticker"
-
 @implementation MtGoxTickerRequest
 
 -(id)init
 {
-    return [self initWithCurrency:USD];
+    return [self initWithCurrency:CurrencyTypeUSD];
 }
 
 -(id)initWithCurrency:(enum CurrencyType)inCurrencyType
@@ -26,20 +20,20 @@
     currencyType = inCurrencyType;
     
     switch (currencyType) {
-        case USD:
-            self = [super initWithCommand:kUSD type:HttpRequestTypeGet];
+        case CurrencyTypeUSD:
+            self = [super initWithCommand:kMtGoxAPI_USD type:HttpRequestTypeGet];
             break;
-        case EUR:
-            self = [super initWithCommand:kEUR type:HttpRequestTypeGet];
+        case CurrencyTypeEUR:
+            self = [super initWithCommand:kMtGoxAPI_EUR type:HttpRequestTypeGet];
             break;
-        case JPY:
-            self = [super initWithCommand:kJPY type:HttpRequestTypeGet];
+        case CurrencyTypeJPY:
+            self = [super initWithCommand:kMtGoxAPI_JPY type:HttpRequestTypeGet];
             break;
-        case CNY:
-            self = [super initWithCommand:kCNY type:HttpRequestTypeGet];
+        case CurrencyTypeCNY:
+            self = [super initWithCommand:kMtGoxAPI_CNY type:HttpRequestTypeGet];
             break;
         default:
-            self = [super initWithCommand:kUSD type:HttpRequestTypeGet];
+            self = [super initWithCommand:kMtGoxAPI_USD type:HttpRequestTypeGet];
             break;
     }
     
@@ -51,16 +45,16 @@
     NSUInteger requestTag = kActionTag_Request_USD;
     
     switch (currencyType) {
-        case USD:
+        case CurrencyTypeUSD:
             requestTag = kActionTag_Request_USD;
             break;
-        case EUR:
+        case CurrencyTypeEUR:
             requestTag = kActionTag_Request_EUR;
             break;
-        case JPY:
+        case CurrencyTypeJPY:
             requestTag = kActionTag_Request_JPY;
             break;
-        case CNY:
+        case CurrencyTypeCNY:
             requestTag = kActionTag_Request_CNY;
             break;
         default:

@@ -13,6 +13,8 @@
 
 #import "TickerCell.h"
 
+#import "SettingViewController.h"
+
 @interface MainViewController ()
 
 @end
@@ -123,8 +125,21 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    [self setupUI];
+    
     [self loadTicker];
     timer = [NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(loadTicker) userInfo:nil repeats:YES];
+}
+
+- (void)setupUI
+{
+    UIButton *settingButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [settingButton setBackgroundImage:[UIImage imageNamed:@"Setting@2x.png"] forState:UIControlStateNormal];
+    [settingButton addTarget:self action:@selector(showSetting) forControlEvents:UIControlEventTouchUpInside];
+    [settingButton setFrame:CGRectMake(0.0, 0.0, 35.0, 35.0)];
+    UIBarButtonItem *settingButtonItem = [[UIBarButtonItem alloc] initWithCustomView:settingButton];
+    settingButtonItem.style = UIBarButtonItemStylePlain;
+    self.navigationItem.leftBarButtonItem = settingButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -236,24 +251,31 @@
 }
 
 
+
 -(void)loadTicker
 {
     // 请求美元兑换行情
-    MtGoxTickerRequest *mtGoxUSDRequest = [[MtGoxTickerRequest alloc] initWithCurrency:USD];
+    MtGoxTickerRequest *mtGoxUSDRequest = [[MtGoxTickerRequest alloc] initWithCurrency:CurrencyTypeUSD];
     [mtGoxQueue sendRequest:mtGoxUSDRequest target:self selector:@selector(updateUIDisplay:)];
     
     // 请求欧元兑换行情
-    MtGoxTickerRequest *mtGoxEURRequest = [[MtGoxTickerRequest alloc] initWithCurrency:EUR];
+    MtGoxTickerRequest *mtGoxEURRequest = [[MtGoxTickerRequest alloc] initWithCurrency:CurrencyTypeEUR];
     [mtGoxQueue sendRequest:mtGoxEURRequest target:self selector:@selector(updateUIDisplay:)];
     
     // 请求日元兑换行情
-    MtGoxTickerRequest *mtGoxJPYRequest = [[MtGoxTickerRequest alloc] initWithCurrency:JPY];
+    MtGoxTickerRequest *mtGoxJPYRequest = [[MtGoxTickerRequest alloc] initWithCurrency:CurrencyTypeJPY];
     [mtGoxQueue sendRequest:mtGoxJPYRequest target:self selector:@selector(updateUIDisplay:)];
     
     // 请求人民币兑换行情
-    MtGoxTickerRequest *mtGoxCNYRequest = [[MtGoxTickerRequest alloc] initWithCurrency:CNY];
+    MtGoxTickerRequest *mtGoxCNYRequest = [[MtGoxTickerRequest alloc] initWithCurrency:CurrencyTypeCNY];
     [mtGoxQueue sendRequest:mtGoxCNYRequest target:self selector:@selector(updateUIDisplay:)];
 }
 
+-(void)showSetting
+{    
+    SettingViewController *settingViewController = [[SettingViewController alloc] init];
+    settingViewController.title = @"设置";
+    [self.navigationController pushViewController:settingViewController animated:YES];
+}
 
 @end
