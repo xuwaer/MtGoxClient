@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @class Remind;
+@class PickerViewUtil;
 
 @interface RemindSettingController : UIViewController
 {
     @private
     Remind *_remind;
+    PickerViewUtil *picker;
 }
 
 @property (nonatomic, strong)Remind *remind;

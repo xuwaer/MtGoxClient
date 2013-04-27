@@ -7,6 +7,7 @@
 //
 
 #import "RemindSettingController.h"
+#import "PickerViewUtil.h"
 
 @interface RemindSettingController ()
 
@@ -34,6 +35,18 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    picker = [[PickerViewUtil alloc] init];
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+    [dic setValue:@"USD" forKey:@"美元"];
+    [dic setValue:@"EUR" forKey:@"欧元"];
+    [dic setValue:@"JPY" forKey:@"日元"];
+    [dic setValue:@"CNY" forKey:@"人民币"];
+    [picker createPickerView:@"请选择币种" dataSource:dic defaultIndex:2];
+    
+    [picker addTarget:self selector:@selector(didSelectedCurrency:) userinfo:nil forEvent:PickerViewUitlEventConfirm];
+//    [picker addTarget:self selector:@selector(didCanceledCurrency:) userinfo:nil forEvent:PickerViewUitlEventCancel];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,7 +67,7 @@
 
 -(void)onCurrencyButtonClicked:(id)sender
 {
-
+    [picker showPickerView:self.view];
 }
 
 -(void)onThresholdTextFieldEditDidBegin:(id)sender
@@ -65,6 +78,16 @@
 -(void)onThresholdTextFieldEditDidEnd:(id)sender
 {
     [sender setBackground:[UIImage imageNamed:@"bg_model_text@2x.png"]];
+}
+
+-(void)didSelectedCurrency:(PickerObject *)object
+{
+    DDLogVerbose(@"xxx : %@", object.value);
+}
+
+-(void)didCanceledCurrency:(PickerObject *)object
+{
+    [picker destroyPickerView];
 }
 
 @end
