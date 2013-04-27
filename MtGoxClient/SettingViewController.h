@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface SettingViewController : UITableViewController
+{
+    @private
+    NSMutableArray *mtGoxReminds;
+    NSMutableArray *btcChinaReminds;
+    NSMutableArray *btcEReminds;
+}
 
 @end

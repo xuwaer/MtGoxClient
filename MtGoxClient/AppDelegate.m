@@ -73,7 +73,7 @@
     TransManager *transManager = [TransManager defaultManager];
     [transManager setHostname:@"http://data.mtgox.com"];
     
-//    [UserDefault defaultUser];
+    [UserDefault defaultUser];
 }
 
 @end
