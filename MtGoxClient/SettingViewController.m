@@ -10,6 +10,8 @@
 #import "UserDefault.h"
 #import "Remind.h"
 #import "RemindCell.h"
+#import "RemindAddCell.h"
+#import "RemindSettingController.h"
 
 @interface SettingViewController ()
 
@@ -170,13 +172,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    
+    RemindSettingController *remindSettingController = [[RemindSettingController alloc] init];
+    remindSettingController.title = @"设置";
+    if ([cell isKindOfClass:[RemindAddCell class]]) {
+        [remindSettingController setRemind:nil];
+    }
+    else {
+        [remindSettingController setRemind:[(RemindCell *)cell remind]];
+    }
+    
+    [self presentModalViewController:remindSettingController animated:YES];
 }
 
 -(UITableViewCell *)setupCell:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -220,13 +228,16 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         
-        if (remind != nil)
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        else {
+        if (remind != nil) {
             cell = [[[NSBundle mainBundle] loadNibNamed:@"RemindCell" owner:self options:nil] lastObject];
+            [(RemindCell *)cell setupRemindShow:remind];
+        }
+        else {
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"RemindAddCell" owner:self options:nil] lastObject];
         }
     }
     
+    // 去掉tableview group的背景样式
     UIView *backView  = [[UIView alloc] init];
     [cell setBackgroundView:backView];
     [cell setBackgroundColor:[UIColor clearColor]];

@@ -15,6 +15,18 @@
 		B98965C61729003700260BFF /* MtGoxInformationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B98965C51729003700260BFF /* MtGoxInformationQueue.m */; };
 		B98965C9172901A300260BFF /* MtGoxTickerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B98965C8172901A200260BFF /* MtGoxTickerRequest.m */; };
 		B98965D51729069600260BFF /* MtGoxTickerResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B98965D41729069600260BFF /* MtGoxTickerResponse.m */; };
+		B9BA8BD3172B77C50049C878 /* RemindSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BA8BD1172B77C50049C878 /* RemindSettingController.m */; };
+		B9BA8BD4172B77C50049C878 /* RemindSettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9BA8BD2172B77C50049C878 /* RemindSettingController.xib */; };
+		B9BA8BDD172B7C910049C878 /* bg_btn_gray_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9BA8BD5172B7C910049C878 /* bg_btn_gray_pressed@2x.png */; };
+		B9BA8BDE172B7C910049C878 /* bg_btn_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9BA8BD6172B7C910049C878 /* bg_btn_gray@2x.png */; };
+		B9BA8BDF172B7C910049C878 /* bg_btn_yellow_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9BA8BD7172B7C910049C878 /* bg_btn_yellow_pressed@2x.png */; };
+		B9BA8BE0172B7C910049C878 /* bg_btn_yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9BA8BD8172B7C910049C878 /* bg_btn_yellow@2x.png */; };
+		B9BA8BE1172B7C910049C878 /* bg_model_select_empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9BA8BD9172B7C910049C878 /* bg_model_select_empty@2x.png */; };
+		B9BA8BE2172B7C910049C878 /* bg_model_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9BA8BDA172B7C910049C878 /* bg_model_select@2x.png */; };
+		B9BA8BE3172B7C910049C878 /* bg_model_text_empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9BA8BDB172B7C910049C878 /* bg_model_text_empty@2x.png */; };
+		B9BA8BE4172B7C910049C878 /* bg_model_text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9BA8BDC172B7C910049C878 /* bg_model_text@2x.png */; };
+		B9BA8BE7172B974E0049C878 /* RemindAddCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BA8BE6172B974D0049C878 /* RemindAddCell.m */; };
+		B9BA8BE9172B97E80049C878 /* RemindAddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9BA8BE8172B97E80049C878 /* RemindAddCell.xib */; };
 		B9E563271728F82B005443A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E563261728F82B005443A3 /* UIKit.framework */; };
 		B9E563291728F82B005443A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E563281728F82B005443A3 /* Foundation.framework */; };
 		B9E5632B1728F82B005443A3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E5632A1728F82B005443A3 /* CoreGraphics.framework */; };
@@ -87,6 +99,20 @@
 		B98965C8172901A200260BFF /* MtGoxTickerRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MtGoxTickerRequest.m; sourceTree = "<group>"; };
 		B98965D31729069600260BFF /* MtGoxTickerResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MtGoxTickerResponse.h; sourceTree = "<group>"; };
 		B98965D41729069600260BFF /* MtGoxTickerResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MtGoxTickerResponse.m; sourceTree = "<group>"; };
+		B9BA8BD0172B77C50049C878 /* RemindSettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindSettingController.h; sourceTree = "<group>"; };
+		B9BA8BD1172B77C50049C878 /* RemindSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindSettingController.m; sourceTree = "<group>"; };
+		B9BA8BD2172B77C50049C878 /* RemindSettingController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RemindSettingController.xib; sourceTree = "<group>"; };
+		B9BA8BD5172B7C910049C878 /* bg_btn_gray_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_btn_gray_pressed@2x.png"; sourceTree = "<group>"; };
+		B9BA8BD6172B7C910049C878 /* bg_btn_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_btn_gray@2x.png"; sourceTree = "<group>"; };
+		B9BA8BD7172B7C910049C878 /* bg_btn_yellow_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_btn_yellow_pressed@2x.png"; sourceTree = "<group>"; };
+		B9BA8BD8172B7C910049C878 /* bg_btn_yellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_btn_yellow@2x.png"; sourceTree = "<group>"; };
+		B9BA8BD9172B7C910049C878 /* bg_model_select_empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_model_select_empty@2x.png"; sourceTree = "<group>"; };
+		B9BA8BDA172B7C910049C878 /* bg_model_select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_model_select@2x.png"; sourceTree = "<group>"; };
+		B9BA8BDB172B7C910049C878 /* bg_model_text_empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_model_text_empty@2x.png"; sourceTree = "<group>"; };
+		B9BA8BDC172B7C910049C878 /* bg_model_text@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_model_text@2x.png"; sourceTree = "<group>"; };
+		B9BA8BE5172B974D0049C878 /* RemindAddCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindAddCell.h; sourceTree = "<group>"; };
+		B9BA8BE6172B974D0049C878 /* RemindAddCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindAddCell.m; sourceTree = "<group>"; };
+		B9BA8BE8172B97E80049C878 /* RemindAddCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RemindAddCell.xib; sourceTree = "<group>"; };
 		B9E563231728F82B005443A3 /* MtGoxClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MtGoxClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E563261728F82B005443A3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B9E563281728F82B005443A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -503,9 +529,15 @@
 				B9E5F327172A5BC7007FA1D1 /* SettingViewController.h */,
 				B9E5F328172A5BC7007FA1D1 /* SettingViewController.m */,
 				B9E5F329172A5BC7007FA1D1 /* SettingViewController.xib */,
+				B9BA8BD0172B77C50049C878 /* RemindSettingController.h */,
+				B9BA8BD1172B77C50049C878 /* RemindSettingController.m */,
+				B9BA8BD2172B77C50049C878 /* RemindSettingController.xib */,
 				B902B7FC172A9577007872F0 /* RemindCell.h */,
 				B902B7FD172A9577007872F0 /* RemindCell.m */,
 				B902B7FF172A9596007872F0 /* RemindCell.xib */,
+				B9BA8BE5172B974D0049C878 /* RemindAddCell.h */,
+				B9BA8BE6172B974D0049C878 /* RemindAddCell.m */,
+				B9BA8BE8172B97E80049C878 /* RemindAddCell.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -513,6 +545,14 @@
 		B9E5F324172A5303007FA1D1 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				B9BA8BD5172B7C910049C878 /* bg_btn_gray_pressed@2x.png */,
+				B9BA8BD6172B7C910049C878 /* bg_btn_gray@2x.png */,
+				B9BA8BD7172B7C910049C878 /* bg_btn_yellow_pressed@2x.png */,
+				B9BA8BD8172B7C910049C878 /* bg_btn_yellow@2x.png */,
+				B9BA8BD9172B7C910049C878 /* bg_model_select_empty@2x.png */,
+				B9BA8BDA172B7C910049C878 /* bg_model_select@2x.png */,
+				B9BA8BDB172B7C910049C878 /* bg_model_text_empty@2x.png */,
+				B9BA8BDC172B7C910049C878 /* bg_model_text@2x.png */,
 				B9E5F325172A532D007FA1D1 /* Setting@2x.png */,
 			);
 			path = Image;
@@ -579,6 +619,16 @@
 				B9E5F326172A532D007FA1D1 /* Setting@2x.png in Resources */,
 				B9E5F32B172A5BC8007FA1D1 /* SettingViewController.xib in Resources */,
 				B902B800172A9596007872F0 /* RemindCell.xib in Resources */,
+				B9BA8BD4172B77C50049C878 /* RemindSettingController.xib in Resources */,
+				B9BA8BDD172B7C910049C878 /* bg_btn_gray_pressed@2x.png in Resources */,
+				B9BA8BDE172B7C910049C878 /* bg_btn_gray@2x.png in Resources */,
+				B9BA8BDF172B7C910049C878 /* bg_btn_yellow_pressed@2x.png in Resources */,
+				B9BA8BE0172B7C910049C878 /* bg_btn_yellow@2x.png in Resources */,
+				B9BA8BE1172B7C910049C878 /* bg_model_select_empty@2x.png in Resources */,
+				B9BA8BE2172B7C910049C878 /* bg_model_select@2x.png in Resources */,
+				B9BA8BE3172B7C910049C878 /* bg_model_text_empty@2x.png in Resources */,
+				B9BA8BE4172B7C910049C878 /* bg_model_text@2x.png in Resources */,
+				B9BA8BE9172B97E80049C878 /* RemindAddCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +682,8 @@
 				B9366394172A61B60077859A /* UserDefault.m in Sources */,
 				B9366397172A64790077859A /* Remind.m in Sources */,
 				B902B7FE172A9577007872F0 /* RemindCell.m in Sources */,
+				B9BA8BD3172B77C50049C878 /* RemindSettingController.m in Sources */,
+				B9BA8BE7172B974E0049C878 /* RemindAddCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

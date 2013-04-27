@@ -7,8 +7,15 @@
 //
 
 #import "RemindCell.h"
+#import "Remind.h"
 
 @implementation RemindCell
+
+@synthesize remind;
+
+@synthesize currencyLabel;
+@synthesize compareLabel;
+@synthesize thresholdLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -24,6 +31,41 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+-(void)setupRemindShow:(Remind *)inRemind
+{
+    self.remind = inRemind;
+    
+    // 设置显示用兑换币种
+    NSString *currencyStr = @"兑";
+    switch (inRemind.currency) {
+        case CurrencyTypeUSD:
+            currencyStr = [currencyStr stringByAppendingFormat:@"美元"];
+            break;
+        case CurrencyTypeEUR:
+            currencyStr = [currencyStr stringByAppendingFormat:@"欧元"];
+            break;
+        case CurrencyTypeJPY:
+            currencyStr = [currencyStr stringByAppendingFormat:@"日元"];
+            break;
+        case CurrencyTypeCNY:
+            currencyStr = [currencyStr stringByAppendingFormat:@"人民币"];
+            break;
+        default:
+            currencyStr = [currencyStr stringByAppendingFormat:@"美元"];
+            break;
+    }
+    
+    // 设置提醒标准
+    NSString *compareStr = inRemind.isLarge ? @"大于" : @"小于";
+    
+    // 设置提醒阀值
+    NSString *thresholdStr = [NSString stringWithFormat:@"%.4f", inRemind.threshold];
+    
+    self.currencyLabel.text = currencyStr;
+    self.compareLabel.text = compareStr;
+    self.thresholdLabel.text = thresholdStr;
 }
 
 @end
