@@ -93,9 +93,9 @@ static UserDefault *userDefault;
     [self convertRemindToData];
     
     [fileContent setValue:[NSNumber numberWithInt:_platform] forKey:SETTING_PROPERTY_KEY_LASTPLATFORM];
-    [fileContent setValue:_mtGoxRemind forKey:SETTING_PROPERTY_KEY_MTGOXREMINDS];
-    [fileContent setValue:_btcChinaRemind forKey:SETTING_PROPERTY_KEY_BTCCHINAREMINDS];
-    [fileContent setValue:_btcERemind forKey:SETTING_PROPERTY_KEY_BTCEREMINDS];
+    [fileContent setValue:tmpMtGoxRemind forKey:SETTING_PROPERTY_KEY_MTGOXREMINDS];
+    [fileContent setValue:tmpBtcChinaRemind forKey:SETTING_PROPERTY_KEY_BTCCHINAREMINDS];
+    [fileContent setValue:tmpBtcERemind forKey:SETTING_PROPERTY_KEY_BTCEREMINDS];
     
     [fileContent writeToFile:filePath atomically:YES];
 }
@@ -109,25 +109,22 @@ static UserDefault *userDefault;
 {
     NSMutableArray *tmp = [[NSMutableArray alloc] init];
     
-    for (NSData *data in _mtGoxRemind) {
-        
-        Remind *remind = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    for (NSMutableDictionary *dic in _mtGoxRemind) {
+        Remind *remind = [[Remind alloc] initWithDictionary:dic];
         [tmp addObject:remind];
     }
     _mtGoxRemind = [NSMutableArray arrayWithArray:tmp];
     
     [tmp removeAllObjects];
-    for (NSData *data in _btcChinaRemind) {
-        
-        Remind *remind = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    for (NSMutableDictionary *dic in _btcChinaRemind) {
+        Remind *remind = [[Remind alloc] initWithDictionary:dic];
         [tmp addObject:remind];
     }
     _btcChinaRemind = [NSMutableArray arrayWithArray:tmp];
     
     [tmp removeAllObjects];
-    for (NSData *data in _btcERemind) {
-        
-        Remind *remind = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    for (NSMutableDictionary *dic in _btcERemind) {
+        Remind *remind = [[Remind alloc] initWithDictionary:dic];
         [tmp addObject:remind];
     }
     _btcERemind = [NSMutableArray arrayWithArray:tmp];
@@ -138,34 +135,23 @@ static UserDefault *userDefault;
 
 -(void)convertRemindToData
 {
-    NSMutableArray *tmp = [[NSMutableArray alloc] init];
-    
+    tmpMtGoxRemind = [[NSMutableArray alloc] init];
     for (Remind *remind in _mtGoxRemind) {
-        
-        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:remind];
-        [tmp addObject:data];
+        NSDictionary *dic = [remind encode];
+        [tmpMtGoxRemind addObject:dic];
     }
-    _mtGoxRemind = [NSMutableArray arrayWithArray:tmp];
     
-    [tmp removeAllObjects];
+    tmpBtcChinaRemind = [[NSMutableArray alloc] init];
     for (Remind *remind in _btcChinaRemind) {
-        
-        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:remind];
-        [tmp addObject:data];
+        NSDictionary *dic = [remind encode];
+        [tmpBtcChinaRemind addObject:dic];
     }
-    _btcChinaRemind = [NSMutableArray arrayWithArray:tmp];
-
     
-    [tmp removeAllObjects];
+    tmpBtcERemind = [[NSMutableArray alloc] init];
     for (Remind *remind in _btcERemind) {
-        
-        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:remind];
-        [tmp addObject:data];
+        NSDictionary *dic = [remind encode];
+        [tmpBtcERemind addObject:dic];
     }
-    _btcERemind = [NSMutableArray arrayWithArray:tmp];
-    
-    [tmp removeAllObjects];
-    tmp = nil;
 }
 
 -(NSString *)lastPlatformTitle

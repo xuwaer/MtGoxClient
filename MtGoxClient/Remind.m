@@ -8,6 +8,11 @@
 
 #import "Remind.h"
 
+static NSString  * SETTING_PROPERTY_KEY_REMIND_THRESHOLD = @"threshold";
+static NSString  * SETTING_PROPERTY_KEY_REMIND_CURRENCY = @"currency";
+static NSString  * SETTING_PROPERTY_KEY_REMIND_ISLARGE = @"isLarge";
+static NSString  * SETTING_PROPERTY_KEY_REMIND_PLATFORM = @"platform";
+
 @implementation Remind
 
 @synthesize threshold;
@@ -15,26 +20,36 @@
 @synthesize isLarge;
 @synthesize platform;
 
--(void)encodeWithCoder:(NSCoder *)aCoder
-{
-    [aCoder encodeObject:[NSNumber numberWithFloat:self.threshold] forKey:@"threshold"];
-    [aCoder encodeObject:[NSNumber numberWithInt:self.currency] forKey:@"currency"];
-    [aCoder encodeObject:[NSNumber numberWithBool:self.isLarge] forKey:@"isLarge"];
-    [aCoder encodeObject:[NSNumber numberWithInt:self.platform] forKey:@"platform"];
-}
-
--(id)initWithCoder:(NSCoder *)aDecoder
+-(id)initWithDictionary:(NSDictionary *)dataSource
 {
     self = [super init];
-    
     if (self) {
-        self.threshold = [(NSNumber *)[aDecoder decodeObjectForKey:@"threshold"] floatValue];
-        self.currency = [(NSNumber *)[aDecoder decodeObjectForKey:@"currency"] intValue];
-        self.isLarge = [(NSNumber *)[aDecoder decodeObjectForKey:@"isLarge"] boolValue];
-        self.platform = [(NSNumber *)[aDecoder decodeObjectForKey:@"platform"] intValue];
+        _dataSource = dataSource;
+        [self decode];
     }
     
     return self;
+}
+
+-(void)decode
+{
+    if (_dataSource == nil) return;
+    
+    self.threshold = [(NSNumber *)[_dataSource objectForKey:SETTING_PROPERTY_KEY_REMIND_THRESHOLD] floatValue];
+    self.currency = [(NSNumber *)[_dataSource objectForKey:SETTING_PROPERTY_KEY_REMIND_CURRENCY] intValue];
+    self.isLarge = [(NSNumber *)[_dataSource objectForKey:SETTING_PROPERTY_KEY_REMIND_ISLARGE] boolValue];
+    self.platform = [(NSNumber *)[_dataSource objectForKey:SETTING_PROPERTY_KEY_REMIND_PLATFORM] intValue];
+}
+
+-(NSDictionary *)encode
+{
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+    [dic setValue:[NSNumber numberWithFloat:self.threshold] forKey:SETTING_PROPERTY_KEY_REMIND_THRESHOLD];
+    [dic setValue:[NSNumber numberWithInt:self.currency] forKey:SETTING_PROPERTY_KEY_REMIND_CURRENCY];
+    [dic setValue:[NSNumber numberWithBool:self.isLarge] forKey:SETTING_PROPERTY_KEY_REMIND_ISLARGE];
+    [dic setValue:[NSNumber numberWithInt:self.platform] forKey:SETTING_PROPERTY_KEY_REMIND_PLATFORM];
+    
+    return dic;
 }
 
 @end

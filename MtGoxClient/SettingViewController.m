@@ -163,10 +163,11 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // 从数据源中删除
-        [self deleteRemindInDataSource:indexPath];
+        [self deleteCell:tableView indexPath:indexPath];
+//        [self deleteRemindInDataSource:indexPath];
         // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
+//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
@@ -347,20 +348,39 @@
  *
  *	@param 	indexPath 	需要删除的位置
  */
--(void)deleteRemindInDataSource:(NSIndexPath *)indexPath
+-(void)deleteCell:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath
 {
+    int count = 0;
     switch (indexPath.section) {
         case 0:
+            count = [mtGoxReminds count];
             [mtGoxReminds removeObjectAtIndex:indexPath.row];
+            [self deleteCell:tableView indexPath:indexPath dataCountInSection:count];
             break;
         case 1:
+            count = [btcChinaReminds count];
             [btcChinaReminds removeObjectAtIndex:indexPath.row];
+            [self deleteCell:tableView indexPath:indexPath dataCountInSection:count];
             break;
         case 2:
+            count = [btcEReminds count];
             [btcEReminds removeObjectAtIndex:indexPath.row];
+            [self deleteCell:tableView indexPath:indexPath dataCountInSection:count];
             break;
         default:
             break;
+    }
+    
+    [[UserDefault defaultUser] saveUserDefault];
+}
+
+-(void)deleteCell:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath dataCountInSection:(int)count
+{
+    if (count >= ThresholdCount) {
+        [tableView reloadData];
+    }
+    else {
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
 

@@ -19,6 +19,10 @@
     NSMutableArray *_mtGoxRemind;
     NSMutableArray *_btcChinaRemind;
     NSMutableArray *_btcERemind;
+    
+    NSMutableArray *tmpMtGoxRemind;
+    NSMutableArray *tmpBtcChinaRemind;
+    NSMutableArray *tmpBtcERemind;
 }
 
 // 保存的用户配置
