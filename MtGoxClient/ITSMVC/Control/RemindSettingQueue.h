@@ -13,6 +13,16 @@
  *          如果这里自定义了，那么传递数据到上层UI界面显示的方法可能会重写
  *          重写方法，请参考HttpQueueModule
  */
+
+@class Remind;
+
 @interface RemindSettingQueue : HttpQueueModule
+{
+    Remind *_remind;
+}
+
+@property (nonatomic, strong, readonly)Remind *remind;
+
+-(void)sendRequest:(BaseRequest *)request target:(id)target selector:(SEL)selector remind:(Remind *)inRemind;
 
 @end

@@ -93,7 +93,7 @@
 -(void)updateUIDisplay:(id)responseFromQueue
 {
     if ([responseFromQueue isKindOfClass:[MtGoxTickerResponse class]]) {
-        
+                
         MtGoxTickerResponse *response = (MtGoxTickerResponse *)responseFromQueue;
         
         if (response.tag == kActionTag_Response_USD)
@@ -252,9 +252,11 @@
      */
 }
 
-
-
+/**
+ *	@brief	请求行情数据
+ */
 -(void)loadTicker
+
 {
     // 请求美元兑换行情
     MtGoxTickerRequest *mtGoxUSDRequest = [[MtGoxTickerRequest alloc] initWithCurrency:CurrencyTypeUSD];

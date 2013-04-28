@@ -66,6 +66,17 @@
     self.currencyLabel.text = currencyStr;
     self.compareLabel.text = compareStr;
     self.thresholdLabel.text = thresholdStr;
+    
+    if (inRemind.isLarge) {
+        [self.currencyLabel setTextColor:[UIColor redColor]];
+        [self.compareLabel setTextColor:[UIColor redColor]];
+        [self.thresholdLabel setTextColor:[UIColor redColor]];
+    }
+    else {
+        [self.currencyLabel setTextColor:[UIColor greenColor]];
+        [self.compareLabel setTextColor:[UIColor greenColor]];
+        [self.thresholdLabel setTextColor:[UIColor greenColor]];
+    }
 }
 
 @end

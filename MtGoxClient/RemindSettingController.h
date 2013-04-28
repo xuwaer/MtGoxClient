@@ -11,6 +11,7 @@
 @class Remind;
 @class PickerViewUtil;
 @class RemindSettingQueue;
+@class MBProgressHUD;
 
 @protocol RemindSettingDelegate <NSObject>
 
@@ -26,6 +27,8 @@
     PickerViewUtil *picker;
     
     RemindSettingQueue *remindQueue;
+    
+    MBProgressHUD *progress;
 }
 
 @property (nonatomic, strong)Remind *remind;

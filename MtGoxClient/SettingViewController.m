@@ -25,11 +25,17 @@
     if (self) {
         // Custom initialization
         UserDefault *userDefault = [UserDefault defaultUser];
+        [userDefault getUserDefault];
         mtGoxReminds = userDefault.mtGoxRemind;
         btcChinaReminds = userDefault.btcChinaRemind;
         btcEReminds = userDefault.btcERemind;
     }
     return self;
+}
+
+-(void)dealloc
+{
+
 }
 
 - (void)viewDidLoad
@@ -256,6 +262,8 @@
 -(void)finishEditRemind:(Remind *)remind
 {
     [self.tableView reloadData];
+    
+    [[UserDefault defaultUser] saveUserDefault];
 }
 
 -(void)finishAddRemind:(Remind *)remind
@@ -275,6 +283,8 @@
     }
     
     [self.tableView reloadData];
+    [[UserDefault defaultUser] saveUserDefault];
+
 //    [self insertTableViewCell:remind.platform];
 }
 //

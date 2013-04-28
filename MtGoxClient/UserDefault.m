@@ -55,14 +55,26 @@ static UserDefault *userDefault;
 
 -(void)getUserDefault
 {
-    filePath = [[NSBundle mainBundle] pathForResource:@"Setting" ofType:@"plist"];
+    
+    //获取路径对象
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    //获取完整路径
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    filePath = [documentsDirectory stringByAppendingPathComponent:@"Setting.plist"];
+    
+//    filePath = [[NSBundle mainBundle] pathForResource:@"Setting" ofType:@"plist"];
     fileContent = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
     
-    _platform = [(NSNumber *)[fileContent objectForKey:SETTING_PROPERTY_KEY_LASTPLATFORM] intValue];
-    _mtGoxRemind = [fileContent objectForKey:SETTING_PROPERTY_KEY_MTGOXREMINDS];
-    _btcChinaRemind = [fileContent objectForKey:SETTING_PROPERTY_KEY_BTCCHINAREMINDS];
-    _btcERemind = [fileContent objectForKey:SETTING_PROPERTY_KEY_BTCEREMINDS];
-    
+    if (fileContent == nil) {
+        [self clearUserDefault];
+    }
+    else {
+        _platform = [(NSNumber *)[fileContent objectForKey:SETTING_PROPERTY_KEY_LASTPLATFORM] intValue];
+        _mtGoxRemind = [fileContent objectForKey:SETTING_PROPERTY_KEY_MTGOXREMINDS];
+        _btcChinaRemind = [fileContent objectForKey:SETTING_PROPERTY_KEY_BTCCHINAREMINDS];
+        _btcERemind = [fileContent objectForKey:SETTING_PROPERTY_KEY_BTCEREMINDS];
+    }
+        
     [self convertDataToRemind];
 }
 
@@ -72,6 +84,7 @@ static UserDefault *userDefault;
     _mtGoxRemind = [[NSMutableArray alloc] init];
     _btcChinaRemind = [[NSMutableArray alloc] init];
     _btcERemind = [[NSMutableArray alloc] init];
+    fileContent = [[NSMutableDictionary alloc] init];
 }
 
 -(void)saveUserDefault

@@ -83,6 +83,8 @@
 		B9E5F32A172A5BC8007FA1D1 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E5F328172A5BC7007FA1D1 /* SettingViewController.m */; };
 		B9E5F32B172A5BC8007FA1D1 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E5F329172A5BC7007FA1D1 /* SettingViewController.xib */; };
 		B9EE9A91172CB6E100DAF948 /* Setting.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9EE9A90172CB6E100DAF948 /* Setting.plist */; };
+		B9EE9A99172CEB2A00DAF948 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EE9A96172CEB2A00DAF948 /* MBProgressHUD.m */; };
+		B9EE9A9A172CEB2A00DAF948 /* ProgressUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EE9A98172CEB2A00DAF948 /* ProgressUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -221,6 +223,10 @@
 		B9E5F328172A5BC7007FA1D1 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		B9E5F329172A5BC7007FA1D1 /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		B9EE9A90172CB6E100DAF948 /* Setting.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Setting.plist; sourceTree = "<group>"; };
+		B9EE9A95172CEB2A00DAF948 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		B9EE9A96172CEB2A00DAF948 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		B9EE9A97172CEB2A00DAF948 /* ProgressUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressUtil.h; sourceTree = "<group>"; };
+		B9EE9A98172CEB2A00DAF948 /* ProgressUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +261,7 @@
 		B9D8E237172BAEFB00A0A811 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				B9EE9A94172CEB2A00DAF948 /* HUD */,
 				B9D8E243172BB28400A0A811 /* PickerViewUtil.h */,
 				B9D8E244172BB28400A0A811 /* PickerViewUtil.m */,
 			);
@@ -575,6 +582,17 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
+		B9EE9A94172CEB2A00DAF948 /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				B9EE9A95172CEB2A00DAF948 /* MBProgressHUD.h */,
+				B9EE9A96172CEB2A00DAF948 /* MBProgressHUD.m */,
+				B9EE9A97172CEB2A00DAF948 /* ProgressUtil.h */,
+				B9EE9A98172CEB2A00DAF948 /* ProgressUtil.m */,
+			);
+			path = HUD;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -704,6 +722,8 @@
 				B9BA8BE7172B974E0049C878 /* RemindAddCell.m in Sources */,
 				B9D8E245172BB28400A0A811 /* PickerViewUtil.m in Sources */,
 				B9D8E248172BCEA700A0A811 /* RemindSettingQueue.m in Sources */,
+				B9EE9A99172CEB2A00DAF948 /* MBProgressHUD.m in Sources */,
+				B9EE9A9A172CEB2A00DAF948 /* ProgressUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
