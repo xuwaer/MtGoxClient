@@ -14,5 +14,6 @@
 @property (nonatomic, assign)float threshold;
 @property (nonatomic, assign)enum CurrencyType currency;
 @property (nonatomic, assign)BOOL isLarge;
+@property (nonatomic, assign)enum Platform platform;
 
 @end

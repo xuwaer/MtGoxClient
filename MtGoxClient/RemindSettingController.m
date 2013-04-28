@@ -9,6 +9,12 @@
 #import "RemindSettingController.h"
 #import "PickerViewUtil.h"
 
+#import "Remind.h"
+#import "RemindSettingQueue.h"
+#import "TransManager.h"
+
+#import "UserDefault.h"
+
 @interface RemindSettingController ()
 
 @end
@@ -16,19 +22,29 @@
 @implementation RemindSettingController
 
 @synthesize remind = _remind;
+@synthesize platform;
 
 @synthesize confirmButton;
 @synthesize cancelButton;
 @synthesize currencyButton;
 @synthesize thresholdTextField;
 
+@synthesize delegate;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        [self setupHttpQueue];
     }
     return self;
+}
+
+-(void)dealloc
+{
+    delegate = nil;
+    [self destoryHttpQueue];
 }
 
 - (void)viewDidLoad
@@ -38,10 +54,10 @@
     
     picker = [[PickerViewUtil alloc] init];
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-    [dic setValue:@"USD" forKey:@"美元"];
-    [dic setValue:@"EUR" forKey:@"欧元"];
-    [dic setValue:@"JPY" forKey:@"日元"];
-    [dic setValue:@"CNY" forKey:@"人民币"];
+    [dic setValue:[NSNumber numberWithInt:CurrencyTypeUSD] forKey:@"美元"];
+    [dic setValue:[NSNumber numberWithInt:CurrencyTypeEUR] forKey:@"欧元"];
+    [dic setValue:[NSNumber numberWithInt:CurrencyTypeJPY] forKey:@"日元"];
+    [dic setValue:[NSNumber numberWithInt:CurrencyTypeCNY] forKey:@"人民币"];
     [picker createPickerView:@"请选择币种" dataSource:dic defaultIndex:2];
     
     [picker addTarget:self selector:@selector(didSelectedCurrency:) userinfo:nil forEvent:PickerViewUitlEventConfirm];
@@ -55,9 +71,57 @@
     // Dispose of any resources that can be recreated.
 }
 
+//////////////////////////////////////////////////////////////////////////////////////////
+
+#pragma mark - Request & Receive message from server
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+-(void)setupHttpQueue
+{
+    remindQueue = [[RemindSettingQueue alloc] init];
+    [[TransManager defaultManager] add:remindQueue];
+}
+
+-(void)destoryHttpQueue
+{
+    [[TransManager defaultManager] remove:remindQueue];
+    remindQueue = nil;
+    
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+#pragma mark - UI Action method
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
 -(void)onConfirmButtonClicked:(id)sender
 {
-
+    if (![self checkValidate]) return;
+    
+    if (self.remind) {
+        int currency = self.currencyButton.tag;
+        float threshold = [self.thresholdTextField.text floatValue];
+        self.remind.threshold = threshold;
+        self.remind.currency = currency;
+        
+        [delegate finishEditRemind:self.remind];
+    }
+    else {
+        self.remind = [[Remind alloc] init];
+        
+        int currency = self.currencyButton.tag;
+        float threshold = [self.thresholdTextField.text floatValue];
+        self.remind.threshold = threshold;
+        self.remind.currency = currency;
+        self.remind.platform = self.platform;
+        
+        [delegate finishAddRemind:self.remind];
+    }
+    
+    [self dismissModalViewControllerAnimated:YES];
+    
 }
 
 -(void)onCancelButtonClicked:(id)sender
@@ -82,12 +146,26 @@
 
 -(void)didSelectedCurrency:(PickerObject *)object
 {
-    DDLogVerbose(@"xxx : %@", object.value);
+    self.currencyButton.tag = [(NSNumber *)object.value intValue];
+    self.currencyButton.titleLabel.text = object.key;
 }
 
 -(void)didCanceledCurrency:(PickerObject *)object
 {
     [picker destroyPickerView];
+}
+
+-(BOOL)checkValidate
+{
+    if ([self.currencyButton.titleLabel.text isEqualToString:@"请选择币种"]) {
+        return NO;
+    }
+    
+    if (self.thresholdTextField.text.length <= 0) {
+        return NO;
+    }
+    
+    return YES;
 }
 
 @end

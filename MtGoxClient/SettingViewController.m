@@ -95,7 +95,7 @@
             }
             else {
                 int count =  [mtGoxReminds count];
-                rows = count < 4 ? count + 1 : count;
+                rows = count < ThresholdCount ? count + 1 : count;
             }
             break;
         case 1:
@@ -104,7 +104,7 @@
             }
             else {
                 int count =  [btcChinaReminds count];
-                rows = count < 4 ? count + 1 : count;
+                rows = count < ThresholdCount ? count + 1 : count;
             }
         case 2:
             if (btcEReminds == nil) {
@@ -112,7 +112,7 @@
             }
             else {
                 int count =  [btcEReminds count];
-                rows = count < 4 ? count + 1 : count;
+                rows = count < ThresholdCount ? count + 1 : count;
             }
             break;
         default:
@@ -177,6 +177,7 @@
     
     RemindSettingController *remindSettingController = [[RemindSettingController alloc] init];
     remindSettingController.title = @"设置";
+    remindSettingController.delegate = self;
     if ([cell isKindOfClass:[RemindAddCell class]]) {
         [remindSettingController setRemind:nil];
     }
@@ -192,8 +193,8 @@
     UITableViewCell *cell;
     
     if (indexPath.section == 0) {
-        
-        if (mtGoxReminds == nil || indexPath.row > [mtGoxReminds count] - 1)
+                
+        if (mtGoxReminds == nil || indexPath.row >= [mtGoxReminds count])
             cell = [self updateCell:tableView remind:nil];
         else
             cell = [self updateCell:tableView remind:[mtGoxReminds objectAtIndex:indexPath.row]];
@@ -201,7 +202,7 @@
     
     else if (indexPath.section == 1) {
         
-        if (btcChinaReminds == nil || indexPath.row > [btcChinaReminds count] - 1)
+        if (btcChinaReminds == nil || indexPath.row >= [btcChinaReminds count])
             cell = [self updateCell:tableView remind:nil];
         else
             cell = [self updateCell:tableView remind:[btcChinaReminds objectAtIndex:indexPath.row]];
@@ -209,7 +210,7 @@
 
     else if (indexPath.section == 2) {
         
-        if (btcEReminds == nil || indexPath.row > [btcEReminds count] - 1)
+        if (btcEReminds == nil || indexPath.row >= [btcEReminds count])
             cell = [self updateCell:tableView remind:nil];
         else
             cell = [self updateCell:tableView remind:[btcEReminds objectAtIndex:indexPath.row]];
@@ -230,7 +231,7 @@
         
         if (remind != nil) {
             cell = [[[NSBundle mainBundle] loadNibNamed:@"RemindCell" owner:self options:nil] lastObject];
-            [(RemindCell *)cell setupRemindShow:remind];
+            [(RemindCell *)cell setupRemindShow:remind];            
         }
         else {
             cell = [[[NSBundle mainBundle] loadNibNamed:@"RemindAddCell" owner:self options:nil] lastObject];
@@ -245,5 +246,65 @@
     
     return cell;
 }
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+#pragma mark - RemindSettingController delegate
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+-(void)finishEditRemind:(Remind *)remind
+{
+    [self.tableView reloadData];
+}
+
+-(void)finishAddRemind:(Remind *)remind
+{
+    switch (remind.platform) {
+        case PlatformMtGox:
+            [mtGoxReminds addObject:remind];
+            break;
+        case PlatformBtcChina:
+            [btcChinaReminds addObject:remind];
+            break;
+        case PlatformBtcE:
+            [btcEReminds addObject:remind];
+            break;
+        default:
+            break;
+    }
+    
+    [self.tableView reloadData];
+//    [self insertTableViewCell:remind.platform];
+}
+//
+//-(void)insertTableViewCell:(enum Platform)platform
+//{
+//    int section = 0;
+//    int count = 0;
+//    
+//    switch (platform) {
+//        case PlatformMtGox:
+//            section = 0;
+//            count = [mtGoxReminds count];
+//            break;
+//        case PlatformBtcChina:
+//            section = 1;
+//            count = [btcChinaReminds count];
+//            break;
+//        case PlatformBtcE:
+//            section = 2;
+//            count = [btcEReminds count];
+//            break;
+//        default:
+//            count = -1;
+//            break;
+//    }
+//    
+//    if (count >= 0 && count < ThresholdCount - 1) {
+//        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:section];
+//        [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+//    }
+//}
 
 @end

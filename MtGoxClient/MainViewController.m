@@ -190,6 +190,8 @@
             break;
     }
     
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    
     return cell;
 }
 

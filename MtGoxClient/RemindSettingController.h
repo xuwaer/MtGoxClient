@@ -10,20 +10,33 @@
 
 @class Remind;
 @class PickerViewUtil;
+@class RemindSettingQueue;
+
+@protocol RemindSettingDelegate <NSObject>
+
+-(void)finishEditRemind:(Remind *)remind;
+-(void)finishAddRemind:(Remind *)remind;
+
+@end
 
 @interface RemindSettingController : UIViewController
 {
     @private
     Remind *_remind;
     PickerViewUtil *picker;
+    
+    RemindSettingQueue *remindQueue;
 }
 
 @property (nonatomic, strong)Remind *remind;
+@property (nonatomic, assign)enum Platform platform;
 
 @property (nonatomic, strong)IBOutlet UIButton *confirmButton;
 @property (nonatomic, strong)IBOutlet UIButton *cancelButton;
 @property (nonatomic, strong)IBOutlet UIButton *currencyButton;
 @property (nonatomic, strong)IBOutlet UITextField *thresholdTextField;
+
+@property (nonatomic, assign)id<RemindSettingDelegate> delegate;
 
 -(IBAction)onConfirmButtonClicked:(id)sender;
 -(IBAction)onCancelButtonClicked:(id)sender;

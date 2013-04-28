@@ -11,16 +11,22 @@
 
 @interface UserDefault : NSObject
 {
+    @private    
+    NSString *filePath;
+    NSMutableDictionary *fileContent;
+    
     enum Platform _platform;
     NSMutableArray *_mtGoxRemind;
     NSMutableArray *_btcChinaRemind;
     NSMutableArray *_btcERemind;
 }
 
-@property (nonatomic, assign)enum Platform platform;
-@property (nonatomic, strong)NSMutableArray *mtGoxRemind;
-@property (nonatomic, strong)NSMutableArray *btcChinaRemind;
-@property (nonatomic, strong)NSMutableArray *btcERemind;
+@property (nonatomic, assign, readonly)enum Platform platform;
+@property (nonatomic, strong, readonly)NSMutableArray *mtGoxRemind;
+@property (nonatomic, strong, readonly)NSMutableArray *btcChinaRemind;
+@property (nonatomic, strong, readonly)NSMutableArray *btcERemind;
+
+@property (nonatomic, strong, readonly)NSString *lastPlatformTitle;
 
 /**
  *	@brief	Get Userdefault instance.

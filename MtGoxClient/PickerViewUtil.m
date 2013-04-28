@@ -35,7 +35,10 @@
         object.key = selectedKey;
         object.selection = selectedIndex;
         object.userinfo = _userinfo;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         [_target performSelector:_selector withObject:object];
+#pragma clang diagnostic pop
     }    
 }
 
@@ -46,7 +49,10 @@
     if (_event == PickerViewUitlEventCancel && _target && _selector) {
         PickerObject *object= [[PickerObject alloc] init];
         object.userinfo = _userinfo;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         [_target performSelector:_selector withObject:object];
+#pragma clang diagnostic pop
     }
 }
 
@@ -139,6 +145,8 @@
 
 -(void)setupDefaultCursor
 {
+    selectedKey = [keys objectAtIndex:0];
+    selectedValue = [values objectAtIndex:0];
 //    [_picker selectRow:_defaultIndex inComponent:1 animated:NO];
 }
 

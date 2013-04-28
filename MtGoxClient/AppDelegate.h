@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-//@class MainViewController;
+@class UserDefault;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+{
+    @private
+    UserDefault *userDefault;
+}
 
 @property (strong, nonatomic) UIWindow *window;
-
-//@property (strong, nonatomic) MainViewController *viewController;
 
 @end

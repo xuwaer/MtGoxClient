@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B902B7FE172A9577007872F0 /* RemindCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B902B7FD172A9577007872F0 /* RemindCell.m */; };
 		B902B800172A9596007872F0 /* RemindCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B902B7FF172A9596007872F0 /* RemindCell.xib */; };
-		B9366390172A5FC50077859A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B936638F172A5FC50077859A /* QuartzCore.framework */; };
 		B9366394172A61B60077859A /* UserDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = B9366393172A61B60077859A /* UserDefault.m */; };
 		B9366397172A64790077859A /* Remind.m in Sources */ = {isa = PBXBuildFile; fileRef = B9366396172A64790077859A /* Remind.m */; };
 		B98965C61729003700260BFF /* MtGoxInformationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B98965C51729003700260BFF /* MtGoxInformationQueue.m */; };
@@ -28,6 +27,7 @@
 		B9BA8BE7172B974E0049C878 /* RemindAddCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BA8BE6172B974D0049C878 /* RemindAddCell.m */; };
 		B9BA8BE9172B97E80049C878 /* RemindAddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9BA8BE8172B97E80049C878 /* RemindAddCell.xib */; };
 		B9D8E245172BB28400A0A811 /* PickerViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D8E244172BB28400A0A811 /* PickerViewUtil.m */; };
+		B9D8E248172BCEA700A0A811 /* RemindSettingQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D8E247172BCEA700A0A811 /* RemindSettingQueue.m */; };
 		B9E563271728F82B005443A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E563261728F82B005443A3 /* UIKit.framework */; };
 		B9E563291728F82B005443A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E563281728F82B005443A3 /* Foundation.framework */; };
 		B9E5632B1728F82B005443A3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E5632A1728F82B005443A3 /* CoreGraphics.framework */; };
@@ -82,13 +82,13 @@
 		B9E5F326172A532D007FA1D1 /* Setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9E5F325172A532D007FA1D1 /* Setting@2x.png */; };
 		B9E5F32A172A5BC8007FA1D1 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E5F328172A5BC7007FA1D1 /* SettingViewController.m */; };
 		B9E5F32B172A5BC8007FA1D1 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E5F329172A5BC7007FA1D1 /* SettingViewController.xib */; };
+		B9EE9A91172CB6E100DAF948 /* Setting.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9EE9A90172CB6E100DAF948 /* Setting.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B902B7FC172A9577007872F0 /* RemindCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindCell.h; sourceTree = "<group>"; };
 		B902B7FD172A9577007872F0 /* RemindCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindCell.m; sourceTree = "<group>"; };
 		B902B7FF172A9596007872F0 /* RemindCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RemindCell.xib; sourceTree = "<group>"; };
-		B936638F172A5FC50077859A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B9366392172A61B60077859A /* UserDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefault.h; sourceTree = "<group>"; };
 		B9366393172A61B60077859A /* UserDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefault.m; sourceTree = "<group>"; };
 		B9366395172A64790077859A /* Remind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Remind.h; sourceTree = "<group>"; };
@@ -116,6 +116,8 @@
 		B9BA8BE8172B97E80049C878 /* RemindAddCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RemindAddCell.xib; sourceTree = "<group>"; };
 		B9D8E243172BB28400A0A811 /* PickerViewUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewUtil.h; sourceTree = "<group>"; };
 		B9D8E244172BB28400A0A811 /* PickerViewUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewUtil.m; sourceTree = "<group>"; };
+		B9D8E246172BCEA700A0A811 /* RemindSettingQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindSettingQueue.h; sourceTree = "<group>"; };
+		B9D8E247172BCEA700A0A811 /* RemindSettingQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindSettingQueue.m; sourceTree = "<group>"; };
 		B9E563231728F82B005443A3 /* MtGoxClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MtGoxClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E563261728F82B005443A3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B9E563281728F82B005443A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -218,6 +220,7 @@
 		B9E5F327172A5BC7007FA1D1 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		B9E5F328172A5BC7007FA1D1 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		B9E5F329172A5BC7007FA1D1 /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		B9EE9A90172CB6E100DAF948 /* Setting.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Setting.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,7 +228,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9366390172A5FC50077859A /* QuartzCore.framework in Frameworks */,
 				B9E564901728F9DC005443A3 /* Security.framework in Frameworks */,
 				B9E5648E1728F9BC005443A3 /* libz.1.2.5.dylib in Frameworks */,
 				B9E5648A1728F948005443A3 /* MobileCoreServices.framework in Frameworks */,
@@ -245,9 +247,7 @@
 			children = (
 				B9366392172A61B60077859A /* UserDefault.h */,
 				B9366393172A61B60077859A /* UserDefault.m */,
-				B9366395172A64790077859A /* Remind.h */,
-				B9366396172A64790077859A /* Remind.m */,
-				B9366398172A83660077859A /* Constant.h */,
+				B9EE9A90172CB6E100DAF948 /* Setting.plist */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -282,7 +282,6 @@
 			isa = PBXGroup;
 			children = (
 				B9E5648D1728F9BC005443A3 /* libz.1.2.5.dylib */,
-				B936638F172A5FC50077859A /* QuartzCore.framework */,
 				B9E5648F1728F9DC005443A3 /* Security.framework */,
 				B9E564891728F948005443A3 /* MobileCoreServices.framework */,
 				B9E564871728F936005443A3 /* CFNetwork.framework */,
@@ -299,6 +298,9 @@
 			children = (
 				B9E563351728F82B005443A3 /* AppDelegate.h */,
 				B9E563361728F82B005443A3 /* AppDelegate.m */,
+				B9366395172A64790077859A /* Remind.h */,
+				B9366396172A64790077859A /* Remind.m */,
+				B9366398172A83660077859A /* Constant.h */,
 				B9D8E237172BAEFB00A0A811 /* Custom Views */,
 				B9E5F317172A1263007FA1D1 /* View Controllers */,
 				B9366391172A619D0077859A /* Data */,
@@ -341,6 +343,8 @@
 			children = (
 				B98965C41729003700260BFF /* MtGoxInformationQueue.h */,
 				B98965C51729003700260BFF /* MtGoxInformationQueue.m */,
+				B9D8E246172BCEA700A0A811 /* RemindSettingQueue.h */,
+				B9D8E247172BCEA700A0A811 /* RemindSettingQueue.m */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -631,7 +635,6 @@
 				B9E5F321172A12F3007FA1D1 /* TickerCell.xib in Resources */,
 				B9E5F326172A532D007FA1D1 /* Setting@2x.png in Resources */,
 				B9E5F32B172A5BC8007FA1D1 /* SettingViewController.xib in Resources */,
-				B902B800172A9596007872F0 /* RemindCell.xib in Resources */,
 				B9BA8BD4172B77C50049C878 /* RemindSettingController.xib in Resources */,
 				B9BA8BDD172B7C910049C878 /* bg_btn_gray_pressed@2x.png in Resources */,
 				B9BA8BDE172B7C910049C878 /* bg_btn_gray@2x.png in Resources */,
@@ -641,7 +644,9 @@
 				B9BA8BE2172B7C910049C878 /* bg_model_select@2x.png in Resources */,
 				B9BA8BE3172B7C910049C878 /* bg_model_text_empty@2x.png in Resources */,
 				B9BA8BE4172B7C910049C878 /* bg_model_text@2x.png in Resources */,
+				B902B800172A9596007872F0 /* RemindCell.xib in Resources */,
 				B9BA8BE9172B97E80049C878 /* RemindAddCell.xib in Resources */,
+				B9EE9A91172CB6E100DAF948 /* Setting.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -698,6 +703,7 @@
 				B9BA8BD3172B77C50049C878 /* RemindSettingController.m in Sources */,
 				B9BA8BE7172B974E0049C878 /* RemindAddCell.m in Sources */,
 				B9D8E245172BB28400A0A811 /* PickerViewUtil.m in Sources */,
+				B9D8E248172BCEA700A0A811 /* RemindSettingQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

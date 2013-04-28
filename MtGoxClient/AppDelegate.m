@@ -27,9 +27,8 @@
     // Override point for customization after application launch.
     
     MainViewController *viewController = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
+    viewController.title = userDefault.lastPlatformTitle;
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
-//    UINavigationController *navController = [[UINavigationController alloc] init];
-//    [navController pushViewController:viewController animated:YES];
     self.window.rootViewController = navController;
     [self.window makeKeyAndVisible];
 
@@ -71,9 +70,9 @@
 -(void)setupConfig
 {
     TransManager *transManager = [TransManager defaultManager];
-    [transManager setHostname:@"http://data.mtgox.com"];
+    [transManager setHostname:@"https://data.mtgox.com"];
     
-    [UserDefault defaultUser];
+    userDefault = [UserDefault defaultUser];
 }
 
 @end

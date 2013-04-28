@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RemindSettingController.h"
 
-@interface SettingViewController : UITableViewController
+@interface SettingViewController : UITableViewController<RemindSettingDelegate>
 {
     @private
     NSMutableArray *mtGoxReminds;
