@@ -47,6 +47,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,7 +56,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+//////////////////////////////////////////////////////////////////////////////////////////
+
 #pragma mark - Table view data source
+
+//////////////////////////////////////////////////////////////////////////////////////////
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -135,20 +140,30 @@
     return cell;
 }
 
-/*
+-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return @"删除";
+}
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+{    
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    if ([cell isKindOfClass:[RemindCell class]]) {
+        return YES;
+    }
+    else {
+        return NO;
+    }
 }
-*/
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // 从数据源中删除
+        [self deleteRemindInDataSource:indexPath];
         // Delete the row from the data source
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
@@ -156,7 +171,7 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
@@ -174,7 +189,11 @@
 }
 */
 
+//////////////////////////////////////////////////////////////////////////////////////////
+
 #pragma mark - Table view delegate
+
+//////////////////////////////////////////////////////////////////////////////////////////
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -316,5 +335,33 @@
 //        [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
 //    }
 //}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+#pragma mark - other
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+/**
+ *	@brief	根据indexPath，删除数据源中的提醒
+ *
+ *	@param 	indexPath 	需要删除的位置
+ */
+-(void)deleteRemindInDataSource:(NSIndexPath *)indexPath
+{
+    switch (indexPath.section) {
+        case 0:
+            [mtGoxReminds removeObjectAtIndex:indexPath.row];
+            break;
+        case 1:
+            [btcChinaReminds removeObjectAtIndex:indexPath.row];
+            break;
+        case 2:
+            [btcEReminds removeObjectAtIndex:indexPath.row];
+            break;
+        default:
+            break;
+    }
+}
 
 @end

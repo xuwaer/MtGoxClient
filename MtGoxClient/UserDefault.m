@@ -23,6 +23,7 @@ static NSString  * SETTING_PROPERTY_KEY_BTCEREMINDS = @"btcEReminds";
 @synthesize btcERemind = _btcERemind;
 
 @synthesize lastPlatformTitle;
+@synthesize token;
 
 static UserDefault *userDefault;
 
@@ -55,14 +56,11 @@ static UserDefault *userDefault;
 
 -(void)getUserDefault
 {
-    
     //获取路径对象
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     //获取完整路径
     NSString *documentsDirectory = [paths objectAtIndex:0];
-    filePath = [documentsDirectory stringByAppendingPathComponent:@"Setting.plist"];
-    
-//    filePath = [[NSBundle mainBundle] pathForResource:@"Setting" ofType:@"plist"];
+    filePath = [documentsDirectory stringByAppendingPathComponent:SettingFile];
     fileContent = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
     
     if (fileContent == nil) {

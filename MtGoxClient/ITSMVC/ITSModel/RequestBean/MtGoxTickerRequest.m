@@ -18,25 +18,10 @@
 -(id)initWithCurrency:(enum CurrencyType)inCurrencyType
 {
     currencyType = inCurrencyType;
-    
-    switch (currencyType) {
-        case CurrencyTypeUSD:
-            self = [super initWithCommand:kMtGoxAPI_USD type:HttpRequestTypeGet];
-            break;
-        case CurrencyTypeEUR:
-            self = [super initWithCommand:kMtGoxAPI_EUR type:HttpRequestTypeGet];
-            break;
-        case CurrencyTypeJPY:
-            self = [super initWithCommand:kMtGoxAPI_JPY type:HttpRequestTypeGet];
-            break;
-        case CurrencyTypeCNY:
-            self = [super initWithCommand:kMtGoxAPI_CNY type:HttpRequestTypeGet];
-            break;
-        default:
-            self = [super initWithCommand:kMtGoxAPI_USD type:HttpRequestTypeGet];
-            break;
-    }
-    
+    const char * requestChar = getRequestUrlWithCurrencyType(inCurrencyType);
+    NSString *requestStr = [NSString stringWithCString:requestChar encoding:NSUTF8StringEncoding];
+    self = [super initWithCommand:requestStr type:HttpRequestTypeGet];
+    requestChar = NULL;
     return self;
 }
 

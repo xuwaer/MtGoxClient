@@ -82,7 +82,6 @@
 		B9E5F326172A532D007FA1D1 /* Setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9E5F325172A532D007FA1D1 /* Setting@2x.png */; };
 		B9E5F32A172A5BC8007FA1D1 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E5F328172A5BC7007FA1D1 /* SettingViewController.m */; };
 		B9E5F32B172A5BC8007FA1D1 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E5F329172A5BC7007FA1D1 /* SettingViewController.xib */; };
-		B9EE9A91172CB6E100DAF948 /* Setting.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9EE9A90172CB6E100DAF948 /* Setting.plist */; };
 		B9EE9A99172CEB2A00DAF948 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EE9A96172CEB2A00DAF948 /* MBProgressHUD.m */; };
 		B9EE9A9A172CEB2A00DAF948 /* ProgressUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EE9A98172CEB2A00DAF948 /* ProgressUtil.m */; };
 /* End PBXBuildFile section */
@@ -222,7 +221,6 @@
 		B9E5F327172A5BC7007FA1D1 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		B9E5F328172A5BC7007FA1D1 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		B9E5F329172A5BC7007FA1D1 /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
-		B9EE9A90172CB6E100DAF948 /* Setting.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Setting.plist; sourceTree = "<group>"; };
 		B9EE9A95172CEB2A00DAF948 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		B9EE9A96172CEB2A00DAF948 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		B9EE9A97172CEB2A00DAF948 /* ProgressUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressUtil.h; sourceTree = "<group>"; };
@@ -253,7 +251,6 @@
 			children = (
 				B9366392172A61B60077859A /* UserDefault.h */,
 				B9366393172A61B60077859A /* UserDefault.m */,
-				B9EE9A90172CB6E100DAF948 /* Setting.plist */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -664,7 +661,6 @@
 				B9BA8BE4172B7C910049C878 /* bg_model_text@2x.png in Resources */,
 				B902B800172A9596007872F0 /* RemindCell.xib in Resources */,
 				B9BA8BE9172B97E80049C878 /* RemindAddCell.xib in Resources */,
-				B9EE9A91172CB6E100DAF948 /* Setting.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

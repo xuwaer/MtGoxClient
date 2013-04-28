@@ -64,15 +64,23 @@
 
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
-    DDLogCVerbose(@"token : %@", deviceToken);
+    userDefault.token = deviceToken;
+}
+
+-(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    userDefault.token = nil;
 }
 
 -(void)setupConfig
 {
-    TransManager *transManager = [TransManager defaultManager];
-    [transManager setHostname:@"https://data.mtgox.com"];
-    
     userDefault = [UserDefault defaultUser];
+
+    const char * hostnameChar = getHostnameWithPlatform(userDefault.platform);
+    NSString * hostnameStr = [NSString stringWithCString:hostnameChar encoding:NSUTF8StringEncoding];
+    TransManager *transManager = [TransManager defaultManager];
+    [transManager setHostname:hostnameStr];
+    hostnameChar = NULL;
 }
 
 @end

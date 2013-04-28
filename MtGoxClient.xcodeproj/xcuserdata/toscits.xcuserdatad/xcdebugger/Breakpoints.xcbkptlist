@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MtGoxClient/UserDefault.m"
-         timestampString = "388822717.923028"
+         timestampString = "388827353.341896"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "92"
-         endingLineNumber = "92"
+         startingLineNumber = "90"
+         endingLineNumber = "90"
          landmarkName = "-saveUserDefault"
          landmarkType = "5">
       </FileBreakpoint>

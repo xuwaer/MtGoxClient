@@ -21,12 +21,15 @@
     NSMutableArray *_btcERemind;
 }
 
+// 保存的用户配置
 @property (nonatomic, assign, readonly)enum Platform platform;
 @property (nonatomic, strong, readonly)NSMutableArray *mtGoxRemind;
 @property (nonatomic, strong, readonly)NSMutableArray *btcChinaRemind;
 @property (nonatomic, strong, readonly)NSMutableArray *btcERemind;
 
+// 仅作显示用，不保存
 @property (nonatomic, strong, readonly)NSString *lastPlatformTitle;
+@property (nonatomic, strong)NSData *token;
 
 /**
  *	@brief	Get Userdefault instance.

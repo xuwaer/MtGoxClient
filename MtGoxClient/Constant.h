@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+//配置文件地址
+#define SettingFile @"Setting.plist"
+
 // 币种
 enum CurrencyType {
     CurrencyTypeUSD = 0,
@@ -83,29 +86,59 @@ static inline enum CurrencyType currencyNameConvertToCurrencyType(const char * c
     return currencyType;
 }
 
-// MtGox需要请求的数据
-#define kMtGoxAPI_USD @"api/2/BTCUSD/money/ticker"
-#define kMtGoxAPI_EUR @"api/2/BTCEUR/money/ticker"
-#define kMtGoxAPI_JPY @"api/2/BTCJPY/money/ticker"
-#define kMtGoxAPI_CNY @"api/2/BTCCNY/money/ticker"
-
-#define SettingFile_Name @"Setting"
-#define SettingFile_Type @"plist"
-
-typedef struct{
-    const char *name;
-    const char *type;
-    int lastPlatform;
-    Byte *mtGoxReminds;
-    Byte *btcChinaReminds;
-    Byte *btcEReminds;
-}PlistFile;
-
-static inline PlistFile getSettingFile()
+/**
+ *	@brief	根据币种，获取对应的请求url
+ *
+ *	@param 	currencyType 	币种
+ *
+ *	@return	请求url
+ */
+static inline const char * getRequestUrlWithCurrencyType(enum CurrencyType currencyType)
 {
-    PlistFile file;
-    file.name = "Setting";
-    file.type = "plist";
+    const char * requestUrl = "";
+    switch (currencyType) {
+        case CurrencyTypeUSD:
+            requestUrl = "api/2/BTCUSD/money/ticker";
+            break;
+        case CurrencyTypeEUR:
+            requestUrl = "api/2/BTCEUR/money/ticker";
+            break;
+        case CurrencyTypeJPY:
+            requestUrl = "api/2/BTCJPY/money/ticker";
+            break;
+        case CurrencyTypeCNY:
+            requestUrl = "api/2/BTCCNY/money/ticker";
+            break;
+        default:
+            break;
+    }
     
-    return file;
+    return requestUrl;
+}
+
+/**
+ *	@brief	根据平台，获取对应的服务器地址
+ *
+ *	@param 	platform 	平台代码
+ *
+ *	@return	服务器地址
+ */
+static inline const char * getHostnameWithPlatform(enum Platform platform)
+{
+    const char * hostname = "";
+    switch (platform) {
+        case PlatformMtGox:
+            hostname = "https://data.mtgox.com";
+            break;
+        case PlatformBtcChina:
+            hostname = "";
+            break;
+        case PlatformBtcE:
+            hostname = "";
+            break;
+        default:
+            break;
+    }
+    
+    return hostname;
 }

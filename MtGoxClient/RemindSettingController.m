@@ -121,7 +121,7 @@
         
     progress = [[MBProgressHUD alloc] initWithView:self.view];
     [self.view addSubview:progress];
-    progress.mode = MBProgressHUDModeDeterminate;
+    progress.mode = MBProgressHUDModeIndeterminate;
     [progress show:YES];
     
     if (self.remind) {
