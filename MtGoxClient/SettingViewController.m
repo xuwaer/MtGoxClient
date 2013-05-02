@@ -73,6 +73,15 @@
     return 40;
 }
 
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    CGRect headerFrame = CGRectMake(0, 0, 320, 40);
+    UIView *header = [[UIView alloc] initWithFrame:headerFrame];
+    [header setBackgroundColor:[UIColor grayColor]];
+    
+    return header;
+}
+
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     NSString *headerTitle = @"";
@@ -138,7 +147,7 @@
     UITableViewCell *cell = [self setupCell:tableView cellForRowAtIndexPath:indexPath];
     
     return cell;
-}
+}        
 
 -(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -265,7 +274,7 @@
     }
     
     // 去掉tableview group的背景样式
-    UIView *backView  = [[UIView alloc] init];
+    UIView *backView  = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
     [cell setBackgroundView:backView];
     [cell setBackgroundColor:[UIColor clearColor]];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];

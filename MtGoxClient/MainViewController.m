@@ -14,6 +14,7 @@
 #import "TickerCell.h"
 
 #import "SettingViewController.h"
+#import "SettingAlertControllerViewController.h"
 
 @interface MainViewController ()
 
@@ -162,8 +163,6 @@
     return 4;
 }
 
--tableview
-
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 90;
@@ -279,7 +278,8 @@
 
 -(void)showSetting
 {    
-    SettingViewController *settingViewController = [[SettingViewController alloc] init];
+//    SettingViewController *settingViewController = [[SettingViewController alloc] init];
+    SettingAlertControllerViewController *settingViewController = [[SettingAlertControllerViewController alloc] init];
     settingViewController.title = @"设置";
     [self.navigationController pushViewController:settingViewController animated:YES];
 }

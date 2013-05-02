@@ -20,6 +20,8 @@
 @property (nonatomic, assign)BOOL isLarge;
 @property (nonatomic, assign)enum Platform platform;
 
+@property (nonatomic, assign)NSUInteger tag;
+
 -(id)initWithDictionary:(NSDictionary *)dataSource;
 
 -(NSDictionary *)encode;

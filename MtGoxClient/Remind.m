@@ -19,6 +19,7 @@ static NSString  * SETTING_PROPERTY_KEY_REMIND_PLATFORM = @"platform";
 @synthesize currency;
 @synthesize isLarge;
 @synthesize platform;
+@synthesize tag;
 
 -(id)initWithDictionary:(NSDictionary *)dataSource
 {
