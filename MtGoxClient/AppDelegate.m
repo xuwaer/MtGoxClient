@@ -76,11 +76,11 @@
 {
     userDefault = [UserDefault defaultUser];
 
-    const char * hostnameChar = getHostnameWithPlatform(userDefault.platform);
-    NSString * hostnameStr = [NSString stringWithCString:hostnameChar encoding:NSUTF8StringEncoding];
+//    const char * hostnameChar = getHostnameWithPlatform(userDefault.platform);
+//    NSString * hostnameStr = [NSString stringWithCString:hostnameChar encoding:NSUTF8StringEncoding];
     TransManager *transManager = [TransManager defaultManager];
-    [transManager setHostname:hostnameStr];
-    hostnameChar = NULL;
+//    [transManager setHostname:hostnameStr];
+//    hostnameChar = NULL;
 }
 
 @end

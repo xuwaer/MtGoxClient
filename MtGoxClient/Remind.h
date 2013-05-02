@@ -18,6 +18,7 @@
     NSDictionary *_dataSource;
 }
 
+@property (nonatomic, assign)int remindId;
 @property (nonatomic, assign)float threshold;                   //阀值
 @property (nonatomic, assign)enum CurrencyType currency;        //币种
 @property (nonatomic, assign)BOOL isLarge;                      //大于？

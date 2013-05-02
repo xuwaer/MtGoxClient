@@ -86,16 +86,26 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 -(NSURL *)actionURL:(NSString *)requestCommand
-{    
-    hostUrl = _hostname;
+{
+    hostUrl = @"";
+    // 如果没有设置hostname，那么直接把requestCommand当做请求url发送
+    if (_hostname) {
+        hostUrl = _hostname;
+    }
+    else {
+        hostUrl = requestCommand;
+        
+        DDLogVerbose(@"url : %@", hostUrl);
+        
+        return [NSURL URLWithString:hostUrl];
+    }
+    
     if (_port) {
         hostUrl = [hostUrl stringByAppendingFormat:@":%@", _port];
     }
     
     hostUrl = [hostUrl stringByAppendingFormat:@"/%@", requestCommand];
-    
-    DDLogVerbose(@"Request:%@", hostUrl);
-    
+        
     return [NSURL URLWithString:hostUrl];
 }
 
@@ -347,7 +357,7 @@
 
 -(void)requestFinished:(ASIHTTPRequest *)request
 {    
-    DDLogVerbose(@"%@(%@)", THIS_FILE, THIS_METHOD);
+    DDLogVerbose(@"%@(%@) result : %@", THIS_FILE, THIS_METHOD, [request responseString]);
     
     dispatch_block_t block = ^{@autoreleasepool{
         NSDictionary *cacheDic = [self loadCache:request.tag];
@@ -382,7 +392,6 @@
 // 通过插件管理对象，调用插件中实现的方法
 -(void)request:(ASIHTTPRequest *)request didReceiveObject:(id)object
 {
-    
     // 该方法在dataStreamQueue中执行
     dispatch_block_t block = ^{
 

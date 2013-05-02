@@ -8,6 +8,7 @@
 
 #import "Remind.h"
 
+static NSString  * SETTING_PROPERTY_KEY_REMIND_ID = @"remindId";
 static NSString  * SETTING_PROPERTY_KEY_REMIND_THRESHOLD = @"threshold";
 static NSString  * SETTING_PROPERTY_KEY_REMIND_CURRENCY = @"currency";
 static NSString  * SETTING_PROPERTY_KEY_REMIND_ISLARGE = @"isLarge";
@@ -15,6 +16,7 @@ static NSString  * SETTING_PROPERTY_KEY_REMIND_PLATFORM = @"platform";
 
 @implementation Remind
 
+@synthesize remindId;
 @synthesize threshold;
 @synthesize currency;
 @synthesize isLarge;
@@ -36,6 +38,7 @@ static NSString  * SETTING_PROPERTY_KEY_REMIND_PLATFORM = @"platform";
 {
     if (_dataSource == nil) return;
     
+    self.remindId  = [(NSNumber *)[_dataSource objectForKey:SETTING_PROPERTY_KEY_REMIND_ID] intValue];
     self.threshold = [(NSNumber *)[_dataSource objectForKey:SETTING_PROPERTY_KEY_REMIND_THRESHOLD] floatValue];
     self.currency = [(NSNumber *)[_dataSource objectForKey:SETTING_PROPERTY_KEY_REMIND_CURRENCY] intValue];
     self.isLarge = [(NSNumber *)[_dataSource objectForKey:SETTING_PROPERTY_KEY_REMIND_ISLARGE] boolValue];
@@ -45,6 +48,7 @@ static NSString  * SETTING_PROPERTY_KEY_REMIND_PLATFORM = @"platform";
 -(NSDictionary *)encode
 {
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+    [dic setValue:[NSNumber numberWithInt:self.remindId] forKey:SETTING_PROPERTY_KEY_REMIND_ID];
     [dic setValue:[NSNumber numberWithFloat:self.threshold] forKey:SETTING_PROPERTY_KEY_REMIND_THRESHOLD];
     [dic setValue:[NSNumber numberWithInt:self.currency] forKey:SETTING_PROPERTY_KEY_REMIND_CURRENCY];
     [dic setValue:[NSNumber numberWithBool:self.isLarge] forKey:SETTING_PROPERTY_KEY_REMIND_ISLARGE];

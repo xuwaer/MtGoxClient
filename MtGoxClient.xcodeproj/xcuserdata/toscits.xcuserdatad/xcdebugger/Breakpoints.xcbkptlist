@@ -20,13 +20,13 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "MtGoxClient/RemindSettingController.m"
-         timestampString = "389170016.208594"
+         filePath = "MtGoxClient/ITSMVC/ITSTranslate/Http/ITSHttpStream.m"
+         timestampString = "389178329.708444"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "203"
-         endingLineNumber = "203"
-         landmarkName = "-updateUIDisplay:"
+         startingLineNumber = "231"
+         endingLineNumber = "231"
+         landmarkName = "-sendGetHttpRequest:userinfo:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

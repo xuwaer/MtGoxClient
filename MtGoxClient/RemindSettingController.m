@@ -11,6 +11,8 @@
 
 #import "MtGoxTickerRequest.h"
 #import "MtGoxTickerResponse.h"
+#import "RemindSetReqest.h"
+#import "RemindSetResponse.h"
 #import "Remind.h"
 #import "RemindSettingQueue.h"
 #import "TransManager.h"
@@ -198,9 +200,8 @@
 
 -(void)updateUIDisplay:(id)responseFromQueue
 {
-    [progress removeFromSuperview];
-
     if (responseFromQueue == nil || [responseFromQueue isEqual:[NSNull null]]) {
+        [progress removeFromSuperview];
         [ProgressUtil showProgress:@"添加失败" super:self.view];
     }
     else if ([responseFromQueue isKindOfClass:[MtGoxTickerResponse class]]) {
@@ -214,18 +215,57 @@
                 MtGoxTickerValueResponse *value = detail.value;
                 self.remind.isLarge = self.remind.threshold > [value.value floatValue] ? YES : NO;
                 
-                [ProgressUtil showProgress:@"添加成功" super:self.view];
-                [self updateSettingController];
+//                [ProgressUtil showProgress:@"添加成功" super:self.view];
+                
+                [self sendRemind];
             }
             else {
+                [progress removeFromSuperview];
                 [ProgressUtil showProgress:@"添加失败" super:self.view];
             }
         }
 
     }
     else {
+        [progress removeFromSuperview];
         [ProgressUtil showProgress:@"添加失败" super:self.view];
     }
+}
+
+-(void)showSettingResult:(id)responseFromQueue
+{
+    if (responseFromQueue && [responseFromQueue isKindOfClass:[RemindSetResponse class]]) {
+        [progress removeFromSuperview];
+        
+        [self updateSettingController];
+    }
+}
+
+-(void)sendRemind
+{
+    // 请求Url
+    const char * commandChar = getRemindServerRequestUrl(RemindType_GetAlert);
+    NSString *commandStr = [NSString stringWithCString:commandChar encoding:NSUTF8StringEncoding];
+    RemindSetReqest *request = [[RemindSetReqest alloc] initWithCommand:commandStr type:HttpRequestTypeGet];
+    
+    // 平台
+    const char *platformCodeChar = getPlatformCodeWithPlatform(self.remind.platform);
+    NSString *platformCodeStr = [NSString stringWithCString:platformCodeChar encoding:NSUTF8StringEncoding];
+    request.plat = platformCodeStr;
+    platformCodeStr = NULL;
+    // 币种
+    const char *currencyCodeChar = currencyTypeConvertToCurrencyCode(self.remind.currency);
+    NSString *currencyCodeStr = [NSString stringWithCString:currencyCodeChar encoding:NSUTF8StringEncoding];
+    request.cur = currencyCodeStr;
+    currencyCodeChar = NULL;
+    // 阀值
+    request.check = self.remind.threshold;
+    // 大于？
+    request.isLarge = self.remind.isLarge;
+    // token
+    request.token = DEFAULT_TOKEN;
+    
+    [remindQueue sendRequest:request target:self selector:@selector(showSettingResult:)];
 }
 
 -(BOOL)checkResponse:(int)actionTag

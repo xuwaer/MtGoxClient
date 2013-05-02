@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#include <string.h>
+#include <stdio.h>
 
 //配置文件地址
-#define SettingFile @"Setting.plist"
+static const char * SettingFile = "Setting.plist";
 
 // 币种
 enum CurrencyType {
@@ -26,8 +28,16 @@ enum Platform {
     PlatformBtcE = 2
 };
 
+// 提醒请求类型
+enum RemindType {
+    RemindType_GetAlert = 0
+};
+
 static const int ThresholdCount = 2;            //提醒个数
 static const int REPEAT_DELAY = 30;             //自动刷新间隔
+
+#define DEFAULT_TOKEN @"abc00fea0ff7717e36c0b4837b4e840678ad046fd67d895ad4235a901cc54c33"
+#define REMIND_HOSTNAME @"http://10.10.32.44"
 
 /**
  *	@brief	通过币种代码，转换为显示文字
@@ -61,6 +71,37 @@ static inline const char * currencyTypeConvertToCurrencyName(enum CurrencyType c
 }
 
 /**
+ *	@brief	通过币种代码，转换为国际代码
+ *
+ *	@param 	currencyType 	币种代码
+ *
+ *	@return	国际代码
+ */
+static inline const char * currencyTypeConvertToCurrencyCode(enum CurrencyType currencyType)
+{
+    const char * currencyName = "";
+    
+    switch (currencyType) {
+        case CurrencyTypeUSD:
+            currencyName = "USD";
+            break;
+        case CurrencyTypeEUR:
+            currencyName = "EUR";
+            break;
+        case CurrencyTypeJPY:
+            currencyName = "JPY";
+            break;
+        case CurrencyTypeCNY:
+            currencyName = "CNY";
+            break;
+        default:
+            break;
+    }
+    
+    return currencyName;
+}
+
+/**
  *	@brief	通过显示文字转换为币种代码
  *
  *	@param 	currencyName 	显示文字
@@ -80,37 +121,36 @@ static inline enum CurrencyType currencyNameConvertToCurrencyType(const char * c
     else if (strcmp(currencyName, "人民币"))
         currencyType = CurrencyTypeCNY;
 
+  
+    
     return currencyType;
 }
 
 /**
- *	@brief	根据币种，获取对应的请求url
+ *	@brief	根据平台，获取对应的平台代号
  *
- *	@param 	currencyType 	币种
+ *	@param 	platform 	平台代码
  *
- *	@return	请求url
+ *	@return	平台代号
  */
-static inline const char * getRequestUrlWithCurrencyType(enum CurrencyType currencyType)
+static inline const char * getPlatformCodeWithPlatform(enum Platform platform)
 {
-    const char * requestUrl = "";
-    switch (currencyType) {
-        case CurrencyTypeUSD:
-            requestUrl = "api/2/BTCUSD/money/ticker";
+    const char * platformCode = "";
+    switch (platform) {
+        case PlatformMtGox:
+            platformCode = "mtgox";
             break;
-        case CurrencyTypeEUR:
-            requestUrl = "api/2/BTCEUR/money/ticker";
+        case PlatformBtcChina:
+            platformCode = "";
             break;
-        case CurrencyTypeJPY:
-            requestUrl = "api/2/BTCJPY/money/ticker";
-            break;
-        case CurrencyTypeCNY:
-            requestUrl = "api/2/BTCCNY/money/ticker";
+        case PlatformBtcE:
+            platformCode = "";
             break;
         default:
             break;
     }
     
-    return requestUrl;
+    return platformCode;
 }
 
 /**
@@ -138,4 +178,64 @@ static inline const char * getHostnameWithPlatform(enum Platform platform)
     }
     
     return hostname;
+}
+
+/**
+ *	@brief	根据币种，获取对应的请求url
+ *
+ *	@param 	currencyType 	币种
+ *
+ *	@return	请求url
+ */
+static inline const char * getRequestUrl(enum Platform platform, enum CurrencyType currencyType)
+{
+    const char *hostname = getHostnameWithPlatform(platform);
+    char *requestUrl = calloc(80, sizeof(char));
+    strcpy(requestUrl, hostname);
+    
+    switch (currencyType) {
+        case CurrencyTypeUSD:
+            strcat(requestUrl, "/api/2/BTCUSD/money/ticker");
+            break;
+        case CurrencyTypeEUR:
+            strcat(requestUrl, "/api/2/BTCEUR/money/ticker");
+            break;
+        case CurrencyTypeJPY:
+            strcat(requestUrl, "/api/2/BTCJPY/money/ticker");
+            break;
+        case CurrencyTypeCNY:
+            strcat(requestUrl, "/api/2/BTCCNY/money/ticker");
+            break;
+        default:
+            strcat(requestUrl, "/api/2/BTCUSD/money/ticker");
+            break;
+    }
+        
+    return requestUrl;
+}
+
+/**
+ *	@brief	根据类型，获取对应的请求url
+ *
+ *	@param 	currencyType 	币种
+ *
+ *	@return	请求url
+ */
+static inline const char * getRemindServerRequestUrl(enum RemindType remindType)
+{
+    const char *hostname = "http://10.10.32.44";
+    
+    char *requestUrl = calloc(80, sizeof(char));
+    strcpy(requestUrl, hostname);
+    
+    switch (remindType) {
+        case RemindType_GetAlert:
+            strcat(requestUrl, "/get_alert.php");
+            break;
+        default:
+            strcat(requestUrl, "");
+            break;
+    }
+    
+    return requestUrl;
 }

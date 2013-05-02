@@ -18,8 +18,12 @@
 -(id)initWithCurrency:(enum CurrencyType)inCurrencyType
 {
     currencyType = inCurrencyType;
-    const char * requestChar = getRequestUrlWithCurrencyType(inCurrencyType);
+    const char * requestChar = getRequestUrl(PlatformMtGox, inCurrencyType);
     NSString *requestStr = [NSString stringWithCString:requestChar encoding:NSUTF8StringEncoding];
+    
+    DDLogVerbose(@"%@", requestStr);
+    DDLogVerbose(@"%s", requestChar);
+    
     self = [super initWithCommand:requestStr type:HttpRequestTypeGet];
     requestChar = NULL;
     return self;

@@ -40,16 +40,6 @@
     return NO;
 }
 
--(void)request:(ASIHTTPRequest *)request didReceiveObject:(id)object
-{
-    
-    DDLogCVerbose(@"%@(%@)tag:%d", NSStringFromClass([self class]), THIS_METHOD, [(id<ITSResponseDelegate>)object tag]);
-    
-    NSUInteger resultTag = [self getContextTag:request];
-    
-    [self performContext:resultTag object:object];
-}
-
 -(void)requestFailed:(ASIHTTPRequest *)request
 {
     DDLogCVerbose(@"%@(%@)", NSStringFromClass([self class]), THIS_METHOD);

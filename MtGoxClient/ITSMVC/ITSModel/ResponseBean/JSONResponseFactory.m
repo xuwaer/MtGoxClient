@@ -10,6 +10,7 @@
 #import "ITSConfig.h"
 
 #import "MtGoxTickerResponse.h"
+#import "RemindSetResponse.h"
 
 @implementation JSONResponseFactory
 
@@ -36,7 +37,8 @@
         case kActionTag_Response_CNY:
             response = [[MtGoxTickerResponse alloc] initWithJSONData:source tag:responseTag];
             break;
-
+        case kActionTag_Response_Set_Remind:
+            response = [[RemindSetResponse alloc] initWithJSONData:source];
         default:
             break;
     }
