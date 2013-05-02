@@ -23,6 +23,7 @@
 
 @property (nonatomic, strong)IBOutlet UITableView *alertTableView;      //提醒列表
 @property (nonatomic, strong)IBOutlet UIView *headerView;               //提醒group头
+@property (nonatomic, strong)IBOutlet UILabel *headerTitleLabel;
 
 @property (nonatomic, strong)NSMutableArray *dataArray;                 //原始数据源
 

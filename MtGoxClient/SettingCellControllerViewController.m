@@ -38,6 +38,7 @@
 
 @implementation SettingCellControllerViewController
 
+@synthesize headerTitleLabel;
 @synthesize alertTableView;
 @synthesize dataArray;
 @synthesize alterDelegate;

@@ -24,4 +24,7 @@
     SettingCellControllerViewController *btcChinaCellController;        //btcChina平台，提醒列表
     SettingCellControllerViewController *btcECellController;            //btc-E平台，提醒列表
 }
+
+@property (nonatomic, strong)IBOutlet UIScrollView *scrollView;
+
 @end

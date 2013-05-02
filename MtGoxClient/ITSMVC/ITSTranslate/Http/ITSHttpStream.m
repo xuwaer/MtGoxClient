@@ -357,7 +357,7 @@
 
 -(void)requestFinished:(ASIHTTPRequest *)request
 {    
-    DDLogVerbose(@"%@(%@) result : %@", THIS_FILE, THIS_METHOD, [request responseString]);
+    DDLogVerbose(@"%@(%@)", THIS_FILE, THIS_METHOD);
     
     dispatch_block_t block = ^{@autoreleasepool{
         NSDictionary *cacheDic = [self loadCache:request.tag];

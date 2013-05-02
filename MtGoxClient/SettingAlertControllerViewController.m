@@ -22,6 +22,8 @@
 
 @implementation SettingAlertControllerViewController
 
+@synthesize scrollView;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -45,12 +47,14 @@
     [userDefault getUserDefault];
     
     mtGoxCellController = [[SettingCellControllerViewController alloc] init];
-    btcChinaCellController = [[SettingCellControllerViewController alloc] init];
-    btcECellController = [[SettingCellControllerViewController alloc] init];
     mtGoxCellController.dataArray = userDefault.mtGoxRemind;
     mtGoxCellController.alterDelegate = self;
+    
+    btcChinaCellController = [[SettingCellControllerViewController alloc] init];
     btcChinaReminds = userDefault.btcChinaRemind;
     btcChinaCellController.alterDelegate = self;
+    
+    btcECellController = [[SettingCellControllerViewController alloc] init];
     btcEReminds = userDefault.btcERemind;
     btcECellController.alterDelegate = self;
 }
@@ -58,17 +62,23 @@
 -(void)setupUI
 {
     // 针对iphone4、4s
-    CGRect mtGoxFrame = CGRectMake(8, 10, 303, 240);
+    CGRect mtGoxFrame = CGRectMake(8, 12, 303, 240);
     mtGoxCellController.view.frame = mtGoxFrame;
-    [self.view addSubview:mtGoxCellController.view];
+    [self.scrollView addSubview:mtGoxCellController.view];
+    mtGoxCellController.headerTitleLabel.text = @"MtGox";
     
-    CGRect btcChinaFrame = CGRectMake(8, 150, 303, 240);
+    CGRect btcChinaFrame = CGRectMake(8, 147, 303, 240);
     btcChinaCellController.view.frame = btcChinaFrame;
-    [self.view addSubview:btcChinaCellController.view];
+    [self.scrollView addSubview:btcChinaCellController.view];
+    btcChinaCellController.headerTitleLabel.text = @"BTCChina";
     
-    CGRect btcEFrame = CGRectMake(8, 290, 303, 240);
+    CGRect btcEFrame = CGRectMake(8, 282, 303, 240);
     btcECellController.view.frame = btcEFrame;
-    [self.view addSubview:btcECellController.view];
+    [self.scrollView addSubview:btcECellController.view];
+    btcECellController.headerTitleLabel.text = @"BTC-E";
+
+    UIImage *bgImage = [UIImage imageNamed:@"bg.png"];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:bgImage];
 }
 
 - (void)didReceiveMemoryWarning
