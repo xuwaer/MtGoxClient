@@ -13,6 +13,9 @@
 @class RemindSettingQueue;
 @class MBProgressHUD;
 
+/**
+ *	@brief	委托。完成添加、修改操作后，调用
+ */
 @protocol RemindSettingDelegate <NSObject>
 
 -(void)finishEditRemind:(Remind *)remind;
@@ -20,15 +23,18 @@
 
 @end
 
+/**
+ *	@brief	阀值设置界面
+ */
 @interface RemindSettingController : UIViewController
 {
     @private
-    Remind *_remind;
-    PickerViewUtil *picker;
+    Remind *_remind;            //提醒实体bean
+    PickerViewUtil *picker;     //用于生成picker的工具
     
-    RemindSettingQueue *remindQueue;
+    RemindSettingQueue *remindQueue;    //通讯控制层
     
-    MBProgressHUD *progress;
+    MBProgressHUD *progress;    //提示UI
 }
 
 @property (nonatomic, strong)Remind *remind;

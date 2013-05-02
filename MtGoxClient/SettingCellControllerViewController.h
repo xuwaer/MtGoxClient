@@ -10,17 +10,21 @@
 #import "RemindSettingController.h"
 
 @class SettingAlertControllerViewController;
+
+/**
+ *	@brief	设置界面group
+ */
 @interface SettingCellControllerViewController : UIViewController
-<UITableViewDataSource, UITableViewDelegate, RemindSettingDelegate>
+    <UITableViewDataSource, UITableViewDelegate, RemindSettingDelegate>
 {
     @private
-    NSMutableArray *dataSource;
+    NSMutableArray *dataSource;     //显示用数据源
 }
 
-@property (nonatomic, strong)IBOutlet UITableView *alertTableView;
-@property (nonatomic, strong)IBOutlet UIView *headerView;
+@property (nonatomic, strong)IBOutlet UITableView *alertTableView;      //提醒列表
+@property (nonatomic, strong)IBOutlet UIView *headerView;               //提醒group头
 
-@property (nonatomic, strong)NSMutableArray *dataArray;
+@property (nonatomic, strong)NSMutableArray *dataArray;                 //原始数据源
 
 @property (nonatomic, strong)SettingAlertControllerViewController *alterDelegate;
 

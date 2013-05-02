@@ -245,12 +245,22 @@
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
+/**
+ *	@brief	当阀值设置界面完成添加后，调用
+ *
+ *	@param 	remind 	添加后需要保存的数据
+ */
 -(void)finishAddRemind:(Remind *)remind
 {
     [self addData:remind];
     [self.alertTableView reloadData];
 }
 
+/**
+ *	@brief	当阀值设置界面完成修改后，调用
+ *
+ *	@param 	remind 	修改后需要保存的数据
+ */
 -(void)finishEditRemind:(Remind *)remind
 {
     [self editData:remind atIndex:remind.tag];

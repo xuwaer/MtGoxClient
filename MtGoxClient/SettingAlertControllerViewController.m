@@ -13,6 +13,11 @@
 
 @interface SettingAlertControllerViewController ()
 
+//初始化数据，从plist读取用户配置
+-(void)initData;
+//完成界面显示的调整
+-(void)setupUI;
+
 @end
 
 @implementation SettingAlertControllerViewController

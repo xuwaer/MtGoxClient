@@ -10,6 +10,9 @@
 
 @class SettingCellControllerViewController;
 
+/**
+ *	@brief	设置界面
+ */
 @interface SettingAlertControllerViewController : UIViewController
 {
     @private
@@ -17,8 +20,8 @@
     NSMutableArray *btcChinaReminds;
     NSMutableArray *btcEReminds;
 
-    SettingCellControllerViewController *mtGoxCellController;
-    SettingCellControllerViewController *btcChinaCellController;
-    SettingCellControllerViewController *btcECellController;
+    SettingCellControllerViewController *mtGoxCellController;           //MtGox平台，提醒列表
+    SettingCellControllerViewController *btcChinaCellController;        //btcChina平台，提醒列表
+    SettingCellControllerViewController *btcECellController;            //btc-E平台，提醒列表
 }
 @end

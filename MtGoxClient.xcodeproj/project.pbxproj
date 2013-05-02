@@ -268,6 +268,8 @@
 				B9366398172A83660077859A /* Constant.h */,
 				B9366392172A61B60077859A /* UserDefault.h */,
 				B9366393172A61B60077859A /* UserDefault.m */,
+				B9366395172A64790077859A /* Remind.h */,
+				B9366396172A64790077859A /* Remind.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -319,8 +321,6 @@
 			children = (
 				B9E563351728F82B005443A3 /* AppDelegate.h */,
 				B9E563361728F82B005443A3 /* AppDelegate.m */,
-				B9366395172A64790077859A /* Remind.h */,
-				B9366396172A64790077859A /* Remind.m */,
 				B9D8E237172BAEFB00A0A811 /* Custom Views */,
 				B9E5F317172A1263007FA1D1 /* View Controllers */,
 				B9366391172A619D0077859A /* Data */,

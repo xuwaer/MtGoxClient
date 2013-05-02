@@ -19,14 +19,15 @@ enum CurrencyType {
     CurrencyTypeCNY = 3
 };
 
+// 平台
 enum Platform {
     PlatformMtGox = 0,
     PlatformBtcChina = 1,
     PlatformBtcE = 2
 };
 
-static const int ThresholdCount = 2;
-static const int REPEAT_DELAY = 30;
+static const int ThresholdCount = 2;            //提醒个数
+static const int REPEAT_DELAY = 30;             //自动刷新间隔
 
 /**
  *	@brief	通过币种代码，转换为显示文字
