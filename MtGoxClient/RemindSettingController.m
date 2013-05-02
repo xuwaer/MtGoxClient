@@ -182,10 +182,14 @@
 -(BOOL)checkValidate
 {
     if ([self.currencyButton.titleLabel.text isEqualToString:@"请选择币种"]) {
+        
+        [ProgressUtil showProgress:@"请选择币种" super:self.view];
         return NO;
     }
     
     if (self.thresholdTextField.text.length <= 0) {
+        
+        [ProgressUtil showProgress:@"请输入阀值" super:self.view];
         return NO;
     }
     
@@ -194,10 +198,13 @@
 
 -(void)updateUIDisplay:(id)responseFromQueue
 {
-    if ([responseFromQueue isKindOfClass:[MtGoxTickerResponse class]]) {
-        
-        [progress removeFromSuperview];
-        
+    [progress removeFromSuperview];
+
+    if (responseFromQueue == nil || [responseFromQueue isEqual:[NSNull null]]) {
+        [ProgressUtil showProgress:@"添加失败" super:self.view];
+    }
+    else if ([responseFromQueue isKindOfClass:[MtGoxTickerResponse class]]) {
+                
         MtGoxTickerResponse *response = (MtGoxTickerResponse *)responseFromQueue;
         if ([self checkResponse:response.tag]) {
             
@@ -215,6 +222,9 @@
             }
         }
 
+    }
+    else {
+        [ProgressUtil showProgress:@"添加失败" super:self.view];
     }
 }
 

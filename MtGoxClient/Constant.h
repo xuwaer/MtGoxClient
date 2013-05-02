@@ -25,12 +25,8 @@ enum Platform {
     PlatformBtcE = 2
 };
 
-#define ThresholdCount 2
-
-static inline NSString* platformUrl(enum Platform platform, enum CurrencyType currency)
-{
-    return @"";
-}
+static const int ThresholdCount = 2;
+static const int REPEAT_DELAY = 30;
 
 /**
  *	@brief	通过币种代码，转换为显示文字

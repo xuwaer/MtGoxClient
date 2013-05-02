@@ -113,4 +113,6 @@
 
 #endif
 
+#define HTTP_REQUEST_TIMEOUT 10
+
 #endif

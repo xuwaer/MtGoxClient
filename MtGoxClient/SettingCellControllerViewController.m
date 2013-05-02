@@ -195,10 +195,10 @@
     }
     
     // 去掉tableview group的背景样式
-    UIImageView *backView  = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 281, 40)];
+    UIImageView *backView  = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 281, 39)];
     [backView setImage:[UIImage imageNamed:@"bg_cell.png"]];
     [cell setBackgroundView:backView];
-//    [cell setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_cell.png"]]];
+    [cell setBackgroundColor:[UIColor clearColor]];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
     return cell;

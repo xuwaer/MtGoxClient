@@ -51,6 +51,7 @@
     dispatch_block_t block = ^{@autoreleasepool{
         if (_requestGetQueue == nil) {
             _requestGetQueue = [[ASINetworkQueue alloc] init];
+            [_requestGetQueue setShouldCancelAllRequestsOnFailure:NO];
         }
         
         result = _requestGetQueue;
@@ -68,6 +69,7 @@
     dispatch_block_t block = ^{@autoreleasepool{
         if (_requestPostQueue == nil) {
             _requestPostQueue = [[ASINetworkQueue alloc] init];
+            [_requestGetQueue setShouldCancelAllRequestsOnFailure:NO];
         }
         result = _requestPostQueue;
     }};
@@ -219,6 +221,7 @@
         NSUInteger requestTag = [self saveRequestBeanTagInCache:[requestInfo tag]];
         NSString *requestCommand = [requestInfo encode];
         ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[self actionURL:requestCommand]];
+        request.timeOutSeconds = HTTP_REQUEST_TIMEOUT;
         [request setDelegate:self];
         [request setTag:requestTag];
         [request setUserInfo:userinfo];

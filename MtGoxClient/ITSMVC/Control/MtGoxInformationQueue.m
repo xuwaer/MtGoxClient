@@ -12,5 +12,9 @@
 
 @implementation MtGoxInformationQueue
 
+-(void)requestFailed:(ASIHTTPRequest *)request
+{
+    DDLogVerbose(@"%@", request.error);
+}
 
 @end

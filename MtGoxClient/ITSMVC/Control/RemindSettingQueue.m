@@ -40,4 +40,34 @@
     return NO;
 }
 
+-(void)request:(ASIHTTPRequest *)request didReceiveObject:(id)object
+{
+    
+    DDLogCVerbose(@"%@(%@)tag:%d", NSStringFromClass([self class]), THIS_METHOD, [(id<ITSResponseDelegate>)object tag]);
+    
+    NSUInteger resultTag = [self getContextTag:request];
+    
+    [self performContext:resultTag object:object];
+}
+
+-(void)requestFailed:(ASIHTTPRequest *)request
+{
+    DDLogCVerbose(@"%@(%@)", NSStringFromClass([self class]), THIS_METHOD);
+    
+    NSUInteger resultTag = [self getContextTag:request];
+    TargetContext *context = [self getContext:resultTag];
+    [self removeContext:resultTag];
+    
+    
+    if (context && context.target && context.selector) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+            [context.target performSelector:context.selector withObject:[NSNull null]];
+#pragma clang diagnostic pop
+        });
+    }
+}
+
 @end

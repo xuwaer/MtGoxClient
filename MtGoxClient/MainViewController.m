@@ -13,7 +13,7 @@
 
 #import "TickerCell.h"
 
-#import "SettingViewController.h"
+//#import "SettingViewController.h"
 #import "SettingAlertControllerViewController.h"
 
 @interface MainViewController ()
@@ -129,13 +129,13 @@
     [self setupUI];
     
     [self loadTicker];
-    timer = [NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(loadTicker) userInfo:nil repeats:YES];
+    timer = [NSTimer scheduledTimerWithTimeInterval:REPEAT_DELAY target:self selector:@selector(loadTicker) userInfo:nil repeats:YES];
 }
 
 - (void)setupUI
 {
     UIButton *settingButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [settingButton setBackgroundImage:[UIImage imageNamed:@"Setting@2x.png"] forState:UIControlStateNormal];
+    [settingButton setBackgroundImage:[UIImage imageNamed:@"Setting.png"] forState:UIControlStateNormal];
     [settingButton addTarget:self action:@selector(showSetting) forControlEvents:UIControlEventTouchUpInside];
     [settingButton setFrame:CGRectMake(0.0, 0.0, 35.0, 35.0)];
     UIBarButtonItem *settingButtonItem = [[UIBarButtonItem alloc] initWithCustomView:settingButton];
