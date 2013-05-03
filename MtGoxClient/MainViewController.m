@@ -146,10 +146,26 @@
     PriceCell *eurCell = [[[NSBundle mainBundle] loadNibNamed:@"PriceCell" owner:self options:nil] lastObject];
     PriceCell *jpyCell = [[[NSBundle mainBundle] loadNibNamed:@"PriceCell" owner:self options:nil] lastObject];
     PriceCell *cnyCell = [[[NSBundle mainBundle] loadNibNamed:@"PriceCell" owner:self options:nil] lastObject];
-    usdCell.frame = CGRectMake(10, 136, 300, 106);
-    eurCell.frame = CGRectMake(10, 206, 300, 106);
-    jpyCell.frame = CGRectMake(10, 276, 300, 106);
-    cnyCell.frame = CGRectMake(10, 346, 300, 106);
+    
+    if ([DeviceUtil isiPhone5Device]) {
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 0, 300, 180)];
+        imageView.image = [UIImage imageNamed:@"bg_pic.png"];
+        [self.view addSubview:imageView];
+        usdCell.frame = CGRectMake(10, 176, 300, 106);
+        eurCell.frame = CGRectMake(10, 246, 300, 106);
+        jpyCell.frame = CGRectMake(10, 316, 300, 106);
+        cnyCell.frame = CGRectMake(10, 386, 300, 106);
+    }
+    else {
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, -20, 300, 180)];
+        imageView.image = [UIImage imageNamed:@"bg_pic.png"];
+        [self.view addSubview:imageView];
+        
+        usdCell.frame = CGRectMake(10, 96, 300, 106);
+        eurCell.frame = CGRectMake(10, 166, 300, 106);
+        jpyCell.frame = CGRectMake(10, 236, 300, 106);
+        cnyCell.frame = CGRectMake(10, 306, 300, 106);
+    }
 
     [self.view addSubview:usdCell];
     [self.view addSubview:eurCell];
