@@ -11,6 +11,7 @@
 #import "ASIFormDataRequest.h"
 #import "ITSRequest.h"
 #import "ITSResponse.h"
+#import "ITS.h"
 
 #define kStream_Cache_RequestBean_Tag @"kStream_Cache_RequestBean_Tag"
 #define kStream_Cache_Response_Data @"kStream_Cache_Response_Data"
@@ -95,7 +96,7 @@
     else {
         hostUrl = requestCommand;
         
-        DDLogVerbose(@"url : %@", hostUrl);
+        DDLogVerbose(@"%@", hostUrl);
         
         return [NSURL URLWithString:hostUrl];
     }

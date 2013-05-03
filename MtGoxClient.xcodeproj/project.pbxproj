@@ -26,6 +26,19 @@
 		B9BA8BE4172B7C910049C878 /* bg_model_text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9BA8BDC172B7C910049C878 /* bg_model_text@2x.png */; };
 		B9BA8BE7172B974E0049C878 /* RemindAddCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BA8BE6172B974D0049C878 /* RemindAddCell.m */; };
 		B9BA8BE9172B97E80049C878 /* RemindAddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9BA8BE8172B97E80049C878 /* RemindAddCell.xib */; };
+		B9C5688117334F4F00146192 /* bg_pic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C5688017334F4F00146192 /* bg_pic@2x.png */; };
+		B9C568841733528200146192 /* bg_main_section@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C568821733528200146192 /* bg_main_section@2x.png */; };
+		B9C568851733528200146192 /* bg_price@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C568831733528200146192 /* bg_price@2x.png */; };
+		B9C5688D173363C500146192 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9C5688B173363C500146192 /* MainViewController.xib */; };
+		B9C56891173364AF00146192 /* TickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C5688F173364AF00146192 /* TickerViewController.m */; };
+		B9C56892173364AF00146192 /* TickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9C56890173364AF00146192 /* TickerViewController.xib */; };
+		B9C568951733655C00146192 /* PriceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C568941733655B00146192 /* PriceCell.m */; };
+		B9C56897173365AE00146192 /* PriceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9C56896173365AE00146192 /* PriceCell.xib */; };
+		B9C5689C173389DB00146192 /* CNY@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C56898173389DB00146192 /* CNY@2x.png */; };
+		B9C5689D173389DB00146192 /* EUR@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C56899173389DB00146192 /* EUR@2x.png */; };
+		B9C5689E173389DB00146192 /* JPY@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C5689A173389DB00146192 /* JPY@2x.png */; };
+		B9C5689F173389DB00146192 /* USD@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C5689B173389DB00146192 /* USD@2x.png */; };
+		B9C568A117338B1E00146192 /* btn_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C568A017338B1E00146192 /* btn_setting@2x.png */; };
 		B9D8E245172BB28400A0A811 /* PickerViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D8E244172BB28400A0A811 /* PickerViewUtil.m */; };
 		B9D8E248172BCEA700A0A811 /* RemindSettingQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D8E247172BCEA700A0A811 /* RemindSettingQueue.m */; };
 		B9E563271728F82B005443A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E563261728F82B005443A3 /* UIKit.framework */; };
@@ -76,9 +89,6 @@
 		B9E5648E1728F9BC005443A3 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E5648D1728F9BC005443A3 /* libz.1.2.5.dylib */; };
 		B9E564901728F9DC005443A3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E5648F1728F9DC005443A3 /* Security.framework */; };
 		B9E5F31B172A1285007FA1D1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E5F319172A1285007FA1D1 /* MainViewController.m */; };
-		B9E5F31C172A1285007FA1D1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E5F31A172A1285007FA1D1 /* MainViewController.xib */; };
-		B9E5F31F172A12E1007FA1D1 /* TickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E5F31E172A12E1007FA1D1 /* TickerCell.m */; };
-		B9E5F321172A12F3007FA1D1 /* TickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E5F320172A12F3007FA1D1 /* TickerCell.xib */; };
 		B9E5F326172A532D007FA1D1 /* Setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9E5F325172A532D007FA1D1 /* Setting@2x.png */; };
 		B9E5F32A172A5BC8007FA1D1 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E5F328172A5BC7007FA1D1 /* SettingViewController.m */; };
 		B9E5F32B172A5BC8007FA1D1 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E5F329172A5BC7007FA1D1 /* SettingViewController.xib */; };
@@ -126,6 +136,21 @@
 		B9BA8BE5172B974D0049C878 /* RemindAddCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindAddCell.h; sourceTree = "<group>"; };
 		B9BA8BE6172B974D0049C878 /* RemindAddCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindAddCell.m; sourceTree = "<group>"; };
 		B9BA8BE8172B97E80049C878 /* RemindAddCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RemindAddCell.xib; sourceTree = "<group>"; };
+		B9C5688017334F4F00146192 /* bg_pic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_pic@2x.png"; sourceTree = "<group>"; };
+		B9C568821733528200146192 /* bg_main_section@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_main_section@2x.png"; sourceTree = "<group>"; };
+		B9C568831733528200146192 /* bg_price@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_price@2x.png"; sourceTree = "<group>"; };
+		B9C5688B173363C500146192 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		B9C5688E173364AF00146192 /* TickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TickerViewController.h; sourceTree = "<group>"; };
+		B9C5688F173364AF00146192 /* TickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TickerViewController.m; sourceTree = "<group>"; };
+		B9C56890173364AF00146192 /* TickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TickerViewController.xib; sourceTree = "<group>"; };
+		B9C568931733655B00146192 /* PriceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceCell.h; sourceTree = "<group>"; };
+		B9C568941733655B00146192 /* PriceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceCell.m; sourceTree = "<group>"; };
+		B9C56896173365AE00146192 /* PriceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PriceCell.xib; sourceTree = "<group>"; };
+		B9C56898173389DB00146192 /* CNY@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CNY@2x.png"; sourceTree = "<group>"; };
+		B9C56899173389DB00146192 /* EUR@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EUR@2x.png"; sourceTree = "<group>"; };
+		B9C5689A173389DB00146192 /* JPY@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "JPY@2x.png"; sourceTree = "<group>"; };
+		B9C5689B173389DB00146192 /* USD@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "USD@2x.png"; sourceTree = "<group>"; };
+		B9C568A017338B1E00146192 /* btn_setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_setting@2x.png"; sourceTree = "<group>"; };
 		B9D8E243172BB28400A0A811 /* PickerViewUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewUtil.h; sourceTree = "<group>"; };
 		B9D8E244172BB28400A0A811 /* PickerViewUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewUtil.m; sourceTree = "<group>"; };
 		B9D8E246172BCEA700A0A811 /* RemindSettingQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindSettingQueue.h; sourceTree = "<group>"; };
@@ -224,10 +249,6 @@
 		B9E5648F1728F9DC005443A3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		B9E5F318172A1285007FA1D1 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		B9E5F319172A1285007FA1D1 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		B9E5F31A172A1285007FA1D1 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		B9E5F31D172A12E1007FA1D1 /* TickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TickerCell.h; sourceTree = "<group>"; };
-		B9E5F31E172A12E1007FA1D1 /* TickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TickerCell.m; sourceTree = "<group>"; };
-		B9E5F320172A12F3007FA1D1 /* TickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TickerCell.xib; sourceTree = "<group>"; };
 		B9E5F325172A532D007FA1D1 /* Setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Setting@2x.png"; sourceTree = "<group>"; };
 		B9E5F327172A5BC7007FA1D1 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		B9E5F328172A5BC7007FA1D1 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
@@ -290,6 +311,15 @@
 				B9EE9A94172CEB2A00DAF948 /* HUD */,
 				B9D8E243172BB28400A0A811 /* PickerViewUtil.h */,
 				B9D8E244172BB28400A0A811 /* PickerViewUtil.m */,
+				B902B7FC172A9577007872F0 /* RemindCell.h */,
+				B902B7FD172A9577007872F0 /* RemindCell.m */,
+				B902B7FF172A9596007872F0 /* RemindCell.xib */,
+				B9BA8BE5172B974D0049C878 /* RemindAddCell.h */,
+				B9BA8BE6172B974D0049C878 /* RemindAddCell.m */,
+				B9BA8BE8172B97E80049C878 /* RemindAddCell.xib */,
+				B9C568931733655B00146192 /* PriceCell.h */,
+				B9C568941733655B00146192 /* PriceCell.m */,
+				B9C56896173365AE00146192 /* PriceCell.xib */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -573,19 +603,10 @@
 			children = (
 				B9E5F318172A1285007FA1D1 /* MainViewController.h */,
 				B9E5F319172A1285007FA1D1 /* MainViewController.m */,
-				B9E5F31A172A1285007FA1D1 /* MainViewController.xib */,
-				B9E5F31D172A12E1007FA1D1 /* TickerCell.h */,
-				B9E5F31E172A12E1007FA1D1 /* TickerCell.m */,
-				B9E5F320172A12F3007FA1D1 /* TickerCell.xib */,
+				B9C5688B173363C500146192 /* MainViewController.xib */,
 				B9E5F327172A5BC7007FA1D1 /* SettingViewController.h */,
 				B9E5F328172A5BC7007FA1D1 /* SettingViewController.m */,
 				B9E5F329172A5BC7007FA1D1 /* SettingViewController.xib */,
-				B902B7FC172A9577007872F0 /* RemindCell.h */,
-				B902B7FD172A9577007872F0 /* RemindCell.m */,
-				B902B7FF172A9596007872F0 /* RemindCell.xib */,
-				B9BA8BE5172B974D0049C878 /* RemindAddCell.h */,
-				B9BA8BE6172B974D0049C878 /* RemindAddCell.m */,
-				B9BA8BE8172B97E80049C878 /* RemindAddCell.xib */,
 				B9BA8BD0172B77C50049C878 /* RemindSettingController.h */,
 				B9BA8BD1172B77C50049C878 /* RemindSettingController.m */,
 				B9BA8BD2172B77C50049C878 /* RemindSettingController.xib */,
@@ -595,6 +616,9 @@
 				B9E9B6201731FF6E007FFDCD /* SettingCellControllerViewController.h */,
 				B9E9B6211731FF6E007FFDCD /* SettingCellControllerViewController.m */,
 				B9E9B6221731FF6E007FFDCD /* SettingCellControllerViewController.xib */,
+				B9C5688E173364AF00146192 /* TickerViewController.h */,
+				B9C5688F173364AF00146192 /* TickerViewController.m */,
+				B9C56890173364AF00146192 /* TickerViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -602,6 +626,14 @@
 		B9E5F324172A5303007FA1D1 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				B9C568A017338B1E00146192 /* btn_setting@2x.png */,
+				B9C56898173389DB00146192 /* CNY@2x.png */,
+				B9C56899173389DB00146192 /* EUR@2x.png */,
+				B9C5689A173389DB00146192 /* JPY@2x.png */,
+				B9C5689B173389DB00146192 /* USD@2x.png */,
+				B9C568821733528200146192 /* bg_main_section@2x.png */,
+				B9C568831733528200146192 /* bg_price@2x.png */,
+				B9C5688017334F4F00146192 /* bg_pic@2x.png */,
 				B9E9B63717327394007FFDCD /* bg_nav@2x.png */,
 				B9E9B63217326C63007FFDCD /* bg@2x.png */,
 				B9E9B62517320C10007FFDCD /* bg_cell@2x.png */,
@@ -687,8 +719,6 @@
 				B9E5633B1728F82B005443A3 /* Default@2x.png in Resources */,
 				B9E5633D1728F82B005443A3 /* Default-568h@2x.png in Resources */,
 				B9E564821728F8D3005443A3 /* README.txt in Resources */,
-				B9E5F31C172A1285007FA1D1 /* MainViewController.xib in Resources */,
-				B9E5F321172A12F3007FA1D1 /* TickerCell.xib in Resources */,
 				B9E5F326172A532D007FA1D1 /* Setting@2x.png in Resources */,
 				B9E5F32B172A5BC8007FA1D1 /* SettingViewController.xib in Resources */,
 				B9BA8BD4172B77C50049C878 /* RemindSettingController.xib in Resources */,
@@ -709,6 +739,17 @@
 				B9E9B62A17320C10007FFDCD /* plus_btn@2x.png in Resources */,
 				B9E9B63317326C63007FFDCD /* bg@2x.png in Resources */,
 				B9E9B63817327394007FFDCD /* bg_nav@2x.png in Resources */,
+				B9C5688117334F4F00146192 /* bg_pic@2x.png in Resources */,
+				B9C568841733528200146192 /* bg_main_section@2x.png in Resources */,
+				B9C568851733528200146192 /* bg_price@2x.png in Resources */,
+				B9C5688D173363C500146192 /* MainViewController.xib in Resources */,
+				B9C56892173364AF00146192 /* TickerViewController.xib in Resources */,
+				B9C56897173365AE00146192 /* PriceCell.xib in Resources */,
+				B9C5689C173389DB00146192 /* CNY@2x.png in Resources */,
+				B9C5689D173389DB00146192 /* EUR@2x.png in Resources */,
+				B9C5689E173389DB00146192 /* JPY@2x.png in Resources */,
+				B9C5689F173389DB00146192 /* USD@2x.png in Resources */,
+				B9C568A117338B1E00146192 /* btn_setting@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -757,7 +798,6 @@
 				B98965C9172901A300260BFF /* MtGoxTickerRequest.m in Sources */,
 				B98965D51729069600260BFF /* MtGoxTickerResponse.m in Sources */,
 				B9E5F31B172A1285007FA1D1 /* MainViewController.m in Sources */,
-				B9E5F31F172A12E1007FA1D1 /* TickerCell.m in Sources */,
 				B9E5F32A172A5BC8007FA1D1 /* SettingViewController.m in Sources */,
 				B9366394172A61B60077859A /* UserDefault.m in Sources */,
 				B9366397172A64790077859A /* Remind.m in Sources */,
@@ -772,6 +812,8 @@
 				B9E9B6231731FF6E007FFDCD /* SettingCellControllerViewController.m in Sources */,
 				B9E9B62E17325F97007FFDCD /* RemindSetReqest.m in Sources */,
 				B9E9B63117326943007FFDCD /* RemindSetResponse.m in Sources */,
+				B9C56891173364AF00146192 /* TickerViewController.m in Sources */,
+				B9C568951733655C00146192 /* PriceCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

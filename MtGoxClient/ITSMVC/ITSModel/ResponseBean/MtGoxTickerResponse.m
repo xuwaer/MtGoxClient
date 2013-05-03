@@ -129,8 +129,8 @@ NSString const * nowKey = @"now";
 {
     if (_subDic == nil)     return;
     
-    _value = [_subDic objectForKey:kValue];
-    _value_int = [_subDic objectForKey:kValue_int];
+    _value = [NSNumber numberWithFloat:[[_subDic objectForKey:kValue] floatValue]];
+    _value_int = [NSNumber numberWithInt:[[_subDic objectForKey:kValue_int] intValue]];
     _display = [_subDic objectForKey:kDisplay];
     _display_short = [_subDic objectForKey:kDisplay_short];
     _currency = [_subDic objectForKey:kCurrency];

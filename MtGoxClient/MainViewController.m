@@ -11,7 +11,8 @@
 #import "MtGoxTickerRequest.h"
 #import "MtGoxTickerResponse.h"
 
-#import "TickerCell.h"
+#import "PriceCell.h"
+#import "TransManager.h"
 
 //#import "SettingViewController.h"
 #import "SettingAlertControllerViewController.h"
@@ -27,6 +28,7 @@
     self = [super init];
     if (self) {
         [self setupHttpQueue];
+        customViews = [[NSMutableDictionary alloc] init];
     }
     
     return self;
@@ -37,6 +39,7 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         [self setupHttpQueue];
+        customViews = [[NSMutableDictionary alloc] init];
     }
     
     return self;
@@ -47,18 +50,9 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         [self setupHttpQueue];
+        customViews = [[NSMutableDictionary alloc] init];
     }
     
-    return self;
-}
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-        [self setupHttpQueue];
-    }
     return self;
 }
 
@@ -68,6 +62,8 @@
         [timer invalidate];
         timer = nil;
     }
+    
+    [customViews removeAllObjects];
     
     [self destoryHttpQueue];
 }
@@ -106,7 +102,10 @@
         else if (response.tag == kActionTag_Response_CNY)
             mtGoxCNYResponse = response;
         
-        [self.tableView reloadData];
+        
+        PriceCell *cell = [customViews objectForKey:[NSString stringWithFormat:@"%d", response.tag]];
+        [cell display:response];
+//        [self.tableView reloadData];
     }
 }
 
@@ -115,6 +114,12 @@
 #pragma mark - life cycle
 
 //////////////////////////////////////////////////////////////////////////////////////////
+
+-(void)loadView
+{
+    [super loadView];
+    [self setupUI];
+}
 
 - (void)viewDidLoad
 {
@@ -126,129 +131,49 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    [self setupUI];
-    
     [self loadTicker];
     timer = [NSTimer scheduledTimerWithTimeInterval:REPEAT_DELAY target:self selector:@selector(loadTicker) userInfo:nil repeats:YES];
 }
 
 - (void)setupUI
 {
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, -20, 300, 180)];
+    imageView.image = [UIImage imageNamed:@"bg_pic.png"];
+    [self.view addSubview:imageView];
+    
+    PriceCell *usdCell = [[[NSBundle mainBundle] loadNibNamed:@"PriceCell" owner:self options:nil] lastObject];
+    PriceCell *eurCell = [[[NSBundle mainBundle] loadNibNamed:@"PriceCell" owner:self options:nil] lastObject];
+    PriceCell *jpyCell = [[[NSBundle mainBundle] loadNibNamed:@"PriceCell" owner:self options:nil] lastObject];
+    PriceCell *cnyCell = [[[NSBundle mainBundle] loadNibNamed:@"PriceCell" owner:self options:nil] lastObject];
+    usdCell.frame = CGRectMake(10, 136, 300, 106);
+    eurCell.frame = CGRectMake(10, 206, 300, 106);
+    jpyCell.frame = CGRectMake(10, 276, 300, 106);
+    cnyCell.frame = CGRectMake(10, 346, 300, 106);
+
+    [self.view addSubview:usdCell];
+    [self.view addSubview:eurCell];
+    [self.view addSubview:jpyCell];
+    [self.view addSubview:cnyCell];
+    
+    [customViews setValue:usdCell forKey:[[NSNumber numberWithInt:kActionTag_Response_USD] stringValue]];
+    [customViews setValue:eurCell forKey:[[NSNumber numberWithInt:kActionTag_Response_EUR] stringValue]];
+    [customViews setValue:jpyCell forKey:[[NSNumber numberWithInt:kActionTag_Response_JPY] stringValue]];
+    [customViews setValue:cnyCell forKey:[[NSNumber numberWithInt:kActionTag_Response_CNY] stringValue]];
+    
     UIButton *settingButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [settingButton setBackgroundImage:[UIImage imageNamed:@"Setting.png"] forState:UIControlStateNormal];
+    [settingButton setBackgroundImage:[UIImage imageNamed:@"btn_setting.png"] forState:UIControlStateNormal];
     [settingButton addTarget:self action:@selector(showSetting) forControlEvents:UIControlEventTouchUpInside];
-    [settingButton setFrame:CGRectMake(0.0, 0.0, 35.0, 35.0)];
+    [settingButton setFrame:CGRectMake(10.0, 0.0, 26.0, 26.0)];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:settingButton];
+    
+    UIImage *bgImage = [UIImage imageNamed:@"bg.png"];
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:bgImage]];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    // Return the number of rows in the section.
-    return 4;
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 90;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    
-    TickerCell *cell = (TickerCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"TickerCell" owner:self options:nil] lastObject];
-    }
-
-    // Configure the cell...
-
-    switch (indexPath.row) {
-        case 0:
-            [cell display:mtGoxUSDResponse];
-            break;
-        case 1:
-            [cell display:mtGoxEURResponse];
-            break;
-        case 2:
-            [cell display:mtGoxJPYResponse];
-            break;
-        case 3:
-            [cell display:mtGoxCNYResponse];
-            break;
-        default:
-            break;
-    }
-    
-    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    
-    return cell;
-}
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
 }
 
 /**

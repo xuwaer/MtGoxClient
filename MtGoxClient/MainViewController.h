@@ -11,7 +11,7 @@
 @class MtGoxInformationQueue;
 @class MtGoxTickerResponse;
 
-@interface MainViewController : UITableViewController
+@interface MainViewController : UIViewController
 {
     @private
     MtGoxInformationQueue *mtGoxQueue;
@@ -22,6 +22,8 @@
     MtGoxTickerResponse *mtGoxCNYResponse;
     
     NSTimer *timer;
+    
+    NSMutableDictionary *customViews;
 }
 
 @end

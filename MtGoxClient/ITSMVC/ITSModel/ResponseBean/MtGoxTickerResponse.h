@@ -7,6 +7,7 @@
 //
 
 #import "BaseResponse.h"
+#import "ITSResponse.h"
 
 /**
  *  @brief 解析封装服务器传输过来的数据
