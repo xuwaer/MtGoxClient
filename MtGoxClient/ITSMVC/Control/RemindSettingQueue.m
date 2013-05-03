@@ -60,4 +60,10 @@
     }
 }
 
+-(void)requestFinished:(ASIHTTPRequest *)request
+{
+//    DDLogCVerbose(@"result : %@", [request responseString]);
+    [super requestFinished:request];
+}
+
 @end

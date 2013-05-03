@@ -14,7 +14,7 @@
 @synthesize plat;
 @synthesize cur;
 @synthesize check;
-@synthesize isLarge;
+@synthesize islarge;
 
 -(NSUInteger)tag
 {

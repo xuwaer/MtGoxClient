@@ -14,6 +14,6 @@
 @property (nonatomic, copy)NSString *plat;
 @property (nonatomic, copy)NSString *cur;
 @property (nonatomic, assign)float check;
-@property (nonatomic, assign)BOOL isLarge;
+@property (nonatomic, assign)BOOL islarge;
 
 @end

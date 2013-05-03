@@ -10,6 +10,7 @@
 
 #import "UserDefault.h"
 #import "SettingCellControllerViewController.h"
+#import "DeviceUtil.h"
 
 @interface SettingAlertControllerViewController ()
 
@@ -66,20 +67,21 @@
     mtGoxCellController.view.frame = mtGoxFrame;
     [self.scrollView addSubview:mtGoxCellController.view];
     mtGoxCellController.headerTitleLabel.text = @"MtGox";
-    
-    CGRect btcChinaFrame = CGRectMake(8, 147, 303, 169);
-    btcChinaCellController.view.frame = btcChinaFrame;
-    [self.scrollView addSubview:btcChinaCellController.view];
-    btcChinaCellController.headerTitleLabel.text = @"BTCChina";
-    
-    CGRect btcEFrame = CGRectMake(8, 282, 303, 169);
-    btcECellController.view.frame = btcEFrame;
-    [self.scrollView addSubview:btcECellController.view];
-    btcECellController.headerTitleLabel.text = @"BTC-E";
+//    
+//    CGRect btcChinaFrame = CGRectMake(8, 147, 303, 169);
+//    btcChinaCellController.view.frame = btcChinaFrame;
+//    [self.scrollView addSubview:btcChinaCellController.view];
+//    btcChinaCellController.headerTitleLabel.text = @"BTCChina";
+//    
+//    CGRect btcEFrame = CGRectMake(8, 282, 303, 169);
+//    btcECellController.view.frame = btcEFrame;
+//    [self.scrollView addSubview:btcECellController.view];
+//    btcECellController.headerTitleLabel.text = @"BTC-E";
+//
+//    UIImage *bgImage = [UIImage imageNamed:@"bg.png"];
+//    self.view.backgroundColor = [UIColor colorWithPatternImage:bgImage];
+    [DeviceUtil setBackground:self.view imageiPhone:@"bg.png" imageiPhone5:@"bg_iphone5.png"];
 
-    UIImage *bgImage = [UIImage imageNamed:@"bg.png"];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:bgImage];
-    
     // 设置返回按钮样式
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [backButton setBackgroundImage:[UIImage imageNamed:@"btn_back.png"] forState:UIControlStateNormal];

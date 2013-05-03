@@ -19,6 +19,7 @@
 
 #import "MBProgressHUD.h"
 #import "ProgressUtil.h"
+#import "DeviceUtil.h"
 
 #import "UserDefault.h"
 #import "Constant.h"
@@ -77,11 +78,9 @@
     [picker createPickerView:@"请选择币种" dataSource:dic defaultIndex:2];
     
     [picker addTarget:self selector:@selector(didSelectedCurrency:) userinfo:nil forEvent:PickerViewUitlEventConfirm];
-//    [picker addTarget:self selector:@selector(didCanceledCurrency:) userinfo:nil forEvent:PickerViewUitlEventCancel];
 
     isNew = NO;
     if (self.remind) {
-        isNew = YES;
         self.currencyButton.tag = self.remind.currency;
         const char * currencyChar = currencyTypeConvertToCurrencyName(self.remind.currency);
         NSString *currencyStr = [NSString stringWithCString:currencyChar encoding:NSUTF8StringEncoding];
@@ -93,8 +92,9 @@
 
 -(void)setupUI
 {
-    UIImage *bgImage = [UIImage imageNamed:@"bg.png"];
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:bgImage]];
+//    UIImage *bgImage = [UIImage imageNamed:@"bg.png"];
+//    [self.view setBackgroundColor:[UIColor colorWithPatternImage:bgImage]];
+    [DeviceUtil setBackground:self.view imageiPhone:@"bg.png" imageiPhone5:@"bg_iphone5.png"];
     [self.navBar setBackgroundImage:[UIImage imageNamed:@"bg_nav.png"] forBarMetrics:0];
 }
 
@@ -310,7 +310,7 @@
 -(void)sendRemind
 {
     // 请求Url
-    const char * commandChar = getRemindServerRequestUrl(RemindType_GetAlert);
+    const char * commandChar = getRemindServerRequestUrl(RemindType_SetAlert);
     NSString *commandStr = [NSString stringWithCString:commandChar encoding:NSUTF8StringEncoding];
     RemindSetReqest *request = [[RemindSetReqest alloc] initWithCommand:commandStr type:HttpRequestTypeGet];
     
@@ -327,7 +327,7 @@
     // 阀值
     request.check = self.remind.threshold;
     // 大于？
-    request.isLarge = self.remind.isLarge;
+    request.islarge = self.remind.isLarge;
     // token
     request.token = DEFAULT_TOKEN;
     

@@ -13,6 +13,7 @@
 
 #import "PriceCell.h"
 #import "TransManager.h"
+#import "DeviceUtil.h"
 
 //#import "SettingViewController.h"
 #import "SettingAlertControllerViewController.h"
@@ -166,8 +167,9 @@
     [settingButton setFrame:CGRectMake(0.0, 0.0, 26.0, 26.0)];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:settingButton];
     
-    UIImage *bgImage = [UIImage imageNamed:@"bg.png"];
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:bgImage]];
+    [DeviceUtil setBackground:self.view imageiPhone:@"bg.png" imageiPhone5:@"bg_iphone5.png"];
+//    UIImage *bgImage = [UIImage imageNamed:@"bg.png"];
+//    [self.view setBackgroundColor:[UIColor colorWithPatternImage:bgImage]];
 }
 
 - (void)didReceiveMemoryWarning

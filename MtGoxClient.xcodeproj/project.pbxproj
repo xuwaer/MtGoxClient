@@ -16,14 +16,6 @@
 		B98965D51729069600260BFF /* MtGoxTickerResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B98965D41729069600260BFF /* MtGoxTickerResponse.m */; };
 		B9BA8BD3172B77C50049C878 /* RemindSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BA8BD1172B77C50049C878 /* RemindSettingController.m */; };
 		B9BA8BD4172B77C50049C878 /* RemindSettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9BA8BD2172B77C50049C878 /* RemindSettingController.xib */; };
-		B9BA8BDD172B7C910049C878 /* bg_btn_gray_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9BA8BD5172B7C910049C878 /* bg_btn_gray_pressed@2x.png */; };
-		B9BA8BDE172B7C910049C878 /* bg_btn_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9BA8BD6172B7C910049C878 /* bg_btn_gray@2x.png */; };
-		B9BA8BDF172B7C910049C878 /* bg_btn_yellow_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9BA8BD7172B7C910049C878 /* bg_btn_yellow_pressed@2x.png */; };
-		B9BA8BE0172B7C910049C878 /* bg_btn_yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9BA8BD8172B7C910049C878 /* bg_btn_yellow@2x.png */; };
-		B9BA8BE1172B7C910049C878 /* bg_model_select_empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9BA8BD9172B7C910049C878 /* bg_model_select_empty@2x.png */; };
-		B9BA8BE2172B7C910049C878 /* bg_model_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9BA8BDA172B7C910049C878 /* bg_model_select@2x.png */; };
-		B9BA8BE3172B7C910049C878 /* bg_model_text_empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9BA8BDB172B7C910049C878 /* bg_model_text_empty@2x.png */; };
-		B9BA8BE4172B7C910049C878 /* bg_model_text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9BA8BDC172B7C910049C878 /* bg_model_text@2x.png */; };
 		B9BA8BE7172B974E0049C878 /* RemindAddCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BA8BE6172B974D0049C878 /* RemindAddCell.m */; };
 		B9BA8BE9172B97E80049C878 /* RemindAddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9BA8BE8172B97E80049C878 /* RemindAddCell.xib */; };
 		B9C5688117334F4F00146192 /* bg_pic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C5688017334F4F00146192 /* bg_pic@2x.png */; };
@@ -43,6 +35,12 @@
 		B9C568A51733954600146192 /* img_pic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C568A41733954600146192 /* img_pic@2x.png */; };
 		B9C568A81733991400146192 /* btn_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C568A61733991400146192 /* btn_down@2x.png */; };
 		B9C568A91733991400146192 /* btn_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C568A71733991400146192 /* btn_up@2x.png */; };
+		B9C568AC1733B0DD00146192 /* btn_dropdown_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C568AA1733B0DD00146192 /* btn_dropdown_down@2x.png */; };
+		B9C568AD1733B0DD00146192 /* btn_dropdown_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C568AB1733B0DD00146192 /* btn_dropdown_up@2x.png */; };
+		B9C568AF1733B1BB00146192 /* bg_text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C568AE1733B1BB00146192 /* bg_text@2x.png */; };
+		B9C568B31733B9DD00146192 /* UIDevice+Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C568B21733B9DD00146192 /* UIDevice+Hardware.m */; };
+		B9C568B61733BC4D00146192 /* DeviceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C568B51733BC4D00146192 /* DeviceUtil.m */; };
+		B9C568B81733BE9F00146192 /* bg_iphone5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C568B71733BE9F00146192 /* bg_iphone5@2x.png */; };
 		B9D8E245172BB28400A0A811 /* PickerViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D8E244172BB28400A0A811 /* PickerViewUtil.m */; };
 		B9D8E248172BCEA700A0A811 /* RemindSettingQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D8E247172BCEA700A0A811 /* RemindSettingQueue.m */; };
 		B9E563271728F82B005443A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E563261728F82B005443A3 /* UIKit.framework */; };
@@ -93,7 +91,6 @@
 		B9E5648E1728F9BC005443A3 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E5648D1728F9BC005443A3 /* libz.1.2.5.dylib */; };
 		B9E564901728F9DC005443A3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E5648F1728F9DC005443A3 /* Security.framework */; };
 		B9E5F31B172A1285007FA1D1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E5F319172A1285007FA1D1 /* MainViewController.m */; };
-		B9E5F326172A532D007FA1D1 /* Setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9E5F325172A532D007FA1D1 /* Setting@2x.png */; };
 		B9E5F32A172A5BC8007FA1D1 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E5F328172A5BC7007FA1D1 /* SettingViewController.m */; };
 		B9E5F32B172A5BC8007FA1D1 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E5F329172A5BC7007FA1D1 /* SettingViewController.xib */; };
 		B9E9B61E1731FEEC007FFDCD /* SettingAlertControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E9B61C1731FEEC007FFDCD /* SettingAlertControllerViewController.m */; };
@@ -129,14 +126,6 @@
 		B9BA8BD0172B77C50049C878 /* RemindSettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindSettingController.h; sourceTree = "<group>"; };
 		B9BA8BD1172B77C50049C878 /* RemindSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindSettingController.m; sourceTree = "<group>"; };
 		B9BA8BD2172B77C50049C878 /* RemindSettingController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RemindSettingController.xib; sourceTree = "<group>"; };
-		B9BA8BD5172B7C910049C878 /* bg_btn_gray_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_btn_gray_pressed@2x.png"; sourceTree = "<group>"; };
-		B9BA8BD6172B7C910049C878 /* bg_btn_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_btn_gray@2x.png"; sourceTree = "<group>"; };
-		B9BA8BD7172B7C910049C878 /* bg_btn_yellow_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_btn_yellow_pressed@2x.png"; sourceTree = "<group>"; };
-		B9BA8BD8172B7C910049C878 /* bg_btn_yellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_btn_yellow@2x.png"; sourceTree = "<group>"; };
-		B9BA8BD9172B7C910049C878 /* bg_model_select_empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_model_select_empty@2x.png"; sourceTree = "<group>"; };
-		B9BA8BDA172B7C910049C878 /* bg_model_select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_model_select@2x.png"; sourceTree = "<group>"; };
-		B9BA8BDB172B7C910049C878 /* bg_model_text_empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_model_text_empty@2x.png"; sourceTree = "<group>"; };
-		B9BA8BDC172B7C910049C878 /* bg_model_text@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_model_text@2x.png"; sourceTree = "<group>"; };
 		B9BA8BE5172B974D0049C878 /* RemindAddCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindAddCell.h; sourceTree = "<group>"; };
 		B9BA8BE6172B974D0049C878 /* RemindAddCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindAddCell.m; sourceTree = "<group>"; };
 		B9BA8BE8172B97E80049C878 /* RemindAddCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RemindAddCell.xib; sourceTree = "<group>"; };
@@ -159,6 +148,14 @@
 		B9C568A41733954600146192 /* img_pic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_pic@2x.png"; sourceTree = "<group>"; };
 		B9C568A61733991400146192 /* btn_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_down@2x.png"; sourceTree = "<group>"; };
 		B9C568A71733991400146192 /* btn_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_up@2x.png"; sourceTree = "<group>"; };
+		B9C568AA1733B0DD00146192 /* btn_dropdown_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_dropdown_down@2x.png"; sourceTree = "<group>"; };
+		B9C568AB1733B0DD00146192 /* btn_dropdown_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_dropdown_up@2x.png"; sourceTree = "<group>"; };
+		B9C568AE1733B1BB00146192 /* bg_text@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_text@2x.png"; sourceTree = "<group>"; };
+		B9C568B11733B9DD00146192 /* UIDevice+Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Hardware.h"; sourceTree = "<group>"; };
+		B9C568B21733B9DD00146192 /* UIDevice+Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Hardware.m"; sourceTree = "<group>"; };
+		B9C568B41733BC4D00146192 /* DeviceUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceUtil.h; sourceTree = "<group>"; };
+		B9C568B51733BC4D00146192 /* DeviceUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceUtil.m; sourceTree = "<group>"; };
+		B9C568B71733BE9F00146192 /* bg_iphone5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_iphone5@2x.png"; sourceTree = "<group>"; };
 		B9D8E243172BB28400A0A811 /* PickerViewUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewUtil.h; sourceTree = "<group>"; };
 		B9D8E244172BB28400A0A811 /* PickerViewUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewUtil.m; sourceTree = "<group>"; };
 		B9D8E246172BCEA700A0A811 /* RemindSettingQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindSettingQueue.h; sourceTree = "<group>"; };
@@ -249,7 +246,6 @@
 		B9E5641F1728F8D3005443A3 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		B9E564201728F8D3005443A3 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		B9E564211728F8D3005443A3 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		B9E564231728F8D3005443A3 /* System.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = System.h; sourceTree = "<group>"; };
 		B9E564851728F92C005443A3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B9E564871728F936005443A3 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B9E564891728F948005443A3 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -257,7 +253,6 @@
 		B9E5648F1728F9DC005443A3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		B9E5F318172A1285007FA1D1 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		B9E5F319172A1285007FA1D1 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		B9E5F325172A532D007FA1D1 /* Setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Setting@2x.png"; sourceTree = "<group>"; };
 		B9E5F327172A5BC7007FA1D1 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		B9E5F328172A5BC7007FA1D1 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		B9E5F329172A5BC7007FA1D1 /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
@@ -311,6 +306,17 @@
 				B9366396172A64790077859A /* Remind.m */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		B9C568B01733B9AF00146192 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				B9C568B11733B9DD00146192 /* UIDevice+Hardware.h */,
+				B9C568B21733B9DD00146192 /* UIDevice+Hardware.m */,
+				B9C568B41733BC4D00146192 /* DeviceUtil.h */,
+				B9C568B51733BC4D00146192 /* DeviceUtil.m */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		B9D8E237172BAEFB00A0A811 /* Custom Views */ = {
@@ -372,6 +378,7 @@
 				B9D8E237172BAEFB00A0A811 /* Custom Views */,
 				B9E5F317172A1263007FA1D1 /* View Controllers */,
 				B9366391172A619D0077859A /* Data */,
+				B9C568B01733B9AF00146192 /* Util */,
 				B9E563491728F8D3005443A3 /* ITSMVC */,
 				B9E5F324172A5303007FA1D1 /* Image */,
 				B9E5632D1728F82B005443A3 /* Supporting Files */,
@@ -399,7 +406,6 @@
 				B9E5634A1728F8D3005443A3 /* Control */,
 				B9E563731728F8D3005443A3 /* ITS.h */,
 				B9E563741728F8D3005443A3 /* ITSConfig.h */,
-				B9E564231728F8D3005443A3 /* System.h */,
 				B9E563751728F8D3005443A3 /* ITSModel */,
 				B9E563E71728F8D3005443A3 /* ITSTranslate */,
 			);
@@ -634,6 +640,10 @@
 		B9E5F324172A5303007FA1D1 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				B9C568B71733BE9F00146192 /* bg_iphone5@2x.png */,
+				B9C568AE1733B1BB00146192 /* bg_text@2x.png */,
+				B9C568AA1733B0DD00146192 /* btn_dropdown_down@2x.png */,
+				B9C568AB1733B0DD00146192 /* btn_dropdown_up@2x.png */,
 				B9C568A61733991400146192 /* btn_down@2x.png */,
 				B9C568A71733991400146192 /* btn_up@2x.png */,
 				B9C568A41733954600146192 /* img_pic@2x.png */,
@@ -651,15 +661,6 @@
 				B9E9B62517320C10007FFDCD /* bg_cell@2x.png */,
 				B9E9B62617320C10007FFDCD /* bg_section@2x.png */,
 				B9E9B62717320C10007FFDCD /* plus_btn@2x.png */,
-				B9BA8BD5172B7C910049C878 /* bg_btn_gray_pressed@2x.png */,
-				B9BA8BD6172B7C910049C878 /* bg_btn_gray@2x.png */,
-				B9BA8BD7172B7C910049C878 /* bg_btn_yellow_pressed@2x.png */,
-				B9BA8BD8172B7C910049C878 /* bg_btn_yellow@2x.png */,
-				B9BA8BD9172B7C910049C878 /* bg_model_select_empty@2x.png */,
-				B9BA8BDA172B7C910049C878 /* bg_model_select@2x.png */,
-				B9BA8BDB172B7C910049C878 /* bg_model_text_empty@2x.png */,
-				B9BA8BDC172B7C910049C878 /* bg_model_text@2x.png */,
-				B9E5F325172A532D007FA1D1 /* Setting@2x.png */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -731,17 +732,8 @@
 				B9E5633B1728F82B005443A3 /* Default@2x.png in Resources */,
 				B9E5633D1728F82B005443A3 /* Default-568h@2x.png in Resources */,
 				B9E564821728F8D3005443A3 /* README.txt in Resources */,
-				B9E5F326172A532D007FA1D1 /* Setting@2x.png in Resources */,
 				B9E5F32B172A5BC8007FA1D1 /* SettingViewController.xib in Resources */,
 				B9BA8BD4172B77C50049C878 /* RemindSettingController.xib in Resources */,
-				B9BA8BDD172B7C910049C878 /* bg_btn_gray_pressed@2x.png in Resources */,
-				B9BA8BDE172B7C910049C878 /* bg_btn_gray@2x.png in Resources */,
-				B9BA8BDF172B7C910049C878 /* bg_btn_yellow_pressed@2x.png in Resources */,
-				B9BA8BE0172B7C910049C878 /* bg_btn_yellow@2x.png in Resources */,
-				B9BA8BE1172B7C910049C878 /* bg_model_select_empty@2x.png in Resources */,
-				B9BA8BE2172B7C910049C878 /* bg_model_select@2x.png in Resources */,
-				B9BA8BE3172B7C910049C878 /* bg_model_text_empty@2x.png in Resources */,
-				B9BA8BE4172B7C910049C878 /* bg_model_text@2x.png in Resources */,
 				B902B800172A9596007872F0 /* RemindCell.xib in Resources */,
 				B9BA8BE9172B97E80049C878 /* RemindAddCell.xib in Resources */,
 				B9E9B61F1731FEEC007FFDCD /* SettingAlertControllerViewController.xib in Resources */,
@@ -766,6 +758,10 @@
 				B9C568A51733954600146192 /* img_pic@2x.png in Resources */,
 				B9C568A81733991400146192 /* btn_down@2x.png in Resources */,
 				B9C568A91733991400146192 /* btn_up@2x.png in Resources */,
+				B9C568AC1733B0DD00146192 /* btn_dropdown_down@2x.png in Resources */,
+				B9C568AD1733B0DD00146192 /* btn_dropdown_up@2x.png in Resources */,
+				B9C568AF1733B1BB00146192 /* bg_text@2x.png in Resources */,
+				B9C568B81733BE9F00146192 /* bg_iphone5@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -830,6 +826,8 @@
 				B9E9B63117326943007FFDCD /* RemindSetResponse.m in Sources */,
 				B9C56891173364AF00146192 /* TickerViewController.m in Sources */,
 				B9C568951733655C00146192 /* PriceCell.m in Sources */,
+				B9C568B31733B9DD00146192 /* UIDevice+Hardware.m in Sources */,
+				B9C568B61733BC4D00146192 /* DeviceUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
