@@ -141,7 +141,6 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
     RemindSettingController *remindSettingController = [[RemindSettingController alloc] init];
-    remindSettingController.title = @"设置";
     remindSettingController.delegate = self;
     if ([cell isKindOfClass:[RemindAddCell class]]) {
         [remindSettingController setRemind:nil];

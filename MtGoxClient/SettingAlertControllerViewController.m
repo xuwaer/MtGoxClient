@@ -62,17 +62,17 @@
 -(void)setupUI
 {
     // 针对iphone4、4s
-    CGRect mtGoxFrame = CGRectMake(8, 12, 303, 240);
+    CGRect mtGoxFrame = CGRectMake(8, 12, 303, 169);
     mtGoxCellController.view.frame = mtGoxFrame;
     [self.scrollView addSubview:mtGoxCellController.view];
     mtGoxCellController.headerTitleLabel.text = @"MtGox";
     
-    CGRect btcChinaFrame = CGRectMake(8, 147, 303, 240);
+    CGRect btcChinaFrame = CGRectMake(8, 147, 303, 169);
     btcChinaCellController.view.frame = btcChinaFrame;
     [self.scrollView addSubview:btcChinaCellController.view];
     btcChinaCellController.headerTitleLabel.text = @"BTCChina";
     
-    CGRect btcEFrame = CGRectMake(8, 282, 303, 240);
+    CGRect btcEFrame = CGRectMake(8, 282, 303, 169);
     btcECellController.view.frame = btcEFrame;
     [self.scrollView addSubview:btcECellController.view];
     btcECellController.headerTitleLabel.text = @"BTC-E";

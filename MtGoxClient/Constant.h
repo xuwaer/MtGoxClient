@@ -30,7 +30,7 @@ enum Platform {
 
 // 提醒请求类型
 enum RemindType {
-    RemindType_GetAlert = 0
+    RemindType_SetAlert = 0
 };
 
 static const int ThresholdCount = 2;            //提醒个数
@@ -229,8 +229,8 @@ static inline const char * getRemindServerRequestUrl(enum RemindType remindType)
     strcpy(requestUrl, hostname);
     
     switch (remindType) {
-        case RemindType_GetAlert:
-            strcat(requestUrl, "/get_alert.php");
+        case RemindType_SetAlert:
+            strcat(requestUrl, "/btc_set_alert.php");
             break;
         default:
             strcat(requestUrl, "");
