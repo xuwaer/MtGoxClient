@@ -163,7 +163,7 @@
     UIButton *settingButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [settingButton setBackgroundImage:[UIImage imageNamed:@"btn_setting.png"] forState:UIControlStateNormal];
     [settingButton addTarget:self action:@selector(showSetting) forControlEvents:UIControlEventTouchUpInside];
-    [settingButton setFrame:CGRectMake(10.0, 0.0, 26.0, 26.0)];
+    [settingButton setFrame:CGRectMake(0.0, 0.0, 26.0, 26.0)];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:settingButton];
     
     UIImage *bgImage = [UIImage imageNamed:@"bg.png"];
