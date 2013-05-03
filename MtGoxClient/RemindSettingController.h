@@ -26,7 +26,7 @@
 /**
  *	@brief	阀值设置界面
  */
-@interface RemindSettingController : UIViewController
+@interface RemindSettingController : UIViewController<UITextFieldDelegate>
 {
     @private
     Remind *_remind;            //提醒实体bean
@@ -45,6 +45,10 @@
 @property (nonatomic, strong)IBOutlet UIButton *currencyButton;
 @property (nonatomic, strong)IBOutlet UITextField *thresholdTextField;
 
+@property (nonatomic, strong)IBOutlet UIView *containView;
+@property (nonatomic, strong)IBOutlet UINavigationBar *navBar;
+@property (nonatomic, strong)IBOutlet UIButton *backgroundButton;
+
 @property (nonatomic, assign)id<RemindSettingDelegate> delegate;
 
 -(IBAction)onConfirmButtonClicked:(id)sender;
@@ -52,5 +56,6 @@
 -(IBAction)onCurrencyButtonClicked:(id)sender;
 -(IBAction)onThresholdTextFieldEditDidBegin:(id)sender;
 -(IBAction)onThresholdTextFieldEditDidEnd:(id)sender;
+-(IBAction)onTouchUpBackGround:(id)sender;
 
 @end

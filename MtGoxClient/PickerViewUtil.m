@@ -114,9 +114,6 @@
     keys = [NSArray arrayWithArray:[_dataSource allKeys]];
     values = [NSArray arrayWithArray:[_dataSource allValues]];
     
-    DDLogVerbose(@"%@", keys);
-    DDLogVerbose(@"%@", values);
-    
     [self createPickerView];
     [self setupDefaultCursor];
 }

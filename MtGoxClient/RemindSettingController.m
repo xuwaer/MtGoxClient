@@ -39,6 +39,9 @@
 @synthesize cancelButton;
 @synthesize currencyButton;
 @synthesize thresholdTextField;
+@synthesize navBar;
+@synthesize containView;
+@synthesize backgroundButton;
 
 @synthesize delegate;
 
@@ -63,6 +66,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    [self setupUI];
+    
     picker = [[PickerViewUtil alloc] init];
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
     [dic setValue:[NSNumber numberWithInt:CurrencyTypeUSD] forKey:@"美元"];
@@ -84,6 +89,13 @@
         self.thresholdTextField.text = [NSString stringWithFormat:@"%.4f", self.remind.threshold];
         currencyChar = NULL;
     }
+}
+
+-(void)setupUI
+{
+    UIImage *bgImage = [UIImage imageNamed:@"bg.png"];
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:bgImage]];
+    [self.navBar setBackgroundImage:[UIImage imageNamed:@"bg_nav.png"] forBarMetrics:0];
 }
 
 - (void)didReceiveMemoryWarning
@@ -152,6 +164,22 @@
 
 -(void)onCancelButtonClicked:(id)sender
 {
+    if (self.thresholdTextField.editing) {
+        
+        //当用户按下return，把焦点从textField移开那么键盘就会消失了
+        NSTimeInterval animationDuration = 0.3f;
+        CGRect frame = self.containView.frame;
+        frame.origin.y +=216;
+        frame.size. height -=216;
+        //self.view移回原位置
+        [UIView beginAnimations:@"ResizeView" context:nil];
+        [UIView setAnimationDuration:animationDuration];
+        self.containView.frame = frame;
+        [UIView commitAnimations];
+        [self.thresholdTextField resignFirstResponder];
+        
+    }
+    
     [self dismissModalViewControllerAnimated:YES];
 }
 
@@ -179,6 +207,44 @@
 -(void)didCanceledCurrency:(PickerObject *)object
 {
     [picker destroyPickerView];
+}
+
+-(void)onTouchUpBackGround:(id)sender
+{
+    if (self.thresholdTextField.editing) {
+        
+        //当用户按下return，把焦点从textField移开那么键盘就会消失了
+        NSTimeInterval animationDuration = 0.3f;
+        CGRect frame = self.containView.frame;
+        frame.origin.y +=216;
+        frame.size. height -=216;
+        //self.view移回原位置
+        [UIView beginAnimations:@"ResizeView" context:nil];
+        [UIView setAnimationDuration:animationDuration];
+        self.containView.frame = frame;
+        [UIView commitAnimations];
+        [self.thresholdTextField resignFirstResponder];
+
+    }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+#pragma mark - UITextField delegate
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    //当点触textField内部，开始编辑都会调用这个方法。textField将成为first responder
+    NSTimeInterval animationDuration = 0.3f;
+    CGRect frame = self.containView.frame;
+    frame.origin.y -=216;
+    frame.size.height +=216;
+    [UIView beginAnimations:@"ResizeView" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    self.containView.frame = frame;
+    [UIView commitAnimations];
 }
 
 -(BOOL)checkValidate
@@ -295,6 +361,21 @@
     }
         
     [self dismissModalViewControllerAnimated:YES];
+}
+
+- (void)keyboardWillShow:(NSNotification *)notification
+{
+    static CGFloat normalKeyboardHeight = 216.0f;
+    
+    NSDictionary *info = [notification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
+    
+    CGFloat distanceToMove = kbSize.height - normalKeyboardHeight;
+    
+    //自适应代码
+    CGRect containFrame = self.containView.frame;
+    containFrame = CGRectMake(containFrame.origin.x, containFrame.origin.y - (distanceToMove + normalKeyboardHeight), containFrame.size.width, containFrame.size.width);
+    self.containView.frame = containFrame;
 }
 
 @end
