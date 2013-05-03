@@ -138,9 +138,7 @@
     [settingButton setBackgroundImage:[UIImage imageNamed:@"Setting.png"] forState:UIControlStateNormal];
     [settingButton addTarget:self action:@selector(showSetting) forControlEvents:UIControlEventTouchUpInside];
     [settingButton setFrame:CGRectMake(0.0, 0.0, 35.0, 35.0)];
-    UIBarButtonItem *settingButtonItem = [[UIBarButtonItem alloc] initWithCustomView:settingButton];
-    settingButtonItem.style = UIBarButtonItemStylePlain;
-    self.navigationItem.leftBarButtonItem = settingButtonItem;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:settingButton];
 }
 
 - (void)didReceiveMemoryWarning

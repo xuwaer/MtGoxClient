@@ -210,7 +210,7 @@ static inline const char * getRequestUrl(enum Platform platform, enum CurrencyTy
             strcat(requestUrl, "/api/2/BTCUSD/money/ticker");
             break;
     }
-        
+    
     return requestUrl;
 }
 

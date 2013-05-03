@@ -92,6 +92,7 @@
 		B9E9B62E17325F97007FFDCD /* RemindSetReqest.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E9B62D17325F97007FFDCD /* RemindSetReqest.m */; };
 		B9E9B63117326943007FFDCD /* RemindSetResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E9B63017326943007FFDCD /* RemindSetResponse.m */; };
 		B9E9B63317326C63007FFDCD /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9E9B63217326C63007FFDCD /* bg@2x.png */; };
+		B9E9B63817327394007FFDCD /* bg_nav@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9E9B63717327394007FFDCD /* bg_nav@2x.png */; };
 		B9EE9A99172CEB2A00DAF948 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EE9A96172CEB2A00DAF948 /* MBProgressHUD.m */; };
 		B9EE9A9A172CEB2A00DAF948 /* ProgressUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EE9A98172CEB2A00DAF948 /* ProgressUtil.m */; };
 /* End PBXBuildFile section */
@@ -245,6 +246,7 @@
 		B9E9B62F17326943007FFDCD /* RemindSetResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindSetResponse.h; sourceTree = "<group>"; };
 		B9E9B63017326943007FFDCD /* RemindSetResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindSetResponse.m; sourceTree = "<group>"; };
 		B9E9B63217326C63007FFDCD /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
+		B9E9B63717327394007FFDCD /* bg_nav@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_nav@2x.png"; sourceTree = "<group>"; };
 		B9EE9A95172CEB2A00DAF948 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		B9EE9A96172CEB2A00DAF948 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		B9EE9A97172CEB2A00DAF948 /* ProgressUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressUtil.h; sourceTree = "<group>"; };
@@ -600,6 +602,7 @@
 		B9E5F324172A5303007FA1D1 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				B9E9B63717327394007FFDCD /* bg_nav@2x.png */,
 				B9E9B63217326C63007FFDCD /* bg@2x.png */,
 				B9E9B62517320C10007FFDCD /* bg_cell@2x.png */,
 				B9E9B62617320C10007FFDCD /* bg_section@2x.png */,
@@ -705,6 +708,7 @@
 				B9E9B62917320C10007FFDCD /* bg_section@2x.png in Resources */,
 				B9E9B62A17320C10007FFDCD /* plus_btn@2x.png in Resources */,
 				B9E9B63317326C63007FFDCD /* bg@2x.png in Resources */,
+				B9E9B63817327394007FFDCD /* bg_nav@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

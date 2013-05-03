@@ -29,6 +29,10 @@
     MainViewController *viewController = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
     viewController.title = userDefault.lastPlatformTitle;
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    // 设置导航栏背景
+    UIImage *navbgImage= [UIImage imageNamed:@"bg_nav.png"];
+    [navController.navigationBar setBackgroundImage:navbgImage forBarMetrics:0];
+    
     self.window.rootViewController = navController;
     [self.window makeKeyAndVisible];
 
@@ -74,11 +78,13 @@
 
 -(void)setupConfig
 {
+    // 完成环境初始化
     userDefault = [UserDefault defaultUser];
+    [TransManager defaultManager];
 
 //    const char * hostnameChar = getHostnameWithPlatform(userDefault.platform);
 //    NSString * hostnameStr = [NSString stringWithCString:hostnameChar encoding:NSUTF8StringEncoding];
-    TransManager *transManager = [TransManager defaultManager];
+//    TransManager *transManager = [TransManager defaultManager];
 //    [transManager setHostname:hostnameStr];
 //    hostnameChar = NULL;
 }
