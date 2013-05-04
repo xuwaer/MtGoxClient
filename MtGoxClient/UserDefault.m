@@ -56,13 +56,13 @@ static UserDefault *userDefault;
 
 -(void)getUserDefault
 {
-    NSString *fileName = [NSString stringWithCString:SettingFile encoding:NSUTF8StringEncoding];
+//    NSString *fileName = [NSString stringWithCString:SettingFile encoding:NSUTF8StringEncoding];
     
     //获取路径对象
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     //获取完整路径
     NSString *documentsDirectory = [paths objectAtIndex:0];
-    filePath = [documentsDirectory stringByAppendingPathComponent:fileName];
+    filePath = [documentsDirectory stringByAppendingPathComponent:SettingFile];
     fileContent = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
     
     if (fileContent == nil) {

@@ -10,28 +10,34 @@
 
 @implementation DeviceUtil
 
-+(BOOL)isiPhone5Device
++(enum ScreenType)getDeviceScrenType
 {
     CGRect window = [[UIScreen mainScreen] bounds];
     
     if (window.size.width == 320 && window.size.height == 480)
-        return NO;
+        return ScreenType_3_5_Inch;
     else if (window.size.width == 320 && window.size.height == 568)
-        return YES;
+        return ScreenType_4_Inch;
     else
-        return NO;
+        return ScreenType_3_5_Inch;
 }
 
-+(void)setBackground:(UIView *)view imageiPhone:(NSString *)imageiPhone imageiPhone5:(NSString *)imageiPhone5
++(void)view:(UIView *)view image35inch:(NSString *)image35inchName image4inch:(NSString *)image4inchName
 {
     UIImage *image = nil;
-    if ([self isiPhone5Device]) {
-        image = [UIImage imageNamed:imageiPhone5];
-    }
-    else {
-        image = [UIImage imageNamed:imageiPhone];
-    }
     
+    switch ([self getDeviceScrenType]) {
+        case ScreenType_3_5_Inch:
+            image = [UIImage imageNamed:image35inchName];
+            break;
+        case ScreenType_4_Inch:
+            image = [UIImage imageNamed:image4inchName];
+            break;
+        default:
+            image = [UIImage imageNamed:image35inchName];
+            break;
+    }
+        
     [view setBackgroundColor:[UIColor colorWithPatternImage:image]];
 }
 

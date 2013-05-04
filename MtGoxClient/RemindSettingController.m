@@ -94,7 +94,7 @@
 {
 //    UIImage *bgImage = [UIImage imageNamed:@"bg.png"];
 //    [self.view setBackgroundColor:[UIColor colorWithPatternImage:bgImage]];
-    [DeviceUtil setBackground:self.view imageiPhone:@"bg.png" imageiPhone5:@"bg_iphone5.png"];
+    [DeviceUtil view:self.view image35inch:@"bg.png" image4inch:@"bg_iphone5.png"];
     [self.navBar setBackgroundImage:[UIImage imageNamed:@"bg_nav.png"] forBarMetrics:0];
 }
 
@@ -283,7 +283,7 @@
                 
 //                [ProgressUtil showProgress:@"添加成功" super:self.view];
                 
-                [self sendRemind];
+                [self addNewRemind];
             }
             else {
                 [progress removeFromSuperview];
@@ -307,7 +307,17 @@
     }
 }
 
--(void)sendRemind
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+#pragma mark - 提醒相关服务器功能
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+/**
+ *	@brief	添加一个新的提醒，并提交给服务器
+ */
+-(void)addNewRemind
 {
     // 请求Url
     const char * commandChar = getRemindServerRequestUrl(RemindType_SetAlert);
@@ -332,6 +342,22 @@
     request.token = DEFAULT_TOKEN;
     
     [remindQueue sendRequest:request target:self selector:@selector(showSettingResult:)];
+}
+
+/**
+ *	@brief	添加一个新的提醒，并提交给服务器
+ */
+-(void)editRemind
+{
+    
+}
+
+/**
+ *	@brief	删除一个提醒
+ */
+-(void)deleteRemind
+{
+    
 }
 
 -(BOOL)checkResponse:(int)actionTag

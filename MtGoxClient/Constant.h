@@ -11,7 +11,7 @@
 #include <stdio.h>
 
 //配置文件地址
-static const char * SettingFile = "Setting.plist";
+#define SettingFile @"Setting.plist"
 
 // 币种
 enum CurrencyType {
@@ -30,14 +30,16 @@ enum Platform {
 
 // 提醒请求类型
 enum RemindType {
-    RemindType_SetAlert = 0
+    RemindType_SetAlert = 0,
+    RemindType_DelAlert = 1,
+    RemindType_GetAlert = 2
 };
 
 static const int ThresholdCount = 2;            //提醒个数
 static const int REPEAT_DELAY = 30;             //自动刷新间隔
 
 #define DEFAULT_TOKEN @"abc00fea0ff7717e36c0b4837b4e840678ad046fd67d895ad4235a901cc54c33"
-#define REMIND_HOSTNAME @"http://10.10.32.44"
+//#define REMIND_HOSTNAME @"http://10.10.32.44"
 
 /**
  *	@brief	通过币种代码，转换为显示文字
@@ -217,7 +219,7 @@ static inline const char * getRequestUrl(enum Platform platform, enum CurrencyTy
 /**
  *	@brief	根据类型，获取对应的请求url
  *
- *	@param 	currencyType 	币种
+ *	@param 	remindType 	提醒请求类型
  *
  *	@return	请求url
  */
@@ -231,6 +233,12 @@ static inline const char * getRemindServerRequestUrl(enum RemindType remindType)
     switch (remindType) {
         case RemindType_SetAlert:
             strcat(requestUrl, "/btc_set_alert.php");
+            break;
+        case RemindType_DelAlert:
+            strcat(requestUrl, "");
+            break;
+        case RemindType_GetAlert:
+            strcat(requestUrl, "");
             break;
         default:
             strcat(requestUrl, "");

@@ -80,7 +80,7 @@
 //
 //    UIImage *bgImage = [UIImage imageNamed:@"bg.png"];
 //    self.view.backgroundColor = [UIColor colorWithPatternImage:bgImage];
-    [DeviceUtil setBackground:self.view imageiPhone:@"bg.png" imageiPhone5:@"bg_iphone5.png"];
+    [DeviceUtil view:self.view image35inch:@"bg.png" image4inch:@"bg_iphone5.png"];
 
     // 设置返回按钮样式
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];

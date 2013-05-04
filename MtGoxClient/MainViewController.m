@@ -147,7 +147,7 @@
     PriceCell *jpyCell = [[[NSBundle mainBundle] loadNibNamed:@"PriceCell" owner:self options:nil] lastObject];
     PriceCell *cnyCell = [[[NSBundle mainBundle] loadNibNamed:@"PriceCell" owner:self options:nil] lastObject];
     
-    if ([DeviceUtil isiPhone5Device]) {
+    if ([DeviceUtil getDeviceScrenType] == ScreenType_4_Inch) {
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 0, 300, 180)];
         imageView.image = [UIImage imageNamed:@"bg_pic.png"];
         [self.view addSubview:imageView];
@@ -183,7 +183,7 @@
     [settingButton setFrame:CGRectMake(0.0, 0.0, 26.0, 26.0)];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:settingButton];
     
-    [DeviceUtil setBackground:self.view imageiPhone:@"bg.png" imageiPhone5:@"bg_iphone5.png"];
+    [DeviceUtil view:self.view image35inch:@"bg.png" image4inch:@"bg_iphone5.png"];
 //    UIImage *bgImage = [UIImage imageNamed:@"bg.png"];
 //    [self.view setBackgroundColor:[UIColor colorWithPatternImage:bgImage]];
 }

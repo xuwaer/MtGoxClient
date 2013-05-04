@@ -8,10 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+enum ScreenType {
+    ScreenType_3_5_Inch = 0,
+    ScreenType_4_Inch = 1
+};
+
 @interface DeviceUtil : NSObject
 
-+(BOOL)isiPhone5Device;
++(enum ScreenType)getDeviceScrenType;
 
-+(void)setBackground:(UIView *)view imageiPhone:(NSString *)imageiPhone imageiPhone5:(NSString *)imageiPhone5;
++(void)view:(UIView *)view image35inch:(NSString *)image35inchName image4inch:(NSString *)image4inchName;
 
 @end
