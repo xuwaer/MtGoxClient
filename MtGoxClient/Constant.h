@@ -39,7 +39,6 @@ static const int ThresholdCount = 2;            //提醒个数
 static const int REPEAT_DELAY = 30;             //自动刷新间隔
 
 #define DEFAULT_TOKEN @"abc00fea0ff7717e36c0b4837b4e840678ad046fd67d895ad4235a901cc54c33"
-//#define REMIND_HOSTNAME @"http://10.10.32.44"
 
 /**
  *	@brief	通过币种代码，转换为显示文字
@@ -225,6 +224,7 @@ static inline const char * getRequestUrl(enum Platform platform, enum CurrencyTy
  */
 static inline const char * getRemindServerRequestUrl(enum RemindType remindType)
 {
+    // 提醒服务器地址
     const char *hostname = "http://10.10.32.44";
     
     char *requestUrl = calloc(80, sizeof(char));
