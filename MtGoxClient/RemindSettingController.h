@@ -34,7 +34,8 @@
     
     RemindSettingQueue *remindQueue;    //通讯控制层
     
-    MBProgressHUD *progress;    //提示UI
+    MBProgressHUD *progress;    //滚动条
+    MBProgressHUD *toast;       //提示框
 }
 
 @property (nonatomic, strong)Remind *remind;
