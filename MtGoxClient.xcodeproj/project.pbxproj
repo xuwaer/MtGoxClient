@@ -41,6 +41,7 @@
 		B9C568B31733B9DD00146192 /* UIDevice+Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C568B21733B9DD00146192 /* UIDevice+Hardware.m */; };
 		B9C568B61733BC4D00146192 /* DeviceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C568B51733BC4D00146192 /* DeviceUtil.m */; };
 		B9C568B81733BE9F00146192 /* bg_iphone5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C568B71733BE9F00146192 /* bg_iphone5@2x.png */; };
+		B9D5833D17374CD300FE5471 /* UINavigationBar+CustomNav.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D5833C17374CD300FE5471 /* UINavigationBar+CustomNav.m */; };
 		B9D8E245172BB28400A0A811 /* PickerViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D8E244172BB28400A0A811 /* PickerViewUtil.m */; };
 		B9D8E248172BCEA700A0A811 /* RemindSettingQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D8E247172BCEA700A0A811 /* RemindSettingQueue.m */; };
 		B9E563271728F82B005443A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E563261728F82B005443A3 /* UIKit.framework */; };
@@ -156,6 +157,8 @@
 		B9C568B41733BC4D00146192 /* DeviceUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceUtil.h; sourceTree = "<group>"; };
 		B9C568B51733BC4D00146192 /* DeviceUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceUtil.m; sourceTree = "<group>"; };
 		B9C568B71733BE9F00146192 /* bg_iphone5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_iphone5@2x.png"; sourceTree = "<group>"; };
+		B9D5833B17374CD300FE5471 /* UINavigationBar+CustomNav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+CustomNav.h"; sourceTree = "<group>"; };
+		B9D5833C17374CD300FE5471 /* UINavigationBar+CustomNav.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+CustomNav.m"; sourceTree = "<group>"; };
 		B9D8E243172BB28400A0A811 /* PickerViewUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewUtil.h; sourceTree = "<group>"; };
 		B9D8E244172BB28400A0A811 /* PickerViewUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewUtil.m; sourceTree = "<group>"; };
 		B9D8E246172BCEA700A0A811 /* RemindSettingQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindSettingQueue.h; sourceTree = "<group>"; };
@@ -334,6 +337,8 @@
 				B9C568931733655B00146192 /* PriceCell.h */,
 				B9C568941733655B00146192 /* PriceCell.m */,
 				B9C56896173365AE00146192 /* PriceCell.xib */,
+				B9D5833B17374CD300FE5471 /* UINavigationBar+CustomNav.h */,
+				B9D5833C17374CD300FE5471 /* UINavigationBar+CustomNav.m */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -828,6 +833,7 @@
 				B9C568951733655C00146192 /* PriceCell.m in Sources */,
 				B9C568B31733B9DD00146192 /* UIDevice+Hardware.m in Sources */,
 				B9C568B61733BC4D00146192 /* DeviceUtil.m in Sources */,
+				B9D5833D17374CD300FE5471 /* UINavigationBar+CustomNav.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

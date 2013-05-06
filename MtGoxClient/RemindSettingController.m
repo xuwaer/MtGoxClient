@@ -24,6 +24,10 @@
 #import "UserDefault.h"
 #import "Constant.h"
 
+#import "UINavigationBar+CustomNav.h"
+
+#import <QuartzCore/QuartzCore.h>
+
 @interface RemindSettingController ()
 {
     BOOL isNew;         // 是否是添加操作
@@ -95,7 +99,13 @@
 //    UIImage *bgImage = [UIImage imageNamed:@"bg.png"];
 //    [self.view setBackgroundColor:[UIColor colorWithPatternImage:bgImage]];
     [DeviceUtil view:self.view image35inch:@"bg.png" image4inch:@"bg_iphone5.png"];
-    [self.navBar setBackgroundImage:[UIImage imageNamed:@"bg_nav.png"] forBarMetrics:0];
+    // 设置导航栏背景
+    if ([self.navBar respondsToSelector:@selector( setBackgroundImage:forBarMetrics:)]){
+        UIImage *navbgImage= [UIImage imageNamed:@"bg_nav.png"];
+        [self.navBar setBackgroundImage:navbgImage forBarMetrics:UIBarMetricsDefault];
+    }
+    
+    self.thresholdTextField.layer.opaque = NO;
 }
 
 - (void)didReceiveMemoryWarning

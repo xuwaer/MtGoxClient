@@ -17,6 +17,8 @@
 #import "RemindSettingController.h"
 #import "SettingAlertControllerViewController.h"
 
+#import <QuartzCore/QuartzCore.h>
+
 @interface SettingCellControllerViewController ()
 
 // 对数据源进行处理，用作展示和以后的操作
@@ -74,6 +76,7 @@
 -(void)setupUI
 {
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_section.png"]]];
+    self.view.layer.opaque = NO;
 }
 
 - (void)viewDidLoad
@@ -128,6 +131,11 @@
 {
     [self removeDataAtIndex:indexPath.row];
     [tableView reloadData];
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return @"删除";
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

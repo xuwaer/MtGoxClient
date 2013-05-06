@@ -9,6 +9,7 @@
 #import "PriceCell.h"
 #import "MtGoxTickerResponse.h"
 #import "ITSConfig.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation PriceCell
 
@@ -34,8 +35,10 @@
     // 背景颜色
     UIImage *bgImage = [UIImage imageNamed:@"bg_main_section.png"];
     [self setBackgroundColor:[UIColor colorWithPatternImage:bgImage]];
+    self.layer.opaque = NO;
     UIImage *priceBgImage = [UIImage imageNamed:@"bg_price.png"];
     [self.priceBackgroupView setBackgroundColor:[UIColor colorWithPatternImage:priceBgImage]];
+    self.priceBackgroupView.layer.opaque = NO;
 }
 
 /*

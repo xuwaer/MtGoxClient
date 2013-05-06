@@ -12,6 +12,8 @@
 #import "TransManager.h"
 #import "UserDefault.h"
 
+#import "UINavigationBar+CustomNav.h"
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -29,9 +31,12 @@
     MainViewController *viewController = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
     viewController.title = userDefault.lastPlatformTitle;
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    
     // 设置导航栏背景
-    UIImage *navbgImage= [UIImage imageNamed:@"bg_nav.png"];
-    [navController.navigationBar setBackgroundImage:navbgImage forBarMetrics:0];
+    if ([navController.navigationBar respondsToSelector:@selector( setBackgroundImage:forBarMetrics:)]){
+        UIImage *navbgImage= [UIImage imageNamed:@"bg_nav.png"];
+        [navController.navigationBar setBackgroundImage:navbgImage forBarMetrics:UIBarMetricsDefault];
+    }
     
     self.window.rootViewController = navController;
     [self.window makeKeyAndVisible];

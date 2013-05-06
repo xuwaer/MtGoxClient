@@ -13,6 +13,8 @@ enum ScreenType {
     ScreenType_4_Inch = 1
 };
 
+#define IOS_VER_5 [UIS]
+
 @interface DeviceUtil : NSObject
 
 +(enum ScreenType)getDeviceScrenType;
