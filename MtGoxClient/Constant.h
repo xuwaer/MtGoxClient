@@ -245,5 +245,16 @@ static inline const char * getRemindServerRequestUrl(enum RemindType remindType)
             break;
     }
     
+//    http://10.10.32.44/btc_set_alert.php?token=abc00fea0ff7717e36c0b4837b4e840678ad046fd67d895ad4235a901cc54c33&plat=mtgox&cur=CNY&check=780&islarge=1
+    
+    
+    
+//Notice: Undefined variable: sqlfield in D:\Program Files\xampp\htdocs\bitecoin\btc_db.php on line 133
+//    
+//Notice: Undefined variable: sqlvalue in D:\Program Files\xampp\htdocs\bitecoin\btc_db.php on line 134
+//    
+//Notice: Undefined variable: str in D:\Program Files\xampp\htdocs\bitecoin\btc_db.php on line 41
+//    {'id':59}
+    
     return requestUrl;
 }

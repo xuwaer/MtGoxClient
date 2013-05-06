@@ -476,9 +476,15 @@
 -(void)showSettingResult:(id)responseFromQueue
 {
     if (responseFromQueue && [responseFromQueue isKindOfClass:[RemindSetResponse class]]) {
-        
+        // 去掉菊花
         [self destroyProgress];
         
+        RemindSetResponse *remindResponse = (RemindSetResponse *)responseFromQueue;
+        if (remindResponse.remindID == -1) {
+            [self showToast:@"添加失败"];
+            return;
+        }
+                
         //刷新UI
         [self updateSettingController];
     }
@@ -518,12 +524,12 @@
     // 大于？
     request.islarge = self.remind.isLarge;
     // token
-    NSData *token = [UserDefault defaultUser].token;
-    if (token == nil || [token isEqual:[NSNull null]]) {
-        [self hideProgress];
-        [self showToast:@"请检查接收通知功能是否开启。"];
-        return;
-    }
+//    NSData *token = [UserDefault defaultUser].token;
+//    if (token == nil || [token isEqual:[NSNull null]]) {
+//        [self hideProgress];
+//        [self showToast:@"请检查接收通知功能是否开启。"];
+//        return;
+//    }
     request.token = DEFAULT_TOKEN;
     // 设置回调方法
     [remindQueue sendRequest:request target:self selector:@selector(showSettingResult:)];

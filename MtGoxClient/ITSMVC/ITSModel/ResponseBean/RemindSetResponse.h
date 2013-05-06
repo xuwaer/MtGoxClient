@@ -10,4 +10,6 @@
 
 @interface RemindSetResponse : BaseResponse<ITSResponseDelegate>
 
+@property (nonatomic, assign)int remindID;
+
 @end
