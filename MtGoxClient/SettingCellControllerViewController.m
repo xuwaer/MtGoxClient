@@ -9,6 +9,7 @@
 #import "SettingCellControllerViewController.h"
 #import "Constant.h"
 #import "Remind.h"
+#import "RemindSettingQueue.h"
 #import "UserDefault.h"
 
 #import "RemindCell.h"
@@ -50,8 +51,15 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        [self setupHttpQueue];
     }
     return self;
+}
+
+-(void)dealloc
+{
+    DDLogVerbose(@"%@ dealloc", THIS_FILE);
+    [self destoryHttpQueue];
 }
 
 -(void)initData
@@ -92,6 +100,29 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+#pragma mark - Request & Receive message from server
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+-(void)setupHttpQueue
+{
+    remindQueue = [[RemindSettingQueue alloc] init];
+    [[TransManager defaultManager] add:remindQueue];
+}
+
+-(void)destoryHttpQueue
+{
+    [[TransManager defaultManager] remove:remindQueue];
+    remindQueue = nil;
+}
+
+-(void)updateUIDisplay:(id)responseFromQueue
+{
+
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

@@ -139,11 +139,11 @@
 								</object>
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">0</int>
-								<object class="IBUIFontDescription" key="IBUIFontDescription" id="883768339">
+								<object class="IBUIFontDescription" key="IBUIFontDescription" id="449822825">
 									<int key="type">2</int>
 									<double key="pointSize">17</double>
 								</object>
-								<object class="NSFont" key="IBUIFont" id="334447096">
+								<object class="NSFont" key="IBUIFont" id="530759337">
 									<string key="NSName">Helvetica-Bold</string>
 									<double key="NSSize">17</double>
 									<int key="NSfFlags">16</int>
@@ -171,8 +171,8 @@
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">0</int>
 								<int key="IBUITextAlignment">2</int>
-								<reference key="IBUIFontDescription" ref="883768339"/>
-								<reference key="IBUIFont" ref="334447096"/>
+								<reference key="IBUIFontDescription" ref="449822825"/>
+								<reference key="IBUIFont" ref="530759337"/>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 							</object>
 						</array>
@@ -200,27 +200,11 @@
 			<array class="NSMutableArray" key="connectionRecords">
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">hightDisplayShortLabel</string>
-						<reference key="source" ref="191373211"/>
-						<reference key="destination" ref="931125537"/>
-					</object>
-					<int key="connectionID">11</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">lastDisplayLabel</string>
 						<reference key="source" ref="191373211"/>
 						<reference key="destination" ref="79140530"/>
 					</object>
 					<int key="connectionID">12</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">lowDisplayShortLabel</string>
-						<reference key="source" ref="191373211"/>
-						<reference key="destination" ref="613115268"/>
-					</object>
-					<int key="connectionID">13</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
@@ -245,6 +229,22 @@
 						<reference key="destination" ref="529415312"/>
 					</object>
 					<int key="connectionID">18</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">hightDisplayLabel</string>
+						<reference key="source" ref="191373211"/>
+						<reference key="destination" ref="931125537"/>
+					</object>
+					<int key="connectionID">19</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">lowDisplayLabel</string>
+						<reference key="source" ref="191373211"/>
+						<reference key="destination" ref="613115268"/>
+					</object>
+					<int key="connectionID">20</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -331,7 +331,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">18</int>
+			<int key="maxID">20</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -340,9 +340,9 @@
 					<string key="superclassName">UIView</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="currencyImageView">UIImageView</string>
-						<string key="hightDisplayShortLabel">UILabel</string>
+						<string key="hightDisplayLabel">UILabel</string>
 						<string key="lastDisplayLabel">UILabel</string>
-						<string key="lowDisplayShortLabel">UILabel</string>
+						<string key="lowDisplayLabel">UILabel</string>
 						<string key="nowLabel">UILabel</string>
 						<string key="priceBackgroupView">UIView</string>
 					</dictionary>
@@ -351,16 +351,16 @@
 							<string key="name">currencyImageView</string>
 							<string key="candidateClassName">UIImageView</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="hightDisplayShortLabel">
-							<string key="name">hightDisplayShortLabel</string>
+						<object class="IBToOneOutletInfo" key="hightDisplayLabel">
+							<string key="name">hightDisplayLabel</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="lastDisplayLabel">
 							<string key="name">lastDisplayLabel</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="lowDisplayShortLabel">
-							<string key="name">lowDisplayShortLabel</string>
+						<object class="IBToOneOutletInfo" key="lowDisplayLabel">
+							<string key="name">lowDisplayLabel</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="nowLabel">

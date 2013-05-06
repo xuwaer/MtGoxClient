@@ -14,8 +14,8 @@
 @implementation PriceCell
 
 @synthesize lastDisplayLabel;
-@synthesize hightDisplayShortLabel;
-@synthesize lowDisplayShortLabel;
+@synthesize hightDisplayLabel;
+@synthesize lowDisplayLabel;
 @synthesize nowLabel;
 @synthesize currencyImageView;
 @synthesize priceBackgroupView;
@@ -50,7 +50,11 @@
 }
 */
 
-
+/**
+ *	@brief	绑定数据，并在UI上展示
+ *
+ *	@param 	response 	需要展示的数据
+ */
 -(void)display:(MtGoxTickerResponse *)response
 {
     if (response == nil)    return;
@@ -58,11 +62,11 @@
     
     MtGoxTickerDetailResponse *highDetail = [response.data objectForKey:@"high"];
     MtGoxTickerValueResponse *hightValue = highDetail.value;
-    self.hightDisplayShortLabel.text = [hightValue.value stringValue];
+    self.hightDisplayLabel.text = [hightValue.value stringValue];
     
     MtGoxTickerDetailResponse *lowDetail = [response.data objectForKey:@"low"];
     MtGoxTickerValueResponse *lowValue = lowDetail.value;
-    self.lowDisplayShortLabel.text = [lowValue.value stringValue];
+    self.lowDisplayLabel.text = [lowValue.value stringValue];
     
     MtGoxTickerDetailResponse *lastDetail = [response.data objectForKey:@"last"];
     MtGoxTickerValueResponse *lastValue = lastDetail.value;
@@ -75,23 +79,48 @@
     [dateFormat setDateFormat:@"MMM dd HH:mm:ss"];
     self.nowLabel.text = [dateFormat stringFromDate:nowTime];
     
+//    UIImage *currencyImage = nil;
+//    switch (response.tag) {
+//        case kActionTag_Response_USD:
+//            currencyImage = [UIImage imageNamed:@"USD.png"];
+//            break;
+//        case kActionTag_Response_EUR:
+//            currencyImage = [UIImage imageNamed:@"EUR.png"];
+//            break;
+//        case kActionTag_Response_JPY:
+//            currencyImage = [UIImage imageNamed:@"JPY.png"];
+//            break;
+//        case kActionTag_Response_CNY:
+//            currencyImage = [UIImage imageNamed:@"CNY.png"];
+//            break;
+//        default:
+//            break;
+//    }
+//    if (currencyImage)
+//        self.currencyImageView.image = currencyImage;
+}
+
+-(void)setCurrencyType:(enum CurrencyType)inCurrencyType
+{
     UIImage *currencyImage = nil;
-    switch (response.tag) {
-        case kActionTag_Response_USD:
+    switch (inCurrencyType) {
+        case CurrencyTypeUSD:
             currencyImage = [UIImage imageNamed:@"USD.png"];
             break;
-        case kActionTag_Response_EUR:
+        case CurrencyTypeEUR:
             currencyImage = [UIImage imageNamed:@"EUR.png"];
             break;
-        case kActionTag_Response_JPY:
+        case CurrencyTypeJPY:
             currencyImage = [UIImage imageNamed:@"JPY.png"];
             break;
-        case kActionTag_Response_CNY:
+        case CurrencyTypeCNY:
             currencyImage = [UIImage imageNamed:@"CNY.png"];
             break;
+            
         default:
             break;
     }
+    
     if (currencyImage)
         self.currencyImageView.image = currencyImage;
 }

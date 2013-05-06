@@ -7,19 +7,44 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Constant.h"
 
 @class MtGoxTickerResponse;
 
 @interface PriceCell : UIView
 
+/**
+ *	@brief	上次价格
+ */
 @property (nonatomic, strong)IBOutlet UILabel *lastDisplayLabel;
-@property (nonatomic, strong)IBOutlet UILabel *hightDisplayShortLabel;
-@property (nonatomic, strong)IBOutlet UILabel *lowDisplayShortLabel;
+
+/**
+ *	@brief	最高价格
+ */
+@property (nonatomic, strong)IBOutlet UILabel *hightDisplayLabel;
+
+/**
+ *	@brief	最低价格
+ */
+@property (nonatomic, strong)IBOutlet UILabel *lowDisplayLabel;
+
+/**
+ *	@brief	时间
+ */
 @property (nonatomic, strong)IBOutlet UILabel *nowLabel;
 
+/**
+ *	@brief	币种图标
+ */
 @property (nonatomic, strong)IBOutlet UIImageView *currencyImageView;
+
 @property (nonatomic, strong)IBOutlet UIView *priceBackgroupView;
 
+/**
+ *	@brief	根据数据，生成UI展示
+ *
+ *	@param 	response 	需要展示的数据
+ */
 -(void)display:(MtGoxTickerResponse *)response;
 
 @end

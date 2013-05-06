@@ -147,6 +147,11 @@
     PriceCell *jpyCell = [[[NSBundle mainBundle] loadNibNamed:@"PriceCell" owner:self options:nil] lastObject];
     PriceCell *cnyCell = [[[NSBundle mainBundle] loadNibNamed:@"PriceCell" owner:self options:nil] lastObject];
     
+    usdCell.currencyImageView.image = [UIImage imageNamed:@"USD.png"];
+    eurCell.currencyImageView.image = [UIImage imageNamed:@"EUR.png"];
+    jpyCell.currencyImageView.image = [UIImage imageNamed:@"JPY.png"];
+    cnyCell.currencyImageView.image = [UIImage imageNamed:@"CNY.png"];
+    
     if ([DeviceUtil getDeviceScrenType] == ScreenType_4_Inch) {
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 0, 300, 180)];
         imageView.image = [UIImage imageNamed:@"bg_pic.png"];

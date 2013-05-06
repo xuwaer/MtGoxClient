@@ -10,6 +10,7 @@
 #import "RemindSettingController.h"
 
 @class SettingAlertControllerViewController;
+@class RemindSettingQueue;
 
 /**
  *	@brief	设置界面group
@@ -19,6 +20,8 @@
 {
     @private
     NSMutableArray *dataSource;     //显示用数据源
+    
+    RemindSettingQueue *remindQueue;
 }
 
 @property (nonatomic, strong)IBOutlet UITableView *alertTableView;      //提醒列表
