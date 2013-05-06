@@ -358,6 +358,11 @@
     progress = nil;
 }
 
+/**
+ *	@brief	显示提示文字，停留2秒
+ *
+ *	@param 	title 	文字内容
+ */
 -(void)showToast:(NSString *)title
 {
     if (toast == nil) {
