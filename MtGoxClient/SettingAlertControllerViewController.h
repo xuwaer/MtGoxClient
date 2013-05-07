@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class SettingCellControllerViewController;
+@class ProgressController;
 
 /**
  *	@brief	设置界面
@@ -23,8 +24,11 @@
     SettingCellControllerViewController *mtGoxCellController;           //MtGox平台，提醒列表
     SettingCellControllerViewController *btcChinaCellController;        //btcChina平台，提醒列表
     SettingCellControllerViewController *btcECellController;            //btc-E平台，提醒列表
+    
+    ProgressController *_progressController;    //提示控制器
 }
 
+@property (nonatomic, strong, readonly)ProgressController *progressController;
 @property (nonatomic, strong)IBOutlet UIScrollView *scrollView;
 
 @end

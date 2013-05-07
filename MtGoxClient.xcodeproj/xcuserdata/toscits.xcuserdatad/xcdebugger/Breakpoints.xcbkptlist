@@ -20,13 +20,13 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "MtGoxClient/SettingCellControllerViewController.m"
-         timestampString = "389518776.294082"
+         filePath = "MtGoxClient/ITSMVC/ITSModel/ResponseBean/RemindDelResponse.m"
+         timestampString = "389587416.486965"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "62"
-         endingLineNumber = "62"
-         landmarkName = "-dealloc"
+         startingLineNumber = "19"
+         endingLineNumber = "19"
+         landmarkName = "-decode"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

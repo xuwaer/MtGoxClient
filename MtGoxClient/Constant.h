@@ -32,7 +32,8 @@ enum Platform {
 enum RemindType {
     RemindType_SetAlert = 0,
     RemindType_DelAlert = 1,
-    RemindType_GetAlert = 2
+    RemindType_GetAlert = 2,
+    RemindType_UpdateAlert = 3
 };
 
 static const int ThresholdCount = 2;            //提醒个数
@@ -235,10 +236,13 @@ static inline const char * getRemindServerRequestUrl(enum RemindType remindType)
             strcat(requestUrl, "/btc_set_alert.php");
             break;
         case RemindType_DelAlert:
-            strcat(requestUrl, "");
+            strcat(requestUrl, "/btc_delete_alert.php");
             break;
         case RemindType_GetAlert:
             strcat(requestUrl, "");
+            break;
+        case RemindType_UpdateAlert:
+            strcat(requestUrl, "/btc_update_alert.php");
             break;
         default:
             strcat(requestUrl, "");

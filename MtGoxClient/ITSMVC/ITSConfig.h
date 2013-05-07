@@ -97,12 +97,16 @@
 #define kActionTag_Request_EUR      1002
 #define kActionTag_Request_CNY      1003
 #define kActionTag_Request_Set_Remind 1004
+#define kActionTag_Request_Update_Remind 1005
+#define kActionTag_Request_Delete_Remind 1006
 
 #define kActionTag_Response_USD     kActionTag_Request_USD
 #define kActionTag_Response_JPY     kActionTag_Request_JPY
 #define kActionTag_Response_EUR     kActionTag_Request_EUR
 #define kActionTag_Response_CNY     kActionTag_Request_CNY
 #define kActionTag_Response_Set_Remind kActionTag_Request_Set_Remind
+#define kActionTag_Response_Update_Remind kActionTag_Request_Update_Remind
+#define kActionTag_Response_Delete_Remind kActionTag_Request_Delete_Remind
 
 #endif
 

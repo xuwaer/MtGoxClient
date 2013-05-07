@@ -11,6 +11,7 @@
 #import "UserDefault.h"
 #import "SettingCellControllerViewController.h"
 #import "DeviceUtil.h"
+#import "ProgressController.h"
 
 @interface SettingAlertControllerViewController ()
 
@@ -24,6 +25,7 @@
 @implementation SettingAlertControllerViewController
 
 @synthesize scrollView;
+@synthesize progressController = _progressController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -40,6 +42,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self setupUI];
+}
+
+-(void)dealloc
+{
+    [_progressController destroyProgress];
 }
 
 -(void)initData
@@ -68,7 +75,8 @@
     mtGoxCellController.view.frame = mtGoxFrame;
     [self.scrollView addSubview:mtGoxCellController.view];
     mtGoxCellController.headerTitleLabel.text = @"MtGox";
-//    
+    
+//    预留控件
 //    CGRect btcChinaFrame = CGRectMake(8, 147, 303, 169);
 //    btcChinaCellController.view.frame = btcChinaFrame;
 //    [self.scrollView addSubview:btcChinaCellController.view];
@@ -89,6 +97,8 @@
     [backButton addTarget:self action:@selector(popToPreviousViewControllerAnimated:) forControlEvents:UIControlEventTouchUpInside];
     [backButton setFrame:CGRectMake(0.0, 0.0, 26, 26)];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+    
+    _progressController = [[ProgressController alloc] initWithView:self.view];
 }
 
 - (void)didReceiveMemoryWarning

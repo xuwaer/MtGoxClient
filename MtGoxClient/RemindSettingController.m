@@ -13,11 +13,13 @@
 #import "MtGoxTickerResponse.h"
 #import "RemindSetReqest.h"
 #import "RemindSetResponse.h"
+#import "RemindUpdateRequest.h"
+#import "RemindUpdateResponse.h"
 #import "Remind.h"
 #import "RemindSettingQueue.h"
 #import "TransManager.h"
 
-#import "MBProgressHUD.h"
+#import "ProgressController.h"
 #import "DeviceUtil.h"
 
 #import "UserDefault.h"
@@ -63,7 +65,7 @@
 {
     delegate = nil;
     [self destoryHttpQueue];
-    [self destroyProgress];
+    [progressController destroyProgress];
 }
 
 - (void)viewDidLoad
@@ -83,7 +85,7 @@
     [picker createPickerView:@"请选择币种" dataSource:dic defaultIndex:2];
     // 指定回调方法
     [picker addTarget:self selector:@selector(didSelectedCurrency:) userinfo:nil forEvent:PickerViewUitlEventConfirm];
-
+    
     // 如果是修改提醒，则初始化数据并展示
     isNew = NO;
     if (self.remind) {
@@ -110,6 +112,7 @@
     }
     // iOS4.x下，去掉黑边
     self.thresholdTextField.layer.opaque = NO;
+    progressController = [[ProgressController alloc] initWithView:self.view];
 }
 
 - (void)didReceiveMemoryWarning
@@ -158,7 +161,7 @@
 {
     if (![self checkValidate]) return;
     
-    [self showProgress];
+    [progressController showProgress];
     
     if (self.remind) {
         int currency = self.currencyButton.tag;
@@ -176,7 +179,6 @@
         self.remind.threshold = threshold;
         self.remind.currency = currency;
         self.remind.platform = self.platform;
-        
     }
     
     MtGoxTickerRequest *mtGoxUSDRequest = [[MtGoxTickerRequest alloc] initWithCurrency:self.remind.currency];
@@ -187,7 +189,7 @@
 /**
  *	@brief	取消按钮事件
  *
- *	@param 	sender 	
+ *	@param 	sender
  */
 -(void)onCancelButtonClicked:(id)sender
 {
@@ -213,7 +215,7 @@
 /**
  *	@brief	选择币种按钮事件
  *
- *	@param 	sender 	
+ *	@param 	sender
  */
 -(void)onCurrencyButtonClicked:(id)sender
 {
@@ -223,7 +225,7 @@
 /**
  *	@brief	设置输入框编辑时的UI
  *
- *	@param 	sender 
+ *	@param 	sender
  */
 -(void)onThresholdTextFieldEditDidBegin:(id)sender
 {
@@ -233,7 +235,7 @@
 /**
  *	@brief	设置输入框未编辑时的UI
  *
- *	@param 	sender 	
+ *	@param 	sender
  */
 -(void)onThresholdTextFieldEditDidEnd:(id)sender
 {
@@ -243,7 +245,7 @@
 /**
  *	@brief	币种选择器回调方法
  *
- *	@param 	object 
+ *	@param 	object
  */
 -(void)didSelectedCurrency:(PickerObject *)object
 {
@@ -256,7 +258,7 @@
 /**
  *	@brief	币种选择器取消
  *
- *	@param 	object 	
+ *	@param 	object
  */
 -(void)didCanceledCurrency:(PickerObject *)object
 {
@@ -266,7 +268,7 @@
 /**
  *	@brief	根据软键盘弹出，调整UI
  *
- *	@param 	sender 
+ *	@param 	sender
  */
 -(void)onTouchUpBackGround:(id)sender
 {
@@ -283,101 +285,23 @@
         self.containView.frame = frame;
         [UIView commitAnimations];
         [self.thresholdTextField resignFirstResponder];
-
+        
     }
 }
 
 /**
  *	@brief	更新前一界面
  */
--(void)updateSettingController
+-(void)updateSettingController:(int)tag
 {
-    if (!isNew) {
+    if (tag == kActionTag_Response_Update_Remind) {
         [delegate finishEditRemind:self.remind];
     }
-    else {
+    else if (tag == kActionTag_Response_Set_Remind){
         [delegate finishAddRemind:self.remind];
     }
     
     [self dismissModalViewControllerAnimated:YES];
-}
-
-/**
- *	@brief	软键盘弹出时，调整UI
- *
- *	@param 	notification
- */
-- (void)keyboardWillShow:(NSNotification *)notification
-{
-    static CGFloat normalKeyboardHeight = 216.0f;
-    
-    NSDictionary *info = [notification userInfo];
-    CGSize kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
-    
-    CGFloat distanceToMove = kbSize.height - normalKeyboardHeight;
-    
-    //自适应代码
-    CGRect containFrame = self.containView.frame;
-    containFrame = CGRectMake(containFrame.origin.x, containFrame.origin.y - (distanceToMove + normalKeyboardHeight), containFrame.size.width, containFrame.size.width);
-    self.containView.frame = containFrame;
-}
-
-/**
- *	@brief	显示菊花
- */
--(void)showProgress
-{
-    if (progress && progress.isHidden == YES) {
-        progress.hidden = NO;
-    }
-    else {
-        progress = [[MBProgressHUD alloc] initWithView:self.view];
-        [self.view addSubview:progress];
-        progress.mode = MBProgressHUDModeIndeterminate;
-        [progress show:YES];
-    }
-}
-
-/**
- *	@brief	隐藏菊花
- */
--(void)hideProgress
-{
-    if (progress && progress.isHidden == NO)
-        progress.hidden = YES;
-}
-
-/**
- *	@brief	销毁菊花
- */
--(void)destroyProgress
-{
-    if (progress)
-        [progress removeFromSuperview];
-    
-    progress = nil;
-}
-
-/**
- *	@brief	显示提示文字，停留2秒
- *
- *	@param 	title 	文字内容
- */
--(void)showToast:(NSString *)title
-{
-    if (toast == nil) {
-        toast = [[MBProgressHUD alloc] initWithView:self.view];
-        [self.view addSubview:toast];
-        toast.labelText = title;
-        toast.mode = MBProgressHUDModeText;
-        
-        [toast showAnimated:YES whileExecutingBlock:^{
-            sleep(2);
-        } completionBlock:^{
-            [toast removeFromSuperview];
-            toast = nil;
-        }];
-    }
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -404,6 +328,20 @@
     [UIView commitAnimations];
 }
 
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    // 限制输入字符长度
+    if (textField == self.thresholdTextField) {
+        if ([textField.text length] >= 10)
+            return NO;
+        else
+            return YES;
+    }
+    else {
+        return YES;
+    }
+}
+
 /**
  *	@brief	验证输入合法性
  *
@@ -413,13 +351,13 @@
 {
     if ([self.currencyButton.titleLabel.text isEqualToString:@"请选择币种"]) {
         
-        [self showToast:@"请选择币种"];
+        [progressController showToast:@"请选择币种"];
         return NO;
     }
     
     if (self.thresholdTextField.text.length <= 0) {
         
-        [self showToast:@"请输入阀值"];
+        [progressController showToast:@"请输入阀值"];
         return NO;
     }
     
@@ -433,11 +371,11 @@
  */
 -(void)updateUIDisplay:(id)responseFromQueue
 {
-    [self hideProgress];
+    [progressController hideProgress];
     
     // 验证应答结果
     if (responseFromQueue == nil || [responseFromQueue isEqual:[NSNull null]]) {
-        [self showToast:@"添加失败"];
+        [progressController showToast:@"添加失败"];
     }
     else if ([responseFromQueue isKindOfClass:[MtGoxTickerResponse class]]) {
         
@@ -452,19 +390,22 @@
                 MtGoxTickerValueResponse *value = detail.value;
                 self.remind.isLarge = self.remind.threshold > [value.value floatValue] ? YES : NO;
                 
-//                [ProgressUtil showProgress:@"添加成功" super:self.view];
+                //                [ProgressUtil showProgress:@"添加成功" super:self.view];
                 
                 // 向服务器发送添加&设置提醒请求
-                [self addNewRemind];
+                if (isNew)
+                    [self addNewRemind];
+                else
+                    [self editRemind];
             }
             else {
-                [self showToast:@"添加失败"];
+                [progressController showToast:@"添加失败"];
             }
         }
-
+        
     }
     else {
-        [self showToast:@"添加失败"];
+        [progressController showToast:@"添加失败"];
     }
 }
 
@@ -475,18 +416,34 @@
  */
 -(void)showSettingResult:(id)responseFromQueue
 {
-    if (responseFromQueue && [responseFromQueue isKindOfClass:[RemindSetResponse class]]) {
-        // 去掉菊花
-        [self destroyProgress];
-        
-        RemindSetResponse *remindResponse = (RemindSetResponse *)responseFromQueue;
-        if (remindResponse.remindID == -1) {
-            [self showToast:@"添加失败"];
+    // 去掉菊花并销毁
+    [progressController destroyProgress];
+    
+    if (responseFromQueue == nil || [responseFromQueue isEqual:[NSNull null]]) {
+        // request fail.
+        // 网络异常会导致添加失败
+        [progressController showToast:@"添加失败"];
+    }
+    else if ([responseFromQueue isKindOfClass:[RemindSetResponse class]]) {
+        RemindSetResponse *response = (RemindSetResponse *)responseFromQueue;
+        // 解析服务器返回数据失败
+        if (response.remindID == -1) {
+            [progressController showToast:@"添加失败"];
             return;
         }
-                
-        //刷新UI
-        [self updateSettingController];
+        [self updateSettingController:response.tag];
+    }
+    else if ([responseFromQueue isKindOfClass:[RemindUpdateResponse class]]) {
+        RemindUpdateResponse *response = (RemindUpdateResponse *)responseFromQueue;
+        // 服务器返回失败
+        if (response.result == NO) {
+            [progressController showToast:@"添加失败"];
+            return;
+        }
+        [self updateSettingController:response.tag];
+    }
+    else {
+        [progressController showToast:@"添加失败"];
     }
 }
 
@@ -502,7 +459,7 @@
  */
 -(void)addNewRemind
 {
-    [self showProgress];
+    [progressController showProgress];
     
     // 请求Url
     const char * commandChar = getRemindServerRequestUrl(RemindType_SetAlert);
@@ -524,12 +481,12 @@
     // 大于？
     request.islarge = self.remind.isLarge;
     // token
-//    NSData *token = [UserDefault defaultUser].token;
-//    if (token == nil || [token isEqual:[NSNull null]]) {
-//        [self hideProgress];
-//        [self showToast:@"请检查接收通知功能是否开启。"];
-//        return;
-//    }
+    NSData *token = [UserDefault defaultUser].token;
+    if (token == nil || [token isEqual:[NSNull null]]) {
+        [progressController hideProgress];
+        [progressController showToast:@"请检查接收通知功能是否开启。"];
+        return;
+    }
     request.token = DEFAULT_TOKEN;
     // 设置回调方法
     [remindQueue sendRequest:request target:self selector:@selector(showSettingResult:)];
@@ -540,7 +497,39 @@
  */
 -(void)editRemind
 {
+    [progressController showProgress];
     
+    // 请求Url
+    const char * commandChar = getRemindServerRequestUrl(RemindType_UpdateAlert);
+    NSString *commandStr = [NSString stringWithCString:commandChar encoding:NSUTF8StringEncoding];
+    RemindUpdateRequest *request = [[RemindUpdateRequest alloc] initWithCommand:commandStr type:HttpRequestTypeGet];
+    
+    // id
+    request.mid = self.remind.remindId;
+    // 平台
+    const char *platformCodeChar = getPlatformCodeWithPlatform(self.remind.platform);
+    NSString *platformCodeStr = [NSString stringWithCString:platformCodeChar encoding:NSUTF8StringEncoding];
+    request.plat = platformCodeStr;
+    platformCodeStr = NULL;
+    // 币种
+    const char *currencyCodeChar = currencyTypeConvertToCurrencyCode(self.remind.currency);
+    NSString *currencyCodeStr = [NSString stringWithCString:currencyCodeChar encoding:NSUTF8StringEncoding];
+    request.cur = currencyCodeStr;
+    currencyCodeChar = NULL;
+    // 阀值
+    request.check = self.remind.threshold;
+    // 大于？
+    request.islarge = self.remind.isLarge;
+    // token
+    NSData *token = [UserDefault defaultUser].token;
+    if (token == nil || [token isEqual:[NSNull null]]) {
+        [progressController hideProgress];
+        [progressController showToast:@"请检查接收通知功能是否开启。"];
+        return;
+    }
+    request.token = DEFAULT_TOKEN;
+    // 设置回调方法
+    [remindQueue sendRequest:request target:self selector:@selector(showSettingResult:)];
 }
 
 /**

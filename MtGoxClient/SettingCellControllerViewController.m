@@ -10,6 +10,8 @@
 #import "Constant.h"
 #import "Remind.h"
 #import "RemindSettingQueue.h"
+#import "RemindDelRequest.h"
+#import "RemindDelResponse.h"
 #import "UserDefault.h"
 
 #import "RemindCell.h"
@@ -17,6 +19,7 @@
 
 #import "RemindSettingController.h"
 #import "SettingAlertControllerViewController.h"
+#import "ProgressController.h"
 
 #import <QuartzCore/QuartzCore.h>
 
@@ -122,7 +125,24 @@
 
 -(void)updateUIDisplay:(id)responseFromQueue
 {
-
+    NSDictionary *userinfo = [alterDelegate.progressController destroyProgress];
+    if (responseFromQueue == nil || [responseFromQueue isEqual:[NSNull null]]) {
+        [alterDelegate.progressController showToast:@"删除失败"];
+    }
+    else if ([responseFromQueue isKindOfClass:[RemindDelResponse class]]) {
+        RemindDelResponse *response = (RemindDelResponse *)responseFromQueue;
+        if (response.result == NO) {
+            [alterDelegate.progressController showToast:@"删除失败"];
+        }
+        else {
+            NSIndexPath *indexPath = [userinfo objectForKey:@"index"];
+            [self removeDataAtIndex:indexPath.row];
+            [self.alertTableView reloadData];
+        }
+    }
+    else {
+        [alterDelegate.progressController showToast:@"删除失败"];
+    }
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -160,8 +180,16 @@
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self removeDataAtIndex:indexPath.row];
-    [tableView reloadData];
+    const char *commandChar = getRemindServerRequestUrl(RemindType_DelAlert);
+    NSString *commandStr = [NSString stringWithCString:commandChar encoding:NSUTF8StringEncoding];
+    RemindDelRequest *request = [[RemindDelRequest alloc] initWithCommand:commandStr type:HttpRequestTypeGet];
+    Remind *remind = [dataSource objectAtIndex:indexPath.row];
+    request.mid = remind.remindId;
+    [remindQueue sendRequest:request target:self selector:@selector(updateUIDisplay:)];
+    NSDictionary *userinfo = [NSDictionary dictionaryWithObject:indexPath forKey:@"index"];
+    [alterDelegate.progressController showProgress:userinfo];
+    
+    commandChar = NULL;
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath

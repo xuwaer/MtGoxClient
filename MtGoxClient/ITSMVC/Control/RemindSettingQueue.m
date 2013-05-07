@@ -23,6 +23,13 @@
     return _remind;
 }
 
+/**
+ *	@brief	验证返回类型是否合法（无效方法）
+ *
+ *	@param 	actionTag 	返回tag
+ *
+ *	@return	验证结果
+ */
 -(BOOL)checkResponse:(int)actionTag
 {
     if (actionTag == kActionTag_Request_USD && self.remind.currency == CurrencyTypeUSD)
@@ -44,10 +51,10 @@
 {
     DDLogCVerbose(@"%@(%@)", NSStringFromClass([self class]), THIS_METHOD);
     
+    // 去掉缓存中的上下文
     NSUInteger resultTag = [self getContextTag:request];
     TargetContext *context = [self getContext:resultTag];
     [self removeContext:resultTag];
-    
     
     if (context && context.target && context.selector) {
         
@@ -58,12 +65,6 @@
 #pragma clang diagnostic pop
         });
     }
-}
-
--(void)requestFinished:(ASIHTTPRequest *)request
-{
-//    DDLogCVerbose(@"result : %@", [request responseString]);
-    [super requestFinished:request];
 }
 
 @end

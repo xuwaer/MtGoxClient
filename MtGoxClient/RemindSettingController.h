@@ -11,7 +11,7 @@
 @class Remind;
 @class PickerViewUtil;
 @class RemindSettingQueue;
-@class MBProgressHUD;
+@class ProgressController;
 
 /**
  *	@brief	委托。完成添加、修改操作后，调用
@@ -34,8 +34,7 @@
     
     RemindSettingQueue *remindQueue;    //通讯控制层
     
-    MBProgressHUD *progress;    //滚动条
-    MBProgressHUD *toast;       //提示框
+    ProgressController *progressController;     //提示信息控制器
 }
 
 @property (nonatomic, strong)Remind *remind;

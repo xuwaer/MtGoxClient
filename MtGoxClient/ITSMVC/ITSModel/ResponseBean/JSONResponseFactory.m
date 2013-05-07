@@ -11,6 +11,8 @@
 
 #import "MtGoxTickerResponse.h"
 #import "RemindSetResponse.h"
+#import "RemindUpdateResponse.h"
+#import "RemindDelResponse.h"
 
 @implementation JSONResponseFactory
 
@@ -39,6 +41,13 @@
             break;
         case kActionTag_Response_Set_Remind:
             response = [[RemindSetResponse alloc] initWithJSONData:source];
+            break;
+        case kActionTag_Response_Update_Remind:
+            response = [[RemindUpdateResponse alloc] initWithJSONData:source];
+            break;
+        case kActionTag_Response_Delete_Remind:
+            response = [[RemindDelResponse alloc] initWithJSONData:source];
+            break;
         default:
             break;
     }
