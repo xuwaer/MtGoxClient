@@ -10,6 +10,9 @@
 
 @class MBProgressHUD;
 
+/**
+ *	@brief	提示框控制器
+ */
 @interface ProgressController : NSObject
 {
     @private

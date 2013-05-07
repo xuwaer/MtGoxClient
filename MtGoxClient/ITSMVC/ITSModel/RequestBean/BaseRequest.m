@@ -33,6 +33,9 @@
 
 -(NSString *)generatorRequestUrl
 {
+    if (self.requestCommand == nil)
+        return nil;
+    
     NSString *requestUrl = [NSString stringWithFormat:@"%@?", self.requestCommand];
     
     unsigned int propertyCount, i;

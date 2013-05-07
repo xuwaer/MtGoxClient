@@ -7,6 +7,7 @@
 //
 
 #import "MtGoxTickerRequest.h"
+#import "ConstantUtil.h"
 
 @implementation MtGoxTickerRequest
 
@@ -18,11 +19,12 @@
 -(id)initWithCurrency:(enum CurrencyType)inCurrencyType
 {
     currencyType = inCurrencyType;
-    const char * requestChar = getRequestUrl(PlatformMtGox, inCurrencyType);
-    NSString *requestStr = [NSString stringWithCString:requestChar encoding:NSUTF8StringEncoding];
+    
+    NSString *requestStr = [ConstantUtil getRequestUrlWithPlatform:PlatformMtGox withCurrency:inCurrencyType];
+//    const char * requestChar = getRequestUrl(PlatformMtGox, inCurrencyType);
+//    NSString *requestStr = [NSString stringWithCString:requestChar encoding:NSUTF8StringEncoding];
     
     self = [super initWithCommand:requestStr type:HttpRequestTypeGet];
-    requestChar = NULL;
     return self;
 }
 

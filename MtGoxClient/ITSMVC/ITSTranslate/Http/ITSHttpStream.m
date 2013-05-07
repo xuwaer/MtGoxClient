@@ -231,6 +231,9 @@
         //缓存请求、响应信息
         NSUInteger requestTag = [self saveRequestBeanTagInCache:[requestInfo tag]];
         NSString *requestCommand = [requestInfo encode];
+        
+        if (requestCommand == nil)  return ;
+        
         ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[self actionURL:requestCommand]];
         request.timeOutSeconds = HTTP_REQUEST_TIMEOUT;
         [request setDelegate:self];

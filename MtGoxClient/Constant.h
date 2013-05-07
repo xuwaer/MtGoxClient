@@ -12,6 +12,8 @@
 
 //配置文件地址
 #define SettingFile @"Setting.plist"
+//本地服务器
+#define LocalServerHostName "http://10.10.32.44"
 
 // 币种
 enum CurrencyType {
@@ -217,6 +219,39 @@ static inline const char * getRequestUrl(enum Platform platform, enum CurrencyTy
 }
 
 /**
+ *	@brief	根据币种，获取对应的请求url(使用本地服务器中转，访问交易服务器)
+ *
+ *	@param 	currencyType 	币种
+ *
+ *	@return	请求url
+ */
+static inline const char * getLocalRequestUrl(enum CurrencyType currencyType)
+{
+    char *requestUrl = calloc(80, sizeof(char));
+    strcpy(requestUrl, LocalServerHostName);
+    
+    switch (currencyType) {
+        case CurrencyTypeUSD:
+            strcat(requestUrl, "/btc_rat_info.php?path_param=USD");
+            break;
+        case CurrencyTypeEUR:
+            strcat(requestUrl, "/btc_rat_info.php?path_param=EUR");
+            break;
+        case CurrencyTypeJPY:
+            strcat(requestUrl, "/btc_rat_info.php?path_param=JPY");
+            break;
+        case CurrencyTypeCNY:
+            strcat(requestUrl, "/btc_rat_info.php?path_param=CNY");
+            break;
+        default:
+            strcat(requestUrl, "/btc_rat_info.php?path_param=USD");
+            break;
+    }
+    
+    return requestUrl;
+}
+
+/**
  *	@brief	根据类型，获取对应的请求url
  *
  *	@param 	remindType 	提醒请求类型
@@ -226,10 +261,8 @@ static inline const char * getRequestUrl(enum Platform platform, enum CurrencyTy
 static inline const char * getRemindServerRequestUrl(enum RemindType remindType)
 {
     // 提醒服务器地址
-    const char *hostname = "http://10.10.32.44";
-    
     char *requestUrl = calloc(80, sizeof(char));
-    strcpy(requestUrl, hostname);
+    strcpy(requestUrl, LocalServerHostName);
     
     switch (remindType) {
         case RemindType_SetAlert:
