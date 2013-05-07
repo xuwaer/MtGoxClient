@@ -10,7 +10,7 @@
 
 @class SettingCellControllerViewController;
 @class ProgressController;
-
+@class RemindSettingQueue;
 /**
  *	@brief	设置界面
  */
@@ -26,6 +26,8 @@
     SettingCellControllerViewController *btcECellController;            //btc-E平台，提醒列表
     
     ProgressController *_progressController;    //提示控制器
+    
+    RemindSettingQueue *remindQueue;
 }
 
 @property (nonatomic, strong, readonly)ProgressController *progressController;

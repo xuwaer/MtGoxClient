@@ -530,7 +530,6 @@
         return;
     }
     request.token = [ConstantUtil getTokenStr:token];
-    DDLogVerbose(@"%@", request.token);
 //    request.token = DEFAULT_TOKEN;
     // 设置回调方法
     [remindQueue sendRequest:request target:self selector:@selector(showSettingResult:)];

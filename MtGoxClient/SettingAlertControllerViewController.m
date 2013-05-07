@@ -13,6 +13,8 @@
 #import "DeviceUtil.h"
 #import "ProgressController.h"
 
+#import "RemindSettingQueue.h"
+
 @interface SettingAlertControllerViewController ()
 
 //初始化数据，从plist读取用户配置
@@ -33,6 +35,7 @@
     if (self) {
         // Custom initialization
         [self initData];
+        [self setupHttpQueue];
     }
     return self;
 }
@@ -47,6 +50,7 @@
 -(void)dealloc
 {
     [_progressController destroyProgress];
+    [self destoryHttpQueue];
 }
 
 -(void)initData
@@ -114,6 +118,46 @@
     btcECellController.alterDelegate = nil;
     
     [self.navigationController popViewControllerAnimated:animated];
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+#pragma mark - Request & Receive message from server
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+-(void)setupHttpQueue
+{
+    remindQueue = [[RemindSettingQueue alloc] init];
+    [[TransManager defaultManager] add:remindQueue];
+}
+
+-(void)destoryHttpQueue
+{
+    [[TransManager defaultManager] remove:remindQueue];
+    remindQueue = nil;
+}
+
+-(void)updateUIDisplay:(id)responseFromQueue
+{
+//    NSDictionary *userinfo = [alterDelegate.progressController destroyProgress];
+//    if (responseFromQueue == nil || [responseFromQueue isEqual:[NSNull null]]) {
+//        [alterDelegate.progressController showToast:@"删除失败"];
+//    }
+//    else if ([responseFromQueue isKindOfClass:[RemindDelResponse class]]) {
+//        RemindDelResponse *response = (RemindDelResponse *)responseFromQueue;
+//        if (response.result == NO) {
+//            [alterDelegate.progressController showToast:@"删除失败"];
+//        }
+//        else {
+//            NSIndexPath *indexPath = [userinfo objectForKey:@"index"];
+//            [self removeDataAtIndex:indexPath.row];
+//            [self.alertTableView reloadData];
+//        }
+//    }
+//    else {
+//        [alterDelegate.progressController showToast:@"删除失败"];
+//    }
 }
 
 @end
