@@ -487,7 +487,7 @@
         [progressController showToast:@"请检查接收通知功能是否开启。"];
         return;
     }
-    request.token = DEFAULT_TOKEN;
+//    request.token = DEFAULT_TOKEN;
     // 设置回调方法
     [remindQueue sendRequest:request target:self selector:@selector(showSettingResult:)];
 }
@@ -527,7 +527,7 @@
         [progressController showToast:@"请检查接收通知功能是否开启。"];
         return;
     }
-    request.token = DEFAULT_TOKEN;
+//    request.token = DEFAULT_TOKEN;
     // 设置回调方法
     [remindQueue sendRequest:request target:self selector:@selector(showSettingResult:)];
 }
