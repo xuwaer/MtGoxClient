@@ -24,6 +24,7 @@
 
 #import "UserDefault.h"
 #import "Constant.h"
+#import "ConstantUtil.h"
 
 #import "UINavigationBar+CustomNav.h"
 
@@ -487,6 +488,7 @@
         [progressController showToast:@"请检查接收通知功能是否开启。"];
         return;
     }
+    request.token = [ConstantUtil getTokenStr:token];    
 //    request.token = DEFAULT_TOKEN;
     // 设置回调方法
     [remindQueue sendRequest:request target:self selector:@selector(showSettingResult:)];
@@ -527,6 +529,8 @@
         [progressController showToast:@"请检查接收通知功能是否开启。"];
         return;
     }
+    request.token = [ConstantUtil getTokenStr:token];
+    DDLogVerbose(@"%@", request.token);
 //    request.token = DEFAULT_TOKEN;
     // 设置回调方法
     [remindQueue sendRequest:request target:self selector:@selector(showSettingResult:)];

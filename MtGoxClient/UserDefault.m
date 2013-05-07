@@ -9,11 +9,13 @@
 #import "UserDefault.h"
 #import "Remind.h"
 #import "Constant.h"
+#import "ITS.h"
 
 static NSString  * SETTING_PROPERTY_KEY_LASTPLATFORM = @"lastPlatform";
 static NSString  * SETTING_PROPERTY_KEY_MTGOXREMINDS = @"mtGoxReminds";
 static NSString  * SETTING_PROPERTY_KEY_BTCCHINAREMINDS = @"btcChinaReminds";
 static NSString  * SETTING_PROPERTY_KEY_BTCEREMINDS = @"btcEReminds";
+static NSString  * SETTING_PROPERTY_KEY_PREVIOUSTOKEN = @"previoustoken";
 
 @implementation UserDefault
 
@@ -21,6 +23,7 @@ static NSString  * SETTING_PROPERTY_KEY_BTCEREMINDS = @"btcEReminds";
 @synthesize mtGoxRemind = _mtGoxRemind;
 @synthesize btcChinaRemind = _btcChinaRemind;
 @synthesize btcERemind = _btcERemind;
+@synthesize prevToken = _prevToken;
 
 @synthesize lastPlatformTitle;
 @synthesize token;
@@ -73,8 +76,10 @@ static UserDefault *userDefault;
         _mtGoxRemind = [fileContent objectForKey:SETTING_PROPERTY_KEY_MTGOXREMINDS];
         _btcChinaRemind = [fileContent objectForKey:SETTING_PROPERTY_KEY_BTCCHINAREMINDS];
         _btcERemind = [fileContent objectForKey:SETTING_PROPERTY_KEY_BTCEREMINDS];
+        _prevToken = [fileContent objectForKey:SETTING_PROPERTY_KEY_PREVIOUSTOKEN];
     }
-        
+    
+    // 封装
     [self convertDataToRemind];
 }
 
@@ -85,6 +90,7 @@ static UserDefault *userDefault;
     _btcChinaRemind = [[NSMutableArray alloc] init];
     _btcERemind = [[NSMutableArray alloc] init];
     fileContent = [[NSMutableDictionary alloc] init];
+    _prevToken = nil;
 }
 
 -(void)saveUserDefault
@@ -98,6 +104,11 @@ static UserDefault *userDefault;
     [fileContent setValue:tmpMtGoxRemind forKey:SETTING_PROPERTY_KEY_MTGOXREMINDS];
     [fileContent setValue:tmpBtcChinaRemind forKey:SETTING_PROPERTY_KEY_BTCCHINAREMINDS];
     [fileContent setValue:tmpBtcERemind forKey:SETTING_PROPERTY_KEY_BTCEREMINDS];
+    
+    // 保存本次获取的token，如果本次未获取，则不做任何操作
+    DDLogVerbose(@"%@", self.token);
+    if (self.token)
+        [fileContent setValue:self.token forKey:SETTING_PROPERTY_KEY_PREVIOUSTOKEN];
     
     [fileContent writeToFile:filePath atomically:YES];
 }

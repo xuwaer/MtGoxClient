@@ -36,4 +36,6 @@
  */
 +(NSString *)getRequestUrlWithPlatform:(enum Platform)platform withCurrency:(enum CurrencyType)currencyType;
 
++(NSString *)getTokenStr:(NSData *)token;
+
 @end

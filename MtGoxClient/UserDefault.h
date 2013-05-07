@@ -19,6 +19,7 @@
     NSMutableArray *_mtGoxRemind;
     NSMutableArray *_btcChinaRemind;
     NSMutableArray *_btcERemind;
+    NSData *_prevToken;
     
     NSMutableArray *tmpMtGoxRemind;
     NSMutableArray *tmpBtcChinaRemind;
@@ -30,6 +31,8 @@
 @property (nonatomic, strong, readonly)NSMutableArray *mtGoxRemind;
 @property (nonatomic, strong, readonly)NSMutableArray *btcChinaRemind;
 @property (nonatomic, strong, readonly)NSMutableArray *btcERemind;
+// 上次token
+@property (nonatomic, strong, readonly)NSData *prevToken;
 
 // 仅作显示用，不保存
 @property (nonatomic, strong, readonly)NSString *lastPlatformTitle;

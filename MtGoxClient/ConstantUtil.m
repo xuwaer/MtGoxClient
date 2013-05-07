@@ -69,4 +69,20 @@
     return requestStr;
 }
 
++(NSString *)getTokenStr:(NSData *)token
+{
+    if (token == nil || [token isEqual:[NSNull null]])
+        return nil;
+    
+    Byte *bytes = (Byte *)[token bytes];
+    NSString *devToken = @"";
+    for (int i = 0; i < [token length]; i++) {
+        NSString *newHexStr = [NSString stringWithFormat:@"%x", bytes[i]&0xff];
+        if ([newHexStr length] == 1)    devToken = [NSString stringWithFormat:@"%@0%@",devToken, newHexStr];
+        else    devToken = [NSString stringWithFormat:@"%@%@", devToken, newHexStr];
+    }
+    
+    return devToken;
+}
+
 @end

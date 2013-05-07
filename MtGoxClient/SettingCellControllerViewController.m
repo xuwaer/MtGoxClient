@@ -61,7 +61,6 @@
 
 -(void)dealloc
 {
-    DDLogVerbose(@"%@ dealloc", THIS_FILE);
     [self destoryHttpQueue];
 }
 
