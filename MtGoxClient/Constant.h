@@ -35,11 +35,12 @@ enum RemindType {
     RemindType_SetAlert = 0,
     RemindType_DelAlert = 1,
     RemindType_GetAlert = 2,
-    RemindType_UpdateAlert = 3
+    RemindType_UpdateAlert = 3,
+    RemindType_SyncAlert = 4
 };
 
 static const int ThresholdCount = 2;            //提醒个数
-static const int REPEAT_DELAY = 30;             //自动刷新间隔
+static const int REPEAT_DELAY = 35;             //自动刷新间隔
 
 #define DEFAULT_TOKEN @"abc00fea0ff7717e36c0b4837b4e840678ad046fd67d895ad4235a901cc54c33"
 
@@ -106,6 +107,23 @@ static inline const char * currencyTypeConvertToCurrencyCode(enum CurrencyType c
 }
 
 /**
+ *	@brief	通过国际代码，转换为币种代码
+ *
+ *	@param 	currencyCode 	国际代码
+ *
+ *	@return	币种代码
+ */
+static inline enum CurrencyType currencyCodeConvertToCurrencyType(const char * currencyCode)
+{
+    if (strcmp(currencyCode, "USD"))    return CurrencyTypeUSD;
+    if (strcmp(currencyCode, "EUR"))    return CurrencyTypeEUR;
+    if (strcmp(currencyCode, "JPY"))    return CurrencyTypeJPY;
+    if (strcmp(currencyCode, "CNY"))    return CurrencyTypeCNY;
+    
+    return CurrencyTypeUSD;
+}
+
+/**
  *	@brief	通过显示文字转换为币种代码
  *
  *	@param 	currencyName 	显示文字
@@ -125,8 +143,6 @@ static inline enum CurrencyType currencyNameConvertToCurrencyType(const char * c
     else if (strcmp(currencyName, "人民币"))
         currencyType = CurrencyTypeCNY;
 
-  
-    
     return currencyType;
 }
 
@@ -155,6 +171,20 @@ static inline const char * getPlatformCodeWithPlatform(enum Platform platform)
     }
     
     return platformCode;
+}
+
+/**
+ *	@brief	根据平台代号，获取平台id
+ *
+ *	@param 	platformCode 平台代号
+ *
+ *	@return	平台id
+ */
+static inline enum Platform getPlatformWithPlatformCode(char const * platformCode)
+{
+    if (strcmp(platformCode, "mtgox"))    return PlatformMtGox;
+    
+    return -1;
 }
 
 /**
@@ -276,6 +306,9 @@ static inline const char * getRemindServerRequestUrl(enum RemindType remindType)
             break;
         case RemindType_UpdateAlert:
             strcat(requestUrl, "/btc_update_alert.php");
+            break;
+        case RemindType_SyncAlert:
+            strcat(requestUrl, "/btc_syns_alert.php");
             break;
         default:
             strcat(requestUrl, "");

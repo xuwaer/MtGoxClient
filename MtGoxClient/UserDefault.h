@@ -37,6 +37,8 @@
 // 仅作显示用，不保存
 @property (nonatomic, strong, readonly)NSString *lastPlatformTitle;
 @property (nonatomic, strong)NSData *token;
+// 是否已从服务器同步。应用启动后，仅同步一次
+@property (nonatomic, assign)BOOL isSynchronoused;
 
 /**
  *	@brief	Get Userdefault instance.

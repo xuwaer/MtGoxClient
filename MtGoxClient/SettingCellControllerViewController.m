@@ -305,6 +305,11 @@
     [[UserDefault defaultUser] saveUserDefault];
 }
 
+-(void)refreshDataSource
+{
+    [self initData];
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 
 #pragma mark - RemindSetting delegate

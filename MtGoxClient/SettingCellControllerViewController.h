@@ -32,4 +32,6 @@
 
 @property (nonatomic, strong)SettingAlertControllerViewController *alterDelegate;
 
+-(void)refreshDataSource;
+
 @end

@@ -432,6 +432,8 @@
             [progressController showToast:@"添加失败"];
             return;
         }
+        // 获取服务器id
+        self.remind.remindId = response.remindID;
         [self updateSettingController:response.tag];
     }
     else if ([responseFromQueue isKindOfClass:[RemindUpdateResponse class]]) {

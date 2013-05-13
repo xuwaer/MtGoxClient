@@ -14,10 +14,14 @@
 		B98965C61729003700260BFF /* MtGoxInformationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B98965C51729003700260BFF /* MtGoxInformationQueue.m */; };
 		B98965C9172901A300260BFF /* MtGoxTickerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B98965C8172901A200260BFF /* MtGoxTickerRequest.m */; };
 		B98965D51729069600260BFF /* MtGoxTickerResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B98965D41729069600260BFF /* MtGoxTickerResponse.m */; };
+		B9AEC5F4173A56C8000E7F6F /* RemindSyncRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B9AEC5F3173A56C8000E7F6F /* RemindSyncRequest.m */; };
+		B9AEC5F7173A5758000E7F6F /* RemindSyncResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B9AEC5F6173A5758000E7F6F /* RemindSyncResponse.m */; };
 		B9BA8BD3172B77C50049C878 /* RemindSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BA8BD1172B77C50049C878 /* RemindSettingController.m */; };
 		B9BA8BD4172B77C50049C878 /* RemindSettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9BA8BD2172B77C50049C878 /* RemindSettingController.xib */; };
 		B9BA8BE7172B974E0049C878 /* RemindAddCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BA8BE6172B974D0049C878 /* RemindAddCell.m */; };
 		B9BA8BE9172B97E80049C878 /* RemindAddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9BA8BE8172B97E80049C878 /* RemindAddCell.xib */; };
+		B9BBCAE41740B642002264C8 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B9BBCAE31740B642002264C8 /* Icon.png */; };
+		B9BBCAE61740B649002264C8 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9BBCAE51740B649002264C8 /* Icon@2x.png */; };
 		B9C5688117334F4F00146192 /* bg_pic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C5688017334F4F00146192 /* bg_pic@2x.png */; };
 		B9C568841733528200146192 /* bg_main_section@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C568821733528200146192 /* bg_main_section@2x.png */; };
 		B9C568851733528200146192 /* bg_price@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C568831733528200146192 /* bg_price@2x.png */; };
@@ -129,12 +133,18 @@
 		B98965C8172901A200260BFF /* MtGoxTickerRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MtGoxTickerRequest.m; sourceTree = "<group>"; };
 		B98965D31729069600260BFF /* MtGoxTickerResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MtGoxTickerResponse.h; sourceTree = "<group>"; };
 		B98965D41729069600260BFF /* MtGoxTickerResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MtGoxTickerResponse.m; sourceTree = "<group>"; };
+		B9AEC5F2173A56C8000E7F6F /* RemindSyncRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindSyncRequest.h; sourceTree = "<group>"; };
+		B9AEC5F3173A56C8000E7F6F /* RemindSyncRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindSyncRequest.m; sourceTree = "<group>"; };
+		B9AEC5F5173A5758000E7F6F /* RemindSyncResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindSyncResponse.h; sourceTree = "<group>"; };
+		B9AEC5F6173A5758000E7F6F /* RemindSyncResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindSyncResponse.m; sourceTree = "<group>"; };
 		B9BA8BD0172B77C50049C878 /* RemindSettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindSettingController.h; sourceTree = "<group>"; };
 		B9BA8BD1172B77C50049C878 /* RemindSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindSettingController.m; sourceTree = "<group>"; };
 		B9BA8BD2172B77C50049C878 /* RemindSettingController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RemindSettingController.xib; sourceTree = "<group>"; };
 		B9BA8BE5172B974D0049C878 /* RemindAddCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindAddCell.h; sourceTree = "<group>"; };
 		B9BA8BE6172B974D0049C878 /* RemindAddCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindAddCell.m; sourceTree = "<group>"; };
 		B9BA8BE8172B97E80049C878 /* RemindAddCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RemindAddCell.xib; sourceTree = "<group>"; };
+		B9BBCAE31740B642002264C8 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		B9BBCAE51740B649002264C8 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		B9C5688017334F4F00146192 /* bg_pic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_pic@2x.png"; sourceTree = "<group>"; };
 		B9C568821733528200146192 /* bg_main_section@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_main_section@2x.png"; sourceTree = "<group>"; };
 		B9C568831733528200146192 /* bg_price@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_price@2x.png"; sourceTree = "<group>"; };
@@ -363,6 +373,8 @@
 		B9E5631A1728F82B005443A3 = {
 			isa = PBXGroup;
 			children = (
+				B9BBCAE51740B649002264C8 /* Icon@2x.png */,
+				B9BBCAE31740B642002264C8 /* Icon.png */,
 				B9E5632C1728F82B005443A3 /* MtGoxClient */,
 				B9E563251728F82B005443A3 /* Frameworks */,
 				B9E563241728F82B005443A3 /* Products */,
@@ -494,6 +506,8 @@
 				B9D583421737BA1D00FE5471 /* RemindUpdateRequest.m */,
 				B9D583441737BEAA00FE5471 /* RemindDelRequest.h */,
 				B9D583451737BEAB00FE5471 /* RemindDelRequest.m */,
+				B9AEC5F2173A56C8000E7F6F /* RemindSyncRequest.h */,
+				B9AEC5F3173A56C8000E7F6F /* RemindSyncRequest.m */,
 				B9E563B31728F8D3005443A3 /* URLRequestFactory.h */,
 				B9E563B41728F8D3005443A3 /* URLRequestFactory.m */,
 			);
@@ -513,6 +527,8 @@
 				B9D5833F1737B9BA00FE5471 /* RemindUpdateResponse.m */,
 				B9D583471737BFBC00FE5471 /* RemindDelResponse.h */,
 				B9D583481737BFBC00FE5471 /* RemindDelResponse.m */,
+				B9AEC5F5173A5758000E7F6F /* RemindSyncResponse.h */,
+				B9AEC5F6173A5758000E7F6F /* RemindSyncResponse.m */,
 				B9E563CA1728F8D3005443A3 /* JSONResponseFactory.h */,
 				B9E563CB1728F8D3005443A3 /* JSONResponseFactory.m */,
 			);
@@ -792,6 +808,8 @@
 				B9C568AD1733B0DD00146192 /* btn_dropdown_up@2x.png in Resources */,
 				B9C568AF1733B1BB00146192 /* bg_text@2x.png in Resources */,
 				B9C568B81733BE9F00146192 /* bg_iphone5@2x.png in Resources */,
+				B9BBCAE41740B642002264C8 /* Icon.png in Resources */,
+				B9BBCAE61740B649002264C8 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -864,6 +882,8 @@
 				B9D583491737BFBD00FE5471 /* RemindDelResponse.m in Sources */,
 				B9D7E926173898A900130F4F /* ProgressController.m in Sources */,
 				B9D7E9291738A43F00130F4F /* ConstantUtil.m in Sources */,
+				B9AEC5F4173A56C8000E7F6F /* RemindSyncRequest.m in Sources */,
+				B9AEC5F7173A5758000E7F6F /* RemindSyncResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,6 +13,7 @@
 #import "RemindSetResponse.h"
 #import "RemindUpdateResponse.h"
 #import "RemindDelResponse.h"
+#import "RemindSyncResponse.h"
 
 @implementation JSONResponseFactory
 
@@ -47,6 +48,9 @@
             break;
         case kActionTag_Response_Delete_Remind:
             response = [[RemindDelResponse alloc] initWithJSONData:source];
+            break;
+        case kActionTag_Request_Sync_Remind:
+            response = [[RemindSyncResponse alloc] initWithJSONData:source];
             break;
         default:
             break;

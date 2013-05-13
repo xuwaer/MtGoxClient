@@ -99,6 +99,7 @@
 #define kActionTag_Request_Set_Remind 1004
 #define kActionTag_Request_Update_Remind 1005
 #define kActionTag_Request_Delete_Remind 1006
+#define kActionTag_Request_Sync_Remind 1007
 
 #define kActionTag_Response_USD     kActionTag_Request_USD
 #define kActionTag_Response_JPY     kActionTag_Request_JPY
@@ -107,6 +108,7 @@
 #define kActionTag_Response_Set_Remind kActionTag_Request_Set_Remind
 #define kActionTag_Response_Update_Remind kActionTag_Request_Update_Remind
 #define kActionTag_Response_Delete_Remind kActionTag_Request_Delete_Remind
+#define kActionTag_Response_Sync_Remind kActionTag_Request_Sync_Remind
 
 #endif
 

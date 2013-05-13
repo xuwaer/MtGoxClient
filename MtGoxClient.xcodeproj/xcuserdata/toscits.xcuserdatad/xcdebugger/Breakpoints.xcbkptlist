@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MtGoxClient/RemindSettingController.m"
-         timestampString = "389600426.966334"
+         timestampString = "389609233.370376"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "534"
-         endingLineNumber = "534"
+         startingLineNumber = "535"
+         endingLineNumber = "535"
          landmarkName = "-editRemind"
          landmarkType = "5">
       </FileBreakpoint>

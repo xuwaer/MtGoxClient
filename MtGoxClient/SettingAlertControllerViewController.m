@@ -13,6 +13,11 @@
 #import "DeviceUtil.h"
 #import "ProgressController.h"
 
+#import "Constant.h"
+#import "ConstantUtil.h"
+#import "Remind.h"
+#import "RemindSyncRequest.h"
+#import "RemindSyncResponse.h"
 #import "RemindSettingQueue.h"
 
 @interface SettingAlertControllerViewController ()
@@ -34,8 +39,9 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        [self initData];
+//        [self initData];
         [self setupHttpQueue];
+        mtGoxCellController = [[SettingCellControllerViewController alloc] init];
     }
     return self;
 }
@@ -44,12 +50,21 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self setupUI];
+    
+    if ([UserDefault defaultUser].isSynchronoused) {
+        [self initData];
+        [self setupUI];
+    }
+    else {
+        [self setupUI];
+        [self synchronousedRemind];
+    }
 }
 
 -(void)dealloc
 {
     [_progressController destroyProgress];
+    mtGoxCellController.alterDelegate = nil;
     [self destoryHttpQueue];
 }
 
@@ -57,10 +72,10 @@
 {
     UserDefault *userDefault = [UserDefault defaultUser];
     [userDefault getUserDefault];
-    
-    mtGoxCellController = [[SettingCellControllerViewController alloc] init];
+        
     mtGoxCellController.dataArray = userDefault.mtGoxRemind;
     mtGoxCellController.alterDelegate = self;
+    [mtGoxCellController.alertTableView reloadData];
     
     // 版本v1.0仅支持mtGox，故以下代码预留
 //    btcChinaCellController = [[SettingCellControllerViewController alloc] init];
@@ -70,6 +85,17 @@
 //    btcECellController = [[SettingCellControllerViewController alloc] init];
 //    btcEReminds = userDefault.btcERemind;
 //    btcECellController.alterDelegate = self;
+}
+
+-(void)reInitData
+{
+    UserDefault *userDefault = [UserDefault defaultUser];
+    [userDefault getUserDefault];
+    
+    mtGoxCellController.dataArray = userDefault.mtGoxRemind;
+    mtGoxCellController.alterDelegate = self;
+    [mtGoxCellController refreshDataSource];
+    [mtGoxCellController.alertTableView reloadData];
 }
 
 -(void)setupUI
@@ -140,24 +166,43 @@
 
 -(void)updateUIDisplay:(id)responseFromQueue
 {
-//    NSDictionary *userinfo = [alterDelegate.progressController destroyProgress];
-//    if (responseFromQueue == nil || [responseFromQueue isEqual:[NSNull null]]) {
-//        [alterDelegate.progressController showToast:@"删除失败"];
+    [self.progressController destroyProgress];
+    if (responseFromQueue == nil || [responseFromQueue isEqual:[NSNull null]]) {
+        [self.progressController showToast:@"添加失败"];
+    }
+    else if ([responseFromQueue isKindOfClass:[RemindSyncResponse class]]) {
+        RemindSyncResponse *response = (RemindSyncResponse *)responseFromQueue;
+        NSMutableArray *reminds = [UserDefault defaultUser].mtGoxRemind;
+        [reminds removeAllObjects];
+        for (Remind *remind in response.reminds) {
+            [reminds addObject:remind];
+        }
+        [[UserDefault defaultUser] saveUserDefault];
+        [UserDefault defaultUser].isSynchronoused = YES;
+//        [self initData];
+        [self reInitData];
+    }
+    else {
+        [self.progressController showToast:@"添加失败"];
+    }
+}
+
+-(void)synchronousedRemind
+{    
+    char const * commandChar = getRemindServerRequestUrl(RemindType_SyncAlert);
+    NSString *commandStr = [NSString stringWithCString:commandChar encoding:NSUTF8StringEncoding];
+    RemindSyncRequest *request = [[RemindSyncRequest alloc] initWithCommand:commandStr type:HttpRequestTypeGet];
+    
+//    NSData *token = [UserDefault defaultUser].prevToken;
+//    if (token == nil || [token isEqual:[NSNull null]]) {
+//        return;
 //    }
-//    else if ([responseFromQueue isKindOfClass:[RemindDelResponse class]]) {
-//        RemindDelResponse *response = (RemindDelResponse *)responseFromQueue;
-//        if (response.result == NO) {
-//            [alterDelegate.progressController showToast:@"删除失败"];
-//        }
-//        else {
-//            NSIndexPath *indexPath = [userinfo objectForKey:@"index"];
-//            [self removeDataAtIndex:indexPath.row];
-//            [self.alertTableView reloadData];
-//        }
-//    }
-//    else {
-//        [alterDelegate.progressController showToast:@"删除失败"];
-//    }
+//    request.token = [ConstantUtil getTokenStr:token];
+    
+    NSString *token = [NSString stringWithFormat:@"'%@'", DEFAULT_TOKEN];
+    request.token = token;
+    [self.progressController showProgress];
+    [remindQueue sendRequest:request target:self selector:@selector(updateUIDisplay:)];
 }
 
 @end

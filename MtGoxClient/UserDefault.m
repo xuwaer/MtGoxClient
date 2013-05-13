@@ -27,6 +27,7 @@ static NSString  * SETTING_PROPERTY_KEY_PREVIOUSTOKEN = @"previoustoken";
 
 @synthesize lastPlatformTitle;
 @synthesize token;
+@synthesize isSynchronoused;
 
 static UserDefault *userDefault;
 
@@ -46,6 +47,7 @@ static UserDefault *userDefault;
     self = [super init];
     if (self != nil) {
         [self getUserDefault];
+        self.isSynchronoused = NO;
     }
     
     return self;
@@ -106,7 +108,6 @@ static UserDefault *userDefault;
     [fileContent setValue:tmpBtcERemind forKey:SETTING_PROPERTY_KEY_BTCEREMINDS];
     
     // 保存本次获取的token，如果本次未获取，则不做任何操作
-    DDLogVerbose(@"%@", self.token);
     if (self.token)
         [fileContent setValue:self.token forKey:SETTING_PROPERTY_KEY_PREVIOUSTOKEN];
     
