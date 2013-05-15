@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
 @class Remind;
 @class PickerViewUtil;
@@ -26,7 +27,7 @@
 /**
  *	@brief	阀值设置界面
  */
-@interface RemindSettingController : UIViewController<UITextFieldDelegate>
+@interface RemindSettingController : BaseViewController<UITextFieldDelegate>
 {
     @private
     Remind *_remind;            //提醒实体bean

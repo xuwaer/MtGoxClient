@@ -18,18 +18,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // 配置用户行为收集
+    if (IsCollectUserEvent) 
+        [self setupBaiduMobStat];
+    
+    // 设置连接配置
     [self setupConfig];
     
-    // Remote notification. first require device token from apple server.
-    // Let the device know we want to receive push notifications
+    // 申请远程推送token
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
      (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    
     MainViewController *viewController = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
     viewController.title = userDefault.lastPlatformTitle;
+    
+    if (IsCollectUserEvent) 
+        viewController.isCollectEvent = YES;
+    
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
     
     // 设置导航栏背景
@@ -92,6 +99,24 @@
 //    TransManager *transManager = [TransManager defaultManager];
 //    [transManager setHostname:hostnameStr];
 //    hostnameChar = NULL;
+}
+
+-(void)setupBaiduMobStat
+{
+    BaiduMobStat *statTracker = [BaiduMobStat defaultStat];
+    // 配置是否打开崩溃日志收集
+    statTracker.enableExceptionLog = NO;
+    // 配置渠道名，默认为appStore
+//    statTracker.channelId = @"";
+    // 自定义日志发送间隔
+    statTracker.logStrategy = BaiduMobStatLogStrategyCustom;
+    // 日志发送间隔1小时
+    statTracker.logSendInterval = 1;
+    // 仅在WIFI发送
+    statTracker.logSendWifiOnly = YES;
+    statTracker.sessionResumeInterval = 60;
+    // AppKey
+    [statTracker startWithAppId:BaiduAppId];
 }
 
 @end

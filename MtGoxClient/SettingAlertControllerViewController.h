@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
 @class SettingCellControllerViewController;
 @class ProgressController;
@@ -14,7 +15,7 @@
 /**
  *	@brief	设置界面
  */
-@interface SettingAlertControllerViewController : UIViewController
+@interface SettingAlertControllerViewController : BaseViewController
 {
     @private
     NSMutableArray *mtGoxReminds;

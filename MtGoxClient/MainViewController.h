@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
 @class MtGoxInformationQueue;
 @class MtGoxTickerResponse;
 
-@interface MainViewController : UIViewController
+@interface MainViewController : BaseViewController
 {
     @private
     MtGoxInformationQueue *mtGoxQueue;

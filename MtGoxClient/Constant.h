@@ -10,6 +10,10 @@
 #include <string.h>
 #include <stdio.h>
 
+//是否收集用户行为
+#define IsCollectUserEvent YES
+//百度平台appId
+#define BaiduAppId @"0a59e39237"
 //配置文件地址
 #define SettingFile @"Setting.plist"
 //本地服务器
