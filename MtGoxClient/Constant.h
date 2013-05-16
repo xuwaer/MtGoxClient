@@ -17,7 +17,7 @@
 //配置文件地址
 #define SettingFile @"Setting.plist"
 //本地服务器
-#define LocalServerHostName "http://10.10.32.44"
+#define LocalServerHostName "http://10.10.32.44:8081/bitecoin"
 
 // 币种
 enum CurrencyType {
@@ -119,10 +119,17 @@ static inline const char * currencyTypeConvertToCurrencyCode(enum CurrencyType c
  */
 static inline enum CurrencyType currencyCodeConvertToCurrencyType(const char * currencyCode)
 {
-    if (strcmp(currencyCode, "USD"))    return CurrencyTypeUSD;
-    if (strcmp(currencyCode, "EUR"))    return CurrencyTypeEUR;
-    if (strcmp(currencyCode, "JPY"))    return CurrencyTypeJPY;
-    if (strcmp(currencyCode, "CNY"))    return CurrencyTypeCNY;
+    if (strcmp(currencyCode, "USD") == 0)
+        return CurrencyTypeUSD;
+    
+    if (strcmp(currencyCode, "EUR") == 0)
+        return CurrencyTypeEUR;
+    
+    if (strcmp(currencyCode, "JPY") == 0)
+        return CurrencyTypeJPY;
+    
+    if (strcmp(currencyCode, "CNY") == 0)
+        return CurrencyTypeCNY;
     
     return CurrencyTypeUSD;
 }
@@ -138,13 +145,13 @@ static inline enum CurrencyType currencyNameConvertToCurrencyType(const char * c
 {
     int currencyType = -1;
     
-    if (strcmp(currencyName, "美元"))
+    if (strcmp(currencyName, "美元") == 0)
         currencyType = CurrencyTypeUSD;
-    else if (strcmp(currencyName, "日元"))
+    else if (strcmp(currencyName, "日元") == 0)
         currencyType = CurrencyTypeJPY;
-    else if (strcmp(currencyName, "欧元"))
+    else if (strcmp(currencyName, "欧元") == 0)
         currencyType = CurrencyTypeEUR;
-    else if (strcmp(currencyName, "人民币"))
+    else if (strcmp(currencyName, "人民币") == 0)
         currencyType = CurrencyTypeCNY;
 
     return currencyType;
@@ -186,7 +193,7 @@ static inline const char * getPlatformCodeWithPlatform(enum Platform platform)
  */
 static inline enum Platform getPlatformWithPlatformCode(char const * platformCode)
 {
-    if (strcmp(platformCode, "mtgox"))    return PlatformMtGox;
+    if (strcmp(platformCode, "mtgox") == 0)    return PlatformMtGox;
     
     return -1;
 }

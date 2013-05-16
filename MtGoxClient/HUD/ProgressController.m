@@ -29,6 +29,16 @@
  */
 -(void)showProgress
 {
+    [self showProgress:nil];
+}
+
+-(void)showProgress:(NSString *)title
+{
+    [self showProgress:title userinfo:nil];
+}
+
+-(void)showProgress:(NSString *)title userinfo:(NSDictionary *)inUserinfo
+{
     if (progress && progress.isHidden == YES) {
         progress.hidden = NO;
     }
@@ -38,12 +48,12 @@
         progress.mode = MBProgressHUDModeIndeterminate;
         [progress show:YES];
     }
-}
-
--(void)showProgress:(NSDictionary *)inUserinfo
-{
-    userinfo = [NSDictionary dictionaryWithDictionary:inUserinfo];
-    [self showProgress];
+    
+    if (title)
+        progress.labelText = title;
+    
+    if (inUserinfo)
+        userinfo = [NSDictionary dictionaryWithDictionary:inUserinfo];
 }
 
 /**

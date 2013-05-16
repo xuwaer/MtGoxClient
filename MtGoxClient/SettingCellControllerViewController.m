@@ -186,7 +186,7 @@
     request.mid = remind.remindId;
     [remindQueue sendRequest:request target:self selector:@selector(updateUIDisplay:)];
     NSDictionary *userinfo = [NSDictionary dictionaryWithObject:indexPath forKey:@"index"];
-    [alterDelegate.progressController showProgress:userinfo];
+    [alterDelegate.progressController showProgress:nil userinfo:userinfo];
     
     commandChar = NULL;
 }

@@ -51,12 +51,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    if ([UserDefault defaultUser].isSynchronoused) {
-        [self initData];
-        [self setupUI];
-    }
-    else {
-        [self setupUI];
+    [self initData];
+    [self setupUI];
+    
+    if (![UserDefault defaultUser].isSynchronoused)
+    {
         [self synchronousedRemind];
     }
 }
@@ -168,7 +167,7 @@
 {
     [self.progressController destroyProgress];
     if (responseFromQueue == nil || [responseFromQueue isEqual:[NSNull null]]) {
-        [self.progressController showToast:@"添加失败"];
+        [self.progressController showToast:@"同步失败"];
     }
     else if ([responseFromQueue isKindOfClass:[RemindSyncResponse class]]) {
         RemindSyncResponse *response = (RemindSyncResponse *)responseFromQueue;
@@ -183,7 +182,7 @@
         [self reInitData];
     }
     else {
-        [self.progressController showToast:@"添加失败"];
+        [self.progressController showToast:@"同步失败"];
     }
 }
 
@@ -193,15 +192,15 @@
     NSString *commandStr = [NSString stringWithCString:commandChar encoding:NSUTF8StringEncoding];
     RemindSyncRequest *request = [[RemindSyncRequest alloc] initWithCommand:commandStr type:HttpRequestTypeGet];
     
-//    NSData *token = [UserDefault defaultUser].prevToken;
-//    if (token == nil || [token isEqual:[NSNull null]]) {
-//        return;
-//    }
-//    request.token = [ConstantUtil getTokenStr:token];
+    NSData *token = [UserDefault defaultUser].prevToken;
+    if (token == nil || [token isEqual:[NSNull null]]) {
+        return;
+    }
+    request.token = [ConstantUtil getTokenStr:token];
     
-    NSString *token = [NSString stringWithFormat:@"'%@'", DEFAULT_TOKEN];
-    request.token = token;
-    [self.progressController showProgress];
+//    NSString *token = [NSString stringWithFormat:@"'%@'", DEFAULT_TOKEN];
+//    request.token = token;
+    [self.progressController showProgress:@"同步提醒..."];
     [remindQueue sendRequest:request target:self selector:@selector(updateUIDisplay:)];
 }
 

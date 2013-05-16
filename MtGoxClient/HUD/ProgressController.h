@@ -33,8 +33,18 @@
 
 /**
  *	@brief	显示菊花
+ *
+ *  @param  title   标题
  */
--(void)showProgress:(NSDictionary *)inUserinfo;
+-(void)showProgress:(NSString *)title;
+
+/**
+ *	@brief	显示菊花，同时缓存用户数据
+ *
+ *  @param  title   标题
+ *	@param 	inUserinfo 	缓存的用户数据
+ */
+-(void)showProgress:(NSString *)title userinfo:(NSDictionary *)inUserinfo;
 
 /**
  *	@brief	隐藏菊花
