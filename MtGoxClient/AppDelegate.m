@@ -29,6 +29,9 @@
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
      (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
     
+    // 重置标识数字
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     MainViewController *viewController = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
