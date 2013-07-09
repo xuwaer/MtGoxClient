@@ -27,6 +27,7 @@
 
 @property (nonatomic, strong, readonly)NSString *result;        // 请求结果
 @property (nonatomic, strong, readonly)NSDictionary *data;           // 数据数组
+@property (nonatomic) BOOL isDecodeSuccess;
 
 @end
 

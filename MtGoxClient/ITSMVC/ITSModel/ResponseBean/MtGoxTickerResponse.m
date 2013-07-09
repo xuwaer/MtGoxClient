@@ -25,6 +25,7 @@
 
 -(void)decode
 {
+    self.isDecodeSuccess = NO;
     if (_jSONData == nil)   return;
   
     id json = [_jSONData objectFromJSONData];
@@ -54,6 +55,7 @@
     }
     
     _data = datas;
+    self.isDecodeSuccess = YES;
 }
 
 -(NSUInteger)tag

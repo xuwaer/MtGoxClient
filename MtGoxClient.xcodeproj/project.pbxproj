@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96BF32341786A04400C70EFA /* libBaiduMobStat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BF321A1786A04400C70EFA /* libBaiduMobStat.a */; };
+		96BF32351786A04400C70EFA /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BF321D1786A04400C70EFA /* CDataScanner.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		96BF32361786A04400C70EFA /* CFilteringJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BF32201786A04400C70EFA /* CFilteringJSONSerializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		96BF32371786A04400C70EFA /* CJSONDeserializer_BlocksExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BF32221786A04400C70EFA /* CJSONDeserializer_BlocksExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		96BF32381786A04400C70EFA /* CJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BF32241786A04400C70EFA /* CJSONSerialization.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		96BF32391786A04400C70EFA /* CJSONSerializedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BF32261786A04400C70EFA /* CJSONSerializedData.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		96BF323A1786A04400C70EFA /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BF32291786A04400C70EFA /* CDataScanner_Extensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		96BF323B1786A04400C70EFA /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BF322B1786A04400C70EFA /* NSDictionary_JSONExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		96BF323C1786A04400C70EFA /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BF322E1786A04400C70EFA /* CJSONDeserializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		96BF323D1786A04400C70EFA /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BF32301786A04400C70EFA /* CJSONScanner.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		96BF323E1786A04400C70EFA /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BF32321786A04400C70EFA /* CJSONSerializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B902B7FE172A9577007872F0 /* RemindCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B902B7FD172A9577007872F0 /* RemindCell.m */; };
 		B902B800172A9596007872F0 /* RemindCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B902B7FF172A9596007872F0 /* RemindCell.xib */; };
 		B9366394172A61B60077859A /* UserDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = B9366393172A61B60077859A /* UserDefault.m */; };
@@ -16,21 +27,6 @@
 		B98965D51729069600260BFF /* MtGoxTickerResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B98965D41729069600260BFF /* MtGoxTickerResponse.m */; };
 		B9AEC5F4173A56C8000E7F6F /* RemindSyncRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B9AEC5F3173A56C8000E7F6F /* RemindSyncRequest.m */; };
 		B9AEC5F7173A5758000E7F6F /* RemindSyncResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B9AEC5F6173A5758000E7F6F /* RemindSyncResponse.m */; };
-		B9B7C7E11744E94C00259A90 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B7C7C21744E94C00259A90 /* CDataScanner.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B9B7C7E21744E94C00259A90 /* CFilteringJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B7C7C51744E94C00259A90 /* CFilteringJSONSerializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B9B7C7E31744E94C00259A90 /* CJSONDeserializer_BlocksExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B7C7C71744E94C00259A90 /* CJSONDeserializer_BlocksExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B9B7C7E41744E94C00259A90 /* CJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B7C7C91744E94C00259A90 /* CJSONSerialization.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B9B7C7E51744E94C00259A90 /* CJSONSerializedData.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B7C7CB1744E94C00259A90 /* CJSONSerializedData.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B9B7C7E61744E94C00259A90 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B7C7CE1744E94C00259A90 /* CDataScanner_Extensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B9B7C7E71744E94C00259A90 /* NSCharacterSet_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B7C7D01744E94C00259A90 /* NSCharacterSet_Extensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B9B7C7E81744E94C00259A90 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B7C7D21744E94C00259A90 /* NSDictionary_JSONExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B9B7C7E91744E94C00259A90 /* NSScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B7C7D41744E94C00259A90 /* NSScanner_Extensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B9B7C7EA1744E94C00259A90 /* CJSONDataSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B7C7D71744E94C00259A90 /* CJSONDataSerializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B9B7C7EB1744E94C00259A90 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B7C7D91744E94C00259A90 /* CJSONDeserializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B9B7C7EC1744E94C00259A90 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B7C7DB1744E94C00259A90 /* CJSONScanner.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B9B7C7ED1744E94C00259A90 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B7C7DD1744E94C00259A90 /* CJSONSerializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B9B7C7EE1744E94C00259A90 /* CSerializedJSONData.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B7C7DF1744E94C00259A90 /* CSerializedJSONData.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B9B7C7F21744E95E00259A90 /* libBaiduMobStat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B7C7F11744E95E00259A90 /* libBaiduMobStat.a */; };
 		B9B9FDD61743385E003E0B94 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B9FDD51743385E003E0B94 /* CoreLocation.framework */; };
 		B9B9FDD81743387F003E0B94 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B9FDD71743387F003E0B94 /* libstdc++.dylib */; };
 		B9B9FDDA17433897003E0B94 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B9FDD917433897003E0B94 /* CoreTelephony.framework */; };
@@ -136,6 +132,29 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		96BF32191786A04400C70EFA /* BaiduMobStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMobStat.h; sourceTree = "<group>"; };
+		96BF321A1786A04400C70EFA /* libBaiduMobStat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduMobStat.a; sourceTree = "<group>"; };
+		96BF321C1786A04400C70EFA /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
+		96BF321D1786A04400C70EFA /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner.m; sourceTree = "<group>"; };
+		96BF321F1786A04400C70EFA /* CFilteringJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFilteringJSONSerializer.h; sourceTree = "<group>"; };
+		96BF32201786A04400C70EFA /* CFilteringJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFilteringJSONSerializer.m; sourceTree = "<group>"; };
+		96BF32211786A04400C70EFA /* CJSONDeserializer_BlocksExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer_BlocksExtensions.h; sourceTree = "<group>"; };
+		96BF32221786A04400C70EFA /* CJSONDeserializer_BlocksExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer_BlocksExtensions.m; sourceTree = "<group>"; };
+		96BF32231786A04400C70EFA /* CJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerialization.h; sourceTree = "<group>"; };
+		96BF32241786A04400C70EFA /* CJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerialization.m; sourceTree = "<group>"; };
+		96BF32251786A04400C70EFA /* CJSONSerializedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializedData.h; sourceTree = "<group>"; };
+		96BF32261786A04400C70EFA /* CJSONSerializedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializedData.m; sourceTree = "<group>"; };
+		96BF32281786A04400C70EFA /* CDataScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner_Extensions.h; sourceTree = "<group>"; };
+		96BF32291786A04400C70EFA /* CDataScanner_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner_Extensions.m; sourceTree = "<group>"; };
+		96BF322A1786A04400C70EFA /* NSDictionary_JSONExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_JSONExtensions.h; sourceTree = "<group>"; };
+		96BF322B1786A04400C70EFA /* NSDictionary_JSONExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_JSONExtensions.m; sourceTree = "<group>"; };
+		96BF322D1786A04400C70EFA /* CJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer.h; sourceTree = "<group>"; };
+		96BF322E1786A04400C70EFA /* CJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer.m; sourceTree = "<group>"; };
+		96BF322F1786A04400C70EFA /* CJSONScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONScanner.h; sourceTree = "<group>"; };
+		96BF32301786A04400C70EFA /* CJSONScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONScanner.m; sourceTree = "<group>"; };
+		96BF32311786A04400C70EFA /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
+		96BF32321786A04400C70EFA /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
+		96BF32331786A04400C70EFA /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
 		B902B7FC172A9577007872F0 /* RemindCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindCell.h; sourceTree = "<group>"; };
 		B902B7FD172A9577007872F0 /* RemindCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindCell.m; sourceTree = "<group>"; };
 		B902B7FF172A9596007872F0 /* RemindCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RemindCell.xib; sourceTree = "<group>"; };
@@ -154,37 +173,6 @@
 		B9AEC5F3173A56C8000E7F6F /* RemindSyncRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindSyncRequest.m; sourceTree = "<group>"; };
 		B9AEC5F5173A5758000E7F6F /* RemindSyncResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindSyncResponse.h; sourceTree = "<group>"; };
 		B9AEC5F6173A5758000E7F6F /* RemindSyncResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindSyncResponse.m; sourceTree = "<group>"; };
-		B9B7C7C11744E94C00259A90 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
-		B9B7C7C21744E94C00259A90 /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner.m; sourceTree = "<group>"; };
-		B9B7C7C41744E94C00259A90 /* CFilteringJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFilteringJSONSerializer.h; sourceTree = "<group>"; };
-		B9B7C7C51744E94C00259A90 /* CFilteringJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFilteringJSONSerializer.m; sourceTree = "<group>"; };
-		B9B7C7C61744E94C00259A90 /* CJSONDeserializer_BlocksExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer_BlocksExtensions.h; sourceTree = "<group>"; };
-		B9B7C7C71744E94C00259A90 /* CJSONDeserializer_BlocksExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer_BlocksExtensions.m; sourceTree = "<group>"; };
-		B9B7C7C81744E94C00259A90 /* CJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerialization.h; sourceTree = "<group>"; };
-		B9B7C7C91744E94C00259A90 /* CJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerialization.m; sourceTree = "<group>"; };
-		B9B7C7CA1744E94C00259A90 /* CJSONSerializedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializedData.h; sourceTree = "<group>"; };
-		B9B7C7CB1744E94C00259A90 /* CJSONSerializedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializedData.m; sourceTree = "<group>"; };
-		B9B7C7CD1744E94C00259A90 /* CDataScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner_Extensions.h; sourceTree = "<group>"; };
-		B9B7C7CE1744E94C00259A90 /* CDataScanner_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner_Extensions.m; sourceTree = "<group>"; };
-		B9B7C7CF1744E94C00259A90 /* NSCharacterSet_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSCharacterSet_Extensions.h; sourceTree = "<group>"; };
-		B9B7C7D01744E94C00259A90 /* NSCharacterSet_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSCharacterSet_Extensions.m; sourceTree = "<group>"; };
-		B9B7C7D11744E94C00259A90 /* NSDictionary_JSONExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_JSONExtensions.h; sourceTree = "<group>"; };
-		B9B7C7D21744E94C00259A90 /* NSDictionary_JSONExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_JSONExtensions.m; sourceTree = "<group>"; };
-		B9B7C7D31744E94C00259A90 /* NSScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSScanner_Extensions.h; sourceTree = "<group>"; };
-		B9B7C7D41744E94C00259A90 /* NSScanner_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSScanner_Extensions.m; sourceTree = "<group>"; };
-		B9B7C7D61744E94C00259A90 /* CJSONDataSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDataSerializer.h; sourceTree = "<group>"; };
-		B9B7C7D71744E94C00259A90 /* CJSONDataSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDataSerializer.m; sourceTree = "<group>"; };
-		B9B7C7D81744E94C00259A90 /* CJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer.h; sourceTree = "<group>"; };
-		B9B7C7D91744E94C00259A90 /* CJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer.m; sourceTree = "<group>"; };
-		B9B7C7DA1744E94C00259A90 /* CJSONScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONScanner.h; sourceTree = "<group>"; };
-		B9B7C7DB1744E94C00259A90 /* CJSONScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONScanner.m; sourceTree = "<group>"; };
-		B9B7C7DC1744E94C00259A90 /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
-		B9B7C7DD1744E94C00259A90 /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
-		B9B7C7DE1744E94C00259A90 /* CSerializedJSONData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSerializedJSONData.h; sourceTree = "<group>"; };
-		B9B7C7DF1744E94C00259A90 /* CSerializedJSONData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSerializedJSONData.m; sourceTree = "<group>"; };
-		B9B7C7E01744E94C00259A90 /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
-		B9B7C7F01744E95E00259A90 /* BaiduMobStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMobStat.h; sourceTree = "<group>"; };
-		B9B7C7F11744E95E00259A90 /* libBaiduMobStat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduMobStat.a; sourceTree = "<group>"; };
 		B9B9FDD51743385E003E0B94 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B9B9FDD71743387F003E0B94 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		B9B9FDD917433897003E0B94 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -371,13 +359,75 @@
 				B9E563271728F82B005443A3 /* UIKit.framework in Frameworks */,
 				B9E563291728F82B005443A3 /* Foundation.framework in Frameworks */,
 				B9E5632B1728F82B005443A3 /* CoreGraphics.framework in Frameworks */,
-				B9B7C7F21744E95E00259A90 /* libBaiduMobStat.a in Frameworks */,
+				96BF32341786A04400C70EFA /* libBaiduMobStat.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		96BF32181786A04400C70EFA /* BaiduStatistics */ = {
+			isa = PBXGroup;
+			children = (
+				96BF32191786A04400C70EFA /* BaiduMobStat.h */,
+				96BF321A1786A04400C70EFA /* libBaiduMobStat.a */,
+				96BF321B1786A04400C70EFA /* TouchJSON */,
+			);
+			path = BaiduStatistics;
+			sourceTree = "<group>";
+		};
+		96BF321B1786A04400C70EFA /* TouchJSON */ = {
+			isa = PBXGroup;
+			children = (
+				96BF321C1786A04400C70EFA /* CDataScanner.h */,
+				96BF321D1786A04400C70EFA /* CDataScanner.m */,
+				96BF321E1786A04400C70EFA /* Experimental */,
+				96BF32271786A04400C70EFA /* Extensions */,
+				96BF322C1786A04400C70EFA /* JSON */,
+			);
+			path = TouchJSON;
+			sourceTree = "<group>";
+		};
+		96BF321E1786A04400C70EFA /* Experimental */ = {
+			isa = PBXGroup;
+			children = (
+				96BF321F1786A04400C70EFA /* CFilteringJSONSerializer.h */,
+				96BF32201786A04400C70EFA /* CFilteringJSONSerializer.m */,
+				96BF32211786A04400C70EFA /* CJSONDeserializer_BlocksExtensions.h */,
+				96BF32221786A04400C70EFA /* CJSONDeserializer_BlocksExtensions.m */,
+				96BF32231786A04400C70EFA /* CJSONSerialization.h */,
+				96BF32241786A04400C70EFA /* CJSONSerialization.m */,
+				96BF32251786A04400C70EFA /* CJSONSerializedData.h */,
+				96BF32261786A04400C70EFA /* CJSONSerializedData.m */,
+			);
+			path = Experimental;
+			sourceTree = "<group>";
+		};
+		96BF32271786A04400C70EFA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				96BF32281786A04400C70EFA /* CDataScanner_Extensions.h */,
+				96BF32291786A04400C70EFA /* CDataScanner_Extensions.m */,
+				96BF322A1786A04400C70EFA /* NSDictionary_JSONExtensions.h */,
+				96BF322B1786A04400C70EFA /* NSDictionary_JSONExtensions.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		96BF322C1786A04400C70EFA /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				96BF322D1786A04400C70EFA /* CJSONDeserializer.h */,
+				96BF322E1786A04400C70EFA /* CJSONDeserializer.m */,
+				96BF322F1786A04400C70EFA /* CJSONScanner.h */,
+				96BF32301786A04400C70EFA /* CJSONScanner.m */,
+				96BF32311786A04400C70EFA /* CJSONSerializer.h */,
+				96BF32321786A04400C70EFA /* CJSONSerializer.m */,
+				96BF32331786A04400C70EFA /* JSONRepresentation.h */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
 		B9366391172A619D0077859A /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,90 +442,10 @@
 			name = Data;
 			sourceTree = "<group>";
 		};
-		B9B7C7BF1744E93200259A90 /* BaiduStat */ = {
-			isa = PBXGroup;
-			children = (
-				B9B7C7EF1744E95D00259A90 /* Release-iphoneos */,
-				B9B7C7C01744E94C00259A90 /* TouchJSON */,
-			);
-			name = BaiduStat;
-			sourceTree = "<group>";
-		};
-		B9B7C7C01744E94C00259A90 /* TouchJSON */ = {
-			isa = PBXGroup;
-			children = (
-				B9B7C7C11744E94C00259A90 /* CDataScanner.h */,
-				B9B7C7C21744E94C00259A90 /* CDataScanner.m */,
-				B9B7C7C31744E94C00259A90 /* Experimental */,
-				B9B7C7CC1744E94C00259A90 /* Extensions */,
-				B9B7C7D51744E94C00259A90 /* JSON */,
-			);
-			name = TouchJSON;
-			path = "../../../../Users/toscits/Documents/work/比特币/BaiduState/ios_api/TouchJSON";
-			sourceTree = "<group>";
-		};
-		B9B7C7C31744E94C00259A90 /* Experimental */ = {
-			isa = PBXGroup;
-			children = (
-				B9B7C7C41744E94C00259A90 /* CFilteringJSONSerializer.h */,
-				B9B7C7C51744E94C00259A90 /* CFilteringJSONSerializer.m */,
-				B9B7C7C61744E94C00259A90 /* CJSONDeserializer_BlocksExtensions.h */,
-				B9B7C7C71744E94C00259A90 /* CJSONDeserializer_BlocksExtensions.m */,
-				B9B7C7C81744E94C00259A90 /* CJSONSerialization.h */,
-				B9B7C7C91744E94C00259A90 /* CJSONSerialization.m */,
-				B9B7C7CA1744E94C00259A90 /* CJSONSerializedData.h */,
-				B9B7C7CB1744E94C00259A90 /* CJSONSerializedData.m */,
-			);
-			path = Experimental;
-			sourceTree = "<group>";
-		};
-		B9B7C7CC1744E94C00259A90 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				B9B7C7CD1744E94C00259A90 /* CDataScanner_Extensions.h */,
-				B9B7C7CE1744E94C00259A90 /* CDataScanner_Extensions.m */,
-				B9B7C7CF1744E94C00259A90 /* NSCharacterSet_Extensions.h */,
-				B9B7C7D01744E94C00259A90 /* NSCharacterSet_Extensions.m */,
-				B9B7C7D11744E94C00259A90 /* NSDictionary_JSONExtensions.h */,
-				B9B7C7D21744E94C00259A90 /* NSDictionary_JSONExtensions.m */,
-				B9B7C7D31744E94C00259A90 /* NSScanner_Extensions.h */,
-				B9B7C7D41744E94C00259A90 /* NSScanner_Extensions.m */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		B9B7C7D51744E94C00259A90 /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				B9B7C7D61744E94C00259A90 /* CJSONDataSerializer.h */,
-				B9B7C7D71744E94C00259A90 /* CJSONDataSerializer.m */,
-				B9B7C7D81744E94C00259A90 /* CJSONDeserializer.h */,
-				B9B7C7D91744E94C00259A90 /* CJSONDeserializer.m */,
-				B9B7C7DA1744E94C00259A90 /* CJSONScanner.h */,
-				B9B7C7DB1744E94C00259A90 /* CJSONScanner.m */,
-				B9B7C7DC1744E94C00259A90 /* CJSONSerializer.h */,
-				B9B7C7DD1744E94C00259A90 /* CJSONSerializer.m */,
-				B9B7C7DE1744E94C00259A90 /* CSerializedJSONData.h */,
-				B9B7C7DF1744E94C00259A90 /* CSerializedJSONData.m */,
-				B9B7C7E01744E94C00259A90 /* JSONRepresentation.h */,
-			);
-			path = JSON;
-			sourceTree = "<group>";
-		};
-		B9B7C7EF1744E95D00259A90 /* Release-iphoneos */ = {
-			isa = PBXGroup;
-			children = (
-				B9B7C7F01744E95E00259A90 /* BaiduMobStat.h */,
-				B9B7C7F11744E95E00259A90 /* libBaiduMobStat.a */,
-			);
-			name = "Release-iphoneos";
-			path = "../../../../Users/toscits/Documents/work/比特币/BaiduState/ios_api/Release-iphoneos";
-			sourceTree = "<group>";
-		};
 		B9C568B01733B9AF00146192 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				B9B7C7BF1744E93200259A90 /* BaiduStat */,
+				96BF32181786A04400C70EFA /* BaiduStatistics */,
 				B9C568B11733B9DD00146192 /* UIDevice+Hardware.h */,
 				B9C568B21733B9DD00146192 /* UIDevice+Hardware.m */,
 				B9C568B41733BC4D00146192 /* DeviceUtil.h */,
@@ -1020,20 +990,16 @@
 				B9AEC5F4173A56C8000E7F6F /* RemindSyncRequest.m in Sources */,
 				B9AEC5F7173A5758000E7F6F /* RemindSyncResponse.m in Sources */,
 				B9B9FDDD174356A4003E0B94 /* BaseViewController.m in Sources */,
-				B9B7C7E11744E94C00259A90 /* CDataScanner.m in Sources */,
-				B9B7C7E21744E94C00259A90 /* CFilteringJSONSerializer.m in Sources */,
-				B9B7C7E31744E94C00259A90 /* CJSONDeserializer_BlocksExtensions.m in Sources */,
-				B9B7C7E41744E94C00259A90 /* CJSONSerialization.m in Sources */,
-				B9B7C7E51744E94C00259A90 /* CJSONSerializedData.m in Sources */,
-				B9B7C7E61744E94C00259A90 /* CDataScanner_Extensions.m in Sources */,
-				B9B7C7E71744E94C00259A90 /* NSCharacterSet_Extensions.m in Sources */,
-				B9B7C7E81744E94C00259A90 /* NSDictionary_JSONExtensions.m in Sources */,
-				B9B7C7E91744E94C00259A90 /* NSScanner_Extensions.m in Sources */,
-				B9B7C7EA1744E94C00259A90 /* CJSONDataSerializer.m in Sources */,
-				B9B7C7EB1744E94C00259A90 /* CJSONDeserializer.m in Sources */,
-				B9B7C7EC1744E94C00259A90 /* CJSONScanner.m in Sources */,
-				B9B7C7ED1744E94C00259A90 /* CJSONSerializer.m in Sources */,
-				B9B7C7EE1744E94C00259A90 /* CSerializedJSONData.m in Sources */,
+				96BF32351786A04400C70EFA /* CDataScanner.m in Sources */,
+				96BF32361786A04400C70EFA /* CFilteringJSONSerializer.m in Sources */,
+				96BF32371786A04400C70EFA /* CJSONDeserializer_BlocksExtensions.m in Sources */,
+				96BF32381786A04400C70EFA /* CJSONSerialization.m in Sources */,
+				96BF32391786A04400C70EFA /* CJSONSerializedData.m in Sources */,
+				96BF323A1786A04400C70EFA /* CDataScanner_Extensions.m in Sources */,
+				96BF323B1786A04400C70EFA /* NSDictionary_JSONExtensions.m in Sources */,
+				96BF323C1786A04400C70EFA /* CJSONDeserializer.m in Sources */,
+				96BF323D1786A04400C70EFA /* CJSONScanner.m in Sources */,
+				96BF323E1786A04400C70EFA /* CJSONSerializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1110,16 +1076,17 @@
 		B9E563471728F82B005443A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Shun Shun Pang (HKP557QUHE)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MtGoxClient/MtGoxClient-Prefix.pch";
 				INFOPLIST_FILE = "MtGoxClient/MtGoxClient-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/MtGoxClient/Util\"",
-					"\"/Users/toscits/Documents/work/比特币/BaiduState/ios_api/Release-iphoneos\"",
+					"\"$(SRCROOT)/MtGoxClient/Util/BaiduStatistics\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "39A24A45-8DBA-4989-9C58-B010204FB760";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1133,8 +1100,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/MtGoxClient/Util\"",
-					"\"/Users/toscits/Documents/work/比特币/BaiduState/ios_api/Release-iphoneos\"",
+					"\"$(SRCROOT)/MtGoxClient/Util/BaiduStatistics\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

@@ -17,7 +17,10 @@
 //配置文件地址
 #define SettingFile @"Setting.plist"
 //本地服务器
-#define LocalServerHostName "http://10.10.32.44:8081/bitecoin"
+// Test
+//#define LocalServerHostName "http://10.10.32.44:8081/bitecoin"
+// Product
+#define LocalServerHostName "http://218.93.202.124:8086/bitecoin"
 
 // 币种
 enum CurrencyType {

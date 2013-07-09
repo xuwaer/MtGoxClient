@@ -90,7 +90,7 @@
 
 -(void)updateUIDisplay:(id)responseFromQueue
 {
-    if ([responseFromQueue isKindOfClass:[MtGoxTickerResponse class]]) {
+    if ([responseFromQueue isKindOfClass:[MtGoxTickerResponse class]] && ((MtGoxTickerResponse *)responseFromQueue).isDecodeSuccess) {
                 
         MtGoxTickerResponse *response = (MtGoxTickerResponse *)responseFromQueue;
         
@@ -107,6 +107,8 @@
         PriceCell *cell = [customViews objectForKey:[NSString stringWithFormat:@"%d", response.tag]];
         [cell display:response];
 //        [self.tableView reloadData];
+    } else {
+        DDLogInfo(@"更新失败");
     }
 }
 

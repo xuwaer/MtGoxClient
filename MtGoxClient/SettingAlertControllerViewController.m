@@ -51,13 +51,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    [self synchronousedRemind];
     [self initData];
     [self setupUI];
-    
-    if (![UserDefault defaultUser].isSynchronoused)
-    {
-        [self synchronousedRemind];
-    }
 }
 
 -(void)dealloc
