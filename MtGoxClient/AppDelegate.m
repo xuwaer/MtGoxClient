@@ -11,6 +11,7 @@
 #import "MainViewController.h"
 #import "TransManager.h"
 #import "UserDefault.h"
+#import "BaiduMobStat.h"
 
 #import "UINavigationBar+CustomNav.h"
 
@@ -28,9 +29,6 @@
     // 申请远程推送token
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
      (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
-    
-    // 重置标识数字
-    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
@@ -68,6 +66,10 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
+    
+    // 重置标识数字
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+    
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
@@ -84,6 +86,7 @@
 -(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
     userDefault.token = deviceToken;
+    [userDefault saveUserDefault];
 }
 
 -(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error

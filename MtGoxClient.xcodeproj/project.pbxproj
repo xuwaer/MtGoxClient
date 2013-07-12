@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		966E144F178EBB330094DFEA /* notification.caf in Resources */ = {isa = PBXBuildFile; fileRef = 966E144E178EBB330094DFEA /* notification.caf */; };
 		96BF32341786A04400C70EFA /* libBaiduMobStat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BF321A1786A04400C70EFA /* libBaiduMobStat.a */; };
 		96BF32351786A04400C70EFA /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BF321D1786A04400C70EFA /* CDataScanner.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		96BF32361786A04400C70EFA /* CFilteringJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BF32201786A04400C70EFA /* CFilteringJSONSerializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -132,6 +133,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		966E144E178EBB330094DFEA /* notification.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = notification.caf; sourceTree = "<group>"; };
 		96BF32191786A04400C70EFA /* BaiduMobStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMobStat.h; sourceTree = "<group>"; };
 		96BF321A1786A04400C70EFA /* libBaiduMobStat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduMobStat.a; sourceTree = "<group>"; };
 		96BF321C1786A04400C70EFA /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
@@ -531,6 +533,7 @@
 		B9E5632D1728F82B005443A3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				966E144E178EBB330094DFEA /* notification.caf */,
 				B9E5632E1728F82B005443A3 /* MtGoxClient-Info.plist */,
 				B9E5632F1728F82B005443A3 /* InfoPlist.strings */,
 				B9E563321728F82B005443A3 /* main.m */,
@@ -916,6 +919,7 @@
 				B9C568B81733BE9F00146192 /* bg_iphone5@2x.png in Resources */,
 				B9BBCAE41740B642002264C8 /* Icon.png in Resources */,
 				B9BBCAE61740B649002264C8 /* Icon@2x.png in Resources */,
+				966E144F178EBB330094DFEA /* notification.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

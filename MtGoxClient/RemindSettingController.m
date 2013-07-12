@@ -286,7 +286,7 @@
         self.containView.frame = frame;
         [UIView commitAnimations];
         [self.thresholdTextField resignFirstResponder];
-        
+        self.thresholdTextField.background = [UIImage imageNamed:@"bg_text@2x"];
     }
 }
 
@@ -319,6 +319,7 @@
 -(void)textFieldDidBeginEditing:(UITextField *)textField
 {
     //当点触textField内部，开始编辑都会调用这个方法。textField将成为first responder
+    textField.background = [UIImage imageNamed:@"bg_text@2x"];
     NSTimeInterval animationDuration = 0.3f;
     CGRect frame = self.containView.frame;
     frame.origin.y -=216;

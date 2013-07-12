@@ -51,8 +51,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [self synchronousedRemind];
     [self initData];
+    [self synchronousedRemind];
     [self setupUI];
 }
 
