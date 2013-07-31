@@ -110,6 +110,8 @@
 #define kActionTag_Response_Delete_Remind kActionTag_Request_Delete_Remind
 #define kActionTag_Response_Sync_Remind kActionTag_Request_Sync_Remind
 
+#define kRequest_Failed_Notification @"notification_request_failed"
+
 #endif
 
 // 服务器连接方式

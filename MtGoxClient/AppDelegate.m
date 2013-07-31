@@ -12,6 +12,9 @@
 #import "TransManager.h"
 #import "UserDefault.h"
 #import "BaiduMobStat.h"
+#import "BitcoinIntroController.h"
+#import "BitcoinMiningController.h"
+
 
 #import "UINavigationBar+CustomNav.h"
 
@@ -33,20 +36,41 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     MainViewController *viewController = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
-    viewController.title = userDefault.lastPlatformTitle;
+    viewController.title = @"最新汇率";
     
     if (IsCollectUserEvent) 
         viewController.isCollectEvent = YES;
     
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    BitcoinIntroController *introController = [[BitcoinIntroController alloc] init];
+    introController.title = @"交易指南";
+    BitcoinMiningController *miningController = [[BitcoinMiningController alloc] init];
+    miningController.title = @"挖矿指南";
     
+    UINavigationController *mtgNav = [[UINavigationController alloc] initWithRootViewController:viewController];
+    UINavigationController *introNav = [[UINavigationController alloc] initWithRootViewController:introController];
+    UINavigationController *miningNav = [[UINavigationController alloc] initWithRootViewController:miningController];
+    
+    [viewController.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"btn_mtg"] withFinishedUnselectedImage:[UIImage imageNamed:@"btn_mtg"]];
+    [introController.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"btn_intro"] withFinishedUnselectedImage:[UIImage imageNamed:@"btn_intro"]];
+    [miningController.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"btn_miming"] withFinishedUnselectedImage:[UIImage imageNamed:@"btn_mining"]];
     // 设置导航栏背景
-    if ([navController.navigationBar respondsToSelector:@selector( setBackgroundImage:forBarMetrics:)]){
+    if ([mtgNav.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)]){
         UIImage *navbgImage= [UIImage imageNamed:@"bg_nav.png"];
-        [navController.navigationBar setBackgroundImage:navbgImage forBarMetrics:UIBarMetricsDefault];
+        [mtgNav.navigationBar setBackgroundImage:navbgImage forBarMetrics:UIBarMetricsDefault];
     }
-    
-    self.window.rootViewController = navController;
+    if ([introNav.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)]){
+        UIImage *navbgImage= [UIImage imageNamed:@"bg_nav.png"];
+        [introNav.navigationBar setBackgroundImage:navbgImage forBarMetrics:UIBarMetricsDefault];
+    }
+    if ([miningNav.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)]){
+        UIImage *navbgImage= [UIImage imageNamed:@"bg_nav.png"];
+        [miningNav.navigationBar setBackgroundImage:navbgImage forBarMetrics:UIBarMetricsDefault];
+    }
+    UITabBarController *tabbar = [[UITabBarController alloc] init];
+    tabbar.viewControllers = @[mtgNav, introNav, miningNav];
+    tabbar.tabBar.backgroundImage = [UIImage imageNamed:@"bg_tabbar"];
+
+    self.window.rootViewController = tabbar;
     [self.window makeKeyAndVisible];
 
     return YES;

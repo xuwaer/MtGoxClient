@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
+	<data>
+		<int key="IBDocument.SystemTarget">1552</int>
+		<string key="IBDocument.SystemVersion">12E55</string>
+		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
+		<string key="IBDocument.AppKitVersion">1187.39</string>
+		<string key="IBDocument.HIToolboxVersion">626.00</string>
+		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
+			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+			<string key="NS.object.0">2083</string>
+		</object>
+		<array key="IBDocument.IntegratedClassDependencies">
+			<string>IBProxyObject</string>
+			<string>IBUILabel</string>
+			<string>IBUIScrollView</string>
+			<string>IBUIView</string>
+		</array>
+		<array key="IBDocument.PluginDependencies">
+			<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+		</array>
+		<object class="NSMutableDictionary" key="IBDocument.Metadata">
+			<string key="NS.key.0">PluginDependencyRecalculationVersion</string>
+			<integer value="1" key="NS.object.0"/>
+		</object>
+		<array class="NSMutableArray" key="IBDocument.RootObjects" id="1000">
+			<object class="IBProxyObject" id="372490531">
+				<string key="IBProxiedObjectIdentifier">IBFilesOwner</string>
+				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+			</object>
+			<object class="IBProxyObject" id="975951072">
+				<string key="IBProxiedObjectIdentifier">IBFirstResponder</string>
+				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+			</object>
+			<object class="IBUIView" id="191373211">
+				<reference key="NSNextResponder"/>
+				<int key="NSvFlags">274</int>
+				<array class="NSMutableArray" key="NSSubviews">
+					<object class="IBUIScrollView" id="1060689241">
+						<reference key="NSNextResponder" ref="191373211"/>
+						<int key="NSvFlags">274</int>
+						<array class="NSMutableArray" key="NSSubviews">
+							<object class="IBUIView" id="490169282">
+								<reference key="NSNextResponder" ref="1060689241"/>
+								<int key="NSvFlags">292</int>
+								<array class="NSMutableArray" key="NSSubviews">
+									<object class="IBUILabel" id="213900698">
+										<reference key="NSNextResponder" ref="490169282"/>
+										<int key="NSvFlags">292</int>
+										<string key="NSFrame">{{20, 20}, {181, 33}}</string>
+										<reference key="NSSuperview" ref="490169282"/>
+										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView" ref="690826168"/>
+										<string key="NSReuseIdentifierKey">_NS:9</string>
+										<bool key="IBUIOpaque">NO</bool>
+										<bool key="IBUIClipsSubviews">YES</bool>
+										<int key="IBUIContentMode">7</int>
+										<bool key="IBUIUserInteractionEnabled">NO</bool>
+										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+										<string key="IBUIText">比特币挖矿</string>
+										<object class="NSColor" key="IBUITextColor" id="867970686">
+											<int key="NSColorSpace">1</int>
+											<bytes key="NSRGB">MCAwIDAAA</bytes>
+											<string key="IBUIColorCocoaTouchKeyPath">darkTextColor</string>
+										</object>
+										<nil key="IBUIHighlightedColor"/>
+										<int key="IBUIBaselineAdjustment">0</int>
+										<object class="IBUIFontDescription" key="IBUIFontDescription" id="831416639">
+											<int key="type">2</int>
+											<double key="pointSize">17</double>
+										</object>
+										<object class="NSFont" key="IBUIFont" id="446733381">
+											<string key="NSName">Helvetica-Bold</string>
+											<double key="NSSize">17</double>
+											<int key="NSfFlags">16</int>
+										</object>
+										<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+									</object>
+									<object class="IBUILabel" id="690826168">
+										<reference key="NSNextResponder" ref="490169282"/>
+										<int key="NSvFlags">292</int>
+										<string key="NSFrame">{{20, 61}, {280, 191}}</string>
+										<reference key="NSSuperview" ref="490169282"/>
+										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView" ref="180991241"/>
+										<string key="NSReuseIdentifierKey">_NS:9</string>
+										<bool key="IBUIOpaque">NO</bool>
+										<bool key="IBUIClipsSubviews">YES</bool>
+										<int key="IBUIContentMode">7</int>
+										<bool key="IBUIUserInteractionEnabled">NO</bool>
+										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+										<string key="IBUIText">       比特币矿工通过解决具有一定工作量的工作量证明机制问题，来确认交易和防止双重支付，来管理比特币网络。中本聪在他的论文中阐述说，“在没有中央权威存在的条件下，既鼓励了矿工支持比特币网络，又让比特币的货币流通体系也有了最初的货币注入源头。”中本聪把通过消耗CPU的电力和时间来产生比特币，比喻成金矿消耗资源将黄金注入经济。</string>
+										<reference key="IBUITextColor" ref="867970686"/>
+										<nil key="IBUIHighlightedColor"/>
+										<int key="IBUIBaselineAdjustment">0</int>
+										<int key="IBUINumberOfLines">50</int>
+										<object class="IBUIFontDescription" key="IBUIFontDescription" id="647571427">
+											<int key="type">1</int>
+											<double key="pointSize">15</double>
+										</object>
+										<object class="NSFont" key="IBUIFont" id="226938456">
+											<string key="NSName">Helvetica</string>
+											<double key="NSSize">15</double>
+											<int key="NSfFlags">16</int>
+										</object>
+										<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+										<double key="preferredMaxLayoutWidth">280</double>
+									</object>
+									<object class="IBUILabel" id="180991241">
+										<reference key="NSNextResponder" ref="490169282"/>
+										<int key="NSvFlags">292</int>
+										<string key="NSFrame">{{20, 260}, {181, 33}}</string>
+										<reference key="NSSuperview" ref="490169282"/>
+										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView" ref="441756539"/>
+										<string key="NSReuseIdentifierKey">_NS:9</string>
+										<bool key="IBUIOpaque">NO</bool>
+										<bool key="IBUIClipsSubviews">YES</bool>
+										<int key="IBUIContentMode">7</int>
+										<bool key="IBUIUserInteractionEnabled">NO</bool>
+										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+										<string key="IBUIText">挖矿和网络协作</string>
+										<reference key="IBUITextColor" ref="867970686"/>
+										<nil key="IBUIHighlightedColor"/>
+										<int key="IBUIBaselineAdjustment">0</int>
+										<reference key="IBUIFontDescription" ref="831416639"/>
+										<reference key="IBUIFont" ref="446733381"/>
+										<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+									</object>
+									<object class="IBUILabel" id="441756539">
+										<reference key="NSNextResponder" ref="490169282"/>
+										<int key="NSvFlags">292</int>
+										<string key="NSFrame">{{20, 301}, {280, 580}}</string>
+										<reference key="NSSuperview" ref="490169282"/>
+										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView" ref="262854668"/>
+										<string key="NSReuseIdentifierKey">_NS:9</string>
+										<bool key="IBUIOpaque">NO</bool>
+										<bool key="IBUIClipsSubviews">YES</bool>
+										<int key="IBUIContentMode">7</int>
+										<bool key="IBUIUserInteractionEnabled">NO</bool>
+										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+										<object class="NSMutableString" key="IBUIText">
+											<bytes key="NS.bytes">ICAgICAgIOavlOeJueW4geeahOaMluefv+WSjOiKgueCuei9r+S7tuaYr+WfuuS6juWvueetiee9kee7
+nOOAgeaVsOWtl+etvuWQjeOAgSDkuqTkupLlvI/or4HmmI7ns7vnu5/nmoTpm7bnn6Xor4bor4HmmI7m
+naXlj5Hotbflkozpqozor4HkuqTmmJPnmoTjgILoioLngrnlkJHnvZHnu5zlub/mkq3kuqTmmJPvvIzo
+v5nkupvlub/mkq3lh7rmnaXnmoTkuqTmmJPlnKjnu4/ov4fnn7/lt6XnmoTpqozor4HlkI7vvIznn7/l
+t6XnlKjoh6rlt7HnmoTlt6XkvZzor4HmmI7nu5PmnpzmnaXooajovr7noa7orqTvvIznoa7orqTlkI7n
+moTkuqTmmJPkvJrooqvmiZPljIXliLDmlbDmja7lnZfkuK3vvIzmlbDmja7lnZfkvJrkuLLotbfmnaXl
+vaLmiJDov57nu63nmoTmlbDmja7lnZfpk77jgILkuK3mnKzogarmnKzkurrorr7orqHkuobnrKzkuIDn
+iYjnmoTmr5TnibnluIHmjJbnn7/nqIvluo/vvIzov5nkuIDnqIvluo/pmo/lkI7ooqvlvIDlj5HkuLrl
+ub/ms5vkvb/nlKjnmoTnrKzkuIDku6PmjJbnn7/ova/ku7YgQml0Y29pbmQs6L+Z5LiA5Luj6L2v5Lu2
+5LuOMjAwOeW5tOWIsDIwMTDlubTkuK3ml6zpg73mr5TovoPmtYHooYzjgIIN5q+P5LiA5Liq5q+U54m5
+5biB55qE6IqC54K56YO95Lya5pS26ZuG5omA5pyJ5bCa5pyq56Gu6K6k55qE5Lqk5piT77yM5bm25bCG
+5YW25b2S6ZuG5Yiw5LiA5Liq5pWw5o2u5Z2X5Lit77yM6L+Z5Liq5pWw5o2u5Z2X5Lya5ZKM5YmN6Z2i
+5LiA5Liq5pWw5o2u5Z2X6ZuG5oiQ5Zyo5LiA6LW344CC55+/5bel6IqC54K55Lya6ZmE5Yqg5LiA5Liq
+6ZqP5py66LCD5pW05pWw77yM5bm26K6h566X5YmN5LiA5Liq5pWw5o2u5Z2X55qEU0hBLTI1NuWTiOW4
+jOi/kOeul+WAvOOAguaMluefv+iKgueCueS4jeaWremHjeWkjei/m+ihjOWwneivle+8jOebtOWIsOWu
+g+aJvuWIsOeahOmaj+acuuiwg+aVtOaVsOS9v+W+l+S6p+eUn+eahOWTiOW4jOWAvOS9juS6juafkOS4
+queJueWumueahCDnm67moIfjgILnlLHkuo7lk4jluIzov5DnrpfmmK/kuI3lj6/pgIbnmoTvvIzlr7vm
+ib7liLDnrKblkIjopoHmsYLnmoTpmo/mnLrosIPmlbTmlbDpnZ7luLjlm7Dpmr7vvIzpnIDopoHkuIDk
+uKrlj6/ku6XpooTorqHmgLvmrKHmlbDnmoTkuI3mlq3or5XplJnov4fnqIvjgILov5nml7bvvIzlt6Xk
+vZzph4/or4HmmI7mnLrliLblsLHlj5HmjKXkvZznlKjkuobjgILlvZPkuIDkuKroioLngrnmib7liLDk
+uobnrKblkIjopoHmsYLnmoTop6PvvIzpgqPkuYjlroPlsLHlj6/ku6XlkJHlhajnvZHlub/mkq3oh6rl
+t7HnmoTnu5PmnpzjgILlhbbku5boioLngrnlsLHlj6/ku6XmjqXmlLbov5nkuKrmlrDop6Plh7rmnaXn
+moTmlbDmja7lnZfvvIzlubbmo4DpqozlhbbmmK/lkKbnrKblkIjop4TliJnjgILlpoLmnpzlhbbku5bo
+ioLngrnpgJrov4forqHnrpflk4jluIzlgLzlj5HnjrDnoa7lrp7mu6HotrPopoHmsYLvvIjmr5Tnibnl
+uIHopoHmsYLnmoTov5Dnrpfnm67moIfvvInvvIzpgqPkuYjor6XmlbDmja7lnZfmnInmlYjvvIzlhbbk
+u5bnmoToioLngrnlsLHkvJrmjqXlj5for6XmlbDmja7lnZfvvIzlubblsIblhbbpmYTliqDlnKjoh6rl
+t7Hlt7LmnInnmoTpk77mnaHkuYvlkI7jgII</bytes>
+										</object>
+										<reference key="IBUITextColor" ref="867970686"/>
+										<nil key="IBUIHighlightedColor"/>
+										<int key="IBUIBaselineAdjustment">0</int>
+										<int key="IBUINumberOfLines">50</int>
+										<reference key="IBUIFontDescription" ref="647571427"/>
+										<reference key="IBUIFont" ref="226938456"/>
+										<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+										<double key="preferredMaxLayoutWidth">280</double>
+									</object>
+									<object class="IBUILabel" id="262854668">
+										<reference key="NSNextResponder" ref="490169282"/>
+										<int key="NSvFlags">292</int>
+										<string key="NSFrame">{{20, 889}, {181, 33}}</string>
+										<reference key="NSSuperview" ref="490169282"/>
+										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView" ref="285296911"/>
+										<string key="NSReuseIdentifierKey">_NS:9</string>
+										<bool key="IBUIOpaque">NO</bool>
+										<bool key="IBUIClipsSubviews">YES</bool>
+										<int key="IBUIContentMode">7</int>
+										<bool key="IBUIUserInteractionEnabled">NO</bool>
+										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+										<string key="IBUIText">挖矿产出</string>
+										<reference key="IBUITextColor" ref="867970686"/>
+										<nil key="IBUIHighlightedColor"/>
+										<int key="IBUIBaselineAdjustment">0</int>
+										<reference key="IBUIFontDescription" ref="831416639"/>
+										<reference key="IBUIFont" ref="446733381"/>
+										<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+									</object>
+									<object class="IBUILabel" id="285296911">
+										<reference key="NSNextResponder" ref="490169282"/>
+										<int key="NSvFlags">292</int>
+										<string key="NSFrame">{{20, 930}, {280, 297}}</string>
+										<reference key="NSSuperview" ref="490169282"/>
+										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView" ref="821690673"/>
+										<string key="NSReuseIdentifierKey">_NS:9</string>
+										<bool key="IBUIOpaque">NO</bool>
+										<bool key="IBUIClipsSubviews">YES</bool>
+										<int key="IBUIContentMode">7</int>
+										<bool key="IBUIUserInteractionEnabled">NO</bool>
+										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+										<object class="NSMutableString" key="IBUIText">
+											<bytes key="NS.bytes">ICAgICAgIOmZpOS6huWwhuaOpeaUtuWIsOeahOS6pOaYk+S/oeaBr+aJk+WMheWIsOaVsOaNruWdl++8
+jOavj+S4quaVsOaNruWdl+mDveS8muWFgeiuuOWPkeihjOS4gOWumuaVsOmHj+eahOaWsOavlOeJueW4
+ge+8jOeUqOadpea/gOWKseaIkOWKn+WPkeeOsOaVsOaNruWdl+eahOefv+W3peOAguavlOeJueW4geez
+u+e7n+aMieeFp+mihOWumueahOi0p+W4geWinuWPkeiKguWlj+WGs+WumuWPkeihjOeahOavlOeJueW4
+geaVsOmHj+OAguWmguaenOWFtuS7luaUr+S7mOS6pOaYk+aciee7meaJi+e7rei0ueeahO+8jOmCo+S5
+iOefv+W3pei/mOS8muiOt+W+l+aJi+e7rei0ueOAgueUseS6juefv+W3peWPr+S7peiHquihjOWGs+Wu
+muaYr+WQpuWwhuafkOS4gOS4quS6pOaYk+aVsOaNruaJk+WMheWIsOaVsOaNruWdl+S4re+8jOWboOat
+pOefv+W3peacieWPr+iDveS8mOWFiOmAieaLqeaJi+e7rei0uei+g+mrmOeahOS6pOaYk+adpeaJk+WM
+heOAguaVsOaNruWdl+S6p+eUn+mAn+eOh+eahOmihOacn+S4uuavjzEw5YiG6ZKf5LiA5Liq77yM5L2G
+5q+P5Liq5pWw5o2u5Z2X5Lit5paw5Y+R6KGM55qE5q+U54m55biB5LiN6IO96LaF6L+HNTDkuKrvvIzo
+gIzov5nkuKrmlbDlrZfmr4/kuKo05bm05bCx5Lya5YeP5Y2K77yM5Zug5q2k5q+U54m55biB55qE5oC7
+5pWw6YeP5LiN5Lya6LaF6L+HMjEwMOS4h+S4quOAgumaj+edgOaWsOWPkeihjOavlOeJueW4geaVsOmH
+j+eahOS4i+mZje+8jOaJi+e7rei0ueWwhuaIkOS4uuaMluefv+eahOS4u+imgea/gOWKseOAgg</bytes>
+										</object>
+										<reference key="IBUITextColor" ref="867970686"/>
+										<nil key="IBUIHighlightedColor"/>
+										<int key="IBUIBaselineAdjustment">0</int>
+										<int key="IBUINumberOfLines">50</int>
+										<reference key="IBUIFontDescription" ref="647571427"/>
+										<reference key="IBUIFont" ref="226938456"/>
+										<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+										<double key="preferredMaxLayoutWidth">280</double>
+									</object>
+									<object class="IBUILabel" id="821690673">
+										<reference key="NSNextResponder" ref="490169282"/>
+										<int key="NSvFlags">292</int>
+										<string key="NSFrame">{{20, 1235}, {181, 33}}</string>
+										<reference key="NSSuperview" ref="490169282"/>
+										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView" ref="525184843"/>
+										<string key="NSReuseIdentifierKey">_NS:9</string>
+										<bool key="IBUIOpaque">NO</bool>
+										<bool key="IBUIClipsSubviews">YES</bool>
+										<int key="IBUIContentMode">7</int>
+										<bool key="IBUIUserInteractionEnabled">NO</bool>
+										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+										<string key="IBUIText">矿池</string>
+										<reference key="IBUITextColor" ref="867970686"/>
+										<nil key="IBUIHighlightedColor"/>
+										<int key="IBUIBaselineAdjustment">0</int>
+										<reference key="IBUIFontDescription" ref="831416639"/>
+										<reference key="IBUIFont" ref="446733381"/>
+										<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+									</object>
+									<object class="IBUILabel" id="525184843">
+										<reference key="NSNextResponder" ref="490169282"/>
+										<int key="NSvFlags">292</int>
+										<string key="NSFrame">{{20, 1276}, {280, 72}}</string>
+										<reference key="NSSuperview" ref="490169282"/>
+										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView" ref="531974270"/>
+										<string key="NSReuseIdentifierKey">_NS:9</string>
+										<bool key="IBUIOpaque">NO</bool>
+										<bool key="IBUIClipsSubviews">YES</bool>
+										<int key="IBUIContentMode">7</int>
+										<bool key="IBUIUserInteractionEnabled">NO</bool>
+										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+										<string key="IBUIText">       比特币矿工将计算力汇集在一起，以增强挖矿产出的稳定性。矿池可以向矿工收取一定百分比的提成。</string>
+										<reference key="IBUITextColor" ref="867970686"/>
+										<nil key="IBUIHighlightedColor"/>
+										<int key="IBUIBaselineAdjustment">0</int>
+										<int key="IBUINumberOfLines">50</int>
+										<reference key="IBUIFontDescription" ref="647571427"/>
+										<reference key="IBUIFont" ref="226938456"/>
+										<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+										<double key="preferredMaxLayoutWidth">280</double>
+									</object>
+									<object class="IBUILabel" id="531974270">
+										<reference key="NSNextResponder" ref="490169282"/>
+										<int key="NSvFlags">292</int>
+										<string key="NSFrame">{{20, 1356}, {181, 33}}</string>
+										<reference key="NSSuperview" ref="490169282"/>
+										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView" ref="69446246"/>
+										<string key="NSReuseIdentifierKey">_NS:9</string>
+										<bool key="IBUIOpaque">NO</bool>
+										<bool key="IBUIClipsSubviews">YES</bool>
+										<int key="IBUIContentMode">7</int>
+										<bool key="IBUIUserInteractionEnabled">NO</bool>
+										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+										<string key="IBUIText">挖矿难度</string>
+										<reference key="IBUITextColor" ref="867970686"/>
+										<nil key="IBUIHighlightedColor"/>
+										<int key="IBUIBaselineAdjustment">0</int>
+										<reference key="IBUIFontDescription" ref="831416639"/>
+										<reference key="IBUIFont" ref="446733381"/>
+										<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+									</object>
+									<object class="IBUILabel" id="69446246">
+										<reference key="NSNextResponder" ref="490169282"/>
+										<int key="NSvFlags">292</int>
+										<string key="NSFrame">{{20, 1397}, {280, 113}}</string>
+										<reference key="NSSuperview" ref="490169282"/>
+										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView" ref="461806888"/>
+										<string key="NSReuseIdentifierKey">_NS:9</string>
+										<bool key="IBUIOpaque">NO</bool>
+										<bool key="IBUIClipsSubviews">YES</bool>
+										<int key="IBUIContentMode">7</int>
+										<bool key="IBUIUserInteractionEnabled">NO</bool>
+										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+										<string key="IBUIText">       为了使得数据块产生的速度大体均匀，产生新数据块的难度会定期调整。如果数据块产生的速度加快了，那么就提高挖矿难度；如果数据块产生速度变慢了，那么就降低难度。</string>
+										<reference key="IBUITextColor" ref="867970686"/>
+										<nil key="IBUIHighlightedColor"/>
+										<int key="IBUIBaselineAdjustment">0</int>
+										<int key="IBUINumberOfLines">50</int>
+										<reference key="IBUIFontDescription" ref="647571427"/>
+										<reference key="IBUIFont" ref="226938456"/>
+										<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+										<double key="preferredMaxLayoutWidth">280</double>
+									</object>
+									<object class="IBUILabel" id="461806888">
+										<reference key="NSNextResponder" ref="490169282"/>
+										<int key="NSvFlags">292</int>
+										<string key="NSFrame">{{20, 1518}, {181, 33}}</string>
+										<reference key="NSSuperview" ref="490169282"/>
+										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView" ref="216368720"/>
+										<string key="NSReuseIdentifierKey">_NS:9</string>
+										<bool key="IBUIOpaque">NO</bool>
+										<bool key="IBUIClipsSubviews">YES</bool>
+										<int key="IBUIContentMode">7</int>
+										<bool key="IBUIUserInteractionEnabled">NO</bool>
+										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+										<string key="IBUIText">挖矿设备</string>
+										<reference key="IBUITextColor" ref="867970686"/>
+										<nil key="IBUIHighlightedColor"/>
+										<int key="IBUIBaselineAdjustment">0</int>
+										<reference key="IBUIFontDescription" ref="831416639"/>
+										<reference key="IBUIFont" ref="446733381"/>
+										<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+									</object>
+									<object class="IBUILabel" id="216368720">
+										<reference key="NSNextResponder" ref="490169282"/>
+										<int key="NSvFlags">292</int>
+										<string key="NSFrame">{{20, 1559}, {280, 167}}</string>
+										<reference key="NSSuperview" ref="490169282"/>
+										<reference key="NSWindow"/>
+										<string key="NSReuseIdentifierKey">_NS:9</string>
+										<bool key="IBUIOpaque">NO</bool>
+										<bool key="IBUIClipsSubviews">YES</bool>
+										<int key="IBUIContentMode">7</int>
+										<bool key="IBUIUserInteractionEnabled">NO</bool>
+										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+										<string key="IBUIText">       比特币矿工最早都是通过Intel或AMD的CPU产品来挖矿。但由于挖矿是运算密集型应用，且随着挖矿人数与设备性能的不断提升难度逐渐增加，现在使用CPU挖矿已近毫无甚至负收益。截至2012年，矿工们逐渐开始采用GPU或FPGA等挖矿设备。同时，ASIC设备也在开发之中，有多家宣布正在开发ASIC的挖矿设备</string>
+										<reference key="IBUITextColor" ref="867970686"/>
+										<nil key="IBUIHighlightedColor"/>
+										<int key="IBUIBaselineAdjustment">0</int>
+										<int key="IBUINumberOfLines">50</int>
+										<reference key="IBUIFontDescription" ref="647571427"/>
+										<reference key="IBUIFont" ref="226938456"/>
+										<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+										<double key="preferredMaxLayoutWidth">280</double>
+									</object>
+								</array>
+								<string key="NSFrameSize">{320, 1746}</string>
+								<reference key="NSSuperview" ref="1060689241"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="213900698"/>
+								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<object class="NSColor" key="IBUIBackgroundColor">
+									<int key="NSColorSpace">3</int>
+									<bytes key="NSWhite">MCAwAA</bytes>
+								</object>
+								<object class="IBUISimulatedSizeMetrics" key="IBUISimulatedDestinationMetrics">
+									<string key="IBUISimulatedSizeMetricsClass">IBUISimulatedFreeformSizeMetricsSentinel</string>
+									<string key="IBUIDisplayName">Freeform</string>
+								</object>
+								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+							</object>
+						</array>
+						<string key="NSFrameSize">{320, 460}</string>
+						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="490169282"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<bool key="IBUIMultipleTouchEnabled">YES</bool>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+					</object>
+				</array>
+				<string key="NSFrame">{{0, 20}, {320, 460}}</string>
+				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
+				<reference key="NSNextKeyView" ref="1060689241"/>
+				<object class="NSColor" key="IBUIBackgroundColor">
+					<int key="NSColorSpace">3</int>
+					<bytes key="NSWhite">MQA</bytes>
+					<object class="NSColorSpace" key="NSCustomColorSpace">
+						<int key="NSID">2</int>
+					</object>
+				</object>
+				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
+				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+			</object>
+		</array>
+		<object class="IBObjectContainer" key="IBDocument.Objects">
+			<array class="NSMutableArray" key="connectionRecords">
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">view</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="191373211"/>
+					</object>
+					<int key="connectionID">3</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">contentScroll</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="1060689241"/>
+					</object>
+					<int key="connectionID">25</int>
+				</object>
+			</array>
+			<object class="IBMutableOrderedSet" key="objectRecords">
+				<array key="orderedObjects">
+					<object class="IBObjectRecord">
+						<int key="objectID">0</int>
+						<array key="object" id="0"/>
+						<reference key="children" ref="1000"/>
+						<nil key="parent"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1</int>
+						<reference key="object" ref="191373211"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="1060689241"/>
+						</array>
+						<reference key="parent" ref="0"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">-1</int>
+						<reference key="object" ref="372490531"/>
+						<reference key="parent" ref="0"/>
+						<string key="objectName">File's Owner</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">-2</int>
+						<reference key="object" ref="975951072"/>
+						<reference key="parent" ref="0"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">5</int>
+						<reference key="object" ref="1060689241"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="490169282"/>
+						</array>
+						<reference key="parent" ref="191373211"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">6</int>
+						<reference key="object" ref="490169282"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="216368720"/>
+							<reference ref="461806888"/>
+							<reference ref="69446246"/>
+							<reference ref="531974270"/>
+							<reference ref="525184843"/>
+							<reference ref="821690673"/>
+							<reference ref="285296911"/>
+							<reference ref="262854668"/>
+							<reference ref="441756539"/>
+							<reference ref="180991241"/>
+							<reference ref="690826168"/>
+							<reference ref="213900698"/>
+						</array>
+						<reference key="parent" ref="1060689241"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">24</int>
+						<reference key="object" ref="216368720"/>
+						<reference key="parent" ref="490169282"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">23</int>
+						<reference key="object" ref="461806888"/>
+						<reference key="parent" ref="490169282"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">22</int>
+						<reference key="object" ref="69446246"/>
+						<reference key="parent" ref="490169282"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">21</int>
+						<reference key="object" ref="531974270"/>
+						<reference key="parent" ref="490169282"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">20</int>
+						<reference key="object" ref="525184843"/>
+						<reference key="parent" ref="490169282"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">19</int>
+						<reference key="object" ref="821690673"/>
+						<reference key="parent" ref="490169282"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">18</int>
+						<reference key="object" ref="285296911"/>
+						<reference key="parent" ref="490169282"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">17</int>
+						<reference key="object" ref="262854668"/>
+						<reference key="parent" ref="490169282"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">12</int>
+						<reference key="object" ref="441756539"/>
+						<reference key="parent" ref="490169282"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">11</int>
+						<reference key="object" ref="180991241"/>
+						<reference key="parent" ref="490169282"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">10</int>
+						<reference key="object" ref="690826168"/>
+						<reference key="parent" ref="490169282"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">9</int>
+						<reference key="object" ref="213900698"/>
+						<reference key="parent" ref="490169282"/>
+					</object>
+				</array>
+			</object>
+			<dictionary class="NSMutableDictionary" key="flattenedProperties">
+				<string key="-1.CustomClassName">BitcoinMiningController</string>
+				<string key="-1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="-2.CustomClassName">UIResponder</string>
+				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="10.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="11.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="12.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="17.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="18.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="19.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="20.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="21.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="22.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="23.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="24.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="5.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="9.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+			</dictionary>
+			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
+			<nil key="activeLocalization"/>
+			<dictionary class="NSMutableDictionary" key="localizations"/>
+			<nil key="sourceID"/>
+			<int key="maxID">25</int>
+		</object>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">BaseViewController</string>
+					<string key="superclassName">UIViewController</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/BaseViewController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">BitcoinMiningController</string>
+					<string key="superclassName">BaseViewController</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">contentScroll</string>
+						<string key="NS.object.0">UIScrollView</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">contentScroll</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">contentScroll</string>
+							<string key="candidateClassName">UIScrollView</string>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/BitcoinMiningController.h</string>
+					</object>
+				</object>
+			</array>
+		</object>
+		<int key="IBDocument.localizationMode">0</int>
+		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
+		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
+		<int key="IBDocument.defaultPropertyAccessControl">3</int>
+		<string key="IBCocoaTouchPluginVersion">2083</string>
+	</data>
+</archive>

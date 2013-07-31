@@ -112,6 +112,12 @@
     }
 }
 
+- (void)requestFinishedWithFailed:(NSNotification *)note {
+    NSString *tag = note.object;
+    PriceCell *cell = [customViews objectForKey:tag];
+    [cell displayFailedMessage];
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 
 #pragma mark - life cycle
@@ -134,8 +140,10 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestFinishedWithFailed:) name:kRequest_Failed_Notification object:nil];
     [self loadTicker];
     timer = [NSTimer scheduledTimerWithTimeInterval:REPEAT_DELAY target:self selector:@selector(loadTicker) userInfo:nil repeats:YES];
+    
 }
 
 - (void)setupUI
@@ -168,10 +176,10 @@
         imageView.image = [UIImage imageNamed:@"bg_pic.png"];
         [self.view addSubview:imageView];
         
-        usdCell.frame = CGRectMake(10, 96, 300, 106);
-        eurCell.frame = CGRectMake(10, 166, 300, 106);
-        jpyCell.frame = CGRectMake(10, 236, 300, 106);
-        cnyCell.frame = CGRectMake(10, 306, 300, 106);
+        usdCell.frame = CGRectMake(10, 96-15, 300, 106);
+        eurCell.frame = CGRectMake(10, 166-15, 300, 106);
+        jpyCell.frame = CGRectMake(10, 236-15, 300, 106);
+        cnyCell.frame = CGRectMake(10, 306-15, 300, 106);
     }
 
     [self.view addSubview:usdCell];
@@ -199,6 +207,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidUnload {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kRequest_Failed_Notification object:nil];
+    [super viewDidUnload];
 }
 
 /**

@@ -354,8 +354,8 @@
 {
     DDLogVerbose(@"%@(%@)", THIS_FILE, THIS_METHOD);
     
-    [self loadCache:request.tag];
-
+    NSDictionary *cacheDic = [self loadCache:request.tag];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kRequest_Failed_Notification object:[[cacheDic objectForKey:kStream_Cache_RequestBean_Tag] stringValue]];
     [gcdMulticastDelegate performSelector:@selector(requestFailed:) withObject:request];
 }
 

@@ -47,4 +47,10 @@
  */
 -(void)display:(MtGoxTickerResponse *)response;
 
+/**
+ *	@brief	请求失败时显示
+ *
+ */
+-(void) displayFailedMessage;
+
 @end

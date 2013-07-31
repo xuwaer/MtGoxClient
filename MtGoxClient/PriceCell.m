@@ -70,6 +70,9 @@
     
     MtGoxTickerDetailResponse *lastDetail = [response.data objectForKey:@"last"];
     MtGoxTickerValueResponse *lastValue = lastDetail.value;
+    if (self.lastDisplayLabel.font.pointSize != 24) {
+        self.lastDisplayLabel.font = [UIFont boldSystemFontOfSize:24];
+    }
     self.lastDisplayLabel.text = [lastValue.value stringValue];
     
     MtGoxTickerDetailResponse *nowDetail = [response.data objectForKey:@"now"];
@@ -98,6 +101,16 @@
 //    }
 //    if (currencyImage)
 //        self.currencyImageView.image = currencyImage;
+}
+
+- (void) displayFailedMessage {
+    self.hightDisplayLabel.text = @"----";
+    self.lowDisplayLabel.text = @"----";
+    if (self.lastDisplayLabel.font.pointSize != 18) {
+        self.lastDisplayLabel.font = [UIFont boldSystemFontOfSize:18];
+    }
+    self.lastDisplayLabel.text = @"MtGox网站异常";
+    self.nowLabel.text = @"----";
 }
 
 -(void)setCurrencyType:(enum CurrencyType)inCurrencyType

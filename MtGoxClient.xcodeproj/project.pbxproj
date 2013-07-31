@@ -22,6 +22,14 @@
 		96BF323C1786A04400C70EFA /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BF322E1786A04400C70EFA /* CJSONDeserializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		96BF323D1786A04400C70EFA /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BF32301786A04400C70EFA /* CJSONScanner.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		96BF323E1786A04400C70EFA /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BF32321786A04400C70EFA /* CJSONSerializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		96E69C9817A8C00000FABC7F /* BitcoinMiningController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E69C9617A8C00000FABC7F /* BitcoinMiningController.m */; };
+		96E69C9917A8C00000FABC7F /* BitcoinMiningController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E69C9717A8C00000FABC7F /* BitcoinMiningController.xib */; };
+		96E69C9D17A8E06400FABC7F /* BitcoinIntroController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E69C9B17A8E06400FABC7F /* BitcoinIntroController.m */; };
+		96E69C9E17A8E06400FABC7F /* BitcoinIntroController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E69C9C17A8E06400FABC7F /* BitcoinIntroController.xib */; };
+		96E69CB817A8F3BF00FABC7F /* bg_tabbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E69CB717A8F3BE00FABC7F /* bg_tabbar@2x.png */; };
+		96E69CBC17A8F4AD00FABC7F /* btn_intro@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E69CB917A8F4AB00FABC7F /* btn_intro@2x.png */; };
+		96E69CBD17A8F4AD00FABC7F /* btn_mining@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E69CBA17A8F4AC00FABC7F /* btn_mining@2x.png */; };
+		96E69CBE17A8F4AD00FABC7F /* btn_mtg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E69CBB17A8F4AC00FABC7F /* btn_mtg@2x.png */; };
 		B902B7FE172A9577007872F0 /* RemindCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B902B7FD172A9577007872F0 /* RemindCell.m */; };
 		B902B800172A9596007872F0 /* RemindCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B902B7FF172A9596007872F0 /* RemindCell.xib */; };
 		B9366394172A61B60077859A /* UserDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = B9366393172A61B60077859A /* UserDefault.m */; };
@@ -160,6 +168,16 @@
 		96BF32311786A04400C70EFA /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
 		96BF32321786A04400C70EFA /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
 		96BF32331786A04400C70EFA /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
+		96E69C9517A8C00000FABC7F /* BitcoinMiningController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitcoinMiningController.h; sourceTree = "<group>"; };
+		96E69C9617A8C00000FABC7F /* BitcoinMiningController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitcoinMiningController.m; sourceTree = "<group>"; };
+		96E69C9717A8C00000FABC7F /* BitcoinMiningController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BitcoinMiningController.xib; sourceTree = "<group>"; };
+		96E69C9A17A8E06400FABC7F /* BitcoinIntroController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitcoinIntroController.h; sourceTree = "<group>"; };
+		96E69C9B17A8E06400FABC7F /* BitcoinIntroController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitcoinIntroController.m; sourceTree = "<group>"; };
+		96E69C9C17A8E06400FABC7F /* BitcoinIntroController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BitcoinIntroController.xib; sourceTree = "<group>"; };
+		96E69CB717A8F3BE00FABC7F /* bg_tabbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_tabbar@2x.png"; sourceTree = "<group>"; };
+		96E69CB917A8F4AB00FABC7F /* btn_intro@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_intro@2x.png"; sourceTree = "<group>"; };
+		96E69CBA17A8F4AC00FABC7F /* btn_mining@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_mining@2x.png"; sourceTree = "<group>"; };
+		96E69CBB17A8F4AC00FABC7F /* btn_mtg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_mtg@2x.png"; sourceTree = "<group>"; };
 		B902B7FC172A9577007872F0 /* RemindCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindCell.h; sourceTree = "<group>"; };
 		B902B7FD172A9577007872F0 /* RemindCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindCell.m; sourceTree = "<group>"; };
 		B902B7FF172A9596007872F0 /* RemindCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RemindCell.xib; sourceTree = "<group>"; };
@@ -789,6 +807,12 @@
 				B9E9B6201731FF6E007FFDCD /* SettingCellControllerViewController.h */,
 				B9E9B6211731FF6E007FFDCD /* SettingCellControllerViewController.m */,
 				B9E9B6221731FF6E007FFDCD /* SettingCellControllerViewController.xib */,
+				96E69C9517A8C00000FABC7F /* BitcoinMiningController.h */,
+				96E69C9617A8C00000FABC7F /* BitcoinMiningController.m */,
+				96E69C9717A8C00000FABC7F /* BitcoinMiningController.xib */,
+				96E69C9A17A8E06400FABC7F /* BitcoinIntroController.h */,
+				96E69C9B17A8E06400FABC7F /* BitcoinIntroController.m */,
+				96E69C9C17A8E06400FABC7F /* BitcoinIntroController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -796,6 +820,10 @@
 		B9E5F324172A5303007FA1D1 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				96E69CB917A8F4AB00FABC7F /* btn_intro@2x.png */,
+				96E69CBA17A8F4AC00FABC7F /* btn_mining@2x.png */,
+				96E69CBB17A8F4AC00FABC7F /* btn_mtg@2x.png */,
+				96E69CB717A8F3BE00FABC7F /* bg_tabbar@2x.png */,
 				B9C568B71733BE9F00146192 /* bg_iphone5@2x.png */,
 				B9C568AE1733B1BB00146192 /* bg_text@2x.png */,
 				B9C568AA1733B0DD00146192 /* btn_dropdown_down@2x.png */,
@@ -920,6 +948,12 @@
 				9670B620178FFD9C00A1F050 /* Default.png in Resources */,
 				9670B622178FFD9F00A1F050 /* Default@2x.png in Resources */,
 				9670B624178FFDA200A1F050 /* Default-568h@2x.png in Resources */,
+				96E69C9917A8C00000FABC7F /* BitcoinMiningController.xib in Resources */,
+				96E69C9E17A8E06400FABC7F /* BitcoinIntroController.xib in Resources */,
+				96E69CB817A8F3BF00FABC7F /* bg_tabbar@2x.png in Resources */,
+				96E69CBC17A8F4AD00FABC7F /* btn_intro@2x.png in Resources */,
+				96E69CBD17A8F4AD00FABC7F /* btn_mining@2x.png in Resources */,
+				96E69CBE17A8F4AD00FABC7F /* btn_mtg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1004,6 +1038,8 @@
 				96BF323C1786A04400C70EFA /* CJSONDeserializer.m in Sources */,
 				96BF323D1786A04400C70EFA /* CJSONScanner.m in Sources */,
 				96BF323E1786A04400C70EFA /* CJSONSerializer.m in Sources */,
+				96E69C9817A8C00000FABC7F /* BitcoinMiningController.m in Sources */,
+				96E69C9D17A8E06400FABC7F /* BitcoinIntroController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1033,7 +1069,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: wang hongyun (77K9VUU57K)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1048,6 +1084,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C382249E-B625-4094-BBB6-027AF6EA6C4D";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1064,7 +1101,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: wang hongyun (77K9VUU57K)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -1072,6 +1109,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C382249E-B625-4094-BBB6-027AF6EA6C4D";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1080,17 +1118,17 @@
 		B9E563471728F82B005443A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Shun Shun Pang (HKP557QUHE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: wang hongyun (77K9VUU57K)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MtGoxClient/MtGoxClient-Prefix.pch";
 				INFOPLIST_FILE = "MtGoxClient/MtGoxClient-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/MtGoxClient/Util/BaiduStatistics\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "39A24A45-8DBA-4989-9C58-B010204FB760";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C382249E-B625-4094-BBB6-027AF6EA6C4D";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1101,7 +1139,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MtGoxClient/MtGoxClient-Prefix.pch";
 				INFOPLIST_FILE = "MtGoxClient/MtGoxClient-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/MtGoxClient/Util/BaiduStatistics\"",
