@@ -9,6 +9,7 @@
 #import "RemindSettingQueue.h"
 #import "MtGoxTickerResponse.h"
 #import "Remind.h"
+#import "MKNetworkOperationExt.h"
 
 @implementation RemindSettingQueue
 
@@ -47,23 +48,25 @@
     return NO;
 }
 
--(void)requestFailed:(MKNetworkOperation *)request error:(NSError *)error
+-(void)requestFailed:(MKNetworkOperation *)opt error:(NSError *)error
 {
-    DDLogCVerbose(@"%@(%@)", NSStringFromClass([self class]), THIS_METHOD);
+    [super requestFailed:opt error:error];
     
-    // 去掉缓存中的上下文
-    NSUInteger resultTag = [self getContextTag:request];
-    TargetContext *context = [self getContext:resultTag];
-    [self removeContext:resultTag];
+    NSDictionary *userinfo = ((MKNetworkOperationExt *)opt).userinfo;
     
-    if (context && context.target && context.selector) {
+    if (userinfo) {
+        id target = [userinfo objectForKey:kTarget];
+        SEL selector = NSSelectorFromString([userinfo objectForKey:kSelector]);
         
-        dispatch_async(dispatch_get_main_queue(), ^{
+        if (target && selector) {
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-            [context.target performSelector:context.selector withObject:[NSNull null]];
+                [target performSelector:selector withObject:[NSNull null]];
 #pragma clang diagnostic pop
-        });
+            });
+        }
     }
 }
 

@@ -31,6 +31,11 @@
 
 #pragma mark - Get request method
 
+/**
+ *	@brief	生成http请求url
+ *
+ *	@return
+ */
 -(NSString *)generatorRequestUrl
 {
     if (self.requestCommand == nil)
@@ -113,6 +118,11 @@
 
 #pragma mark - Post request method
 
+/**
+ *	@brief	生成http请求param，用于POST方式
+ *
+ *	@return
+ */
 -(NSDictionary *)generatorRequestParams
 {
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];

@@ -75,12 +75,18 @@
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
+/**
+ *	@brief	注册控制层，管理网络请求和应答
+ */
 -(void)setupHttpQueue
 {
     mtGoxQueue = [[MtGoxInformationQueue alloc] init];
     [[TransManager defaultManager] add:mtGoxQueue];
 }
 
+/**
+ *	@brief	注销控制层
+ */
 -(void)destoryHttpQueue
 {
     [[TransManager defaultManager] remove:mtGoxQueue];
