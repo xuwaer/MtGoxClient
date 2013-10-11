@@ -106,20 +106,20 @@
 
 -(void)setupBaiduMobStat
 {
-    BaiduMobStat *statTracker = [BaiduMobStat defaultStat];
-    // 配置是否打开崩溃日志收集
-    statTracker.enableExceptionLog = NO;
-    // 配置渠道名，默认为appStore
-//    statTracker.channelId = @"";
-    // 自定义日志发送间隔
-    statTracker.logStrategy = BaiduMobStatLogStrategyCustom;
-    // 日志发送间隔1小时
-    statTracker.logSendInterval = 1;
-    // 仅在WIFI发送
-    statTracker.logSendWifiOnly = YES;
-    statTracker.sessionResumeInterval = 60;
-    // AppKey
-    [statTracker startWithAppId:BaiduAppId];
+//    BaiduMobStat *statTracker = [BaiduMobStat defaultStat];
+//    // 配置是否打开崩溃日志收集
+//    statTracker.enableExceptionLog = NO;
+//    // 配置渠道名，默认为appStore
+////    statTracker.channelId = @"";
+//    // 自定义日志发送间隔
+//    statTracker.logStrategy = BaiduMobStatLogStrategyCustom;
+//    // 日志发送间隔1小时
+//    statTracker.logSendInterval = 1;
+//    // 仅在WIFI发送
+//    statTracker.logSendWifiOnly = YES;
+//    statTracker.sessionResumeInterval = 60;
+//    // AppKey
+//    [statTracker startWithAppId:BaiduAppId];
 }
 
 @end

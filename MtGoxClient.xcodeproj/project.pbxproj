@@ -16,21 +16,6 @@
 		B98965D51729069600260BFF /* MtGoxTickerResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B98965D41729069600260BFF /* MtGoxTickerResponse.m */; };
 		B9AEC5F4173A56C8000E7F6F /* RemindSyncRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B9AEC5F3173A56C8000E7F6F /* RemindSyncRequest.m */; };
 		B9AEC5F7173A5758000E7F6F /* RemindSyncResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B9AEC5F6173A5758000E7F6F /* RemindSyncResponse.m */; };
-		B9B7C7E11744E94C00259A90 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B7C7C21744E94C00259A90 /* CDataScanner.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B9B7C7E21744E94C00259A90 /* CFilteringJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B7C7C51744E94C00259A90 /* CFilteringJSONSerializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B9B7C7E31744E94C00259A90 /* CJSONDeserializer_BlocksExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B7C7C71744E94C00259A90 /* CJSONDeserializer_BlocksExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B9B7C7E41744E94C00259A90 /* CJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B7C7C91744E94C00259A90 /* CJSONSerialization.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B9B7C7E51744E94C00259A90 /* CJSONSerializedData.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B7C7CB1744E94C00259A90 /* CJSONSerializedData.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B9B7C7E61744E94C00259A90 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B7C7CE1744E94C00259A90 /* CDataScanner_Extensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B9B7C7E71744E94C00259A90 /* NSCharacterSet_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B7C7D01744E94C00259A90 /* NSCharacterSet_Extensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B9B7C7E81744E94C00259A90 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B7C7D21744E94C00259A90 /* NSDictionary_JSONExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B9B7C7E91744E94C00259A90 /* NSScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B7C7D41744E94C00259A90 /* NSScanner_Extensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B9B7C7EA1744E94C00259A90 /* CJSONDataSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B7C7D71744E94C00259A90 /* CJSONDataSerializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B9B7C7EB1744E94C00259A90 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B7C7D91744E94C00259A90 /* CJSONDeserializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B9B7C7EC1744E94C00259A90 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B7C7DB1744E94C00259A90 /* CJSONScanner.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B9B7C7ED1744E94C00259A90 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B7C7DD1744E94C00259A90 /* CJSONSerializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B9B7C7EE1744E94C00259A90 /* CSerializedJSONData.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B7C7DF1744E94C00259A90 /* CSerializedJSONData.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B9B7C7F21744E95E00259A90 /* libBaiduMobStat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B7C7F11744E95E00259A90 /* libBaiduMobStat.a */; };
 		B9B9FDD61743385E003E0B94 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B9FDD51743385E003E0B94 /* CoreLocation.framework */; };
 		B9B9FDD81743387F003E0B94 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B9FDD71743387F003E0B94 /* libstdc++.dylib */; };
 		B9B9FDDA17433897003E0B94 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B9FDD917433897003E0B94 /* CoreTelephony.framework */; };
@@ -371,7 +356,6 @@
 				B9E563271728F82B005443A3 /* UIKit.framework in Frameworks */,
 				B9E563291728F82B005443A3 /* Foundation.framework in Frameworks */,
 				B9E5632B1728F82B005443A3 /* CoreGraphics.framework in Frameworks */,
-				B9B7C7F21744E95E00259A90 /* libBaiduMobStat.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1020,20 +1004,6 @@
 				B9AEC5F4173A56C8000E7F6F /* RemindSyncRequest.m in Sources */,
 				B9AEC5F7173A5758000E7F6F /* RemindSyncResponse.m in Sources */,
 				B9B9FDDD174356A4003E0B94 /* BaseViewController.m in Sources */,
-				B9B7C7E11744E94C00259A90 /* CDataScanner.m in Sources */,
-				B9B7C7E21744E94C00259A90 /* CFilteringJSONSerializer.m in Sources */,
-				B9B7C7E31744E94C00259A90 /* CJSONDeserializer_BlocksExtensions.m in Sources */,
-				B9B7C7E41744E94C00259A90 /* CJSONSerialization.m in Sources */,
-				B9B7C7E51744E94C00259A90 /* CJSONSerializedData.m in Sources */,
-				B9B7C7E61744E94C00259A90 /* CDataScanner_Extensions.m in Sources */,
-				B9B7C7E71744E94C00259A90 /* NSCharacterSet_Extensions.m in Sources */,
-				B9B7C7E81744E94C00259A90 /* NSDictionary_JSONExtensions.m in Sources */,
-				B9B7C7E91744E94C00259A90 /* NSScanner_Extensions.m in Sources */,
-				B9B7C7EA1744E94C00259A90 /* CJSONDataSerializer.m in Sources */,
-				B9B7C7EB1744E94C00259A90 /* CJSONDeserializer.m in Sources */,
-				B9B7C7EC1744E94C00259A90 /* CJSONScanner.m in Sources */,
-				B9B7C7ED1744E94C00259A90 /* CJSONSerializer.m in Sources */,
-				B9B7C7EE1744E94C00259A90 /* CSerializedJSONData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1117,7 +1087,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/MtGoxClient/Util\"",
-					"\"/Users/toscits/Documents/work/比特币/BaiduState/ios_api/Release-iphoneos\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -1134,7 +1103,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/MtGoxClient/Util\"",
-					"\"/Users/toscits/Documents/work/比特币/BaiduState/ios_api/Release-iphoneos\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

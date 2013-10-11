@@ -30,27 +30,6 @@
     [super viewDidLoad];
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    // 收集用户行为
-    if (isCollectEvent) {
-        NSString *pageName = NSStringFromClass([self class]);
-        [[BaiduMobStat defaultStat] pageviewStartWithName:pageName];
-    }
-}
-
--(void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    // 收集用户行为
-    if (isCollectEvent) {
-        NSString *pageName = NSStringFromClass([self class]);
-        [[BaiduMobStat defaultStat] pageviewEndWithName:pageName];
-    }
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
