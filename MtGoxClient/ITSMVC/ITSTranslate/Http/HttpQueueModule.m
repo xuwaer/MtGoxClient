@@ -7,6 +7,7 @@
 //
 
 #import "HttpQueueModule.h"
+#import "MKNetworkOperationExt.h"
 
 #define kTag @"tag"
 
@@ -144,16 +145,18 @@
     }}];
 }
 
--(NSUInteger)getContextTag:(ASIHTTPRequest *)request
+-(NSUInteger)getContextTag:(MKNetworkOperation *)request
 {
     __block NSUInteger result = 0;
     
     [self execute:^{@autoreleasepool{
+        
         if (request == nil) {
             result = 0;
         }
         else {
-            NSDictionary *userinfo = [request userInfo];
+            
+            NSDictionary *userinfo = ((MKNetworkOperationExt *)request).userinfo;
             if (userinfo == nil || ![userinfo objectForKey:kTag]) {
                 result = 0;
             }
@@ -208,22 +211,22 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
--(void)request:(ASIHTTPRequest *)request didReceiveObject:(id)object
+-(void)request:(MKNetworkOperation *)opt didReceiveObject:(id)object
 {
     
     DDLogCVerbose(@"%@(%@)tag:%d", NSStringFromClass([self class]), THIS_METHOD, [(id<ITSResponseDelegate>)object tag]);
     
-    NSUInteger resultTag = [self getContextTag:request];
+    NSUInteger resultTag = [self getContextTag:opt];
     
     [self performContext:resultTag object:object];
 }
 
--(void)requestFailed:(ASIHTTPRequest *)request
+-(void)requestFailed:(MKNetworkOperation *)opt error:(NSError *)error
 {
     DDLogCVerbose(@"%@(%@)", NSStringFromClass([self class]), THIS_METHOD);
 }
 
--(void)requestFinished:(ASIHTTPRequest *)request
+-(void)requestFinished:(MKNetworkOperation *)opt
 {
     DDLogCVerbose(@"%@(%@)", NSStringFromClass([self class]), THIS_METHOD);
 }

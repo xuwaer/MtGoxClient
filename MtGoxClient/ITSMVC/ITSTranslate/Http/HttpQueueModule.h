@@ -10,6 +10,7 @@
 #import "BaseRequest.h"
 
 @class TargetContext;
+@class MKNetworkOperation;
 
 /**
  *	@brief	Control层，接收通信层数据（封装完毕）。完成不同project的逻辑处理
@@ -41,7 +42,7 @@
  *
  *	@return	上下文标识，用于从上下文dictionary中获取上下文（target、selector）
  */
--(NSUInteger)getContextTag:(ASIHTTPRequest *)request;
+-(NSUInteger)getContextTag:(MKNetworkOperation *)opt;
 
 /**
  *	@brief	获取上下文

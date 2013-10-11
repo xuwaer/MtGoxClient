@@ -16,7 +16,7 @@
     // This class is from apple library.
     // For detail, see in apple develop wesite.
     
-    Reachability *r = [Reachability reachabilityWithHostName:@"www.apple.com"];
+    Reachability *r = [Reachability reachabilityWithHostname:@"www.apple.com"];
     
     if ([r currentReachabilityStatus] == ReachableViaWiFi) {
         return YES;
@@ -32,7 +32,7 @@
     // For detail, see in apple develop wesite.
     
     NSString* result = nil;
-    Reachability *r = [Reachability reachabilityWithHostName:@"www.apple.com"];
+    Reachability *r = [Reachability reachabilityWithHostname:@"www.apple.com"];
     switch ([r currentReachabilityStatus]) {
         case NotReachable:// 没有网络连接
             result=nil;

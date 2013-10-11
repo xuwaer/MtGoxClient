@@ -12,9 +12,9 @@
 
 @implementation MtGoxInformationQueue
 
--(void)requestFailed:(ASIHTTPRequest *)request
+-(void)requestFailed:(MKNetworkOperation *)opt error:(NSError *)error
 {
-    DDLogVerbose(@"%@", request.error);
+    DDLogVerbose(@"%@", error);
 }
 
 @end

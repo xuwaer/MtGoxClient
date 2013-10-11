@@ -7,19 +7,17 @@
 //
 
 #import "ITSHttpStream.h"
-#import "ASINetworkQueue.h"
-#import "ASIFormDataRequest.h"
 #import "ITSRequest.h"
 #import "ITSResponse.h"
 #import "ITS.h"
+
+#import "MKNetworkKit.h"
+#import "MKNetworkOperationExt.h"
 
 #define kStream_Cache_RequestBean_Tag @"kStream_Cache_RequestBean_Tag"
 #define kStream_Cache_Response_Data @"kStream_Cache_Response_Data"
 
 @implementation ITSHttpStream
-
-@synthesize requestGetQueue = _requestGetQueue;
-@synthesize requestPostQueue = _requestPostQueue;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -32,52 +30,11 @@
     self = [super init];
     
     if (self) {
-        cache = [[NSMutableDictionary alloc] init];
-        cacheTag = 1;
+        //TODO
+        netEngine = [[MKNetworkEngine alloc] init];
     }
     
     return self;
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-
-#pragma mark - Getter/Setter
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-
--(ASINetworkQueue *)requestGetQueue
-{
-    __block ASINetworkQueue *result = nil;
-    
-    dispatch_block_t block = ^{@autoreleasepool{
-        if (_requestGetQueue == nil) {
-            _requestGetQueue = [[ASINetworkQueue alloc] init];
-            [_requestGetQueue setShouldCancelAllRequestsOnFailure:NO];
-        }
-        
-        result = _requestGetQueue;
-    }};
-    
-    [self execute:block];
-    
-    return _requestGetQueue;
-}
-
--(ASINetworkQueue *)requestPostQueue
-{
-    __block ASINetworkQueue *result = nil;
-    
-    dispatch_block_t block = ^{@autoreleasepool{
-        if (_requestPostQueue == nil) {
-            _requestPostQueue = [[ASINetworkQueue alloc] init];
-            [_requestGetQueue setShouldCancelAllRequestsOnFailure:NO];
-        }
-        result = _requestPostQueue;
-    }};
- 
-    [self execute:block];
-
-    return result;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -110,90 +67,11 @@
     return [NSURL URLWithString:hostUrl];
 }
 
--(void)request:(ASIHTTPRequest *)request parse:(NSData *)data requestBeanTag:(NSUInteger)requestBeanTag
+-(void)request:(MKNetworkOperation *)opt parse:(NSData *)data requestBeanTag:(NSUInteger)requestBeanTag
 {
-//    dispatch_block_t block = ^{@autoreleasepool{
-    
     id object = [ITSResponse decode:data tag:[NSNumber numberWithUnsignedInt:requestBeanTag]];
     
-    [self request:request didReceiveObject:object];
-//    }};
-//    
-//    if (dispatch_get_current_queue() == parseQueue)
-//        block();
-//    else
-//        dispatch_async(parseQueue, block);
-}
-
--(NSUInteger)createTag
-{
-    return (cacheTag > 999) ? 1 : ++cacheTag;
-}
-
--(NSUInteger)saveRequestBeanTagInCache:(NSUInteger)requestBeanTag
-{
-    NSNumber *cacheTagKey = [NSNumber numberWithUnsignedInteger:[self createTag]];
-    
-    NSMutableDictionary *tagDic = [[NSMutableDictionary alloc] init];
-    NSNumber *tagValue = [NSNumber numberWithUnsignedInteger:requestBeanTag];
-    [tagDic setValue:tagValue forKey:kStream_Cache_RequestBean_Tag];
-    [tagDic setValue:[NSNull null] forKey:kStream_Cache_Response_Data];
-    
-    [cache setValue:tagDic forKey:[cacheTagKey stringValue]];
-    
-    return cacheTag;
-}
-
--(void)saveDataInCache:(NSData *)data cacheTag:(NSUInteger)inCacheTag
-{
-    NSString *cacheTagKey = [[NSNumber numberWithUnsignedInteger:inCacheTag] stringValue];
-    
-    NSMutableDictionary *tagDic = [cache objectForKey:cacheTagKey];
-    if (tagDic == nil)
-        return;
-
-    NSMutableData *cacheData = [tagDic objectForKey:kStream_Cache_Response_Data];
-    if (![cacheData isEqual:[NSNull null]]) {
-        [cacheData appendData:data];
-    }
-    else {
-        NSMutableData *tmpData = [NSMutableData dataWithData:data];
-        [tagDic setValue:tmpData forKey:kStream_Cache_Response_Data];
-    }
-    
-}
-
--(NSDictionary *)loadCache:(NSUInteger)inCacheTag
-{
-    NSString *cacheTagKey = [[NSNumber numberWithUnsignedInteger:inCacheTag] stringValue];
-    
-    NSMutableDictionary *tagDic = [cache objectForKey:cacheTagKey];
-    if (tagDic == nil)
-        return nil;
-    
-    [cache removeObjectForKey:cacheTagKey];
-    return tagDic;
-}
-
--(void)addParams:(NSDictionary *)params request:(ASIFormDataRequest *)request
-{
-    if (params == nil)
-        return;
-    
-    NSArray *keys = params.allKeys;
-    NSArray *values = params.allValues;
-    
-    for (int i = 0; i < [keys count]; i++) {
-        
-        NSString *key = [keys objectAtIndex:i];
-        id value = [values objectAtIndex:i];
-        
-        if ([value isKindOfClass:[NSDictionary class]]) {
-            [self addParams:value request:request];
-        }
-        
-        [request addPostValue:value forKey:key];
-    }
+    [self request:opt didReceiveObject:object];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -211,9 +89,14 @@
                 [self sendGetHttpRequest:requestInfo userinfo:userinfo];
                 break;
             case HttpRequestTypePost:
+                //暂不支持Post请求
+//                [self sendPostHttpRequest:requestInfo userinfo:userinfo];
+                break;
             case HttpRequestTypePostWithFile:
             case HttpRequestTypePostWithData:
-                [self sendPostHttpRequest:requestInfo userinfo:userinfo];
+                
+                //文件传输暂时未支持
+                
                 break;
             default:
                 break;
@@ -227,21 +110,36 @@
                  userinfo:(NSDictionary *)userinfo
 {
     dispatch_block_t block = ^{@autoreleasepool{
-    
-        //缓存请求、响应信息
-        NSUInteger requestTag = [self saveRequestBeanTagInCache:[requestInfo tag]];
+        
+        DDLogVerbose(@"%@(%@)", THIS_FILE, THIS_METHOD);
+        
         NSString *requestCommand = [requestInfo encode];
         
-        if (requestCommand == nil)  return ;
+        if (requestCommand == nil)
+            return;
         
-        ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[self actionURL:requestCommand]];
-        request.timeOutSeconds = HTTP_REQUEST_TIMEOUT;
-        [request setDelegate:self];
-        [request setTag:requestTag];
-        [request setUserInfo:userinfo];
-        [request setRequestMethod:@"GET"];
-        [[self requestGetQueue] addOperation:request];
-        [[self requestGetQueue] go];
+        NSURL *url = [self actionURL:requestCommand];
+        
+        MKNetworkOperationExt *operationExt = [[MKNetworkOperationExt alloc] initWithURLString:[url absoluteString] params:nil httpMethod:@"GET"];
+        // 防止block丢失,出现错误时会通知缓存更新
+        operationExt.userinfo = userinfo;
+        operationExt.tag = requestInfo.tag;
+        // MKNetworkOperation *operation = [self.netEngine operationWithPath:url];
+        
+        MKNKResponseBlock responseBlock = ^(MKNetworkOperation *operation) {
+            [self requestFinished:operation];
+        };
+        
+        MKNKResponseErrorBlock errorBlock = ^(MKNetworkOperation *operation, NSError *error) {
+            [self requestFailed:operation error:error];
+        };
+        
+        [operationExt addCompletionHandler:responseBlock errorHandler:errorBlock];
+        
+        [self requestStarted:operationExt];
+        
+        // 如果请求失败，重新请求
+        [netEngine enqueueOperation:operationExt forceReload:YES];
     }};
     
     [self schedule:block];
@@ -251,27 +149,8 @@
                   userinfo:(NSDictionary *)userinfo
 {
     dispatch_block_t block = ^{@autoreleasepool{
-    
-        //缓存请求、响应信息
-        NSUInteger requestTag = [self saveRequestBeanTagInCache:[requestInfo tag]];
-        NSString *requestCommand = requestInfo.requestCommand;
-        NSDictionary *params = [requestInfo encode];
-        ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[self actionURL:requestCommand]];
-        [self addParams:params request:request];
         
-        if (requestInfo.requestType == HttpRequestTypePostWithFile) {
-            [request addFile:requestInfo.filePath forKey:requestInfo.fileKey];
-        }
-        else if (requestInfo.requestType == HttpRequestTypePostWithData) {
-            [request addData:requestInfo.fileData forKey:requestInfo.fileKey];
-        }
-        
-        [request setDelegate:self];
-        [request setTag:requestTag];
-        [request setUserInfo:userinfo];
-        [request setRequestMethod:@"POST"];
-        [[self requestPostQueue] addOperation:request];
-        [[self requestPostQueue] go];
+        DDLogVerbose(@"%@(%@)", THIS_FILE, THIS_METHOD);
         
     }};
     
@@ -280,95 +159,32 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-#pragma mark - ASIProgressDelegate delegate
+#pragma mark - Http请求以及应答，在各个状态下的处理回调
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
--(void)request:(ASIHTTPRequest *)request didReceiveBytes:(long long)bytes
+-(void)request:(MKNetworkOperation *)opt didReceiveData:(NSData *)data
 {
     DDLogVerbose(@"%@(%@)", THIS_FILE, THIS_METHOD);
     
-    [gcdMulticastDelegate performSelector:@selector(request:didReceiveBytes::)
-                            withObject:request
-                            withObject:[NSNumber numberWithLongLong:bytes]];
+    //不作任何处理
 }
 
--(void)request:(ASIHTTPRequest *)request didSendBytes:(long long)bytes
+- (void)requestStarted:(MKNetworkOperation *)opt
 {
     DDLogVerbose(@"%@(%@)", THIS_FILE, THIS_METHOD);
     
-    [gcdMulticastDelegate performSelector:@selector(request:didSendBytes:)
-                            withObject:request
-                            withObject:[NSNumber numberWithLongLong:bytes]];
+    [gcdMulticastDelegate performSelector:@selector(requestStarted:) withObject:opt];
 }
 
--(void)request:(ASIHTTPRequest *)request incrementDownloadSizeBy:(long long)newLength
+- (void)requestFinished:(MKNetworkOperation *)opt
 {
-    DDLogVerbose(@"%@(%@)", THIS_FILE, THIS_METHOD);
-    
-    [gcdMulticastDelegate performSelector:@selector(request:incrementDownloadSizeBy:)
-                            withObject:request
-                            withObject:[NSNumber numberWithLongLong:newLength]];
-
-}
-
--(void)request:(ASIHTTPRequest *)request incrementUploadSizeBy:(long long)newLength
-{
-    DDLogVerbose(@"%@(%@)", THIS_FILE, THIS_METHOD);
-    
-    [gcdMulticastDelegate performSelector:@selector(request:incrementUploadSizeBy:)
-                            withObject:request
-                            withObject:[NSNumber numberWithLongLong:newLength]];
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-
-#pragma mark - ASIHTTPRequestDelegate delegate
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-
-//
-//-(void)request:(ASIHTTPRequest *)request didReceiveData:(NSData *)data
-//{
-//    DDLogVerbose(@"%@(%@)", THIS_FILE, THIS_METHOD);
-//    
-//    [self saveDataInCache:data cacheTag:request.tag];
-//
-//}
-
--(void)request:(ASIHTTPRequest *)request didReceiveResponseHeaders:(NSDictionary *)responseHeaders
-{
-    DDLogVerbose(@"%@(%@)", THIS_FILE, THIS_METHOD);
-   
-    [gcdMulticastDelegate performSelector:@selector(request:didReceiveResponseHeaders:) withObject:request withObject:responseHeaders];
-}
-
--(void)request:(ASIHTTPRequest *)request willRedirectToURL:(NSURL *)newURL
-{
-    DDLogVerbose(@"%@(%@)", THIS_FILE, THIS_METHOD);
-
-    [gcdMulticastDelegate performSelector:@selector(request:willRedirectToURL:) withObject:request withObject:newURL];
-}
-
--(void)requestFailed:(ASIHTTPRequest *)request
-{
-    DDLogVerbose(@"%@(%@)", THIS_FILE, THIS_METHOD);
-    
-    [self loadCache:request.tag];
-
-    [gcdMulticastDelegate performSelector:@selector(requestFailed:) withObject:request];
-}
-
--(void)requestFinished:(ASIHTTPRequest *)request
-{    
     DDLogVerbose(@"%@(%@)", THIS_FILE, THIS_METHOD);
     
     dispatch_block_t block = ^{@autoreleasepool{
-        NSDictionary *cacheDic = [self loadCache:request.tag];
-        NSUInteger requestBeanTag = [[cacheDic objectForKey:kStream_Cache_RequestBean_Tag] unsignedIntegerValue];
-//        NSData *data = [cacheDic objectForKey:kStream_Cache_Response_Data];
-
-        [self request:[request copy] parse:[request responseData] requestBeanTag:requestBeanTag];
+        
+        MKNetworkOperationExt *optExt = (MKNetworkOperationExt *)opt;
+        [self request:optExt parse:[optExt responseData] requestBeanTag:optExt.tag];
     }};
     
     if (dispatch_get_current_queue() == parseQueue)
@@ -376,25 +192,19 @@
     else
         dispatch_sync(parseQueue, block);
     
-    [gcdMulticastDelegate performSelector:@selector(requestFinished:) withObject:request];
+    [gcdMulticastDelegate performSelector:@selector(requestFinished:) withObject:opt];
 }
 
--(void)requestRedirected:(ASIHTTPRequest *)request
+- (void)requestFailed:(MKNetworkOperation *)opt error:(NSError *)error
 {
     DDLogVerbose(@"%@(%@)", THIS_FILE, THIS_METHOD);
-
-    [gcdMulticastDelegate performSelector:@selector(requestRedirected:) withObject:request];
-}
-
--(void)requestStarted:(ASIHTTPRequest *)request
-{
-    DDLogVerbose(@"%@(%@)", THIS_FILE, THIS_METHOD);
-
-    [gcdMulticastDelegate performSelector:@selector(requestStarted:) withObject:request];
+    DDLogVerbose(@"%@", error);
+    
+    [gcdMulticastDelegate performSelector:@selector(requestFailed::) withObject:opt withObject:error];
 }
 
 // 通过插件管理对象，调用插件中实现的方法
--(void)request:(ASIHTTPRequest *)request didReceiveObject:(id)object
+-(void)request:(MKNetworkOperation *)opt didReceiveObject:(id)object
 {
     // 该方法在dataStreamQueue中执行
     dispatch_block_t block = ^{
@@ -402,7 +212,7 @@
         DDLogVerbose(@"%@(%@)tag:%d", THIS_FILE, THIS_METHOD, [(id<ITSResponseDelegate>)object tag]);
         
         // multicastDelgate没有实现该方法，所以在其内部，会把该函数调用消息传递给其保存的delegate中去执行。
-        [gcdMulticastDelegate performSelector:@selector(request:didReceiveObject:) withObject:request withObject:object];
+        [gcdMulticastDelegate performSelector:@selector(request:didReceiveObject:) withObject:opt withObject:object];
 
     };
     

@@ -47,7 +47,7 @@
     return NO;
 }
 
--(void)requestFailed:(ASIHTTPRequest *)request
+-(void)requestFailed:(MKNetworkOperation *)request error:(NSError *)error
 {
     DDLogCVerbose(@"%@(%@)", NSStringFromClass([self class]), THIS_METHOD);
     

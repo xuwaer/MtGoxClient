@@ -7,18 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ASIHTTPRequest.h"
 #import "ITSStream.h"
 #import "BaseRequest.h"
+
+#import "MKNetworkKit.h"
 
 /**
  *	@brief	通信时调用的方法。需要在QueueModule中实现。所有加入控制且实现了该委托的QueueModule，在与服务器进行数据通信时
  *          会被自动调用。
  */
-@protocol HttpStreamDelegate <ASIHTTPRequestDelegate>
+@protocol HttpStreamDelegate
 
 @optional
--(void)request:(ASIHTTPRequest *)request didReceiveObject:(id)object;
+- (void)request:(MKNetworkOperation *)opt didReceiveObject:(id)object;
+- (void)requestStarted:(MKNetworkOperation *)opt;
+- (void)requestFinished:(MKNetworkOperation *)opt;
+- (void)requestFailed:(MKNetworkOperation *)opt error:(NSError *)error;
+- (void)request:(MKNetworkOperation *)opt didReceiveData:(NSData *)data;
 
 @end
 
@@ -27,14 +32,10 @@
 /**
  *	@brief 通信类。完成创建、断开连接，发送、接收消息等功能
  */
-@interface ITSHttpStream : ITSStream<ASIHTTPRequestDelegate, ASIProgressDelegate, ITSStreamDelegate>
+@interface ITSHttpStream : ITSStream<ITSStreamDelegate>
 {
     @protected
-    ASINetworkQueue *_requestGetQueue;
-    ASINetworkQueue *_requestPostQueue;
-    
-    NSMutableDictionary *cache;
-    NSUInteger cacheTag;
+    MKNetworkEngine *netEngine;
 }
 
 /**
@@ -55,14 +56,5 @@
 
 -(void)sendHttpRequest:(BaseRequest *)requestInfo
               userinfo:(NSDictionary *)userinfo;
-
-/**
- *	@brief	http get请求队列，最好不要使用。会破坏stream的线程安全
- */
-@property (nonatomic, strong, readonly) ASINetworkQueue *requestGetQueue;
-/**
- *	@brief	http post请求队列，最好不要使用。会破坏stream的线程安全
- */
-@property (nonatomic, strong, readonly) ASINetworkQueue *requestPostQueue;
 
 @end
