@@ -26,9 +26,7 @@
 		B98965D51729069600260BFF /* MtGoxTickerResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B98965D41729069600260BFF /* MtGoxTickerResponse.m */; };
 		B9AEC5F4173A56C8000E7F6F /* RemindSyncRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B9AEC5F3173A56C8000E7F6F /* RemindSyncRequest.m */; };
 		B9AEC5F7173A5758000E7F6F /* RemindSyncResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B9AEC5F6173A5758000E7F6F /* RemindSyncResponse.m */; };
-		B9B9FDD61743385E003E0B94 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B9FDD51743385E003E0B94 /* CoreLocation.framework */; };
 		B9B9FDD81743387F003E0B94 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B9FDD71743387F003E0B94 /* libstdc++.dylib */; };
-		B9B9FDDA17433897003E0B94 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B9FDD917433897003E0B94 /* CoreTelephony.framework */; };
 		B9B9FDDD174356A4003E0B94 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B9FDDC174356A4003E0B94 /* BaseViewController.m */; };
 		B9BA8BD3172B77C50049C878 /* RemindSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BA8BD1172B77C50049C878 /* RemindSettingController.m */; };
 		B9BA8BD4172B77C50049C878 /* RemindSettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9BA8BD2172B77C50049C878 /* RemindSettingController.xib */; };
@@ -192,9 +190,7 @@
 		B9B7C7E01744E94C00259A90 /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
 		B9B7C7F01744E95E00259A90 /* BaiduMobStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMobStat.h; sourceTree = "<group>"; };
 		B9B7C7F11744E95E00259A90 /* libBaiduMobStat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduMobStat.a; sourceTree = "<group>"; };
-		B9B9FDD51743385E003E0B94 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B9B9FDD71743387F003E0B94 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
-		B9B9FDD917433897003E0B94 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		B9B9FDDB174356A3003E0B94 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		B9B9FDDC174356A4003E0B94 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		B9BA8BD0172B77C50049C878 /* RemindSettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindSettingController.h; sourceTree = "<group>"; };
@@ -345,9 +341,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9B9FDDA17433897003E0B94 /* CoreTelephony.framework in Frameworks */,
 				B9B9FDD81743387F003E0B94 /* libstdc++.dylib in Frameworks */,
-				B9B9FDD61743385E003E0B94 /* CoreLocation.framework in Frameworks */,
 				B9E564901728F9DC005443A3 /* Security.framework in Frameworks */,
 				B9E5648E1728F9BC005443A3 /* libz.1.2.5.dylib in Frameworks */,
 				B9E5648A1728F948005443A3 /* MobileCoreServices.framework in Frameworks */,
@@ -545,9 +539,7 @@
 		B9E563251728F82B005443A3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B9B9FDD917433897003E0B94 /* CoreTelephony.framework */,
 				B9B9FDD71743387F003E0B94 /* libstdc++.dylib */,
-				B9B9FDD51743385E003E0B94 /* CoreLocation.framework */,
 				B9E5648D1728F9BC005443A3 /* libz.1.2.5.dylib */,
 				B9E5648F1728F9DC005443A3 /* Security.framework */,
 				B9E564891728F948005443A3 /* MobileCoreServices.framework */,
