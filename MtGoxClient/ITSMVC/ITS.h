@@ -8,10 +8,8 @@
 
 #import "DDLog.h"
 #import "DDTTYLogger.h"
-#import "TransManager.h"
+#import "ITSTransManager.h"
 #import "ITSConfig.h"
-#import "ITSRequest.h"
-#import "ITSResponse.h"
 
 #if DEBUG
 static const int ddLogLevel = LOG_LEVEL_VERBOSE;

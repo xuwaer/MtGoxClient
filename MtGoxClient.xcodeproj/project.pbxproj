@@ -85,8 +85,8 @@
 		B9E5646D1728F8D3005443A3 /* GCDMulticastDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E563EA1728F8D3005443A3 /* GCDMulticastDelegate.m */; };
 		B9E5646E1728F8D3005443A3 /* ITSQueueModule.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E563EC1728F8D3005443A3 /* ITSQueueModule.m */; };
 		B9E5646F1728F8D3005443A3 /* ITSStream.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E563EE1728F8D3005443A3 /* ITSStream.m */; };
-		B9E564701728F8D3005443A3 /* TransManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E563F01728F8D3005443A3 /* TransManager.m */; };
-		B9E564791728F8D3005443A3 /* HttpQueueModule.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E564081728F8D3005443A3 /* HttpQueueModule.m */; };
+		B9E564701728F8D3005443A3 /* ITSTransManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E563F01728F8D3005443A3 /* ITSTransManager.m */; };
+		B9E564791728F8D3005443A3 /* ITSHttpQueueModule.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E564081728F8D3005443A3 /* ITSHttpQueueModule.m */; };
 		B9E5647A1728F8D3005443A3 /* ITSHttpStream.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E5640A1728F8D3005443A3 /* ITSHttpStream.m */; };
 		B9E5647B1728F8D3005443A3 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E5640F1728F8D3005443A3 /* DDAbstractDatabaseLogger.m */; };
 		B9E5647C1728F8D3005443A3 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E564111728F8D3005443A3 /* DDASLLogger.m */; };
@@ -284,10 +284,10 @@
 		B9E563EC1728F8D3005443A3 /* ITSQueueModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITSQueueModule.m; sourceTree = "<group>"; };
 		B9E563ED1728F8D3005443A3 /* ITSStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITSStream.h; sourceTree = "<group>"; };
 		B9E563EE1728F8D3005443A3 /* ITSStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITSStream.m; sourceTree = "<group>"; };
-		B9E563EF1728F8D3005443A3 /* TransManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransManager.h; sourceTree = "<group>"; };
-		B9E563F01728F8D3005443A3 /* TransManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransManager.m; sourceTree = "<group>"; };
-		B9E564071728F8D3005443A3 /* HttpQueueModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpQueueModule.h; sourceTree = "<group>"; };
-		B9E564081728F8D3005443A3 /* HttpQueueModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpQueueModule.m; sourceTree = "<group>"; };
+		B9E563EF1728F8D3005443A3 /* ITSTransManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITSTransManager.h; sourceTree = "<group>"; };
+		B9E563F01728F8D3005443A3 /* ITSTransManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITSTransManager.m; sourceTree = "<group>"; };
+		B9E564071728F8D3005443A3 /* ITSHttpQueueModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITSHttpQueueModule.h; sourceTree = "<group>"; };
+		B9E564081728F8D3005443A3 /* ITSHttpQueueModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITSHttpQueueModule.m; sourceTree = "<group>"; };
 		B9E564091728F8D3005443A3 /* ITSHttpStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITSHttpStream.h; sourceTree = "<group>"; };
 		B9E5640A1728F8D3005443A3 /* ITSHttpStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITSHttpStream.m; sourceTree = "<group>"; };
 		B9E5640E1728F8D3005443A3 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
@@ -712,8 +712,8 @@
 				B9E563EC1728F8D3005443A3 /* ITSQueueModule.m */,
 				B9E563ED1728F8D3005443A3 /* ITSStream.h */,
 				B9E563EE1728F8D3005443A3 /* ITSStream.m */,
-				B9E563EF1728F8D3005443A3 /* TransManager.h */,
-				B9E563F01728F8D3005443A3 /* TransManager.m */,
+				B9E563EF1728F8D3005443A3 /* ITSTransManager.h */,
+				B9E563F01728F8D3005443A3 /* ITSTransManager.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -724,8 +724,8 @@
 				392F5DA71807C662005F5C12 /* MKNetworkOperationExt.h */,
 				392F5DA81807C662005F5C12 /* MKNetworkOperationExt.m */,
 				392F5D891807AA06005F5C12 /* MKNetworkKit */,
-				B9E564071728F8D3005443A3 /* HttpQueueModule.h */,
-				B9E564081728F8D3005443A3 /* HttpQueueModule.m */,
+				B9E564071728F8D3005443A3 /* ITSHttpQueueModule.h */,
+				B9E564081728F8D3005443A3 /* ITSHttpQueueModule.m */,
 				B9E564091728F8D3005443A3 /* ITSHttpStream.h */,
 				B9E5640A1728F8D3005443A3 /* ITSHttpStream.m */,
 			);
@@ -954,11 +954,11 @@
 				B9E5646D1728F8D3005443A3 /* GCDMulticastDelegate.m in Sources */,
 				B9E5646E1728F8D3005443A3 /* ITSQueueModule.m in Sources */,
 				B9E5646F1728F8D3005443A3 /* ITSStream.m in Sources */,
-				B9E564701728F8D3005443A3 /* TransManager.m in Sources */,
+				B9E564701728F8D3005443A3 /* ITSTransManager.m in Sources */,
 				392F5D9F1807AA06005F5C12 /* NSDate+RFC1123.m in Sources */,
 				392F5DA51807AA06005F5C12 /* MKNetworkOperation.m in Sources */,
 				392F5DA91807C662005F5C12 /* MKNetworkOperationExt.m in Sources */,
-				B9E564791728F8D3005443A3 /* HttpQueueModule.m in Sources */,
+				B9E564791728F8D3005443A3 /* ITSHttpQueueModule.m in Sources */,
 				B9E5647A1728F8D3005443A3 /* ITSHttpStream.m in Sources */,
 				B9E5647B1728F8D3005443A3 /* DDAbstractDatabaseLogger.m in Sources */,
 				B9E5647C1728F8D3005443A3 /* DDASLLogger.m in Sources */,

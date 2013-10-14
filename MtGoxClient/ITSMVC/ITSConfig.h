@@ -6,6 +6,9 @@
 //
 //
 
+#import "ITSRequest.h"
+#import "ITSResponse.h"
+
 #ifndef tfsp_rc_TranslateConfig_h
 #define tfsp_rc_TranslateConfig_h
 
@@ -92,14 +95,14 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
 #ifndef kActionTag
-#define kActionTag_Request_USD      1000
-#define kActionTag_Request_JPY      1001
-#define kActionTag_Request_EUR      1002
-#define kActionTag_Request_CNY      1003
-#define kActionTag_Request_Set_Remind 1004
-#define kActionTag_Request_Update_Remind 1005
-#define kActionTag_Request_Delete_Remind 1006
-#define kActionTag_Request_Sync_Remind 1007
+#define kActionTag_Request_USD      1000            //美元行情
+#define kActionTag_Request_JPY      1001            //日元行情
+#define kActionTag_Request_EUR      1002            //欧元行情
+#define kActionTag_Request_CNY      1003            //人民币行情
+#define kActionTag_Request_Set_Remind 1004          //添加价格提醒
+#define kActionTag_Request_Update_Remind 1005       //更新价格提醒
+#define kActionTag_Request_Delete_Remind 1006       //删除价格提醒
+#define kActionTag_Request_Sync_Remind 1007         //同步价格提醒
 
 #define kActionTag_Response_USD     kActionTag_Request_USD
 #define kActionTag_Response_JPY     kActionTag_Request_JPY
@@ -117,6 +120,7 @@
 
 #elif defined (connectiontype_http)
 #import "ITSHttpStream.h"
+#import "ITSHttpQueueModule.h"
 #elif defined (connectiontype_other)
 
 #endif

@@ -6,17 +6,17 @@
 //
 //
 
-#import "HttpQueueModule.h"
+#import "ITSHttpQueueModule.h"
 #import "MKNetworkOperationExt.h"
 
-@implementation HttpQueueModule
+@implementation ITSHttpQueueModule
 
 -(id)init
 {
     self = [super init];
     
     if (self) {
-        transManager = [TransManager defaultManager];
+        transManager = [ITSTransManager defaultManager];
     }
     
     return self;

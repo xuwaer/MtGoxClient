@@ -29,8 +29,6 @@
 
 @end
 
-@class ASINetworkQueue;
-
 /**
  *	@brief 通信类。完成创建、断开连接，发送、接收消息等功能
  */

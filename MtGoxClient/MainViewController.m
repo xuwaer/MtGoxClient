@@ -12,7 +12,7 @@
 #import "MtGoxTickerResponse.h"
 
 #import "PriceCell.h"
-#import "TransManager.h"
+#import "ITSTransManager.h"
 #import "DeviceUtil.h"
 
 //#import "SettingViewController.h"
@@ -81,7 +81,7 @@
 -(void)setupHttpQueue
 {
     mtGoxQueue = [[MtGoxInformationQueue alloc] init];
-    [[TransManager defaultManager] add:mtGoxQueue];
+    [[ITSTransManager defaultManager] add:mtGoxQueue];
 }
 
 /**
@@ -89,7 +89,7 @@
  */
 -(void)destoryHttpQueue
 {
-    [[TransManager defaultManager] remove:mtGoxQueue];
+    [[ITSTransManager defaultManager] remove:mtGoxQueue];
     mtGoxQueue = nil;
     
 }

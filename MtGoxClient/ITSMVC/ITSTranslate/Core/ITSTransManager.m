@@ -6,12 +6,12 @@
 //
 //
 
-#import "TransManager.h"
+#import "ITSTransManager.h"
 #import "ITSConfig.h"
 
-static TransManager *transManager;
+static ITSTransManager *transManager;
 
-@implementation TransManager
+@implementation ITSTransManager
 
 @synthesize stream = _stream;
 
@@ -19,7 +19,7 @@ static TransManager *transManager;
 {
     if (transManager == nil) {
         @synchronized(transManager){
-            transManager = [[TransManager alloc] init];
+            transManager = [[ITSTransManager alloc] init];
         }
     }
     

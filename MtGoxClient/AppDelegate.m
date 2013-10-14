@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 
 #import "MainViewController.h"
-#import "TransManager.h"
+#import "ITSTransManager.h"
 #import "UserDefault.h"
 
 #import "UINavigationBar+CustomNav.h"
@@ -95,7 +95,7 @@
 {
     // 完成环境初始化
     userDefault = [UserDefault defaultUser];
-    [TransManager defaultManager];
+    [ITSTransManager defaultManager];
 
 //    const char * hostnameChar = getHostnameWithPlatform(userDefault.platform);
 //    NSString * hostnameStr = [NSString stringWithCString:hostnameChar encoding:NSUTF8StringEncoding];

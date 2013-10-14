@@ -24,7 +24,7 @@
  *  1.steam，使用线程管理数据发送、接收、解析。(ITSStream)
  *  2.controllers，缓存需要callback的控制层对象
  */
-@interface TransManager : NSObject
+@interface ITSTransManager : NSObject
 {
     // 通信层，管理数据发送、接收、解析线程
     ITSStream *_stream;

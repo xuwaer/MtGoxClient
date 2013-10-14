@@ -17,7 +17,7 @@
 #import "RemindUpdateResponse.h"
 #import "Remind.h"
 #import "RemindSettingQueue.h"
-#import "TransManager.h"
+#import "ITSTransManager.h"
 
 #import "ProgressController.h"
 #import "DeviceUtil.h"
@@ -134,7 +134,7 @@
 -(void)setupHttpQueue
 {
     remindQueue = [[RemindSettingQueue alloc] init];
-    [[TransManager defaultManager] add:remindQueue];
+    [[ITSTransManager defaultManager] add:remindQueue];
 }
 
 /**
@@ -142,7 +142,7 @@
  */
 -(void)destoryHttpQueue
 {
-    [[TransManager defaultManager] remove:remindQueue];
+    [[ITSTransManager defaultManager] remove:remindQueue];
     remindQueue = nil;
     
 }

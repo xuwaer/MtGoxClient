@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MtGoxClient/ITSMVC/ITSTranslate/Http/ITSHttpStream.m"
-            timestampString = "403172202.316983"
+            timestampString = "403422302.958686"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "-sendHttpRequest:userinfo:"
             landmarkType = "5">
             <Locations>

@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 tosc-its. All rights reserved.
 //
 
-#import "HttpQueueModule.h"
-
 /**
  *	@brief	控制层，如果需要，可以在这里添加代码。处理从通信层传递过来的数据.
  *          如果这里自定义了，那么传递数据到上层UI界面显示的方法可能会重写
@@ -16,7 +14,7 @@
 
 @class Remind;
 
-@interface RemindSettingQueue : HttpQueueModule
+@interface RemindSettingQueue : ITSHttpQueueModule
 {
     Remind *_remind;
 }

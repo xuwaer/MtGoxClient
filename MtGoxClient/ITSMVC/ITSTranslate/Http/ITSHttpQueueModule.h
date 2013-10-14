@@ -19,10 +19,10 @@
  *	@brief	控制层子类。完成数据传递和接收callback。
  *  在本项目中，实现了HttpStreamDelegate。通信层接收并处理完毕后，callback该委托对象的方法
  */
-@interface HttpQueueModule : ITSQueueModule<HttpStreamDelegate>
+@interface ITSHttpQueueModule : ITSQueueModule<HttpStreamDelegate>
 {
     @private
-    TransManager *transManager;             //通信管理类
+    ITSTransManager *transManager;             //通信管理类
 }
 
 /**

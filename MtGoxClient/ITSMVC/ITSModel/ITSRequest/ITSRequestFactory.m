@@ -41,7 +41,7 @@ static ITSRequestFactory *requestFactory;
 
 -(id)encode:(id<ITSRequestDelegate>)source
 {
-    return nil;
+    return [source encode];
 }
 
 @end

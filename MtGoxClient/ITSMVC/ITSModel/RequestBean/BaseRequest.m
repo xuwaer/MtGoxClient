@@ -32,7 +32,7 @@
 #pragma mark - Get request method
 
 /**
- *	@brief	生成http请求url
+ *	@brief	反射方式生成http请求url,GET方式
  *
  *	@return
  */
@@ -119,7 +119,7 @@
 #pragma mark - Post request method
 
 /**
- *	@brief	生成http请求param，用于POST方式
+ *	@brief	反射方式生成http请求param，用于POST方式
  *
  *	@return
  */
@@ -188,6 +188,11 @@
     }
 }
 
+/**
+ *	@brief	实现ITSRequestDelegate
+ *
+ *	@return	<#return value description#>
+ */
 -(id)encode
 {
     id result;

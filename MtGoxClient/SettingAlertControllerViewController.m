@@ -154,12 +154,12 @@
 -(void)setupHttpQueue
 {
     remindQueue = [[RemindSettingQueue alloc] init];
-    [[TransManager defaultManager] add:remindQueue];
+    [[ITSTransManager defaultManager] add:remindQueue];
 }
 
 -(void)destoryHttpQueue
 {
-    [[TransManager defaultManager] remove:remindQueue];
+    [[ITSTransManager defaultManager] remove:remindQueue];
     remindQueue = nil;
 }
 
