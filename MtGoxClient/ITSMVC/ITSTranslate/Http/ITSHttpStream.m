@@ -69,6 +69,7 @@
 
 -(void)request:(MKNetworkOperation *)opt parse:(NSData *)data requestBeanTag:(NSUInteger)requestBeanTag
 {
+    // 通过工厂方法，找到匹配的解析方案
     id object = [ITSResponse decode:data tag:[NSNumber numberWithUnsignedInt:requestBeanTag]];
     
     [self request:opt didReceiveObject:object];
@@ -89,7 +90,7 @@
                 [self sendGetHttpRequest:requestInfo userinfo:userinfo];
                 break;
             case HttpRequestTypePost:
-                //暂不支持Post请求
+                //由于还未验证POST，因此暂不支持POST请求
 //                [self sendPostHttpRequest:requestInfo userinfo:userinfo];
                 break;
             case HttpRequestTypePostWithFile:
@@ -106,6 +107,11 @@
     [self schedule:block];
 }
 
+/**
+ *	@brief	http get请求
+ *
+ *	@param 	requestInfo 	实现接口ITSRequestDelegate的实体类
+ */
 -(void)sendGetHttpRequest:(BaseRequest *)requestInfo
                  userinfo:(NSDictionary *)userinfo
 {
@@ -113,6 +119,7 @@
         
         DDLogVerbose(@"%@(%@)", THIS_FILE, THIS_METHOD);
         
+        // 本地实体对象编码为服务器能够识别的数据
         NSString *requestCommand = [requestInfo encode];
         
         if (requestCommand == nil)
@@ -121,8 +128,9 @@
         NSURL *url = [self actionURL:requestCommand];
         
         MKNetworkOperationExt *operationExt = [[MKNetworkOperationExt alloc] initWithURLString:[url absoluteString] params:nil httpMethod:@"GET"];
-        // 防止block丢失,出现错误时会通知缓存更新
+        // 缓存需要的信息
         operationExt.userinfo = userinfo;
+        // 请求tag
         operationExt.tag = requestInfo.tag;
         // MKNetworkOperation *operation = [self.netEngine operationWithPath:url];
         
@@ -159,7 +167,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-#pragma mark - Http请求以及应答，在各个状态下的处理回调
+#pragma mark - Http请求以及应答，在各个状态下的回调
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -183,6 +191,7 @@
     
     dispatch_block_t block = ^{@autoreleasepool{
         
+        //接收到数据后，完成解析操作。解析操作均在解析线程中执行
         MKNetworkOperationExt *optExt = (MKNetworkOperationExt *)opt;
         [self request:optExt parse:[optExt responseData] requestBeanTag:optExt.tag];
     }};

@@ -9,14 +9,25 @@
 #import <Foundation/Foundation.h>
 #import "GCDMulticastDelegate.h"
 
+/*************/
+/*  请勿修改  */
+/************/
+
+/**
+ *	@brief	控制整个网络请求流程中的数据发送、接收父类。该类必须针对特定的网络情况设计(http、socket等)。
+ */
 @interface ITSStream : NSObject<ITSStreamDelegate>
 {
     NSString *_hostname;
     NSString *_port;
     NSString *hostUrl;
     
+    // 动作分发管理器。把通信层的操作，分发给控制层
     GCDMulticastDelegate *gcdMulticastDelegate;
+    
+    // 通信线程
     dispatch_queue_t streamQueue;
+    // 解析线程
     dispatch_queue_t parseQueue;
 }
 

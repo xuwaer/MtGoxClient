@@ -9,12 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "ITSStream.h"
 
+/*************/
+/*  请勿修改  */
+/************/
+
 /**
- *	@brief	Control层父类，通信模块得到的数据会自动传递到该类
+ *	@brief	控制层层父类，通信模块得到的数据会自动传递到该类。
  */
 @interface ITSQueueModule : NSObject
 {
-    // Control层运行所在的线程queue
+    // 控制层运行所在的线程queue
     dispatch_queue_t _threadQueue;
     // 通信模块
     ITSStream *_stream;
@@ -36,7 +40,9 @@
 -(NSString *)queueName;
 
 /**
- *	@brief	响应数据模块。当请求得到服务器的响应后，所有已加入的模块的对应方法均会被调用。
+ *	@brief	把次对象加入到ITSStream的响应队列中。
+ *
+ *          当请求得到服务器的响应后，所有已加入的模块的对应方法均会被调用。
  *          调用的方法，参见具体的通信模块委托
  *
  *	@param 	stream 	通信模块

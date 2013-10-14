@@ -56,13 +56,12 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#pragma mark - HttpStream delegate
+#pragma mark - HttpStream delegate。这里只实现了部分
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 -(void)request:(MKNetworkOperation *)opt didReceiveObject:(id)object
 {
-    
     DDLogCVerbose(@"%@(%@)tag:%d", NSStringFromClass([self class]), THIS_METHOD, [(id<ITSResponseDelegate>)object tag]);
     
     NSDictionary *userinfo = ((MKNetworkOperationExt *)opt).userinfo;

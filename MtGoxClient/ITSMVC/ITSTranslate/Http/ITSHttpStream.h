@@ -13,8 +13,10 @@
 #import "MKNetworkKit.h"
 
 /**
- *	@brief	通信时调用的方法。需要在QueueModule中实现。所有加入控制且实现了该委托的QueueModule，在与服务器进行数据通信时
- *          会被自动调用。
+ *	@brief	进行数据交互时会自动回调的委托，用于监控数据传递、接收状态。需要在QueueModule中实现。
+ *          要让该委托在与服务器进行数据通信时会被自动调用，需要完成以下操作.
+ *          1.在ITSQueueModule的子类中实现该委托
+ *          2.调用ITSQueueModule中的方法：-(BOOL)plugin:(ITSStream *)stream;
  */
 @protocol HttpStreamDelegate
 
@@ -39,20 +41,20 @@
 }
 
 /**
- *	@brief	http get请求
+ *	@brief	http get请求.(取消该方法的对外开发）
  *
  *	@param 	requestInfo 	实现接口ITSRequestDelegate的实体类
  */
--(void)sendGetHttpRequest:(BaseRequest *)requestInfo
-                 userinfo:(NSDictionary *)userinfo;
+//-(void)sendGetHttpRequest:(BaseRequest *)requestInfo
+//                 userinfo:(NSDictionary *)userinfo;
 
 /**
- *	@brief	http post请求
+ *	@brief	http post请求.(取消该方法的对外开发)
  *
  *	@param 	requestInfo 	实现接口ITSRequestDelegate的实体类
  */
--(void)sendPostHttpRequest:(BaseRequest *)requestInfo
-                  userinfo:(NSDictionary *)userinfo;
+//-(void)sendPostHttpRequest:(BaseRequest *)requestInfo
+//                  userinfo:(NSDictionary *)userinfo;
 
 -(void)sendHttpRequest:(BaseRequest *)requestInfo
               userinfo:(NSDictionary *)userinfo;

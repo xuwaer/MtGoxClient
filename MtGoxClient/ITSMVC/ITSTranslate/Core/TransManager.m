@@ -83,6 +83,8 @@ static TransManager *transManager;
 
 -(BOOL)add:(ITSQueueModule *)queueModule
 {
+    
+    //加入callback缓存
     if ([queueModule plugin:_stream]) {
         [controllers addObject:queueModule];
         return YES;

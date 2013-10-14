@@ -1,5 +1,9 @@
 #import <Foundation/Foundation.h>
 
+/*************/
+/*  请勿修改  */
+/************/
+
 @class GCDMulticastDelegateEnumerator;
 
 @protocol ITSStreamDelegate <NSObject>
