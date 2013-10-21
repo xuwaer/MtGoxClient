@@ -160,6 +160,33 @@
         
         DDLogVerbose(@"%@(%@)", THIS_FILE, THIS_METHOD);
         
+        // 本地实体对象编码为服务器能够识别的数据
+        NSDictionary *requestParam = [requestInfo encode];
+        
+        NSURL *url = [self actionURL:requestInfo.requestCommand];
+        
+        MKNetworkOperationExt *operationExt = [[MKNetworkOperationExt alloc] initWithURLString:[url absoluteString] params:requestParam httpMethod:@"POST"];
+        // 缓存需要的信息
+        operationExt.userinfo = userinfo;
+        // 请求tag
+        operationExt.tag = requestInfo.tag;
+        // MKNetworkOperation *operation = [self.netEngine operationWithPath:url];
+        
+        MKNKResponseBlock responseBlock = ^(MKNetworkOperation *operation) {
+            [self requestFinished:operation];
+        };
+        
+        MKNKResponseErrorBlock errorBlock = ^(MKNetworkOperation *operation, NSError *error) {
+            [self requestFailed:operation error:error];
+        };
+        
+        [operationExt addCompletionHandler:responseBlock errorHandler:errorBlock];
+        
+        [self requestStarted:operationExt];
+        
+        // 如果请求失败，重新请求
+        [netEngine enqueueOperation:operationExt forceReload:YES];
+        
     }};
     
     [self schedule:block];
