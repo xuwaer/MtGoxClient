@@ -251,7 +251,7 @@
 		B9D8E244172BB28400A0A811 /* PickerViewUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewUtil.m; sourceTree = "<group>"; };
 		B9D8E246172BCEA700A0A811 /* RemindSettingQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindSettingQueue.h; sourceTree = "<group>"; };
 		B9D8E247172BCEA700A0A811 /* RemindSettingQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindSettingQueue.m; sourceTree = "<group>"; };
-		B9E563231728F82B005443A3 /* MtGoxClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MtGoxClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9E563231728F82B005443A3 /* BTCAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BTCAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E563261728F82B005443A3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B9E563281728F82B005443A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B9E5632A1728F82B005443A3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -507,7 +507,7 @@
 		B9E563241728F82B005443A3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B9E563231728F82B005443A3 /* MtGoxClient.app */,
+				B9E563231728F82B005443A3 /* BTCAlert.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -877,7 +877,7 @@
 			);
 			name = MtGoxClient;
 			productName = MtGoxClient;
-			productReference = B9E563231728F82B005443A3 /* MtGoxClient.app */;
+			productReference = B9E563231728F82B005443A3 /* BTCAlert.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1069,7 +1069,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: wang hongyun (77K9VUU57K)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Shun Shun Pang (HKP557QUHE)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1084,7 +1084,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C382249E-B625-4094-BBB6-027AF6EA6C4D";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B14442AC-E7EC-4DD7-8B42-FD0E05D158E2";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1118,7 +1118,7 @@
 		B9E563471728F82B005443A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: wang hongyun (77K9VUU57K)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Shun Shun Pang (HKP557QUHE)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MtGoxClient/MtGoxClient-Prefix.pch";
 				INFOPLIST_FILE = "MtGoxClient/MtGoxClient-Info.plist";
@@ -1127,8 +1127,8 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/MtGoxClient/Util/BaiduStatistics\"",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C382249E-B625-4094-BBB6-027AF6EA6C4D";
+				PRODUCT_NAME = BTCAlert;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B14442AC-E7EC-4DD7-8B42-FD0E05D158E2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1144,7 +1144,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/MtGoxClient/Util/BaiduStatistics\"",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = BTCAlert;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
